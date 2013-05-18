@@ -27,19 +27,19 @@ $(document).ready(function($) {
 
 	// Hiding all the testimonials, except for the first one.
 	$('.testimonials li').hide().eq(0).show();
-	
+
 	// A self executing function that loops through the testimonials:
 	(function showNextTestimonial(){
-		
+
 		// Wait for 7.5 seconds and hide the currently visible testimonial:
 		$('.testimonials li:visible').delay(7500).fadeOut('slow',function(){
-			
+
 			// Move it to the back:
 			$(this).appendTo('.testimonials ul');
-			
+
 			// Show the next testimonial:
 			$('.testimonials li:first').fadeIn('slow',function(){
-				
+
 				// Call the function again:
 				showNextTestimonial();
 			});
@@ -74,7 +74,7 @@ $(document).ready(function($) {
 		$(window).bind('resize', function(){
 			var selector = $filter.find('a.active4').attr('data-filter');
 			try {
-				$container.isotope({ 
+				$container.isotope({
 					filter	: selector,
 					animationOptions: {
 						duration: 750,
@@ -87,14 +87,14 @@ $(document).ready(function($) {
 
 			}
 		});
-		
-		// Isotope Filter 
+
+		// Isotope Filter
 		$filter.find('a').click(function(){
 			var selector = $(this).attr('data-filter');
 
 			try {
-				
-				$container.isotope({ 
+
+				$container.isotope({
 					filter	: selector,
 					animationOptions: {
 						duration: 750,
@@ -162,7 +162,7 @@ $(document).ready(function($) {
 	/* ---------------------------------------------------------------------- */
 	/*	Contact Map
 	/* ---------------------------------------------------------------------- */
-	var contact = {"lat":"42.672421", "lon":"21.16453899999999"}; //Change a map coordinate here!
+	var contact = {"lat":"59.476758", "lon":"18.344683"}; //Change a map coordinate here!
 
 	try {
 		$('#map').gmap3({

@@ -12,9 +12,10 @@
   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
   <!--[if lt IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <%= javascript_include_tag "application" %>
-    <%= csrf_meta_tags %>
+  <![endif]-->
+  <%= javascript_include_tag "application" %>
+  <%= yield :javascript %>
+  <%= csrf_meta_tags %>
 
   <!--
   Flexslider
@@ -53,7 +54,7 @@ $(document).ready(function(){
                 <li class="active"><a href="/extraclean/index.html"><%= I18n.t(:home) %></a></li>
                 <% if can? :read, :all %>
                   <li><a href="/extraclean/blog.html">Blog</a></li>
-                  <li class="drop"><a href="#">singlepages</a>
+                  <!--<li class="drop"><a href="#">singlepages</a>
                     <span></span>
                     <ul class="dropdown">
                       <li><a href="/extraclean/single-post.html">Singlepost</a></li>
@@ -61,10 +62,9 @@ $(document).ready(function(){
                     </ul>
                   </li>
                   <li><a href="/extraclean/portfolio.html">portfolio</a></li>
-                  <li><a href="/extraclean/shortcodes.html">shortcodes</a></li>
-                  <li><a href="/extraclean/contact.html">contact</a></li>
-
+                  <li><a href="/extraclean/shortcodes.html">shortcodes</a></li>-->
                 <% end %>
+                <li><a href="<%= contact_index_path %>"><%= I18n.t(:contact) %></a></li>
               </ul>
             </nav>
           </section>
@@ -85,7 +85,11 @@ $(document).ready(function(){
       </div>
     </header>
 
-    <%= yield %>
+    <div id="content" class="nine column">
+
+      <%= yield %>
+
+    </div>
 
   </div>
 </div>
