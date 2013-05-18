@@ -48,8 +48,13 @@ RailsAdmin.config do |config|
 
   config.model Page do
     edit do
-      field :content do
-        bootstrap_wysihtml5 true
+      # field :content do
+      #   bootstrap_wysihtml5 true
+      # end
+      field :content, :rich_editor do
+        config({
+          :insert_many => true
+        })
       end
     end
   end

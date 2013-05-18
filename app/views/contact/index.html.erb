@@ -31,13 +31,7 @@
     </div>
 
     <div class="six column">
-      <h1><%= I18n.t(:contact_information) %></h1>
-      <p>Praesent elit mi, mattis vitae accumsan bibendum, porttitor non neque. Phasellus dignissim sagittis</p>
-      <div>
-        <p><img alt="" src="/extraclean/images/contact1.png">contact@company.com</p>
-        <p><img alt="" src="/extraclean/images/contact2.png">+38649 123 456</p>
-        <p><img alt="" src="/extraclean/images/contact3.png">http://www.envato.com</p>
-      </div>
+      <%= raw Page.first.content %>
     </div>
   </div>
 </div>

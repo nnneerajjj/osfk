@@ -13,3 +13,4 @@
 //= require jquery
 //= require jquery.flexslider
 //= require script
+//= require rich

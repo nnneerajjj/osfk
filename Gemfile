@@ -11,6 +11,7 @@ gem 'devise'
 gem 'i18n-active_record', :git => 'git://github.com/svenfuchs/i18n-active_record.git'
 gem 'cancan'
 gem 'bootstrap-wysihtml5-rails'
+gem 'rich'
 
 group :development do
   gem 'sqlite3'
