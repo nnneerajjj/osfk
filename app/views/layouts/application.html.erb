@@ -1,14 +1,373 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="sv">
 <head>
-  <title>Caraten</title>
+  <title>Brf caraten</title>
+
+  <meta charset="utf-8">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
   <%= stylesheet_link_tag    "application", :media => "all" %>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+  <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+
+  <!--
+  Flexslider
+  -->
+    <script type="text/javascript">
+      $(document).ready(function(){
+
+      $('.flexslider').flexslider({
+        animation: "fade",
+        start: function(slider){
+          $('body').removeClass('loading');
+        }
+      });
+
+    })
+    </script>
 </head>
 <body>
 
-<%= yield %>
+  <div class="static-background">
+    <img alt="" src="/assets/bg-static.jpg">
+  </div>
+  <!-- Container -->
+  <div class="container">
+    <div class="row">
+      <!-- Header -->
+      <header class="three column">
+        <div class="inner-header">
+          <div id="logo">
+            <div>
+              <a href="/assets/index.html"><img alt="" src="/assets/logo.png"></a>
+            </div>
+          </div>
+          <section class="menu">
+            <nav>
+              <ul>
+                <li class="active"><a href="/assets/index.html">home</a></li>
+                <li><a href="/assets/blog.html">Blog</a></li>
+                <li class="drop"><a href="#">singlepages</a>
+                  <span></span>
+                  <ul class="dropdown">
+                    <li><a href="/assets/single-post.html">Singlepost</a></li>
+                    <li><a href="/assets/single-work.html">Singleproject</a></li>
+                  </ul>
+                </li>
+                <li><a href="/assets/portfolio.html">portfolio</a></li>
+                <li><a href="/assets/shortcodes.html">shortcodes</a></li>
+                <li><a href="/assets/contact.html">contact</a></li>
+              </ul>
+            </nav>
+          </section>
+          <section class="header-end">
+            <form action="http://www.examples.com" method="get">
+                   <div id="search-bar" class="clearfix">
+                    <input type="text" name="s" placeholder="Search" value="">
+                    <input type="submit" value="">
+                </div>
+              </form>
+            <ul id="social-icons" class="clearfix"> <!-- Social Icons -->
+              <li><a href="#"><img alt="" src="/assets/fb.png"></a></li>
+              <li><a href="#"><img alt="" src="/assets/gogle.png"></a></li>
+              <li><a href="#"><img alt="" src="/assets/rss.png"></a></li>
+              <li><a href="#"><img alt="" src="/assets/twi.png"></a></li>
+            </ul>
+          </section>
+        </div>
+      </header>
+      <!-- End Header -->
+
+      <!-- Content -->
+      <div id="content" class="nine column">
+
+        <!-- Slider -->
+        <div id="main-slider">
+            <div class="flexslider">
+               <ul class="slides">
+                <li>
+                    <img alt="" src="/assets/1.jpg" />
+                    <p class="flex-caption">Nisi elit <span>consequat ipsum,</span> nec sagit</p>
+                    <p class="flex-caption1">Lorem ipsum dolor</p>
+                </li>
+                <li>
+                    <img alt="" src="/assets/2.jpg" />
+                    <p class="flex-caption">Nisi elit consequat ipsum, nec sagittis sem nibh id elit duis </p>
+                </li>
+                <li>
+                    <img alt="" src="/assets/3.jpg" />
+                    <p class="flex-caption">Nisi elit <span>consequat ipsum,</span> nec sagit</p>
+                    <p class="flex-caption1">Lorem ipsum dolor</p>
+                </li>
+                <li>
+                    <img alt="" src="/assets/4.jpg" />
+                    <p class="flex-caption">Nisi elit consequat ipsum, nec sagittis sem nibh id elit duis</p>
+                </li>
+              </ul>
+            </div>
+        </div>
+        <!-- End slider -->
+
+          <!-- Inner Content -->
+        <div class="inner-content">
+
+          <section id="top-articles" class="row">
+
+            <article class="four column">
+              <a href="#"><img alt="" src="/assets/optim.png"></a>
+              <h2>Optimized Code</h2>
+              <p>Formerly known as the Admin Bar, the Toolbar has links to various administration functions, and is </p>
+            </article>
+
+            <article class="four column">
+              <a href="#"><img alt="" src="/assets/pencil.png"></a>
+              <h2>Flexible Layout</h2>
+              <p>The large area in the middle of the screen is the work area. It is here the specific information relating to a</p>
+            </article>
+
+            <article class="four column">
+              <a href="#"><img alt="" src="/assets/desig.png"></a>
+              <h2>Clean Design</h2>
+              <p>Finally in the footer at the bottom of each Administration Screen in light shading, are links to WordPress</p>
+            </article>
+
+            <article class="twelve column blockquote">
+              <blockquote>Extra Clean is a <span>Fully Responsive</span> Theme with Awesome Features</blockquote>
+              <a href="#">Purchase <span></span></a>
+            </article>
+          </section>
+
+          <section class="projects row">
+            <h1>latest projects</h1>
+            <ul class="moving-content">
+              <li class="four column">
+                <a href="#">
+                  <img alt="" src="/assets/5.jpg">
+                  <div class="description">
+                    <div>
+                      <h3>Work Title 2</h3>
+                      <p>Middle of the screen is the work area. It is here the specific</p>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li class="four column">
+                <a href="#">
+                  <img alt="" src="/assets/7.jpg">
+                  <div class="description">
+                    <div>
+                      <h3>Work Title 2</h3>
+                      <p>Middle of the screen is the work area. It is here the specific</p>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li class="four column">
+                <a href="#">
+                  <img alt="" src="/assets/8.jpg">
+                  <div class="description">
+                    <div>
+                      <h3>Work Title 2</h3>
+                      <p>Middle of the screen is the work area. It is here the specific</p>
+                    </div>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </section>
+
+          <section class="row">
+
+            <article class="services four column">
+              <h1>features</h1>
+              <h2 class="first-one active"><img alt="" src="/assets/feat1.png">Powerful Admin</h2>
+              <p>Formerly known as the Admin Bar, the Toolbar has links to various administration functions, and is displayed at the top of each Administra.</p>
+              <h2><img alt="" src="/assets/feat2.png">Optimized Code</h2>
+              <p>Formerly known as the Admin Bar, the Toolbar has links to various administration functions, and is displayed at the top of each Administra</p>
+              <h2><img alt="" src="/assets/feat3.png">Flexible Layout</h2>
+              <p>Formerly known as the Admin Bar, the Toolbar has links to various administration functions, and is displayed at the top of each Administra</p>
+              <h2><img alt="" src="/assets/feat4.png">Clean Design</h2>
+              <p>Formerly known as the Admin Bar, the Toolbar has links to various administration functions, and is displayed at the top of each Administra</p>
+            </article>
+
+            <article class="popular-post four column">
+              <h1>recent Posts</h1>
+              <div class="post">
+                <a href="#">
+                  <img alt="" src="/assets/post1.jpg">
+                  <img alt="" class="hover-image" src="/assets/image.png">
+                </a>
+                <a href="/assets/singlepost.html"><p>Get the News on Today’s Apple Event from AppStorm </p></a>
+                <span>21 September, 2012</span>
+              </div>
+              <div class="post">
+                <a href="#">
+                  <img alt="" src="/assets/post2.jpg">
+                  <img alt="" class="hover-image" src="/assets/video.png">
+                </a>
+                <a href="/assets/singlepost.html"><p>Your Say: Where do you get your best ideas?</p></a>
+                <span>21 September, 2012</span>
+              </div>
+              <div class="post">
+                <a href="#">
+                  <img alt="" src="/assets/post3.jpg">
+                  <img alt="" class="hover-image" src="/assets/link.png">
+                </a>
+                <a href="/assets/singlepost.html"><p>10 Opportunities to Improve at Social Media Marketing Right Now</p></a>
+                <span>21 September, 2012</span>
+              </div>
+            </article>
+
+            <article class="testimonials four column">
+              <h1>Testimonials</h1>
+              <ul>
+                <li>
+                  <blockquote>Many Toolbar items expand (flyout) when hovered over to display more information various administration functions, and is displayed at the each Administration Screen. Many Toolbar items expand (flyout) when
+                  <br><span>Besim Dauti</span></blockquote>
+                </li>
+                <li>
+                  <blockquote>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                  tempor incididunt ut labore et dolore magna aliqua.
+                  <br><span>John Smith</span></blockquote>
+                </li>
+                <li>
+                  <blockquote>Duis aute irure dolor in reprehenderit in voluptate velit essecillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                  <br><span>Faton Avdiu</span></blockquote>
+                </li>
+                <li>
+                  <blockquote> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                  <br><span>John Smith</span></blockquote>
+                </li>
+              </ul>
+            </article>
+          </section>
+
+          <section class="row clients">
+            <div class="twelve column images">
+              <h1>Our Clients</h1>
+              <div class="static-place">
+                <ul class="client-logos">
+                  <li>
+                    <img alt="" src="/assets/client-logo1.png">
+                    <img alt="" src="/assets/client-logo2.png">
+                  </li>
+                  <li>
+                    <img alt="" src="/assets/client-logo3.png">
+                    <img alt="" src="/assets/client-logo4.png">
+                  </li>
+                  <li>
+                    <img alt="" src="/assets/client-logo5.png">
+                    <img alt="" src="/assets/client-logo6.png">
+                  </li>
+                  <li>
+                    <img alt="" src="/assets/client-logo7.png">
+                    <img alt="" src="/assets/client-logo8.png">
+                  </li>
+                  <li>
+                    <img alt="" src="/assets/client-logo1.png">
+                    <img alt="" src="/assets/client-logo2.png">
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+        </div>
+        <!-- End Inner Content -->
+
+        <footer class="row">
+
+          <div class="four column twitter-widget">
+            <div class="back-title">
+              <h2>Flickr Gallery</h2>
+            </div>
+            <div class="flicker-images">
+              <a href="#">
+                <img alt="" src="/assets/twit-widget1.jpg">
+              </a>
+              <a href="#">
+                <img alt="" src="/assets/twit-widget2.jpg">
+              </a>
+              <a href="#">
+                <img alt="" src="/assets/twit-widget3.jpg">
+              </a>
+              <a href="#">
+                <img alt="" src="/assets/twit-widget4.jpg">
+              </a>
+              <a href="#">
+                <img alt="" src="/assets/twit-widget5.jpg">
+              </a>
+              <a href="#">
+                <img alt="" src="/assets/twit-widget6.jpg">
+              </a>
+              <a href="#">
+                <img alt="" src="/assets/twit-widget7.jpg">
+              </a>
+              <a href="#">
+                <img alt="" src="/assets/twit-widget8.jpg">
+              </a>
+              <a href="#">
+                <img alt="" src="/assets/twit-widget9.jpg">
+              </a>
+
+            </div>
+          </div>
+
+          <div class="four column twiter">
+            <div class="back-title">
+              <h2>latest Twitter</h2>
+            </div>
+            <div>
+                <p><img alt="" src="/assets/twiter.png">
+                Envato's Most Wanted Winners <a href="#">http://t.co/JCyncAhw</a><br>
+                <span>about 11 hours ago </span>
+              </p>
+            </div>
+            <div>
+              <p>
+                <img alt="" src="/assets/twiter.png">
+                <a href="#">@carmenangerer </a>I'll get back to you asap Carmen<br>
+                <span>about 11 hours ago </span>
+              </p>
+            </div>
+            <div>
+              <p>
+                <img alt="" src="/assets/twiter.png">
+                <a href="#">@nextWPthemes </a>Please use ThemeForest for asking questions. <a href="#">http://t.co/drZ3XwXb</a><br>
+                <span>about 4 hours ago</span>
+              </p>
+            </div>
+
+          </div>
+
+          <div class="four column contact-info">
+            <div class="back-title">
+              <h2>Contact info</h2>
+            </div>
+            <p><img alt="" src="/assets/phone.png"><span>0038 45 1234 5678</span></p>
+            <p><img alt="" src="/assets/mail.png"><span><a href="#">info@contact.com</a></span></p>
+            <p><img alt="" src="/assets/print.png"><span>+938 45 1234 5678</span></p>
+            <p><img alt="" src="/assets/addres.png"><span>Little Lonsdale St, Melbourne
+            Victoria 8011 Australia</span></p>
+          </div>
+
+          <article class="end-footer twelve column">
+            <p>© Copyright 2012 Extra Clean</p>
+          </article>
+
+        </footer>
+
+      </div>
+      <!-- End content -->
+    </div>
+  </div>
+  <!-- End Container -->
 
 </body>
 </html>

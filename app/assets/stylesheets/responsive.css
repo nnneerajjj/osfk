@@ -1,0 +1,102 @@
+@media screen and (max-width : 768px) {
+	header {
+		padding-right: 20px !important;
+		margin-bottom: 16px;
+	}
+
+	.moving-content li {
+		padding: 0 20px !important;
+	}
+
+	.twitter-widget a {
+		width: auto;
+	}
+
+	footer .four {
+		padding: 0 20px;
+	}
+
+	.twiter p {
+		width: 90%;
+	}
+
+	#top-articles article blockquote {
+		float: none;
+		padding: 30px 30px 90px 30px;
+	}
+
+	#top-articles article.blockquote a {
+		bottom:50px;
+		left: 40px;
+		top: inherit;
+	}
+
+	#main-slider .flex-caption,
+	#main-slider .flex-caption1 {
+		display: none;
+	}
+
+	.blog-text {
+		margin-bottom: 20px;
+	}
+
+	#comment-leave div.five textarea {
+		position: relative;
+	}
+
+	ul.member-post li a span {
+		display: none;
+	}
+
+	ul.member-post li a {
+		padding: 7px;
+	}
+
+	.head-description p {
+		padding: 15px 0;
+		font-size: 11px;
+	}
+
+	.single-work .flex-caption {
+		display: none;
+	}
+
+	#widget li {
+		float: none;
+		margin-left: 0;
+		width: 100%;
+		margin-bottom: 20px;
+	}
+
+	.single-nav a span {
+		display: none;
+	}
+
+	.project-container li {
+		width: 46.8%;
+	}
+
+	ul.tab-list li a {
+		padding: 11px 8px;
+		font-size: 10px;
+	}
+}
+
+@media screen and (max-width : 550px) {
+
+	.project-container li {
+		width: 92.2%;
+	}
+
+	ul.tab-list li a {
+		padding: 10px 3px;
+		font-size: 9px;
+	}
+}
+
+@media screen and (max-width : 350px) {
+
+	.project-container li {
+		width: 88%;
+	}
+}
