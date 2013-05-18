@@ -2,9 +2,9 @@
 # See github.com/sferik/rails_admin for more informations
 
 RailsAdmin.config do |config|
-
-
   ################  Global configuration  ################
+
+  config.authorize_with :cancan
 
   # Set the admin name here (optional second array element will appear in red). For example:
   config.main_app_name = ['BRF Caraten', 'Admin']
