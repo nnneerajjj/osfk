@@ -8,6 +8,7 @@ gem 'rails_admin_nestable'
 gem 'jquery-rails'
 gem 'thin'
 gem 'devise'
+gem 'i18n-active_record', :git => 'git://github.com/svenfuchs/i18n-active_record.git'
 
 group :development do
   gem 'sqlite3'
