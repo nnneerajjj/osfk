@@ -8,6 +8,8 @@ class Ability
       else
         can :read, :all
       end
+    else
+      cannot :read, :all
     end
   end
 end

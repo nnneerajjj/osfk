@@ -17,9 +17,6 @@
   <%= yield :javascript %>
   <%= csrf_meta_tags %>
 
-  <!--
-  Flexslider
--->
 <script type="text/javascript">
 $(document).ready(function(){
 
@@ -45,43 +42,39 @@ $(document).ready(function(){
         <div class="inner-header">
           <div id="logo">
             <div>
-              <a href="/extraclean/index.html"><img alt="" src="/assets/logo.png"></a>
+              <a href="<%= root_path %>"><img alt="" src="/assets/logo.png"></a>
             </div>
           </div>
           <section class="menu">
             <nav>
               <ul>
-                <li class="active"><a href="/extraclean/index.html"><%= I18n.t(:home) %></a></li>
+                <li class="active"><%= link_to I18n.t(:home), root_path %></li>
                 <% if can? :read, :all %>
-                  <li><a href="/extraclean/blog.html">Blog</a></li>
-                  <!--<li class="drop"><a href="#">singlepages</a>
+                  <li class="drop"><%= link_to I18n.t(:forum), topic_index_path %>
                     <span></span>
                     <ul class="dropdown">
-                      <li><a href="/extraclean/single-post.html">Singlepost</a></li>
-                      <li><a href="/extraclean/single-work.html">Singleproject</a></li>
+                      <li><%= link_to I18n.t(:new_post), new_topic_path %></li>
                     </ul>
                   </li>
-                  <li><a href="/extraclean/portfolio.html">portfolio</a></li>
-                  <li><a href="/extraclean/shortcodes.html">shortcodes</a></li>-->
                 <% end %>
-                <li><a href="<%= contact_index_path %>"><%= I18n.t(:contact) %></a></li>
+                <li><%= link_to I18n.t(:contact), contact_index_path %></li>
               </ul>
             </nav>
           </section>
-          <section class="header-end">
+          <%#<section class="header-end">
             <form action="http://www.examples.com" method="get">
              <div id="search-bar" class="clearfix">
               <input type="text" name="s" placeholder="Search" value="">
               <input type="submit" value="">
             </div>
           </form>
-          <ul id="social-icons" class="clearfix"> <!-- Social Icons -->
+          <ul id="social-icons" class="clearfix">
             <li><a href="#"><img alt="" src="/assets/fb.png"></a></li>
             <li><a href="#"><img alt="" src="/assets/gogle.png"></a></li>
             <li><a href="#"><img alt="" src="/assets/rss.png"></a></li>
             <li><a href="#"><img alt="" src="/assets/twi.png"></a></li>
           </ul>
-        </section>
+        </section>%>
       </div>
     </header>
 

@@ -1,0 +1,30 @@
+<div class="head-title">
+  <h1><%= I18n.t(:forum) %></h1>
+  <div class="head-description">
+    <p><%= I18n.t(:forum_description) %></p>
+  </div>
+</div>
+
+<% @topics.each do |topic| %>
+
+  <div class="blog-post image-post row">
+    <article class="blog-content nine column">
+      <!--<a href="#"><img alt="" src="/extraclean/upload/blog-image.jpg"></a>-->
+      <div class="blog-text">
+        <h1><a href="<%= topic_path(topic.id) %>"><%= topic.subject %></a></h1>
+        <p><%= simple_format truncate(topic.content, length: 200) %></p>
+        <a href="<%= topic_path(topic.id) %>"><%= I18n.t(:read_more) %><span></span></a>
+      </div>
+    </article>
+
+    <article class="blog-inform three column">
+      <ul>
+        <li><p><%= I18n.t(:posted) %>: <br><span><%= l topic.created_at, format: :short %></span></p></li>
+        <li><p><%= I18n.t(:comments) %>: <br><span><%= topic.comment_threads.count %></span></p></li>
+        <li><p><%= I18n.t(:author) %>: <br><span><%= topic.user.email %></span></p></li>
+      </ul>
+    </article>
+    <div class="blog-icon"></div>
+  </div>
+
+<% end %>

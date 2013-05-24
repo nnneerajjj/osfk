@@ -8,9 +8,12 @@ gem 'rails_admin_nestable'
 gem 'jquery-rails'
 gem 'thin'
 gem 'devise'
+gem 'rails-i18n'
 gem 'i18n-active_record', :git => 'git://github.com/svenfuchs/i18n-active_record.git'
 gem 'cancan'
 gem 'bootstrap-wysihtml5-rails'
+gem 'acts_as_commentable_with_threading'
+gem 'uk_buses'
 
 group :development do
   gem 'sqlite3'

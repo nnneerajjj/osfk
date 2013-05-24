@@ -36,6 +36,9 @@ Caraten::Application.routes.draw do
   #   end
 
   resources :contact, only: :index
+  resources :topic, path: 'forum' do
+    post :comment, on: :member
+  end
 
   # Sample resource route within a namespace:
   #   namespace :admin do
