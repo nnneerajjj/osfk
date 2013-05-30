@@ -1,23 +1,17 @@
 <div class="head-title">
-  <h1><%= I18n.t(:sign_in) %></h1>
+  <h1><%= I18n.t(:my_page) %></h1>
   <div class="head-description">
-    <p><%= I18n.t(:forgot_password) %></p>
+    <p><%= I18n.t(:about_me) %></p>
   </div>
 </div>
 
 <div class="row main-content">
   <article class="headings">
-    <h2><%= I18n.t(:forgot_password) %></h2>
+    <h2><%= I18n.t(:about_me) %></h2>
 
     <br>
 
-    <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
-      <%= devise_error_messages! %>
 
-      <%= f.email_field :email, autofocus: true, placeholder: I18n.t(:email) %>
-
-      <%= f.submit I18n.t(:send_me_reset_password), class: 'submit-button' %>
-    <% end %>
 
   </article>
 
