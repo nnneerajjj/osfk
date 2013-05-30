@@ -28,10 +28,4 @@ class TopicController < ApplicationController
 
     return redirect_to topic_path(@topic.id)
   end
-
-  private
-
-  def set_locale
-    I18n.locale = :sv
-  end
 end
