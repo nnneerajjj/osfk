@@ -16,10 +16,4 @@ class ForumController < ApplicationController
       render action: :new
     end
   end
-
-  private
-
-  def set_locale
-    I18n.locale = :sv
-  end
 end

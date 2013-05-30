@@ -46,35 +46,11 @@ $(document).ready(function(){
             </div>
           </div>
           <section class="menu">
-            <nav>
-              <ul>
-                <li class="active"><%= link_to I18n.t(:home), root_path %></li>
-                <% if can? :read, :all %>
-                  <li class="drop"><%= link_to I18n.t(:forum), topic_index_path %>
-                    <span></span>
-                    <ul class="dropdown">
-                      <li><%= link_to I18n.t(:new_post), new_topic_path %></li>
-                    </ul>
-                  </li>
-                <% end %>
-                <li><%= link_to I18n.t(:contact), contact_index_path %></li>
-              </ul>
-            </nav>
+            <%= render "layouts/menu" %>
           </section>
-          <%#<section class="header-end">
-            <form action="http://www.examples.com" method="get">
-             <div id="search-bar" class="clearfix">
-              <input type="text" name="s" placeholder="Search" value="">
-              <input type="submit" value="">
-            </div>
-          </form>
-          <ul id="social-icons" class="clearfix">
-            <li><a href="#"><img alt="" src="/assets/fb.png"></a></li>
-            <li><a href="#"><img alt="" src="/assets/gogle.png"></a></li>
-            <li><a href="#"><img alt="" src="/assets/rss.png"></a></li>
-            <li><a href="#"><img alt="" src="/assets/twi.png"></a></li>
-          </ul>
-        </section>%>
+            <section class="header-end">
+              <%= render "layouts/sign_on" %>
+            </section>
       </div>
     </header>
 

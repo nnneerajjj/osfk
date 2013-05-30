@@ -1,0 +1,17 @@
+<div id="search-bar" class="clearfix">
+<% if cannot? :read, :all %>
+  <%= form_for "user", url: user_session_path  do |f| %>
+    <%= f.text_field :email, placeholder: I18n.t(:email) %>
+    <%= f.password_field :password, placeholder: I18n.t(:password) %>
+    <div id="remember">
+      <%= f.check_box :remember_me, checked: true %>
+      <%= f.label :remember_me, I18n.t(:remember_me) %>
+    </div>
+
+    <%= f.submit I18n.t(:sign_in), class: 'submit-button' %>
+    <%= link_to I18n.t(:forgot_password), new_password_path('user') %>
+  <% end %>
+  <% else %>
+    <%= link_to I18n.t(:logout), destroy_user_session_path, method: :delete %>
+  <% end %>
+</div>
