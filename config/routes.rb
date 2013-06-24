@@ -36,7 +36,7 @@ Caraten::Application.routes.draw do
   #   end
 
   resources :contact, only: :index
-  resources :profile, only: :index
+  resources :users, only: [:index, :update]
   resources :topic, path: 'forum' do
     post :comment, on: :member
   end

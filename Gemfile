@@ -19,6 +19,7 @@ group :development do
   gem 'sqlite3'
   gem 'quiet_assets'
   gem 'debugger'
+  gem 'af'
 end
 
 group :assets do

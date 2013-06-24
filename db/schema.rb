@@ -97,6 +97,7 @@ ActiveRecord::Schema.define(:version => 20130530191958) do
     t.boolean  "admin",                  :default => false
     t.string   "firstname"
     t.string   "lastname"
+    t.string   "website"
     t.integer  "number"
   end
 
