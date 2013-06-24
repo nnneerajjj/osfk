@@ -1,5 +1,5 @@
 class TopicController < ApplicationController
-  load_and_authorize_resource :topic
+  load_and_authorize_resource :topic, except: :comment
 
   def index
     @topics = Topic.order('updated_at DESC')
@@ -23,7 +23,8 @@ class TopicController < ApplicationController
   end
 
   def comment
-    @comment = Comment.build_from( @topic, @current_user.id, params[:comment][:body] )
+    @topic = Topic.find(params[:id])
+    @comment = Comment.build_from( @topic, current_user.id, params[:comment][:body] )
     @comment.save!
 
     return redirect_to topic_path(@topic.id)
