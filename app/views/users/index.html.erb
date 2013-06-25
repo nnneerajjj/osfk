@@ -1,0 +1,28 @@
+<div class="head-title">
+  <h1><%= I18n.t(:my_page) %></h1>
+  <div class="head-description">
+    <p><%= I18n.t(:about_me) %></p>
+  </div>
+</div>
+
+<div class="main-content">
+  <article class="headings">
+    <h1><%= I18n.t(:about_me) %></h1>
+
+    <br>
+    <div class="six column">
+
+       <%= form_for current_user do |f| %>
+         <%= f.text_field :firstname, placeholder: I18n.t(:firstname) %>
+         <%= f.text_field :lastname, placeholder: I18n.t(:lastname) %>
+         <%= f.number_field :number, in: 1...20, placeholder: I18n.t(:number) %>
+         <%= f.text_field :website, placeholder: I18n.t(:website) %>
+         <%= f.submit I18n.t(:save), class: 'submit-button' %>
+       <% end %>
+    </div>
+
+
+  </article>
+  <div style="clear:both"></div>
+
+</div>

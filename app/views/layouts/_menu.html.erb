@@ -1,0 +1,15 @@
+<nav>
+  <ul>
+    <li class="active"><%= link_to I18n.t(:home), root_path %></li>
+    <% if can? :read, :all %>
+      <li class="drop"><%= link_to I18n.t(:forum), topic_index_path %>
+        <span></span>
+        <ul class="dropdown">
+          <li><%= link_to I18n.t(:new_post), new_topic_path %></li>
+        </ul>
+      </li>
+    <li><%= link_to I18n.t(:my_page), users_path %></li>
+    <% end %>
+    <li><%= link_to I18n.t(:contact), contact_index_path %></li>
+  </ul>
+</nav>

@@ -46,7 +46,7 @@ RailsAdmin.config do |config|
   #   - This initializer is loaded once at startup (modifications will show up when restarting the application) but all RailsAdmin configuration would stay in one place.
   #   - Models are reloaded at each request in development mode (when modified), which may smooth your RailsAdmin development workflow.
 
-  config.model Page do
+  config.model News do
     edit do
       # field :content do
       #   bootstrap_wysihtml5 true

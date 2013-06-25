@@ -14,3 +14,5 @@
 //= require jquery.flexslider
 //= require script
 //= require rich
+//= require jquery.validate
+//= require messages_sv

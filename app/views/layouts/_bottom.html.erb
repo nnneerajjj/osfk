@@ -1,0 +1,37 @@
+<% if can? :read, :all %>
+<footer class="row">
+  <div class="four column contact-info twiter">
+    <div class="back-title">
+      <h2><%= I18n.t(:latest_topics) %></h2>
+    </div>
+    <% Topic.most_recent.each do |topic| %>
+    <div class="forum">
+      <div class="blog-icon"></div><%= link_to topic.subject, topic %><br>
+      <span><%= I18n.t(:by) %> <%= topic.user.name %> (<%= topic.user.number %>)</span><br>
+      <span><%= time_ago_in_words(topic.created_at) %> <%= I18n.t(:ago) %></span>
+    </div>
+    <% end %>
+  </div>
+
+  <div class="four column twiter">
+    <div class="back-title">
+      <h2><%= I18n.t(:latest_comments) %></h2>
+    </div>
+    <% Comment.most_recent.each do |comment| %>
+    <div>
+      <p><img alt="" src="/extraclean/images/icons/17.png">
+        <%= comment.body %><br>
+        <span><%= I18n.t(:by) %> <%= comment.user.name %> (<%= comment.user.number %>)</span><br>
+        <span><%= I18n.t(:in_thread) %> <%= link_to comment.commentable.subject, comment.commentable %></span><br>
+        <span><%= time_ago_in_words(comment.created_at) %> <%= I18n.t(:ago) %></span>
+      </p>
+    </div>
+
+    <% end %>
+  </div>
+
+  <div class="four column contact-info">
+  </div>
+
+</footer>
+<% end %>

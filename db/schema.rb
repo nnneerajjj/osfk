@@ -13,6 +13,32 @@
 
 ActiveRecord::Schema.define(:version => 20130518211442) do
 
+  create_table "comments", :force => true do |t|
+    t.integer  "commentable_id",   :default => 0
+    t.string   "commentable_type", :default => ""
+    t.string   "title",            :default => ""
+    t.text     "body",             :default => ""
+    t.string   "subject",          :default => ""
+    t.integer  "user_id",          :default => 0,  :null => false
+    t.integer  "parent_id"
+    t.integer  "lft"
+    t.integer  "rgt"
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
+  end
+
+  add_index "comments", ["commentable_id", "commentable_type"], :name => "index_comments_on_commentable_id_and_commentable_type"
+  add_index "comments", ["user_id"], :name => "index_comments_on_user_id"
+
+  create_table "news", :force => true do |t|
+    t.string   "subject"
+    t.text     "content"
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "pages", :force => true do |t|
     t.string   "title"
     t.text     "content"
@@ -46,6 +72,14 @@ ActiveRecord::Schema.define(:version => 20130518211442) do
     t.string   "simplified_type",        :default => "file"
   end
 
+  create_table "topics", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "subject"
+    t.text     "content"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "translations", :force => true do |t|
     t.string   "locale"
     t.string   "key"
@@ -70,6 +104,10 @@ ActiveRecord::Schema.define(:version => 20130518211442) do
     t.datetime "created_at",                                :null => false
     t.datetime "updated_at",                                :null => false
     t.boolean  "admin",                  :default => false
+    t.string   "firstname"
+    t.string   "lastname"
+    t.string   "website"
+    t.integer  "number"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

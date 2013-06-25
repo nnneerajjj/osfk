@@ -17,9 +17,6 @@
   <%= yield :javascript %>
   <%= csrf_meta_tags %>
 
-  <!--
-  Flexslider
--->
 <script type="text/javascript">
 $(document).ready(function(){
 
@@ -45,49 +42,27 @@ $(document).ready(function(){
         <div class="inner-header">
           <div id="logo">
             <div>
-              <a href="/"><img alt="" src="/assets/logo.png"></a>
+              <a href="<%= root_path %>"><img alt="" src="/assets/logo.png"></a>
             </div>
           </div>
           <section class="menu">
-            <nav>
-              <ul>
-                <li class="active"><a href="/"><%= I18n.t(:home) %></a></li>
-                <% if can? :read, :all %>
-                  <li><a href="/extraclean/blog.html">Blog</a></li>
-                  <!--<li class="drop"><a href="#">singlepages</a>
-                    <span></span>
-                    <ul class="dropdown">
-                      <li><a href="/extraclean/single-post.html">Singlepost</a></li>
-                      <li><a href="/extraclean/single-work.html">Singleproject</a></li>
-                    </ul>
-                  </li>
-                  <li><a href="/extraclean/portfolio.html">portfolio</a></li>
-                  <li><a href="/extraclean/shortcodes.html">shortcodes</a></li>-->
-                <% end %>
-                <li><a href="<%= contact_index_path %>"><%= I18n.t(:contact) %></a></li>
-              </ul>
-            </nav>
+            <%= render "layouts/menu" %>
           </section>
-          <section class="header-end">
-            <form action="http://www.examples.com" method="get">
-             <div id="search-bar" class="clearfix">
-              <input type="text" name="s" placeholder="Search" value="">
-              <input type="submit" value="">
-            </div>
-          </form>
-          <ul id="social-icons" class="clearfix"> <!-- Social Icons -->
-            <li><a href="#"><img alt="" src="/assets/fb.png"></a></li>
-            <li><a href="#"><img alt="" src="/assets/gogle.png"></a></li>
-            <li><a href="#"><img alt="" src="/assets/rss.png"></a></li>
-            <li><a href="#"><img alt="" src="/assets/twi.png"></a></li>
-          </ul>
-        </section>
+            <section class="header-end">
+              <%= render "layouts/sign_on" %>
+            </section>
       </div>
     </header>
 
     <div id="content" class="nine column">
 
       <%= yield %>
+
+      <%= render "layouts/bottom" %>
+
+      <article class="end-footer twelve column">
+        <p><%= I18n.t(:copyright) %>/p>
+      </article>
 
     </div>
 

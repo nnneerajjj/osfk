@@ -10,6 +10,10 @@ class ApplicationController < ActionController::Base
   private
 
   def set_locale
-    I18n.locale = :en
+    if is_a? RailsAdmin::ApplicationController
+      I18n.locale = :en
+    else
+      I18n.locale = :sv
+    end
   end
 end
