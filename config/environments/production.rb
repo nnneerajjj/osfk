@@ -64,4 +64,15 @@ Caraten::Application.configure do
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
+
+  Paperclip::Attachment.default_options.merge!(
+    :storage => :s3,
+    :bucket => ENV['S3_BUCKET'],
+    :path => "/system/:class/:attachment/:id/:style/:filename",
+    :url => ':s3_domain_url',
+    :s3_credentials => {
+      :access_key_id => ENV['S3_ACCESS_KEY_ID'],
+      :secret_access_key => ENV['S3_SECRET_ACCESS_KEY']
+    }
+  )
 end

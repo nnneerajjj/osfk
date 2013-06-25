@@ -13,6 +13,9 @@
   <% end %>
   <% else %>
     <%= current_user.name %>
-    <%= link_to I18n.t(:logout), destroy_user_session_path, method: :delete %>
+    <div>
+      <%= link_to I18n.t(:settings), users_path, style: 'float: left;' %>
+      <%= link_to I18n.t(:logout), destroy_user_session_path, method: :delete, style: 'float:right;' %>
+    </div>
   <% end %>
 </div>

@@ -8,7 +8,12 @@
           <li><%= link_to I18n.t(:new_post), new_topic_path %></li>
         </ul>
       </li>
-    <li><%= link_to I18n.t(:my_page), users_path %></li>
+      <% Page.where(public: true).each do |page| %>
+        <li><%= link_to page.title, page %></li>
+      <% end %>
+    <% end %>
+    <% Page.where(public: false).each do |page| %>
+      <li><%= link_to page.title, page %></li>
     <% end %>
     <li><%= link_to I18n.t(:contact), contact_index_path %></li>
   </ul>

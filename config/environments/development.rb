@@ -34,4 +34,15 @@ Caraten::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  # Paperclip::Attachment.default_options.merge!(
+  #   :storage => :s3,
+  #   :bucket => 'caraten',
+  #   :path => "/system/:class/:attachment/:id/:style/:filename",
+  #   :url => ':s3_domain_url',
+  #   :s3_credentials => {
+  #     :access_key_id => 'AKIAIWAAF4T3YZE6P6BA',
+  #     :secret_access_key => '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'
+  #   }
+  # )
 end

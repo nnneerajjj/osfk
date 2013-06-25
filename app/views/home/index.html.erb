@@ -1,1 +1,5 @@
 <p>Welcome!</p>
+
+<% Page.all.each do |page| %>
+  <div><%= raw page.content %></div>
+<% end%>

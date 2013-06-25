@@ -5,6 +5,28 @@ GIT
     i18n-active_record (0.0.2)
       i18n (>= 0.5.0)
 
+GIT
+  remote: https://github.com/aws/aws-sdk-ruby.git
+  revision: 52cab7ae4d7f59d9ef395e4f73330285713f186f
+  specs:
+    aws-sdk (1.11.3)
+      json (~> 1.4)
+      nokogiri (< 1.6.0)
+      uuidtools (~> 2.1)
+
+GIT
+  remote: https://github.com/bastiaanterhorst/rich.git
+  revision: 719ebf02288c6377a7d7e5377f3550593234288e
+  specs:
+    rich (1.4.6)
+      jquery-rails
+      kaminari
+      mime-types
+      paperclip
+      rack-raw-upload
+      rails (>= 3.2.0)
+      sass-rails
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -187,14 +209,6 @@ GEM
     remotipart (1.0.5)
     rest-client (1.6.7)
       mime-types (>= 1.16)
-    rich (1.4.6)
-      jquery-rails
-      kaminari
-      mime-types
-      paperclip
-      rack-raw-upload
-      rails (>= 3.2.0)
-      sass-rails
     rubyzip (0.9.9)
     safe_yaml (0.9.1)
     sass (3.2.9)
@@ -232,6 +246,7 @@ PLATFORMS
 DEPENDENCIES
   acts_as_commentable_with_threading
   af
+  aws-sdk!
   bootstrap-wysihtml5-rails
   cancan
   coffee-rails (~> 3.2.1)
@@ -245,7 +260,7 @@ DEPENDENCIES
   rails-i18n
   rails_admin
   rails_admin_nestable
-  rich
+  rich!
   sass-rails (~> 3.2.3)
   sqlite3
   thin

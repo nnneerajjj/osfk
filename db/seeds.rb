@@ -3,4 +3,6 @@
 #
 # Examples:
 #
-User.create!(email: "caterpiller@gmail.com", password: "hejsan", password_confirmation: "hejsan")
+user = User.create(email: "caterpiller@gmail.com", password: "hejsan", password_confirmation: "hejsan")
+user.admin = true
+user.save!
