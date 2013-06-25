@@ -12,4 +12,6 @@
 //
 //= require jquery
 //= require jquery.flexslider
+//= require jquery.validate
+//= require messages_sv
 //= require script

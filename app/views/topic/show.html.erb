@@ -46,10 +46,10 @@
 
   <div id="comment-leave" class="row">
     <h1><%= I18n.t(:write_comment) %></h1>
-    <%= form_for Comment.new, url: comment_topic_path, html: { id: "contact-form2"} do |f| %>
+    <%= form_for Comment.new, url: comment_topic_path, html: { id: "contact-form2" } do |f| %>
     <div>
       <div class="nine column">
-        <%= f.text_area :body %>
+        <%= f.text_area :body, required: '' %>
       </div>
       <div class="three column">
         <%= f.submit I18n.t(:reply) %>
@@ -57,86 +57,3 @@
     </div>
     <% end %>
   </div>
-
-
-<footer class="row">
-
-  <div class="four column twitter-widget">
-    <div class="back-title">
-      <h2>Flickr Gallery</h2>
-    </div>
-    <div class="flicker-images">
-      <a href="#">
-        <img alt="" src="/extraclean/upload/twit-widget1.jpg">
-      </a>
-      <a href="#">
-        <img alt="" src="/extraclean/upload/twit-widget2.jpg">
-      </a>
-      <a href="#">
-        <img alt="" src="/extraclean/upload/twit-widget3.jpg">
-      </a>
-      <a href="#">
-        <img alt="" src="/extraclean/upload/twit-widget4.jpg">
-      </a>
-      <a href="#">
-        <img alt="" src="/extraclean/upload/twit-widget5.jpg">
-      </a>
-      <a href="#">
-        <img alt="" src="/extraclean/upload/twit-widget6.jpg">
-      </a>
-      <a href="#">
-        <img alt="" src="/extraclean/upload/twit-widget7.jpg">
-      </a>
-      <a href="#">
-        <img alt="" src="/extraclean/upload/twit-widget8.jpg">
-      </a>
-      <a href="#">
-        <img alt="" src="/extraclean/upload/twit-widget9.jpg">
-      </a>
-
-    </div>
-  </div>
-
-  <div class="four column twiter">
-    <div class="back-title">
-      <h2>latest Twitter</h2>
-    </div>
-    <div>
-      <p><img alt="" src="/extraclean/images/twiter.png">
-        Envato's Most Wanted Winners <a href="#">http://t.co/JCyncAhw</a><br>
-        <span>about 11 hours ago </span>
-      </p>
-    </div>
-    <div>
-      <p>
-        <img alt="" src="/extraclean/images/twiter.png">
-        <a href="#">@carmenangerer </a>I'll get back to you asap Carmen<br>
-        <span>about 11 hours ago </span>
-      </p>
-    </div>
-    <div>
-      <p>
-        <img alt="" src="/extraclean/images/twiter.png">
-        <a href="#">@nextWPthemes </a>Please use ThemeForest for asking questions. <a href="#">http://t.co/drZ3XwXb</a><br>
-        <span>about 4 hours ago</span>
-      </p>
-    </div>
-
-  </div>
-
-  <div class="four column contact-info">
-    <div class="back-title">
-      <h2>Contact info</h2>
-    </div>
-    <p><img alt="" src="/extraclean/images/phone.png"><span>0038 45 1234 5678</span></p>
-    <p><img alt="" src="/extraclean/images/mail.png"><span><a href="#">info@contact.com</a></span></p>
-    <p><img alt="" src="/extraclean/images/print.png"><span>+938 45 1234 5678</span></p>
-    <p><img alt="" src="/extraclean/images/addres.png"><span>Little Lonsdale St, Melbourne
-      Victoria 8011 Australia</span></p>
-    </div>
-
-    <article class="end-footer twelve column">
-      <p>© Copyright 2012 Extra Clean</p>
-    </article>
-
-  </footer>

@@ -6,5 +6,6 @@ class Topic < ActiveRecord::Base
   belongs_to :user
 
   validates :user, :subject, :content, presence: true
-  #validates :subject, allow_blank: false
+
+  scope :most_recent, order("created_at desc").limit(3)
 end

@@ -58,6 +58,12 @@ $(document).ready(function(){
 
       <%= yield %>
 
+      <%= render "layouts/bottom" %>
+
+      <article class="end-footer twelve column">
+        <p><%= I18n.t(:copyright) %>/p>
+      </article>
+
     </div>
 
   </div>
