@@ -16,6 +16,7 @@ gem 'rich', git: 'https://github.com/bastiaanterhorst/rich.git'
 gem 'aws-sdk', git: 'https://github.com/aws/aws-sdk-ruby.git'
 gem 'acts_as_commentable_with_threading'
 gem 'friendly_id'
+gem 'nokogiri'
 
 group :development do
   gem 'sqlite3'

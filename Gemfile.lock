@@ -256,6 +256,7 @@ DEPENDENCIES
   friendly_id
   i18n-active_record!
   jquery-rails
+  nokogiri
   pg
   quiet_assets
   rails (= 3.2.13)

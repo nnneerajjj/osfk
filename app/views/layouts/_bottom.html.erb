@@ -3,32 +3,18 @@
 
   <div class="four column contact-info popular-post">
     <div class="back-title">
-      <h2>Recentpost</h2>
+      <h2><%= I18n.t(:latest_news) %></h2>
     </div>
-    <div class="post">
-      <a href="#">
-        <img alt="" src="/assets/post1.jpg">
-        <img alt="" class="hover-image" src="/extraclean/images/image.png">
-      </a>
-      <a href="/extraclean/singlepost.html"><p>Get the News on Today’s Apple Event from AppStorm </p></a>
-      <span>21 September, 2012</span>
-    </div>
-    <div class="post">
-      <a href="#">
-        <img alt="" src="/assets/post1.jpg">
-        <img alt="" class="hover-image" src="/extraclean/images/image.png">
-      </a>
-      <a href="/extraclean/singlepost.html"><p>Get the News on Today’s Apple Event from AppStorm </p></a>
-      <span>21 September, 2012</span>
-    </div>
-    <div class="post">
-      <a href="#">
-        <img alt="" src="/assets/post1.jpg">
-        <img alt="" class="hover-image" src="/extraclean/images/image.png">
-      </a>
-      <a href="/extraclean/singlepost.html"><p>Get the News on Today’s Apple Event from AppStorm </p></a>
-      <span>21 September, 2012</span>
-    </div>
+    <% News.most_recent.each do |news| %>
+      <div class="post">
+        <a href="<%= news_path news %>">
+          <%= image_tag news.thumbnail %>
+          <%= image_tag 'image.png', class: 'hover-image' %>
+        </a>
+        <%= link_to raw("<p>#{news.subject}</p>"), news %>
+        <span><%= l news.created_at, format: :short %></span>
+      </div>
+    <% end %>
   </div>
 
   <div class="four column contact-info twiter">
