@@ -32,6 +32,10 @@ class Page < ActiveRecord::Base
     self.key.present?
   end
 
+  def empty_text?
+    text == "<p></p>\r\n" || text == "<div></div>\r\n"
+  end
+
   private
 
   def never_destroy_key_pages

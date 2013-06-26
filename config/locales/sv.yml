@@ -27,6 +27,8 @@ sv:
   write_comment: "Skriv kommentar"
   reply: "Svara"
   email: "Epost"
+  message: "Meddelande"
+  send: "Skicka"
   password: "Lösenord"
   sign_in: "Logga in"
   remember_me: "Kom ihåg mig"
