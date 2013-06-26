@@ -8,4 +8,9 @@ module ApplicationHelper
 
     I18n.t(:in_news)
   end
+
+  def fix_number(number)
+    return "&nbsp;#{number}".html_safe if number < 10
+    number.to_s.html_safe
+  end
 end

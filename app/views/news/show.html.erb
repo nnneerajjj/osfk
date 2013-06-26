@@ -30,12 +30,13 @@
     <ul>
       <% @news.comment_threads.asc.each do |comment| %>
       <li class="depth1">
-        <%= image_tag 'comment.png' %>
+        <div class="round-icon"><%= fix_number(comment.user.number) %></div>
         <div>
           <h5><%= comment.user.name %></h5>
           <span><%= l comment.created_at, format: :short %></span>
           <p><%= comment.body %></p>
         </div>
+        <div style="clear: both"></div>
       </li>
       <% end %>
     </ul>
