@@ -30,7 +30,7 @@
     <ul>
       <% @news.comment_threads.asc.each do |comment| %>
       <li class="depth1">
-        <img alt="" src="/extraclean/images/comment.png">
+        <%= image_tag 'comment.png' %>
         <div>
           <h5><%= comment.user.name %></h5>
           <span><%= l comment.created_at, format: :short %></span>

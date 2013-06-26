@@ -40,11 +40,12 @@ sv:
   website: "Hemsida"
   number: "Husnummer"
   save: "Spara"
-  latest_topics: "Senaste trådarna"
+  latest_topics: "Senaste forum trådarna"
   latest_comments: "Senaste kommentarerna"
   ago: "sedan"
   by: "av"
   in_thread: "i tråden"
+  in_news: "i nyheten"
   copyright: "© Copyright 2013 Ludvig Dickman"
 
   available_styles: "Valbara typer"

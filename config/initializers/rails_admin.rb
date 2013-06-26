@@ -47,6 +47,9 @@ RailsAdmin.config do |config|
   #   - Models are reloaded at each request in development mode (when modified), which may smooth your RailsAdmin development workflow.
 
   config.model Page do
+    navigation_label 'Sidor'
+    weight -1
+
     edit do
       field :title
       field :header
@@ -60,6 +63,9 @@ RailsAdmin.config do |config|
   end
 
   config.model News do
+    navigation_label 'Nyheter'
+    weight -1
+
     edit do
       field :subject
       field :content, :rich_editor do
@@ -67,8 +73,8 @@ RailsAdmin.config do |config|
           :insert_many => true
         })
       end
-      field :start_date
-      field :end_date
+      # field :start_date
+      # field :end_date
     end
   end
 

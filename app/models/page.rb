@@ -5,6 +5,8 @@ class Page < ActiveRecord::Base
 
   attr_accessible :title, :content, :public, :header
 
+  validates :title, :content, presence: true
+
   def description
     self.header.present? ? self.header : self.title
   end

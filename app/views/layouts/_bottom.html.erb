@@ -1,5 +1,36 @@
 <% if can? :read, :all %>
 <footer class="row">
+
+  <div class="four column contact-info popular-post">
+    <div class="back-title">
+      <h2>Recentpost</h2>
+    </div>
+    <div class="post">
+      <a href="#">
+        <img alt="" src="/assets/post1.jpg">
+        <img alt="" class="hover-image" src="/extraclean/images/image.png">
+      </a>
+      <a href="/extraclean/singlepost.html"><p>Get the News on Today’s Apple Event from AppStorm </p></a>
+      <span>21 September, 2012</span>
+    </div>
+    <div class="post">
+      <a href="#">
+        <img alt="" src="/assets/post1.jpg">
+        <img alt="" class="hover-image" src="/extraclean/images/image.png">
+      </a>
+      <a href="/extraclean/singlepost.html"><p>Get the News on Today’s Apple Event from AppStorm </p></a>
+      <span>21 September, 2012</span>
+    </div>
+    <div class="post">
+      <a href="#">
+        <img alt="" src="/assets/post1.jpg">
+        <img alt="" class="hover-image" src="/extraclean/images/image.png">
+      </a>
+      <a href="/extraclean/singlepost.html"><p>Get the News on Today’s Apple Event from AppStorm </p></a>
+      <span>21 September, 2012</span>
+    </div>
+  </div>
+
   <div class="four column contact-info twiter">
     <div class="back-title">
       <h2><%= I18n.t(:latest_topics) %></h2>
@@ -19,18 +50,15 @@
     </div>
     <% Comment.most_recent.each do |comment| %>
     <div>
-      <p><img alt="" src="/extraclean/images/icons/17.png">
+      <p><%= image_tag 'icons/17.png' %>
         <%= comment.body %><br>
         <span><%= I18n.t(:by) %> <%= comment.user.fullname %></span><br>
-        <span><%= I18n.t(:in_thread) %> <%= link_to comment.commentable.subject, comment.commentable %></span><br>
+        <span><%= in_commentable(comment.commentable) %> <%= link_to comment.commentable.subject, comment.commentable %></span><br>
         <span><%= time_ago_in_words(comment.created_at) %> <%= I18n.t(:ago) %></span>
       </p>
     </div>
 
     <% end %>
-  </div>
-
-  <div class="four column contact-info">
   </div>
 
 </footer>

@@ -64,7 +64,7 @@ html[xmlns] .slides {display: block;}
 .flex-direction-nav .flex-next {
 	width: 37px;
 	height: 37px;
-	background: #d44040 url(/extraclean/images/next-slide.png) center no-repeat;
+	background: #d44040 url(/assets/next-slide.png) center no-repeat;
 	float: right;
 	transition: opacity 0.2s linear;
 	-moz-transition: opacity 0.2s linear;
@@ -75,7 +75,7 @@ html[xmlns] .slides {display: block;}
 .flex-direction-nav .flex-prev {
 	width: 37px;
 	height: 37px;
-	background: #d44040 url(/extraclean/images/prev-slide.png) center no-repeat;
+	background: #d44040 url(/assets/prev-slide.png) center no-repeat;
 	float: left;
 		transition: opacity 0.2s linear;
 	-moz-transition: opacity 0.2s linear;
@@ -93,9 +93,9 @@ html[xmlns] .slides {display: block;}
 /* Control Nav */
 .flex-control-nav {min-width:50px; position: absolute; top: 20px; right:20px;}
 .flex-control-nav li {margin: 0 3px; display: inline-block; zoom: 1; *display: inline;}
-.flex-control-paging li a {width: 20px; height: 20px; display: block; background: url(/extraclean/images/bullets.png) center no-repeat; cursor: pointer; text-indent: -9999px; }
+.flex-control-paging li a {width: 20px; height: 20px; display: block; background: url(/assets/bullets.png) center no-repeat; cursor: pointer; text-indent: -9999px; }
 .flex-control-paging li a:hover { opacity:0.9; }
-.flex-control-paging li a.flex-active {background: url(/extraclean/images/bullets1.png); cursor: default; }
+.flex-control-paging li a.flex-active {background: url(/assets/bullets1.png); cursor: default; }
 
 .flex-control-thumbs {margin: 5px 0 0; position: static; overflow: hidden;}
 .flex-control-thumbs li {width: 25%; float: left; margin: 0;}

@@ -4,7 +4,7 @@ class News < ActiveRecord::Base
 
   friendly_id :subject, use: :slugged
 
-  attr_accessible :subject, :content, :start_date, :end_date
+  attr_accessible :subject, :content
 
   validates :subject, :content, presence: true
 
