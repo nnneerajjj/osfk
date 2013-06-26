@@ -2,6 +2,14 @@
   <ul>
     <li class="active"><%= link_to I18n.t(:home), root_path %></li>
     <% if can? :read, :all %>
+      <li class="drop"><%= link_to I18n.t(:news), news_index_path %>
+        <span></span>
+        <ul class="dropdown">
+          <% News.most_recent.each do |news| %>
+            <li><%= link_to news.subject, news %></li>
+          <% end %>
+        </ul>
+      </li>
       <li class="drop"><%= link_to I18n.t(:forum), topic_index_path %>
         <span></span>
         <ul class="dropdown">

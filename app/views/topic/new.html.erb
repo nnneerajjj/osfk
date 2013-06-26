@@ -1,12 +1,14 @@
+<% content_for :title, I18n.t(:new_post_header) %>
+
 <div class="head-title">
   <h1><%= I18n.t(:forum) %></h1>
   <div class="head-description">
-    <p><%= I18n.t(:new_post_description) %></p>
+    <p><%= I18n.t(:new_post_header) %></p>
   </div>
 </div>
 
 <div id="comment-leave" class="row">
-  <h1><%= I18n.t(:new_post_description) %></h1>
+  <h1><%= I18n.t(:new_post_header) %></h1>
 
   <div>
     <%= form_for Topic.new, url: topic_index_path, html: { id: "contact-form2"} do |f| %>

@@ -1,3 +1,5 @@
+<% content_for :title, @topic.subject %>
+
   <div class="head-title">
     <h1><%= I18n.t(:forum) %></h1>
     <div class="head-description">
@@ -7,8 +9,7 @@
 
   <div class="single-blog-post row">
     <article class="blog-content twelve column">
-      <!--<a href="#"><img alt="" src="/extraclean/upload/blog-image.jpg"></a>-->
-      <div class="blog-text">
+      <div class="blog-text header">
         <h1><%= @topic.subject %></h1>
         <p><%= simple_format @topic.content %></p>
       </div>
@@ -28,7 +29,7 @@
       <% else %>
       <h1><%= @topic.comment_threads.count %> <%= I18n.t(:comment_count) %></h1>
       <ul>
-        <% @topic.comment_threads.each do |comment| %>
+        <% @topic.comment_threads.asc.each do |comment| %>
         <li class="depth1">
           <img alt="" src="/extraclean/images/comment.png">
           <div>

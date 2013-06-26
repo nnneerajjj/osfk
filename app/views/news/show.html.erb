@@ -1,0 +1,58 @@
+<% content_for :title, @news.subject %>
+
+<div class="head-title">
+  <h1><%= I18n.t(:news) %></h1>
+  <div class="head-description">
+    <p><%= @news.subject %></p>
+  </div>
+</div>
+
+<div class="single-blog-post row">
+  <article class="blog-content twelve column">
+    <div class="blog-text header">
+      <h1><%= @news.subject %></h1>
+      <p><%= simple_format @news.content %></p>
+    </div>
+    <div class="blog-icon"></div>
+    <ul>
+      <li><p><%= I18n.t(:posted) %>: <span><%= l @news.created_at, format: :short %></span></p></li>
+      <li><p><%= I18n.t(:comments) %>: <span><%= @news.comment_threads.count %></span></p></li>
+    </ul>
+  </article>
+</div>
+
+<div id="comments" class="row">
+  <div class="twelve column">
+    <% if @news.comment_threads.empty? %>
+    <h1><%= I18n.t(:no_comments) %></h1>
+    <% else %>
+    <h1><%= @news.comment_threads.count %> <%= I18n.t(:comment_count) %></h1>
+    <ul>
+      <% @news.comment_threads.asc.each do |comment| %>
+      <li class="depth1">
+        <img alt="" src="/extraclean/images/comment.png">
+        <div>
+          <h5><%= comment.user.name %></h5>
+          <span><%= l comment.created_at, format: :short %></span>
+          <p><%= comment.body %></p>
+        </div>
+      </li>
+      <% end %>
+    </ul>
+    <% end %>
+  </div>
+</div>
+
+<div id="comment-leave" class="row">
+  <h1><%= I18n.t(:write_comment) %></h1>
+  <%= form_for Comment.new, url: comment_news_path, html: { id: "contact-form2" } do |f| %>
+  <div>
+    <div class="nine column">
+      <%= f.text_area :body, required: '' %>
+    </div>
+    <div class="three column">
+      <%= f.submit I18n.t(:reply) %>
+    </div>
+  </div>
+  <% end %>
+</div>

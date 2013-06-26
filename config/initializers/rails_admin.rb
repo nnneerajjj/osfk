@@ -48,9 +48,6 @@ RailsAdmin.config do |config|
 
   config.model Page do
     edit do
-      # field :content do
-      #   bootstrap_wysihtml5 true
-      # end
       field :title
       field :header
       field :public
@@ -59,6 +56,19 @@ RailsAdmin.config do |config|
           :insert_many => true
         })
       end
+    end
+  end
+
+  config.model News do
+    edit do
+      field :subject
+      field :content, :rich_editor do
+        config({
+          :insert_many => true
+        })
+      end
+      field :start_date
+      field :end_date
     end
   end
 

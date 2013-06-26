@@ -1,14 +1,14 @@
 <!doctype html>
 <html lang="sv">
 <head>
-  <title>BRF Caraten</title>
+  <title><%= I18n.t(:title) %> <%= yield :title %></title>
 
   <meta charset="utf-8">
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= stylesheet_link_tag "application", :media => "all" %>
   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
   <!--[if lt IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>

@@ -1,7 +1,9 @@
+<% content_for :title, @page.description %>
+
 <div class="head-title">
   <h1><%= @page.title %></h1>
   <div class="head-description">
-    <p><%= @page.header.present? ? @page.header : @page.title %></p>
+    <p><%= @page.description %></p>
   </div>
 </div>
 

@@ -2,15 +2,19 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 sv:
+  title: "BRF Caraten - "
+  home_title: "Bostadsrättsförening"
   home: "Hem"
   contact: "Kontakt"
-  contact_description: "Kontakta oss"
+  contact_header: "Kontakta oss"
   send_us_a_message: "Skicka oss ett meddelande"
   contact_information: "Kontaktinformation"
+  news: "Nyheter"
   forum: "Forum"
+  news_header: "Alla nyheter"
   new_post: "Skapa ny tråd"
-  forum_description: "Trådar"
-  new_post_description: "Skapa ny tråd"
+  forum_header: "Trådar"
+  new_post_header: "Skapa ny tråd"
   subject: "Rubrik"
   create: "Skapa"
   read_more: "Läs mer"

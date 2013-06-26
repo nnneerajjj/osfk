@@ -1,0 +1,31 @@
+<% content_for :title, I18n.t(:news) %>
+
+<div class="head-title">
+  <h1><%= I18n.t(:news) %></h1>
+  <div class="head-description">
+    <p><%= I18n.t(:news_header) %></p>
+  </div>
+</div>
+
+<% @allnews.each do |news| %>
+
+  <div class="blog-post image-post row">
+    <article class="blog-content nine column">
+      <!--<a href="#"><img alt="" src="/extraclean/upload/blog-image.jpg"></a>-->
+      <div class="blog-text">
+        <h1><%= link_to news.subject, news %></h1>
+        <p><%= simple_format truncate(news.content, length: 400) %></p>
+        <%= link_to raw("#{I18n.t(:read_more)} <span></span>"), news %>
+      </div>
+    </article>
+
+    <article class="blog-inform three column">
+      <ul>
+        <li><p><%= I18n.t(:posted) %>: <br><span><%= l news.created_at, format: :short %></span></p></li>
+        <li><p><%= I18n.t(:comments) %>: <br><span><%= news.comment_threads.count %></span></p></li>
+      </ul>
+    </article>
+    <div class="blog-icon"></div>
+  </div>
+
+<% end %>

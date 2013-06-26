@@ -37,9 +37,12 @@ Caraten::Application.routes.draw do
   #     resource :seller
   #   end
 
-  resources :contact, only: :index
-  resources :pages, only: :show
+  resources :contact, path: 'kontakt', only: :index
+  resources :pages, path: 'sidor', only: :show
   resources :users, only: [:index, :update]
+  resources :news, path: 'nyheter', only: [:index, :show] do
+    post :comment, on: :member
+  end
   resources :topic, path: 'forum' do
     post :comment, on: :member
   end
