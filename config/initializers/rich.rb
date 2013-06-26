@@ -29,6 +29,7 @@ if Object.const_defined?("Rich")
     #   rake rich:refresh_assets
     config.image_styles = {
       :thumb => "100x100#",
+      :large => "840x420#",
       :news => "490x277#"
     }
 
@@ -48,7 +49,7 @@ if Object.const_defined?("Rich")
     # selectable in the file manager?
     #
     # Example:
-    #   config.allowed_styles = [ :large, :thumb ]
+    config.allowed_styles = [ :thumb, :original ]
     #
     # Default:
     # config.allowed_styles = :all

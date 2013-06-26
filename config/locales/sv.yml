@@ -3,10 +3,11 @@
 
 sv:
   title: "BRF Caraten - "
-  home_title: "Bostadsrättsförening"
+  home_text1: "Välkommen till <span>BRF Caraten</span>"
+  home_text2: "Bostadsrättsföreningen i Åkersberga"
+  brf_caraten: "BRF Caraten"
   home: "Hem"
   contact: "Kontakt"
-  contact_header: "Kontakta oss"
   send_us_a_message: "Skicka oss ett meddelande"
   contact_information: "Kontaktinformation"
   news: "Nyheter"
@@ -48,6 +49,7 @@ sv:
   in_thread: "i tråden"
   in_news: "i nyheten"
   copyright: "© Copyright 2013 Ludvig Dickman"
+  unable_to_destroy_key_pages: "Denna sida går ej att ta bort"
 
   available_styles: "Valbara typer"
   upload_a_file: "Ladda upp en fil"

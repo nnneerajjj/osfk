@@ -25,7 +25,7 @@
       <div class="blog-text">
         <h1><%= link_to news.subject, news %></h1>
         <p><%= simple_format truncate(news.text, length: 400) %></p>
-        <%= link_to raw("#{I18n.t(:read_more)} <span></span>"), news %>
+        <%= link_to raw("#{I18n.t(:read_more)} <span></span>".html_safe), news %>
       </div>
     </article>
 

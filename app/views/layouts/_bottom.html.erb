@@ -11,7 +11,7 @@
           <%= image_tag news.thumbnail %>
           <%= image_tag 'image.png', class: 'hover-image' %>
         </a>
-        <%= link_to raw("<p>#{news.subject}</p>"), news %>
+        <%= link_to raw("<p>#{news.subject}</p>".html_safe), news %>
         <span><%= l news.created_at, format: :short %></span>
       </div>
     <% end %>

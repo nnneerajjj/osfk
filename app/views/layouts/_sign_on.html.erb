@@ -12,7 +12,7 @@
     <%= link_to I18n.t(:forgot_password), new_password_path('user') %>
   <% end %>
   <% else %>
-    <%= current_user.name %>
+    <%= current_user.fullname %>
     <div>
       <%= link_to I18n.t(:settings), users_path, style: 'float: left;' %>
       <%= link_to I18n.t(:logout), destroy_user_session_path, method: :delete, style: 'float:right;' %>

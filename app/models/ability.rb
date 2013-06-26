@@ -10,6 +10,9 @@ class Ability
         can :create, Topic
         can :manage, Topic, user_id: user.id
         can :read, :all
+        cannot :read, Page do |page|
+          page.locked?
+        end
       end
     else
       cannot :read, :all

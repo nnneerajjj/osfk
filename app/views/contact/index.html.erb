@@ -1,4 +1,4 @@
-<% content_for :title, I18n.t(:contact) %>
+<% content_for :title, @page.header %>
 
 <% content_for :javascript do %>
   <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
@@ -6,9 +6,9 @@
 <% end %>
 
 <div class="head-title">
-  <h1><%= I18n.t(:contact) %></h1>
+  <h1>@page.title</h1>
   <div class="head-description">
-    <p><%= I18n.t(:contact_header) %></p>
+    <p>@page.description</p>
   </div>
 </div>
 
@@ -32,7 +32,7 @@
     </div>
 
     <div class="six column">
-      <%= raw Page.first.content %>
+      <%= raw @page.content.html_safe %>
     </div>
   </div>
 </div>

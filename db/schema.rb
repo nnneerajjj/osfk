@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130626113936) do
+ActiveRecord::Schema.define(:version => 20130626192628) do
 
   create_table "comments", :force => true do |t|
     t.integer  "commentable_id",   :default => 0
@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(:version => 20130626113936) do
     t.boolean  "public",     :default => false, :null => false
     t.string   "slug"
     t.string   "header"
+    t.string   "key"
   end
 
   add_index "pages", ["slug"], :name => "index_pages_on_slug", :unique => true

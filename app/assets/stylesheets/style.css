@@ -351,6 +351,11 @@ header {
 	background: #565656;
 }
 
+#main-slider img {
+	width: 840px;
+	height: 420px;
+}
+
 #main-slider .flex-direction-nav  {
 	width: 37px;
 	height: 75px;
@@ -764,11 +769,11 @@ div.description p {
 }
 
 .clients .images a#prev-logos:hover {
-	background: #e5e5e5 url('/assets/prev.png') center center no-repeat;
+	background: #d44040 url('/assets/prev.png') center center no-repeat;
 }
 
 .clients .images a#next-logos:hover {
-	background: #e5e5e5 url('/assets/next.png') center center no-repeat;
+	background: #d44040 url('/assets/next.png') center center no-repeat;
 }
 
 /*-------------------------------------------------*/
@@ -1524,6 +1529,10 @@ ul.member-data li p,
 	font-size: 13px;
 	font-family: 'open Sans', sans-serif;
 	line-height: 20px;
+}
+
+#comments li div p {
+	margin-left: 64px;
 }
 
 #comments ul li {
