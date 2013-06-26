@@ -10,7 +10,7 @@ if Object.const_defined?("Rich")
     #
     # For example, the elements available in the formats
     # dropdown are defined like this:
-    #   config.editor[:format_tags] = "h3;p;pre"
+    config.editor[:format_tags] = "h1;h3;p;pre"
     #
     # By default, Rich visualizes what type of element
     # you are editing. To disable this:
