@@ -1,7 +1,7 @@
 <div class="head-title">
-  <h1>[XXX]</h1>
+  <h1><%= @page.title %></h1>
   <div class="head-description">
-    <p><%= @page.title %></p>
+    <p><%= @page.header.present? ? @page.header : @page.title %></p>
   </div>
 </div>
 

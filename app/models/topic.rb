@@ -1,5 +1,8 @@
 class Topic < ActiveRecord::Base
+  extend FriendlyId
   acts_as_commentable
+
+  friendly_id :subject, use: :slugged
 
   attr_accessible :user, :subject, :content
 

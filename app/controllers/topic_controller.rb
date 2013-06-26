@@ -27,6 +27,6 @@ class TopicController < ApplicationController
     @comment = Comment.build_from( @topic, current_user.id, params[:comment][:body] )
     @comment.save!
 
-    return redirect_to topic_path(@topic.id)
+    return redirect_to topic_path(@topic.slug)
   end
 end

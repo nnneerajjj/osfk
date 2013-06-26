@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130625222538) do
+ActiveRecord::Schema.define(:version => 20130626111450) do
 
   create_table "comments", :force => true do |t|
     t.integer  "commentable_id",   :default => 0
@@ -45,7 +45,11 @@ ActiveRecord::Schema.define(:version => 20130625222538) do
     t.datetime "created_at",                    :null => false
     t.datetime "updated_at",                    :null => false
     t.boolean  "public",     :default => false, :null => false
+    t.string   "slug"
+    t.string   "header"
   end
+
+  add_index "pages", ["slug"], :name => "index_pages_on_slug", :unique => true
 
   create_table "rails_admin_histories", :force => true do |t|
     t.text     "message"
@@ -79,7 +83,10 @@ ActiveRecord::Schema.define(:version => 20130625222538) do
     t.text     "content"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "slug"
   end
+
+  add_index "topics", ["slug"], :name => "index_topics_on_slug", :unique => true
 
   create_table "translations", :force => true do |t|
     t.string   "locale"

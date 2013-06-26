@@ -12,6 +12,13 @@ class User < ActiveRecord::Base
   has_many :topics
 
   def name
-    "#{firstname} #{lastname}"
+    name = "#{firstname} #{lastname}"
+    return email if name.blank?
+    name
+  end
+
+  def fullname
+    return name if number.nil?
+    "#{name} (#{number})"
   end
 end

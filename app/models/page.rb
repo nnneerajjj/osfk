@@ -1,3 +1,7 @@
 class Page < ActiveRecord::Base
-  attr_accessible :title, :content, :public
+  extend FriendlyId
+
+  friendly_id :title, use: :slugged
+
+  attr_accessible :title, :content, :public, :header
 end

@@ -7,7 +7,7 @@
     <% Topic.most_recent.each do |topic| %>
     <div class="forum">
       <div class="blog-icon"></div><%= link_to topic.subject, topic %><br>
-      <span><%= I18n.t(:by) %> <%= topic.user.name %> (<%= topic.user.number %>)</span><br>
+      <span><%= I18n.t(:by) %> <%= topic.user.fullname %></span><br>
       <span><%= time_ago_in_words(topic.created_at) %> <%= I18n.t(:ago) %></span>
     </div>
     <% end %>
@@ -21,7 +21,7 @@
     <div>
       <p><img alt="" src="/extraclean/images/icons/17.png">
         <%= comment.body %><br>
-        <span><%= I18n.t(:by) %> <%= comment.user.name %> (<%= comment.user.number %>)</span><br>
+        <span><%= I18n.t(:by) %> <%= comment.user.fullname %></span><br>
         <span><%= I18n.t(:in_thread) %> <%= link_to comment.commentable.subject, comment.commentable %></span><br>
         <span><%= time_ago_in_words(comment.created_at) %> <%= I18n.t(:ago) %></span>
       </p>

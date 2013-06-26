@@ -16,7 +16,7 @@
       <ul>
         <li><p><%= I18n.t(:posted) %>: <span><%= l @topic.created_at, format: :short %></span></p></li>
         <li><p><%= I18n.t(:comments) %>: <span><%= @topic.comment_threads.count %></span></p></li>
-        <li><p><%= I18n.t(:author) %>: <span><%= @topic.user.email %></span></p></li>
+        <li><p><%= I18n.t(:author) %>: <span><%= @topic.user.fullname %></span></p></li>
       </ul>
     </article>
   </div>
@@ -32,7 +32,7 @@
         <li class="depth1">
           <img alt="" src="/extraclean/images/comment.png">
           <div>
-            <h5><%= comment.user.email %></h5>
+            <h5><%= comment.user.name %></h5>
             <span><%= l comment.created_at, format: :short %></span>
             <p><%= comment.body %></p>
             <!--<a href="#">reply</a>-->

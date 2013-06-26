@@ -112,6 +112,7 @@ GEM
     font-awesome-sass-rails (3.0.2.2)
       railties (>= 3.1.1)
       sass-rails (>= 3.1.1)
+    friendly_id (4.0.9)
     haml (4.0.2)
       tilt
     haml-rails (0.4)
@@ -252,6 +253,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   debugger
   devise
+  friendly_id
   i18n-active_record!
   jquery-rails
   pg

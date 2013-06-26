@@ -52,6 +52,7 @@ RailsAdmin.config do |config|
       #   bootstrap_wysihtml5 true
       # end
       field :title
+      field :header
       field :public
       field :content, :rich_editor do
         config({
