@@ -2541,3 +2541,7 @@ footer .twelve:after {
 	font-weight: bold;
 	float: left;
 }
+
+.red-arrow {
+	margin: 40px;
+}

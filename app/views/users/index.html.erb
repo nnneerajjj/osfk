@@ -1,3 +1,5 @@
+<% content_for :title, I18n.t(:about_me) %>
+
 <div class="head-title">
   <h1><%= I18n.t(:settings) %></h1>
   <div class="head-description">
@@ -5,11 +7,9 @@
   </div>
 </div>
 
-<div class="main-content">
-  <article class="headings">
-    <h1><%= I18n.t(:about_me) %></h1>
+<div class="page">
+  <h1><%= I18n.t(:about_me) %></h1>
 
-    <br>
     <div class="six column">
 
        <%= form_for current_user do |f| %>
@@ -21,8 +21,6 @@
        <% end %>
     </div>
 
-
-  </article>
   <div style="clear:both"></div>
 
 </div>

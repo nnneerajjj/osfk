@@ -1,16 +1,28 @@
-<h2>Change your password</h2>
+<% content_for :title, I18n.t(:change_my_password) %>
 
-<%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put }) do |f| %>
-  <%= devise_error_messages! %>
-  <%= f.hidden_field :reset_password_token %>
+<div class="head-title">
+  <h1><%= I18n.t(:sign_in) %></h1>
+  <div class="head-description">
+    <p><%= I18n.t(:change_my_password) %> </p>
+  </div>
+</div>
 
-  <div><%= f.label :password, "New password" %><br />
-  <%= f.password_field :password, :autofocus => true %></div>
 
-  <div><%= f.label :password_confirmation, "Confirm new password" %><br />
-  <%= f.password_field :password_confirmation %></div>
+<div class="page">
 
-  <div><%= f.submit "Change my password" %></div>
-<% end %>
+<h1><%= I18n.t(:change_my_password) %></h1>
 
-<%= render "devise/shared/links" %>
+<div class="eight column">
+  <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put }) do |f| %>
+    <%= devise_error_messages! %>
+    <%= f.hidden_field :reset_password_token %>
+
+    <%= f.password_field :password, autofocus: true, placeholder: I18n.t(:password) %>
+
+    <%= f.password_field :password_confirmation, placeholder: I18n.t(:password_confirmation) %>
+
+    <%= f.submit I18n.t(:change_my_password), class: 'submit-button' %>
+  <% end %>
+</div>
+
+</div>
