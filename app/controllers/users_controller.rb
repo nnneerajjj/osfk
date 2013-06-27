@@ -7,10 +7,13 @@ class UsersController < ApplicationController
 
   def update
     if @user.update_attributes(params[:user])
+      if params[:user][:password].present?
+        sign_in @user, bypass: true
+      end
+
       redirect_to users_path, notice: "yes"
     else
        render action: "index"
     end
   end
 end
-
