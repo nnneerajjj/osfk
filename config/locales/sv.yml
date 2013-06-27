@@ -57,6 +57,7 @@ sv:
   link_to_reset_password: "Här kommer en länk för att återställa ditt lösenord:"
   change_my_password: "Ändra mitt lösenord"
   your_password_wont_change: "Ditt lösenord kommer inte ändras fören du går in på länken ovan."
+  greetings: "Mvh BRF Caraten"
 
   available_styles: "Valbara typer"
   upload_a_file: "Ladda upp en fil"
