@@ -60,7 +60,7 @@ Caraten::Application.configure do
        :address => ENV['MAILGUN_SMTP_SERVER'],
        :port => ENV['MAILGUN_SMTP_PORT'],
        :domain => "brfcaraten.se",
-       :user_name => ENV['MAILGUN_SMTP_LOGIN']
+       :user_name => ENV['MAILGUN_SMTP_LOGIN'],
        :password => ENV['MAILGUN_SMTP_PASSWORD']
   }
 

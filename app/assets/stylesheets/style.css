@@ -1101,14 +1101,12 @@ div#map {
 }
 
 .blog-content > .header > h1 {
-		color: #d44040;
-		font-size: 18px;
-		font-family: arial;
-		font-weight: bold;
-		padding-bottom: 14px;
-		border-bottom: 1px solid #e6e6e6;
-	}
-
+	color: #d44040;
+	font-size: 18px;
+	font-family: arial;
+	font-weight: bold;
+	padding-bottom: 14px;
+	border-bottom: 1px solid #e6e6e6;
 }
 
 .blog-content h1,
@@ -2521,26 +2519,6 @@ footer .twelve:after {
 }
 .page > ul > li {
 	margin: 5px 0;
-}
-
-.number-circle {
-    -webkit-border-radius: 999px;
-    -moz-border-radius: 999px;
-    border-radius: 999px;
-
-    width: 10px;
-    height: 10px;
-    padding: 6px;
-
-    border: 2px solid #d44040;
-    color: #d44040;
-    text-align: center;
-    margin-left: 5px;
-    background-color: #d44040;
-    color: white;
-
-    font: 14px Arial, sans-serif;
-    display: inline;
 }
 
 .round-icon {
