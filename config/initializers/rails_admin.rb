@@ -1,8 +1,45 @@
 # RailsAdmin config file. Generated on May 16, 2013 22:00
 # See github.com/sferik/rails_admin for more informations
 
+require Rails.root.join('lib', 'rails_admin_send_newsletter.rb')
+
 RailsAdmin.config do |config|
   ################  Global configuration  ################
+
+  module RailsAdmin
+    module Config
+      module Actions
+        class SendNewsletter < RailsAdmin::Config::Actions::Base
+          RailsAdmin::Config::Actions.register(self)
+        end
+      end
+    end
+  end
+
+  config.actions do
+    # root actions
+    dashboard                     # mandatory
+    # collection actions
+    index                         # mandatory
+    new
+    export
+    history_index
+    bulk_delete
+    # member actions
+    show
+    edit
+    delete
+    history_show
+    show_in_app
+
+    # Set the custom action here
+    # send_newsletter do
+    #   # Make it visible only for article model. You can remove this if you don't need.
+    #   # visible do
+    #   #   bindings[:abstract_model].model.to_s == "Article"
+    #   # end
+    # end
+  end
 
   config.authorize_with :cancan
 

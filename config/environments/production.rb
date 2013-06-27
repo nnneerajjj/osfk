@@ -51,6 +51,19 @@ Caraten::Application.configure do
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
 
+  config.action_mailer.default_url_options = { :host => 'www.brfcaraten.se' }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.smtp_settings = {
+       :authentication => :plain,
+       :address => ENV['MAILGUN_SMTP_SERVER'],
+       :port => ENV['MAILGUN_SMTP_PORT'],
+       :domain => "brfcaraten.se",
+       :user_name => ENV['MAILGUN_SMTP_LOGIN']
+       :password => ENV['MAILGUN_SMTP_PASSWORD']
+  }
+
   # Enable threaded mode
   # config.threadsafe!
 

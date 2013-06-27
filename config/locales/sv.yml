@@ -53,6 +53,11 @@ sv:
   copyright: "© Copyright 2013 Ludvig Dickman"
   unable_to_destroy_key_pages: "Denna sida går ej att ta bort"
 
+  hello: "Hej"
+  link_to_reset_password: "Här kommer en länk för att återställa ditt lösenord:"
+  change_my_password: "Ändra mitt lösenord"
+  your_password_wont_change: "Ditt lösenord kommer inte ändras fören du går in på länken ovan."
+
   available_styles: "Valbara typer"
   upload_a_file: "Ladda upp en fil"
   insert_one: "Lägg till en"
