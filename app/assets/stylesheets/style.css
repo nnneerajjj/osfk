@@ -253,10 +253,22 @@ header {
 	padding:18px 0 10px;
 }
 
+.settings {
+	margin-top: 20px;
+}
+
 #search-bar {
 	position: relative;
 	padding: 0 18px;
 	width: 100%;
+}
+
+#search-bar span {
+	color: #a8a8a8;
+}
+
+#search-bar .name {
+	margin-top: 10px;
 }
 
 #search-bar input[type="text"],
@@ -1561,7 +1573,7 @@ ul.member-data li p,
 	float: left;
 }
 
-#comments li div h5 {
+h5 {
 	color: #d44040;
 	font-size: 14px;
 	font-family: 'open Sans', sans-serif;
