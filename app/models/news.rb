@@ -22,7 +22,7 @@ class News < ActiveRecord::Base
 
   def thumbnail
     doc = Nokogiri::HTML( content )
-    img = doc.css('img').map{ |i| i['src'] }[0]
+    img = doc.css('img').map{ |i| i['src'] }[0] || 'newspaper.jpg'
     img.gsub('/original/', '/thumb/').gsub('/news/', '/thumb/')
   end
 end
