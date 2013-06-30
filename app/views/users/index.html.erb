@@ -5,25 +5,26 @@
 <div class="page">
   <h1><%= I18n.t(:about_me) %></h1>
 
+  <%= render 'layouts/flashmessage' %>
+
     <div class="eight column">
-       <%= form_for current_user do |f| %>
-         <%= f.text_field :firstname, placeholder: I18n.t(:firstname) %>
-         <%= f.text_field :lastname, placeholder: I18n.t(:lastname) %>
-         <%= f.number_field :number, in: 1...30, placeholder: I18n.t(:number) %>
-         <%= f.text_field :website, placeholder: I18n.t(:website) %>
-         <%= f.submit I18n.t(:save), class: 'submit-button' %>
-       <% end %>
+      <%= form_for current_user do |f| %>
+        <%= f.text_field :firstname, placeholder: I18n.t(:firstname) %>
+        <%= f.text_field :lastname, placeholder: I18n.t(:lastname) %>
+        <%= f.number_field :number, in: 1...30, placeholder: I18n.t(:number) %>
+        <%= f.text_field :website, placeholder: I18n.t(:website) %>
+        <%= f.submit I18n.t(:save), class: 'submit-button' %>
+      <% end %>
     </div>
     <br>
     <div class="eight column change-password">
-       <%= form_for current_user do |f| %>
-         <%= f.password_field :password, autocomplete: "off", placeholder: I18n.t(:new_password) %>
+      <%= form_for current_user do |f| %>
+        <%= f.password_field :password, autocomplete: "off", placeholder: I18n.t(:new_password) %>
 
-         <%= f.password_field :password_confirmation, placeholder: I18n.t(:new_password_again) %>
+        <%= f.password_field :password_confirmation, placeholder: I18n.t(:new_password_again) %>
 
-         <%= f.submit I18n.t(:change_my_password), class: 'submit-button' %>
-       <% end %>
+        <%= f.submit I18n.t(:change_my_password), class: 'submit-button' %>
+      <% end %>
 
     </div>
-
 </div>

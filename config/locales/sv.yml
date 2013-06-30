@@ -2,6 +2,16 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 sv:
+  activerecord:
+    attributes:
+      user:
+        password: Lösenord
+        email: Epost
+        firstname: Förnamn
+        lastname: Efternamn
+        number: Husnummer
+        website: Webbsida
+
   title: "BRF Caraten - "
   home_text1: "Välkommen till <span>BRF Caraten</span>"
   home_text2: "Bostadsrättsföreningen i Åkersberga"
@@ -43,6 +53,8 @@ sv:
   login_below: "Det gör du genom att ange din epost och ditt lösenord här nedanför till vänster."
   settings: "Inställningar"
   about_me: "Mina inställningar"
+  password_changed: "Lösenord uppdaterat"
+  settings_changed: "Inställningar uppdaterades"
   name: "Namn"
   firstname: "Förnamn"
   lastname: "Efternamn"
