@@ -1,11 +1,6 @@
 <% content_for :title, I18n.t(:about_me) %>
-
-<div class="head-title">
-  <h1><%= I18n.t(:settings) %></h1>
-  <div class="head-description">
-    <p><%= I18n.t(:about_me) %></p>
-  </div>
-</div>
+<% content_for :header, I18n.t(:settings) %>
+<% content_for :description, I18n.t(:about_me) %>
 
 <div class="page">
   <h1><%= I18n.t(:about_me) %></h1>

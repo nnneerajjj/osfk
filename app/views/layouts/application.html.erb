@@ -56,6 +56,18 @@ $(document).ready(function(){
 
 
     <div id="content" class="nine column">
+      <%
+        header = yield :header
+        description = yield :description
+        if header.present? && description.present?
+      %>
+        <div class="head-title">
+          <h1><%= header %></h1>
+          <div class="head-description">
+            <p><%= description %></p>
+          </div>
+        </div>
+      <% end %>
 
       <%= yield %>
 

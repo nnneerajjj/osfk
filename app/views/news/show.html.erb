@@ -1,11 +1,6 @@
 <% content_for :title, @news.subject %>
-
-<div class="head-title">
-  <h1><%= I18n.t(:news) %></h1>
-  <div class="head-description">
-    <p><%= @news.subject %></p>
-  </div>
-</div>
+<% content_for :header, I18n.t(:news) %>
+<% content_for :description, @news.subject %>
 
 <div class="single-blog-post row">
   <article class="blog-content twelve column">

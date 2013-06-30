@@ -1,11 +1,6 @@
 <% content_for :title, @topic.subject %>
-
-  <div class="head-title">
-    <h1><%= I18n.t(:forum) %></h1>
-    <div class="head-description">
-      <p><%= @topic.subject %></p>
-    </div>
-  </div>
+<% content_for :header, I18n.t(:forum) %>
+<% content_for :description, @topic.subject %>
 
   <div class="single-blog-post row">
     <article class="blog-content twelve column">

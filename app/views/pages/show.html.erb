@@ -1,11 +1,6 @@
 <% content_for :title, @page.description %>
-
-<div class="head-title">
-  <h1><%= @page.title %></h1>
-  <div class="head-description">
-    <p><%= @page.description %></p>
-  </div>
-</div>
+<% content_for :header, @page.title %>
+<% content_for :description, @page.description %>
 
 <div class="inner-content page">
   <%= raw @page.content.html_safe %>
