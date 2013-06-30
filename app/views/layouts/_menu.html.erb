@@ -23,6 +23,6 @@
     <% Page.opened.each do |page| %>
       <li><%= link_to page.title, page %></li>
     <% end %>
-    <li><%= link_to I18n.t(:contact), contact_index_path %></li>
+    <li><%= link_to I18n.t(:contact), contacts_path %></li>
   </ul>
 </nav>

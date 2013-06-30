@@ -969,7 +969,9 @@ div#map {
 }
 
 #contact input[type="text"],
-#contact-form2 input[type="text"] {
+#contact-form2 input[type="text"],
+#contact input[type="email"],
+#contact-form2 input[type="email"] {
 	float: left;
 	border: 1px solid #d8d8d8;
 	font-family:arial;

@@ -11,6 +11,12 @@ sv:
         lastname: Efternamn
         number: Husnummer
         website: Webbsida
+      contact:
+        name: Namn
+        email: Epost
+        website: Webbsida
+        content: Meddelande
+        secret: Allt
 
   title: "BRF Caraten - "
   home_text1: "Välkommen till <span>BRF Caraten</span>"
@@ -19,6 +25,8 @@ sv:
   home: "Hem"
   contact: "Kontakt"
   send_us_a_message: "Skicka oss ett meddelande"
+  your_message_is_sent: "Ditt meddelande är skickat"
+  try_send_again: "Något gick fel. Försök skicka meddelandet igen"
   contact_information: "Kontaktinformation"
   news: "Nyheter"
   forum: "Forum"

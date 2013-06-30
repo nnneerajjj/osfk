@@ -1,0 +1,37 @@
+<% content_for :title, @page.header %>
+<% content_for :header, @page.title %>
+<% content_for :description, @page.description %>
+
+<% content_for :javascript do %>
+  <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+  <%= javascript_include_tag "gmap3.min" %>
+<% end %>
+
+<div class="inner-content">
+
+  <div id="outer-map">
+    <div id="map"></div>
+  </div>
+
+  <div>
+    <%= render 'layouts/flashmessage' %>
+  </div>
+
+  <div id="contact" class="row">
+    <div class="six column">
+      <h1><%= I18n.t(:send_us_a_message) %></h1>
+      <%= form_for Contact.new, id: 'contact-form' do |f| %>
+        <label id="label" for="contact[name]"></label><input name="contact[name]" placeholder="<%= I18n.t(:name) %>" type="text" required="" value="<%= @contact.name %>">
+        <label id="label1" for="contact[email]"></label><input name="contact[email]" placeholder="<%= I18n.t(:email) %>" type="email" required="" value="<%= @contact.email %>">
+        <label id="label2" for="contact[website]"></label><input name="contact[website]" placeholder="<%= I18n.t(:website) %>" type="text" value="<%= @contact.website %>">
+        <textarea name="contact[content]" placeholder="<%= I18n.t(:message) %>" required><%= @contact.content %></textarea>
+        <div id="msg" class="message"></div>
+        <%= f.submit I18n.t(:send), id: 'submit_contact' %>
+      <% end %>
+    </div>
+
+    <div class="six column">
+      <%= raw @page.content.html_safe %>
+    </div>
+  </div>
+</div>

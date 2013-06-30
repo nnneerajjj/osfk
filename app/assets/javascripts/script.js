@@ -160,7 +160,7 @@ $(document).ready(function($) {
 
 
 	/* ---------------------------------------------------------------------- */
-	/*	Contact Map
+	/*	Contact
 	/* ---------------------------------------------------------------------- */
 	var contact = {"lat":"59.476758", "lon":"18.344683"};
 
@@ -177,5 +177,15 @@ $(document).ready(function($) {
 		);
 	} catch(err) {
 
+	}
+
+	if($('#new_contact').length > 0) {
+		setTimeout(function() {
+			$input = $('<input></input>')
+									.attr('name', 'contact[secret]')
+									.attr('type', 'hidden')
+									.val('s3cr3t')
+			$('#new_contact').prepend($input)
+		}, 1337)
 	}
 });
