@@ -25,6 +25,7 @@ group :development do
   gem 'quiet_assets'
   gem 'debugger'
   gem 'af'
+  gem 'mailcatcher'
 end
 
 group :assets do

@@ -11,6 +11,7 @@ sv:
         lastname: Efternamn
         number: Husnummer
         website: Webbsida
+        reset_password_token: Token
       contact:
         name: Namn
         email: Epost
