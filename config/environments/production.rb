@@ -57,11 +57,11 @@ Caraten::Application.configure do
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.smtp_settings = {
        :authentication => :plain,
-       :address => ENV['MAILGUN_SMTP_SERVER'],
-       :port => ENV['MAILGUN_SMTP_PORT'],
+       :address => 'smtp.mailgun.org',
+       :port => 587,
        :domain => "brfcaraten.se",
-       :user_name => ENV['MAILGUN_SMTP_LOGIN'],
-       :password => ENV['MAILGUN_SMTP_PASSWORD']
+       :user_name => 'postmaster@brfcaraten.se',
+       :password => '3e5xs6znvfj0'
   }
 
   # Enable threaded mode

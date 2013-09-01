@@ -83,7 +83,33 @@ RailsAdmin.config do |config|
   #   - This initializer is loaded once at startup (modifications will show up when restarting the application) but all RailsAdmin configuration would stay in one place.
   #   - Models are reloaded at each request in development mode (when modified), which may smooth your RailsAdmin development workflow.
 
+  config.model Letter do
+    label 'Brev'
+    label_plural 'Brev'
+    navigation_label 'Brev'
+    weight -10
+
+    edit do
+      field :subject
+      field :content, :rich_editor do
+        config({
+          :insert_many => true
+        })
+      end
+      field :send_after_save
+
+      field :user_id, :hidden do
+        default_value do
+          bindings[:view]._current_user.id
+        end
+      end
+
+    end
+  end
+
   config.model Page do
+    label 'Sidor'
+    label_plural 'Sidor'
     navigation_label 'Sidor'
     weight -1
 
@@ -100,6 +126,8 @@ RailsAdmin.config do |config|
   end
 
   config.model News do
+    label 'Nyheter'
+    label_plural 'Nyheter'
     navigation_label 'Nyheter'
     weight -1
 

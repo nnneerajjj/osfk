@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130630203256) do
+ActiveRecord::Schema.define(:version => 20130901182259) do
 
   create_table "comments", :force => true do |t|
     t.integer  "commentable_id",   :default => 0
@@ -54,6 +54,15 @@ ActiveRecord::Schema.define(:version => 20130630203256) do
   end
 
   add_index "delayed_jobs", ["priority", "run_at"], :name => "delayed_jobs_priority"
+
+  create_table "letters", :force => true do |t|
+    t.integer  "user_id",         :null => false
+    t.string   "subject",         :null => false
+    t.text     "content",         :null => false
+    t.boolean  "send_after_save"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
 
   create_table "news", :force => true do |t|
     t.string   "subject"
