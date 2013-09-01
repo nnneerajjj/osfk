@@ -10,6 +10,7 @@ module ApplicationHelper
   end
 
   def fix_number(number)
+    return "" unless number.present?
     return "&nbsp;#{number}".html_safe if number < 10
     number.to_s.html_safe
   end
