@@ -17,7 +17,7 @@
       <ul>
         <li><p><%= I18n.t(:posted) %>: <br><span><%= l topic.created_at, format: :short %></span></p></li>
         <li><p><%= I18n.t(:comments) %>: <br><span><%= topic.comment_threads.count %></span></p></li>
-        <li><p><%= I18n.t(:author) %>: <br><span><%= topic.user.email %></span></p></li>
+        <li><p><%= I18n.t(:author) %>: <br><span><%= topic.user.fullname %></span></p></li>
       </ul>
     </article>
     <div class="blog-icon"></div>
