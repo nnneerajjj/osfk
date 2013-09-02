@@ -12,7 +12,7 @@
     <%= link_to I18n.t(:forgot_password), new_password_path('user') %>
   <% end %>
   <% else %>
-    <span>Inloggad som</span>
+    <span><%= I18n.t(:logged_in_as) %></span>
     <div class="round-icon"><%= fix_number(current_user.number) %></div><h5 class='name'><%= current_user.name %></h5>
     <div class='settings'>
       <%= link_to I18n.t(:settings), users_path, style: 'float: left;' %>

@@ -53,6 +53,7 @@ sv:
   new_password_again: "Nytt lösenord igen"
   current_password: "Nuvarande lösenord"
   sign_in: "Logga in"
+  sign_up: "Skapa konto"
   remember_me: "Kom ihåg mig"
   forgot_password: "Glömt ditt lösenord?"
   logout: "Logga ut"
@@ -99,3 +100,5 @@ sv:
   delete: "Radera den här filen"
   delete_confirm: "Är du säker på att du vill radera den här filen?"
   picker_browse: "Välj eller ladda upp"
+
+  logged_in_as: "Inloggad som"
