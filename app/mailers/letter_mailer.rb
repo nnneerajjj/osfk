@@ -1,7 +1,7 @@
 class LetterMailer < ActionMailer::Base
   include ActionView::Helpers::TextHelper
 
-  default from: 'kontakt@brfcaraten.se'
+  default from: "\"BRF Caraten\" <kontakt@brfcaraten.se>"
 
   def email(letter, email)
     @letter = letter
