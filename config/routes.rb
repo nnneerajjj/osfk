@@ -1,7 +1,9 @@
 Caraten::Application.routes.draw do
   mount Rich::Engine => '/rich', :as => 'rich'
 
-  devise_for :users
+  devise_for :users do
+    get "/skapakonto" => "devise/registrations#new", as: :new_user_registration
+  end
 
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 

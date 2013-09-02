@@ -49,6 +49,7 @@ sv:
   message: "Meddelande"
   send: "Skicka"
   password: "Lösenord"
+  password_confirmation: "Bekräfta lösenord"
   new_password: "Nytt lösenord"
   new_password_again: "Nytt lösenord igen"
   current_password: "Nuvarande lösenord"
