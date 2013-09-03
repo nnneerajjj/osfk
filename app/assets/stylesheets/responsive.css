@@ -31,10 +31,10 @@
 		top: inherit;
 	}
 
-	#main-slider .flex-caption,
+	/*#main-slider .flex-caption,
 	#main-slider .flex-caption1 {
 		display: none;
-	}
+	}*/
 
 	.blog-text {
 		margin-bottom: 20px;
