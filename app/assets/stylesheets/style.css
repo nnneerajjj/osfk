@@ -2629,3 +2629,8 @@ footer .twelve:after {
      margin: 0;
      color: #fff;
 }
+
+.ie-label {
+	margin-bottom: 5px;
+	display: none;
+}

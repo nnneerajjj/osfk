@@ -112,11 +112,13 @@
 	#main-slider .flex-caption {
 		top: 20px;
 		left: 10px;
+		margin-right: 10px;
 	}
 
 	#main-slider .flex-caption1 {
 		top: 80px;
 		left: 10px;
+		margin-right: 10px;
 	}
 }
 
