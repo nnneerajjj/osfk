@@ -2,6 +2,25 @@ var $ = jQuery.noConflict();
 
 $(document).ready(function($) {
 
+	menuOnTop = true;
+
+	$(window).resize(function(){
+    if($(this).width() <= 768 && menuOnTop) {
+    	$("#content").insertBefore($("header"));
+    	menuOnTop = false;
+    }
+    else if(!menuOnTop) {
+    	menuOnTop = true;
+    	$("header").insertBefore($("#content"));
+    }
+  }).resize();
+
+  $(".toggle-topbar").click(function(ev) {
+  	ev.preventDefault();
+    $("html, body").animate({ scrollTop: $(document).height() }, "slow");
+    return false;
+  });
+
 
 	/*-------------------------------------------------*/
 	/* =  Services

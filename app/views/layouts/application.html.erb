@@ -38,6 +38,14 @@ $(document).ready(function(){
 
   <div class="container">
     <div class="row">
+
+      <nav class="top-bar inner-header hide">
+        <ul>
+          <li class="name"><a href="<%= root_path %>"><img alt="" src="/assets/logo.png"></a></li>
+          <li class="toggle-topbar"><a href="#"></a></li>
+        </ul>
+      </nav>
+
       <header class="three column">
         <div class="inner-header">
           <div id="logo">
@@ -45,6 +53,7 @@ $(document).ready(function(){
               <a href="<%= root_path %>"><img alt="" src="/assets/logo.png"></a>
             </div>
           </div>
+
           <section class="menu">
             <%= render "layouts/menu" %>
           </section>

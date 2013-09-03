@@ -4,6 +4,22 @@
 		margin-bottom: 16px;
 	}
 
+	.top-bar {
+		display: block;
+		margin-bottom: 20px;
+	}
+
+	.end-footer {
+		display: none;
+	}
+
+	#content {
+		margin-bottom: 10px;
+	}
+
+
+
+
 	.moving-content li {
 		padding: 0 20px !important;
 	}
