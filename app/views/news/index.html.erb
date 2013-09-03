@@ -6,8 +6,9 @@
 
   <div class="blog-post image-post row">
     <article class="blog-content nine column">
-      <div class="slider">
-        <div class="flexslider container">
+      <% if news.images.any? %>
+        <div class="slider">
+          <div class="flexslider container">
             <ul class="slides span12">
               <% news.images.each do |image| %>
                 <li>
@@ -16,7 +17,8 @@
               <% end %>
             </ul>
           </div>
-      </div>
+        </div>
+      <% end %>
       <div class="blog-text">
         <h1><%= link_to news.subject, news %></h1>
         <p><%= simple_format truncate(news.text, length: 400) %></p>
