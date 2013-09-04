@@ -1,9 +1,15 @@
 <% content_for :title, I18n.t(:sign_up) %>
 <% content_for :header, I18n.t(:sign_up) %>
 <% content_for :description, I18n.t(:sign_up) %>
+<% content_for :meta do %>
+<meta name="robots" content="noindex">
+<% end %>
 
 <div class="page">
-  <%= request.path %>
+  <% unless request.path == '/skapakonto' %>
+    <% raise ActionController::RoutingError.new('') %>
+  <% end %>
+
   <h1><%= I18n.t(:sign_up) %></h1>
 
   <%= render 'layouts/flashmessage', alert: resource.errors.full_messages.to_sentence %>
