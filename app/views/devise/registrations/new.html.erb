@@ -33,7 +33,7 @@
       <%= f.text_field :lastname, placeholder: I18n.t(:lastname) %>
 
       <%= f.label :number, I18n.t(:number), class: 'ie-label' %>
-      <%= f.number_field :number, in: 1...30, placeholder: I18n.t(:number) %>
+      <%= f.number_field :number, in: 1...31, placeholder: I18n.t(:number) %>
 
       <%= f.submit I18n.t(:sign_up), class: 'submit-button' %>
   <% end %>
