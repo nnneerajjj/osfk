@@ -8,7 +8,7 @@
   <div>
     <%= form_for Topic.new, url: topic_index_path, html: { id: "contact-form2"} do |f| %>
       <div class="four column">
-        <%= f.label :subject, I18n.t(:subject), class: 'ie-label' %>
+        <label id="label" for="subject"><%= f.label :subject, I18n.t(:subject), class: 'ie-label-white' %></label>
         <%= f.text_field :subject, placeholder: I18n.t(:subject), required: '' %>
       </div>
       <div>

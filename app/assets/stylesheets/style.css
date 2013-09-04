@@ -2630,7 +2630,7 @@ footer .twelve:after {
      color: #fff;
 }
 
-.ie-label {
+.ie-label, .ie-label-white {
 	margin-bottom: 5px;
 	display: none;
 }
