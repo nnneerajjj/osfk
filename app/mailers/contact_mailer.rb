@@ -5,6 +5,6 @@ class ContactMailer < ActionMailer::Base
 
   def email(contact)
     @contact = contact
-    mail to: @contact.email, subject: truncate(contact.content, length: 30)
+    mail to: 'kontakt@brfcaraten.se', subject: truncate(contact.content, length: 30)
   end
 end
