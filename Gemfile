@@ -19,6 +19,7 @@ gem 'acts_as_commentable_with_threading'
 gem 'delayed_job_active_record'
 gem 'friendly_id'
 gem 'nokogiri'
+gem "whenever", :require => false
 
 group :development do
   gem 'sqlite3'
