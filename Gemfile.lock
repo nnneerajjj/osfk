@@ -71,6 +71,9 @@ GEM
       rubyzip (~> 0.9.4)
       terminal-table (~> 1.4.2)
       uuidtools (~> 2.1.0)
+    airbrake (3.1.14)
+      builder
+      json
     arel (3.0.2)
     awesome_nested_set (2.1.6)
       activerecord (>= 3.0.0)
@@ -276,6 +279,7 @@ PLATFORMS
 DEPENDENCIES
   acts_as_commentable_with_threading
   af
+  airbrake
   aws-sdk!
   bootstrap-wysihtml5-rails
   cancan
