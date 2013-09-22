@@ -20,6 +20,7 @@ gem 'delayed_job_active_record'
 gem 'friendly_id'
 gem 'nokogiri'
 gem "whenever", :require => false
+gem 'airbrake'
 
 group :development do
   gem 'sqlite3'
