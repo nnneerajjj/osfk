@@ -8,3 +8,4 @@ class LetterMailer < ActionMailer::Base
     mail to: email, subject: letter.subject
   end
 end
+

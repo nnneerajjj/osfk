@@ -25,16 +25,17 @@ sv:
   brf_caraten: "BRF Caraten"
   home: "Hem"
   contact: "Kontakt"
+  with: "med"
   send_us_a_message: "Skicka oss ett meddelande"
   your_message_is_sent: "Ditt meddelande är skickat"
   try_send_again: "Något gick fel. Försök skicka meddelandet igen"
   contact_information: "Kontaktinformation"
   news: "Nyheter"
-  forum: "Forum"
+  forum: "Diskussioner"
   news_header: "Alla nyheter"
-  new_post: "Skapa ny tråd"
-  forum_header: "Trådar"
-  new_post_header: "Skapa ny tråd"
+  new_post: "Skapa ny diskussionstråd"
+  forum_header: "Diskussionstrådar"
+  new_post_header: "Skapa ny diskussionstråd"
   subject: "Rubrik"
   create: "Skapa"
   read_more: "Läs mer / Kommentera"
@@ -73,11 +74,11 @@ sv:
   number: "Husnummer"
   save: "Spara"
   latest_news: "Senaste nyheterna"
-  latest_topics: "Senaste forumtrådarna"
+  latest_topics: "Senaste diskussionstrådarna"
   latest_comments: "Senaste kommentarerna"
   ago: "sedan"
   by: "av"
-  in_thread: "i tråden"
+  in_thread: "i diskussionstråden"
   in_news: "i nyheten"
   copyright: "© Copyright 2013 Ludvig Dickman"
   unable_to_destroy_key_pages: "Denna sida går ej att ta bort"
@@ -102,4 +103,32 @@ sv:
   delete_confirm: "Är du säker på att du vill radera den här filen?"
   picker_browse: "Välj eller ladda upp"
 
+  regards: "Mvh"
+
   logged_in_as: "Inloggad som"
+
+  with_comments_count:
+    zero: "utan kommentarer"
+    one: "med en kommentar"
+    other: "med %{count} st kommentarer"
+
+  with_new_comments_count:
+    one: "med en ny kommentar"
+    other: "med %{count} st nya kommentarer"
+
+  new_news_count:
+    one: "en ny nyhet"
+    other: "%{count} st nya nyheter"
+  new_threads_count:
+    one: "en ny diskussionstråd:"
+    other: "%{count} st nya diskussionstrådar:"
+  new_other_comments_count:
+    one: "en ny kommentar på äldre nyheter/diskussionstrådar:"
+    other: "%{count} st nya kommentarer på äldre nyheter/diskussionstrådar:"
+
+  the_news: "Nyheten:"
+  the_thread: "Diskussionstråden:"
+
+  notification_subject: "Automatiskt veckobrev från brfcaraten.se"
+  notification_all_empty: "Ingenting har hänt på hemsidan sedan förra veckan. :/"
+  notification_since_last_date: "Sedan förra veckan har följande hänt på brfcaraten.se:"

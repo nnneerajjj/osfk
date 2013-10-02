@@ -20,4 +20,16 @@ class User < ActiveRecord::Base
     return name if number.nil?
     "#{name} (#{number})"
   end
+
+  def send_notification
+    if self.notification_date.nil?
+      self.update_attribute(:notification_date, Time.now)
+      return
+    end
+
+    date = Time.now - 4.month#self.notification_date
+    self.update_attribute(:notification_date, Time.now)
+
+    NotificationMailer.email(self, date).deliver!
+  end
 end

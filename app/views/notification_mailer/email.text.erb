@@ -1,0 +1,36 @@
+<%= I18n.t(:hello) %> <%= @user.name %>
+
+<% if @all_empty %>
+<%= I18n.t(:notification_all_empty) %>
+<% else %>
+<%= I18n.t(:notification_since_last_date) %>
+
+<% if @news.any? %>
+<%= I18n.t(:new_news_count, count: @news.count) %>
+<% @news.each do |news| %>
+<%= news.subject %>: <%= news_url(news) %>, <%= I18n.t(:with_comments_count, count: news.comment_threads.count) %>
+<% end %>
+<% end %>
+
+<% if @topics.any? %>
+<%= I18n.t(:new_threads_count, count: @topics.count) %>
+<% @topics.each do |topic| %>
+<%= topic.subject %> (<%= topic_url(topic) %>), <%= I18n.t(:with_comments_count, count: topic.comment_threads.count) %>
+<% end %>
+<% end %>
+
+<% if @comments.any? %>
+<%= I18n.t(:new_other_comments_count, count: @comments.count) %>
+<% @old_news.keys.each do |news| %>
+<%= I18n.t(:the_news) %> <%= news.subject %> (<%= news_url(news) %>), <%= I18n.t(:with_new_comments_count, count: @old_news[news].count) %>
+<% end %>
+<% @old_topics.keys.each do |topic| %>
+<%= I18n.t(:the_thread) %> <%= topic.subject %> (<%= topic_url(topic) %>), <%= I18n.t(:with_new_comments_count, count: @old_topics[topic].count) %>
+<% end %>
+<% end %>
+<% end %>
+
+
+<%= I18n.t(:regards) %>
+kontakt@brfcaraten.se
+http://www.brfcaraten.se/
