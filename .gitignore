@@ -17,3 +17,5 @@
 public/extraclean/
 /public/extraclean/*
 /public/system
+
+.DS_Store
