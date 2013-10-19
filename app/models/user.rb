@@ -10,6 +10,8 @@ class User < ActiveRecord::Base
 
   has_many :topics
 
+  after_create :send_welcome_email
+
   def name
     name = "#{firstname} #{lastname}"
     return email if name.blank?
@@ -31,5 +33,11 @@ class User < ActiveRecord::Base
     self.update_attribute(:notification_date, Time.now)
 
     NotificationMailer.email(self, date).deliver!
+  end
+
+  private
+
+  def send_welcome_email
+    UserMailer.delay.welcome_email(self)
   end
 end

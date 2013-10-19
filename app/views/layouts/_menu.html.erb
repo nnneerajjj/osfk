@@ -24,5 +24,8 @@
       <li><%= link_to page.title, page %></li>
     <% end %>
     <li><%= link_to I18n.t(:contact), contacts_path %></li>
+    <% if can? :access, :admin %>
+      <li><%= link_to I18n.t(:admin), rails_admin_path %></li>
+    <% end %>
   </ul>
 </nav>

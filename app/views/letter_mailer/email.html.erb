@@ -8,7 +8,9 @@
       <%= raw @letter.content %><br/>
     </p>
     <p>
-      /<%= @letter.user.fullname %>
+      <%= I18n.t(:regards) %><br/>
+      <a href="mailto:kontakt@brfcaraten.se">kontakt@brfcaraten.se</a><br/>
+      <a href="http://www.brfcaraten.se/">www.brfcaraten.se</a><br/>
     </p>
   </body>
 </html>

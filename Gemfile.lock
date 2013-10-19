@@ -159,6 +159,10 @@ GEM
       sqlite3 (~> 1.3)
       thin (~> 1.5.0)
     mime-types (1.25)
+    minitest (4.7.5)
+    minitest-spec-rails (4.7.4)
+      minitest (~> 4.7)
+      rails (<= 4.0)
     multi_json (1.7.9)
     nested_form (0.3.2)
     nokogiri (1.5.9)
@@ -292,6 +296,7 @@ DEPENDENCIES
   i18n-active_record!
   jquery-rails
   mailcatcher
+  minitest-spec-rails
   nokogiri
   pg
   quiet_assets

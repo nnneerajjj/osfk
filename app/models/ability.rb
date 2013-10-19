@@ -5,6 +5,7 @@ class Ability
     if user
       if user.admin?
         can :manage, :all
+        can :access, :admin
       else
         can :manage, User, id: user.id
         can :create, Topic

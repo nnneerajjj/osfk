@@ -3,6 +3,7 @@ Caraten::Application.routes.draw do
 
   devise_for :users do
     get "/skapakonto" => "devise/registrations#new", as: :new_user_registration
+    post "/skapakonto" => "devise/registrations#create", as: :user_registration
   end
 
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'

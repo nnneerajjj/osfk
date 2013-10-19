@@ -103,6 +103,12 @@ sv:
   delete_confirm: "Är du säker på att du vill radera den här filen?"
   picker_browse: "Välj eller ladda upp"
 
+  welcome: "Väkommen"
+  member_of: "Du är nu medlem på "
+  welcome_email_subject: "Välkommen till BRF Caraten"
+
+  admin: "Administratör"
+
   regards: "Mvh"
 
   logged_in_as: "Inloggad som"
