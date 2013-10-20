@@ -19,6 +19,7 @@
       <% Page.closed.each do |page| %>
         <li><%= link_to page.title, page %></li>
       <% end %>
+      <li><%= link_to I18n.t(:members), members_path %></li>
     <% end %>
     <% Page.opened.each do |page| %>
       <li><%= link_to page.title, page %></li>

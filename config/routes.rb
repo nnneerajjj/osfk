@@ -41,6 +41,7 @@ Caraten::Application.routes.draw do
   #   end
 
   resources :contacts, path: 'kontakt', only: [:index, :create]
+  resources :members, path: 'medlemmar', only: [:index]
   resources :pages, path: 'sidor', only: :show
   resources :users, only: [:index, :update]
   resources :news, path: 'nyheter', only: [:index, :show] do

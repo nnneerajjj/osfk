@@ -2557,6 +2557,10 @@ footer .twelve:after {
 	float: left;
 }
 
+.member h5 {
+	padding-top: 15px;
+}
+
 .red-arrow {
 	margin: 40px;
 }

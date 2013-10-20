@@ -15,3 +15,7 @@ page.save!
 page = Page.create(title: 'Kontakt', header: 'Kontakta oss', content: '.', public: true)
 page.key = 'contact'
 page.save!
+
+page = Page.create(title: 'Medlemmar', header: 'Lista på registrerade medlemmar', content: '.', public: false)
+page.key = 'members'
+page.save!
