@@ -5,12 +5,14 @@
 <meta name="robots" content="noindex">
 <% end %>
 
-<div class="page">
+<div class="inner-content page">
   <% unless request.path == '/skapakonto' %>
     <% raise ActionController::RoutingError.new('') %>
   <% end %>
 
   <h1><%= I18n.t(:sign_up) %></h1>
+
+  <p><%= I18n.t(:sign_up_text) %></p>
 
   <%= render 'layouts/flashmessage', alert: resource.errors.full_messages.to_sentence %>
 

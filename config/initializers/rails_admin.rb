@@ -103,7 +103,13 @@ RailsAdmin.config do |config|
           bindings[:view]._current_user.id
         end
       end
+    end
 
+    list do
+      field :subject
+      field :content
+      field :created_at
+      field :updated_at
     end
   end
 
@@ -140,6 +146,13 @@ RailsAdmin.config do |config|
       end
       # field :start_date
       # field :end_date
+    end
+
+    list do
+      field :subject
+      field :content
+      field :created_at
+      field :updated_at
     end
   end
 

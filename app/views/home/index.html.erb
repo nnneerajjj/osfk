@@ -6,8 +6,8 @@
         <% @page.images.each do |image| %>
         <li>
             <%= image_tag image %>
-            <p class="flex-caption"><%= raw I18n.t(:home_text1).html_safe %></p>
-            <p class="flex-caption1"><%= raw I18n.t(:home_text2).html_safe %></p>
+            <h1 class="flex-caption"><%= raw I18n.t(:home_text1).html_safe %></h1>
+            <h1 class="flex-caption1"><%= raw I18n.t(:home_text2).html_safe %></h1>
         </li>
         <% end %>
       </ul>
