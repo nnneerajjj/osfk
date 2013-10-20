@@ -11,8 +11,6 @@ class Page < ActiveRecord::Base
   scope :closed, where(public: false)
 
   before_destroy :never_destroy_key_pages
-  before_save :dont_update_public_on_key_pages
-
 
   def description
     self.header.present? ? self.header : self.title
@@ -46,12 +44,6 @@ class Page < ActiveRecord::Base
     if key.present?
       errors.add_to_base(I18n.t(:unable_to_destroy_key_pages))
       return false
-    end
-  end
-
-  def dont_update_public_on_key_pages
-    if locked?
-      self.public = true
     end
   end
 end
