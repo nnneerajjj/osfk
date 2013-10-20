@@ -36,6 +36,10 @@ class Page < ActiveRecord::Base
     text == "<p></p>\r\n" || text == "<div></div>\r\n"
   end
 
+  def path
+    "/#{self.slug}"
+  end
+
   private
 
   def never_destroy_key_pages
