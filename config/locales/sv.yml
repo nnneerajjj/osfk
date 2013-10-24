@@ -9,7 +9,8 @@ sv:
         email: Epost
         firstname: Förnamn
         lastname: Efternamn
-        number: Husnummer
+        street_number: Gatunummer
+        house_number: Föreningens lägenhetsnummer
         website: Webbsida
         reset_password_token: Token
       contact:
@@ -73,7 +74,9 @@ sv:
   firstname: "Förnamn"
   lastname: "Efternamn"
   website: "Hemsida"
-  number: "Husnummer"
+  street_number: "Gatunummer"
+  house_number: "Föreningens lägenhetsnummer"
+  house_number_short: "Lägenhetsnummer"
   save: "Spara"
   latest_news: "Senaste nyheterna"
   latest_topics: "Senaste diskussionstrådarna"

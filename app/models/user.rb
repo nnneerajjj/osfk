@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :firstname, :number, :lastname, :website
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :firstname, :street_number, :house_number, :lastname, :website
 
   has_many :topics
 
@@ -19,8 +19,8 @@ class User < ActiveRecord::Base
   end
 
   def fullname
-    return name if number.nil?
-    "#{name} (#{number})"
+    return name if street_number.nil?
+    "#{name} (#{street_number})"
   end
 
   def send_notification

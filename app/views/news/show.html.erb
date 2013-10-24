@@ -25,7 +25,7 @@
     <ul>
       <% @news.comment_threads.asc.each do |comment| %>
       <li class="depth1">
-        <div class="round-icon"><%= fix_number(comment.user.number) %></div>
+        <div class="round-icon"><%= fix_number(comment.user.street_number) %></div>
         <div>
           <h5><%= comment.user.name %></h5>
           <span><%= l comment.created_at, format: :short %></span>
