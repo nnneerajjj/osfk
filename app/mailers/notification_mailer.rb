@@ -12,7 +12,7 @@ class NotificationMailer < ActionMailer::Base
 
     news_ids = @news.map(&:id)
     topic_ids = @topics.map(&:id)
-    @comments = Comment.where(["((commentable_type = 'Topic' and commentable_id not in (?)) or (commentable_type = 'News' and commentable_id not in (?))) and created_at > ?", topic_ids.empty? ? "[]" : topic_ids, news_ids.empty? ? "[]" : news_ids, date])
+    @comments = Comment.where(["((commentable_type = 'Topic' and commentable_id not in (?)) or (commentable_type = 'News' and commentable_id not in (?))) and created_at > ?", topic_ids, news_ids, date])
     commentables = @comments.group_by{|x| x.commentable}
 
     @old_news = commentables.select {|x| x.class == News}
