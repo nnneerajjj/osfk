@@ -7,6 +7,7 @@ class UserMailer < ActionMailer::Base
   end
 
   def test(email, subject)
-    mail(:to email, subject: subject)
+    @user = User.find_by_email("caterpiller@gmail.com")
+    mail(to: email, subject: subject)
   end
 end
