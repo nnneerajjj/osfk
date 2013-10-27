@@ -9,7 +9,6 @@ class NotificationMailer < ActionMailer::Base
     @user = user
     @news = News.where(["created_at > ?", date])
     @topics = Topic.where(["created_at > ?", date])
-    @all_empty = @news.empty? && @topics.empty? && @comments.empty?
 
     news_ids = @news.map(&:id)
     topic_ids = @topics.map(&:id)
@@ -18,6 +17,8 @@ class NotificationMailer < ActionMailer::Base
 
     @old_news = commentables.select {|x| x.class == News}
     @old_topics = commentables.select {|x| x.class == Topic}
+
+    @all_empty = @news.empty? && @topics.empty? && @comments.empty?
 
     mail to: user.email, subject: I18n.t(:notification_subject)
   end

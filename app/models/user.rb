@@ -29,8 +29,11 @@ class User < ActiveRecord::Base
       return
     end
 
-    date = Time.now - 4.month#self.notification_date
+    date = Time.now - (Time.now - self.notification_date)
     self.update_attribute(:notification_date, Time.now)
+
+    # Override date logic with just plain with 1.week.ago
+    date = 1.week.ago
 
     NotificationMailer.email(self, date).deliver!
   end
