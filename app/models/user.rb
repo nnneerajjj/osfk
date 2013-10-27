@@ -35,7 +35,7 @@ class User < ActiveRecord::Base
     # Override date logic with just plain with 1.week.ago
     date = 1.week.ago
 
-    NotificationMailer.email(self, date).deliver!
+    NotificationMailer.delay.email(self, date)
   end
 
   private
