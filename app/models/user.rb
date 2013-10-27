@@ -23,7 +23,7 @@ class User < ActiveRecord::Base
     "#{name} (#{street_number})"
   end
 
-  def send_notification
+  def send_notification!
     if self.notification_date.nil?
       self.update_attribute(:notification_date, Time.now)
       return
