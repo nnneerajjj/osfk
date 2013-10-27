@@ -141,5 +141,5 @@ sv:
   the_thread: "Diskussionstråden:"
 
   notification_subject: "Automatiskt veckobrev från brfcaraten.se"
-  notification_all_empty: "Ingenting har hänt på hemsidan sedan förra veckan. :/"
+  notification_all_empty: "Ingenting har hänt på brfcaraten.se sedan förra veckan. :/"
   notification_since_last_date: "Sedan förra veckan har följande hänt på brfcaraten.se:"
