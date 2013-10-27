@@ -5,4 +5,8 @@ class UserMailer < ActionMailer::Base
     @user = user
     mail(to: @user.email, subject: "#{I18n.t(:welcome_email_subject)}")
   end
+
+  def test(email, subject)
+    mail(:to email, subject: subject)
+  end
 end
