@@ -58,12 +58,20 @@ Caraten::Application.configure do
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.smtp_settings = {
        :authentication => :plain,
-       :address => 'smtp.mailgun.org',
-       :port => 587,
+       :address => 'smtp.postmarkapp.com',
+       :port => 25,
        :domain => "brfcaraten.se",
-       :user_name => 'postmaster@brfcaraten.se',
-       :password => '3e5xs6znvfj0'
+       :user_name => '0db97861-d148-47d0-ab1c-d3286628c630',
+       :password => '0db97861-d148-47d0-ab1c-d3286628c630'
   }
+  # config.action_mailer.smtp_settings = {
+  #      :authentication => :plain,
+  #      :address => 'smtp.mailgun.org',
+  #      :port => 587,
+  #      :domain => "brfcaraten.se",
+  #      :user_name => 'postmaster@brfcaraten.se',
+  #      :password => '3e5xs6znvfj0'
+  # }
 
   # Enable threaded mode
   # config.threadsafe!
