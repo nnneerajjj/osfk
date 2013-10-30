@@ -21,6 +21,7 @@ gem 'friendly_id'
 gem 'nokogiri'
 gem "whenever", :require => false
 gem 'airbrake'
+gem 'postmark-rails', '~> 0.5.2'
 
 group :development do
   gem 'sqlite3'

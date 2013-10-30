@@ -36,9 +36,11 @@ Caraten::Application.configure do
   config.assets.debug = true
 
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
-  config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
+  config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = { :address => "localhost", :port => 1025 }
+  # config.action_mailer.delivery_method = :postmark
+  # config.action_mailer.postmark_settings = { :api_key => "0db97861-d148-47d0-ab1c-d3286628c630" }
 
   # Paperclip::Attachment.default_options.merge!(
   #   :storage => :s3,
