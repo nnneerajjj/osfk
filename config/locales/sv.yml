@@ -12,6 +12,7 @@ sv:
         street_number: Gatunummer
         house_number: Föreningens lägenhetsnummer
         website: Webbsida
+        telephone: Telefonnummer
         reset_password_token: Token
       contact:
         name: Namn
@@ -74,6 +75,7 @@ sv:
   firstname: "Förnamn"
   lastname: "Efternamn"
   website: "Hemsida"
+  telephone: "Telefonnummer"
   street_number: "Gatunummer"
   house_number: "Föreningens lägenhetsnummer"
   house_number_short: "Lägenhetsnummer"
