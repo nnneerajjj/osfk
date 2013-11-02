@@ -156,6 +156,7 @@ ActiveRecord::Schema.define(:version => 20131101234226) do
     t.integer  "street_number"
     t.datetime "notification_date"
     t.integer  "house_number"
+    t.string   "telephone"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
