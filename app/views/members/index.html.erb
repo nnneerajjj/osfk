@@ -2,33 +2,35 @@
 <% content_for :header, @page.title %>
 <% content_for :description, @page.description %>
 
-<div class="inner-content page members">
+<div class="inner-content page">
   <h1 style="margin-bottom: 0;"><%= @page.header %></h1>
-  <p>
-    <table>
-      <thead>
+  <div class="members">
+    <p>
+      <table>
+        <thead>
+          <tr>
+            <th style="color: #535353;"><%= I18n.t(:street_number) %></th>
+            <th style="color: #535353;"><%= I18n.t(:house_number_short) %></th>
+            <th style="color: #535353;"><%= I18n.t(:name) %></th>
+            <th style="color: #535353;"><%= I18n.t(:email) %></th>
+            <th style="color: #535353;"><%= I18n.t(:telephone) %></th>
+          </tr>
+        </thead>
+        <% @users.each do |user| %>
         <tr>
-          <th style="color: #535353;"><%= I18n.t(:street_number) %></th>
-          <th style="color: #535353;"><%= I18n.t(:house_number_short) %></th>
-          <th style="color: #535353;"><%= I18n.t(:name) %></th>
-          <th style="color: #535353;"><%= I18n.t(:email) %></th>
-          <th style="color: #535353;"><%= I18n.t(:telephone) %></th>
+          <td><div class="round-icon"><%= fix_number(user.street_number) %></div></td>
+          <td><div class="round-icon"><%= fix_number(user.house_number) %></div></td>
+          <td class="valign">
+            <div>
+              <h5><%= user.name %></h5>
+            </div>
+            <div style="clear: both"></div>
+          </td>
+          <td class="valign"><div><%= mail_to user.email %></div></td>
+          <td class="valign" style="width: 100%"><div><%= user.telephone %></div></td>
         </tr>
-      </thead>
-      <% @users.each do |user| %>
-      <tr>
-        <td><div class="round-icon"><%= fix_number(user.street_number) %></div></td>
-        <td><div class="round-icon"><%= fix_number(user.house_number) %></div></td>
-        <td class="valign">
-          <div>
-            <h5><%= user.name %></h5>
-          </div>
-          <div style="clear: both"></div>
-        </td>
-        <td class="valign"><div><%= mail_to user.email %></div></td>
-        <td class="valign" style="width: 100%"><div><%= user.telephone %></div></td>
-      </tr>
-      <% end %>
-    </table>
-  </p>
+        <% end %>
+      </table>
+    </p>
+  </div>
 </div>
