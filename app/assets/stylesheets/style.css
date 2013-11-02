@@ -811,6 +811,7 @@ div.description p {
 	text-transform: uppercase;
 	padding: 12px 17px;
 	background: #fff;
+	margin-right: 20px;
 }
 
 .head-title h1:after {
@@ -832,7 +833,7 @@ div.description p {
 	padding:15px 20px;
 	background: #d44040;
 	max-width: 100%;
-	text-indent: 20px;
+	/*text-indent: 10px;*/
 }
 
 .filter-project {
@@ -2641,4 +2642,8 @@ footer .twelve:after {
 
 .valign > div {
 	margin-top: 11px;
+}
+
+.members {
+	overflow: auto
 }
