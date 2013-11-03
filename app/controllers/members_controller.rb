@@ -9,5 +9,6 @@ class MembersController < ApplicationController
 
   def load_page
     @page = Page.find_by_key('members')
+    authorize! :read, @page
   end
 end
