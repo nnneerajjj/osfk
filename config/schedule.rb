@@ -8,15 +8,12 @@
 set :output, "/home/deploy/www/caraten/log/cron_log.log"
 
 every :reboot do
-  command "cd /home/deploy/www/caraten && RAILS_ENV=production script/delayed_job start"
-end
-#This will start delayed job on every server boot. You may also write
-every 10.hours do
-  command "cd /home/deploy/www/caraten && RAILS_ENV=production script/delayed_job restart"
+  command "script/delayed_job start"
 end
 
-every 1.minutes do
-  rake "caraten:send_notifications"
+#This will start delayed job on every server boot. You may also write
+every 10.hours do
+  command "script/delayed_job restart"
 end
 
 
