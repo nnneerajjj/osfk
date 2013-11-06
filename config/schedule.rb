@@ -15,6 +15,10 @@ every 10.hours do
   command "cd /home/deploy/www/caraten && RAILS_ENV=production script/delayed_job restart"
 end
 
+every 1.minutes do
+  rake "caraten:send_notifications"
+end
+
 
 #
 # every 2.hours do
