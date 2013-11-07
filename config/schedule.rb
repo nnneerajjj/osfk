@@ -16,7 +16,7 @@ every 10.hours do
   command "script/delayed_job restart"
 end
 
-every :saturday, :at => '9pm' do # Use any day of the week or :weekend, :weekday
+every :saturday, :at => '9am' do # Use any day of the week or :weekend, :weekday
   command "script/send_notification"
 end
 
