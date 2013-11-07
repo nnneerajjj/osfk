@@ -20,7 +20,7 @@ every :saturday, :at => '9pm' do # Use any day of the week or :weekend, :weekday
   command "script/send_notification"
 end
 
-every :weekday, :at => '6pm' do # Use any day of the week or :weekend, :weekday
+every :weekday, :at => '10am' do # Use any day of the week or :weekend, :weekday
   command "script/send_notification"
 end
 
