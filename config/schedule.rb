@@ -8,20 +8,20 @@
 set :output, "/home/deploy/www/caraten/log/cron_log.log"
 
 every :reboot do
-  command "script/delayed_job start"
+  command "cd :path && script/delayed_job start"
 end
 
 #This will start delayed job on every server boot. You may also write
 every 10.hours do
-  command "script/delayed_job restart"
+  command "cd :path && script/delayed_job restart"
 end
 
 every :saturday, :at => '9am' do # Use any day of the week or :weekend, :weekday
-  command "script/send_notification"
+  command "cd :path && script/send_notification"
 end
 
 every :weekday, :at => '10am' do # Use any day of the week or :weekend, :weekday
-  command "script/send_notification"
+  command "cd :path && script/send_notification"
 end
 
 #
