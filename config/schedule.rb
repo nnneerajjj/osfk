@@ -5,7 +5,13 @@
 
 # Example:
 #
+
+env :PATH, ENV['PATH']
+env :GEM_PATH, ENV['GEM_PATH']
+
 set :output, "/home/deploy/www/caraten/log/cron_log.log"
+
+#set :job_template, "/usr/binbash -l -c ':job'"
 
 every :reboot do
   script "delayed_job start"
