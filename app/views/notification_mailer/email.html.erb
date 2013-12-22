@@ -17,7 +17,7 @@
       </p>
         <% if @news.any? %>
           <p>
-            <strong><%= I18n.t(:new_news_count, count: @news.count) %></strong><br/>
+            <strong><%= I18n.t(:new_news_count, count: @news.count).humanize %></strong><br/>
             <% @news.each do |news| %>
               <%= link_to news.subject, news_url(news) %> <%= I18n.t(:with_comments_count, count: news.comment_threads.count) %><br/>
             <% end %>
@@ -26,7 +26,7 @@
 
         <% if @topics.any? %>
           <p>
-            <strong><%= I18n.t(:new_threads_count, count: @topics.count) %></strong><br/>
+            <strong><%= I18n.t(:new_threads_count, count: @topics.count).humanize %></strong><br/>
             <% @topics.each do |topic| %>
               <%= link_to topic.subject, topic_url(topic) %> <%= I18n.t(:with_comments_count, count: topic.comment_threads.count) %><br/>
             <% end %>
@@ -35,7 +35,7 @@
 
         <% if @comments.any? %>
           <p>
-            <strong><%= I18n.t(:new_other_comments_count, count: @comments.count) %></strong><br/>
+            <strong><%= I18n.t(:new_other_comments_count, count: @comments.count).humanize %></strong><br/>
             <% @old_news.keys.each do |news| %>
               <%= I18n.t(:the_news) %> <%= link_to news.subject, news_url(news) %>, <%= I18n.t(:with_new_comments_count, count: @old_news[news].count) %><br/>
             <% end %>
