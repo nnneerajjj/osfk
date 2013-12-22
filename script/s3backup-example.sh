@@ -1,0 +1,12 @@
+NOW=`date +%Y-%m-%d_%H-%M-%S`
+PGUSER=promote
+export PGPASSWORD=promote
+PGHOST=localhost
+DATABASENAME=caraten
+FILENAME=$DATABASENAME-$NOW.dump
+FILEPATH=~/backups/$FILENAME
+
+S3BUCKET=s3://s3bucket
+
+pg_dump -U $PGUSER -h $PGHOST -Fc $DATABASENAME > $FILEPATH
+s3cmd put $FILEPATH $S3BUCKET/$DATABASENAME/$FILENAME
