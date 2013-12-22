@@ -23,16 +23,17 @@ every 10.hours do
 end
 
 every :saturday, :at => '9am' do # Use any day of the week or :weekend, :weekday
-  script "send_notification"
+  script "send_notifications"
 end
 
 every :weekday, :at => '10am' do # Use any day of the week or :weekend, :weekday
-  script "send_notification"
+  script "send_notifications"
 end
 
-every :weekday, :at => '6am' do
+every 8.hours do
   script "s3backup"
 end
+
 
 #
 # every 2.hours do
