@@ -7,7 +7,7 @@
 #
 
 env :PATH, ENV['PATH']
-env :GEM_PATH, ENV['GEM_PATH']
+#env :GEM_PATH, ENV['GEM_PATH']
 
 set :output, "/home/deploy/www/caraten/log/cron_log.log"
 
