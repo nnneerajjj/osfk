@@ -30,6 +30,10 @@ every :weekday, :at => '10am' do # Use any day of the week or :weekend, :weekday
   script "send_notification"
 end
 
+every :weekday, :at => '6am' do
+  script "s3backup"
+end
+
 #
 # every 2.hours do
 #   command "/usr/bin/some_great_command"
