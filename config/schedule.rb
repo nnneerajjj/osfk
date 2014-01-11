@@ -17,7 +17,6 @@ every :reboot do
   script "delayed_job start"
 end
 
-#This will start delayed job on every server boot. You may also write
 every 10.hours do
   script "delayed_job restart"
 end
