@@ -21,11 +21,7 @@ every 10.hours do
   script "delayed_job restart"
 end
 
-every :saturday, :at => '9am' do # Use any day of the week or :weekend, :weekday
-  script "send_notifications"
-end
-
-every :weekday, :at => '10am' do # Use any day of the week or :weekend, :weekday
+every :saturday, :at => '10am' do # Use any day of the week or :weekend, :weekday
   script "send_notifications"
 end
 
