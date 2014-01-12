@@ -17,9 +17,9 @@ class NotificationMailer < ActionMailer::Base
     if news_ids.any? and topic_ids.any?
       @comments = Comment.where(["((commentable_type = 'Topic' and commentable_id not in (?)) or (commentable_type = 'News' and commentable_id not in (?))) and created_at > ?", topic_ids, news_ids, date])
     elsif topic_ids.any?
-      @comments = Comment.where(["(commentable_type = 'Topic' and commentable_id not in (?)) and created_at > ?", topic_ids, date])
+      @comments = Comment.where(["((commentable_type = 'Topic' and commentable_id not in (?)) or (commentable_type = 'News')) and created_at > ?", topic_ids, date])
     elsif news_ids.any?
-      @comments = Comment.where(["(commentable_type = 'News' and commentable_id not in (?)) and created_at > ?", news_ids, date])
+      @comments = Comment.where(["((commentable_type = 'News' and commentable_id not in (?)) or (commentable_type = 'Topic')) and created_at > ?", news_ids, date])
     end
 
     commentables = @comments.group_by{|x| x.commentable}
