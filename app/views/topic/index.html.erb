@@ -8,7 +8,7 @@
     <article class="blog-content nine column">
       <div class="blog-text">
         <h1><%= link_to topic.subject, topic %></h1>
-        <p><%= simple_format truncate(topic.content, length: 200) %></p>
+        <p><%= auto_link(simple_format(truncate(topic.content, length: 200)), html: { target: '_blank' }) { |text| text } %></p>
         <%= link_to raw("#{I18n.t(:read_more)} <span></span>".html_safe), topic %>
       </div>
     </article>

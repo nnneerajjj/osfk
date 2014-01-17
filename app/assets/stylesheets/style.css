@@ -1591,7 +1591,7 @@ h5 {
 	margin-bottom: 4px;
 }
 
-#comments li div a {
+#comments_old li div a {
 	display: inline-block;
 	position: absolute;
 	right: 0;
@@ -1607,7 +1607,7 @@ h5 {
 	-o-transition: background 0.2s linear;
 }
 
-#comments li div a:hover {
+#comments_old li div a:hover {
 	background: #d44040;
 }
 

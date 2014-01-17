@@ -6,7 +6,9 @@
     <article class="blog-content twelve column">
       <div class="blog-text header">
         <h1><%= @topic.subject %></h1>
-        <p><%= simple_format @topic.content %></p>
+        <p>
+        <%= auto_link(simple_format(@topic.content), html: { target: '_blank' }) { |text| text } %>
+        </p>
       </div>
       <div class="blog-icon"></div>
       <ul>
@@ -30,7 +32,7 @@
           <div>
             <h5><%= comment.user.name %></h5>
             <span><%= l comment.created_at, format: :short %></span>
-            <p><%= simple_format comment.body %></p>
+            <p><%= auto_link(simple_format(comment.body), html: { target: '_blank' }) { |text| text } %></p>
           </div>
           <div style="clear: both"></div>
         </li>

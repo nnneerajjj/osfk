@@ -22,6 +22,7 @@ gem 'nokogiri'
 gem "whenever", :require => false
 gem 'airbrake'
 gem 'postmark-rails', '~> 0.5.2'
+gem 'rails_autolink'
 
 group :development do
   gem 'sqlite3'
