@@ -2,7 +2,7 @@ class MembersController < ApplicationController
   before_filter :load_page
 
   def index
-    @users = User.order(:street_number)
+    @users = User.order(:street_number).where(active: true)
   end
 
   private
