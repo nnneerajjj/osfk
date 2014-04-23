@@ -1,10 +1,10 @@
 class NewsController < ApplicationController
-  load_and_authorize_resource :news, except: :comment
+  load_and_authorize_resource :news, only: :show
+  include NewsHelper
 
   def index
-    @allnews = News.order('updated_at DESC')
+    @news = scoped_news
   end
-
 
   def show
   end

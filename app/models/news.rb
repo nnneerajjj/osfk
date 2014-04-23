@@ -4,11 +4,12 @@ class News < ActiveRecord::Base
 
   friendly_id :subject, use: :slugged
 
-  attr_accessible :subject, :content
+  attr_accessible :subject, :content, :active
 
   validates :subject, :content, presence: true
 
-  scope :most_recent, order("created_at desc").limit(3)
+  default_scope order('created_at DESC')
+  scope :active, where(active: true)
 
   def text
     content.gsub(/<img .*?>/i, '')

@@ -7,7 +7,7 @@ class NotificationMailer < ActionMailer::Base
   def email(user, date)
     @date = date
     @user = user
-    @news = News.where(["created_at > ?", date])
+    @news = News.active.where(["created_at > ?", date])
     @topics = Topic.where(["created_at > ?", date])
 
     @comments = Comment.where(["created_at > ?", date])

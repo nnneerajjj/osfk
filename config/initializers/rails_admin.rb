@@ -148,6 +148,7 @@ RailsAdmin.config do |config|
           :insert_many => true
         })
       end
+      field :active
       # field :start_date
       # field :end_date
     end
