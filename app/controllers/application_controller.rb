@@ -4,7 +4,12 @@ class ApplicationController < ActionController::Base
   before_filter :set_locale
 
   rescue_from CanCan::AccessDenied do |exception|
-    redirect_to main_app.root_path, :alert => exception.message
+    if current_user.present?
+      redirect_to main_app.root_path
+    else
+      session[:user_return_to] = request.fullpath
+      redirect_to new_user_session_path
+    end
   end
 
   private
