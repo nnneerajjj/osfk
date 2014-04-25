@@ -297,6 +297,7 @@ DEPENDENCIES
   bootstrap-wysihtml5-rails
   cancan
   coffee-rails (~> 3.2.1)
+  daemons
   debugger
   delayed_job_active_record
   devise
