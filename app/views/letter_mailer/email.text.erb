@@ -1,4 +1,4 @@
-<%= strip_tags(@letter.content).gsub(/&nbsp;/, ' ') %>
+<%= strip_tags(HTMLEntities.new.decode(@letter.content)) %>
 
 <%= I18n.t(:regards) %>
 kontakt@brfcaraten.se

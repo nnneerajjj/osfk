@@ -1,5 +1,5 @@
 class Letter < ActiveRecord::Base
-  attr_accessible :subject, :content, :send_after_save, :user_id
+  attr_accessible :subject, :content, :link, :send_after_save, :user_id
 
   after_save :send_email
 
@@ -7,16 +7,12 @@ class Letter < ActiveRecord::Base
 
   validates :subject, :content, :user, presence: true
 
-  def content_html
-
-  end
-
   private
 
   def send_email
     if self.send_after_save
       User.all.each do |user|
-        LetterMailer.delay.email(self, user.email)
+        LetterMailer.delay.email(self, user)
       end
 
       self.update_column(:send_after_save, false)

@@ -96,6 +96,7 @@ RailsAdmin.config do |config|
           :insert_many => true
         })
       end
+      field :link
       field :send_after_save
 
       field :user_id, :hidden do

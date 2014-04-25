@@ -3,9 +3,12 @@ class LetterMailer < ActionMailer::Base
 
   default from: "\"BRF Caraten\" <kontakt@brfcaraten.se>"
 
-  def email(letter, email)
+  layout 'mailer'
+
+  def email(letter, user)
     @letter = letter
-    mail to: email, subject: letter.subject
+    @user = user
+
+    mail to: user.email, subject: letter.subject
   end
 end
-
