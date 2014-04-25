@@ -4,6 +4,8 @@ class NotificationMailer < ActionMailer::Base
 
   default from: "\"BRF Caraten\" <kontakt@brfcaraten.se>"
 
+  layout 'mailer'
+
   def email(user, date)
     @date = date
     @user = user

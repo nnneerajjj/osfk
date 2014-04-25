@@ -33,6 +33,7 @@ sv:
   your_message_is_sent: "Ditt meddelande är skickat"
   try_send_again: "Något gick fel. Försök skicka meddelandet igen"
   contact_information: "Kontaktinformation"
+  contact_message_from: "Kontaktmeddelande från %{name}"
   news: "Nyheter"
   forum: "Diskussioner"
   news_header: "Alla nyheter"
@@ -111,7 +112,6 @@ sv:
   picker_browse: "Välj eller ladda upp"
 
   welcome: "Väkommen"
-  hello: "Hej"
   member_of: "Du är nu medlem på "
   welcome_email_subject: "Välkommen till BRF Caraten"
 

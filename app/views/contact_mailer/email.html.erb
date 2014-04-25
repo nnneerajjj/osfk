@@ -1,16 +1,10 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
-  </head>
-  <body>
-    <p>
-      <%= simple_format @contact.content %><br/>
-    </p>
-    <p>
-      /<%= @contact.name %><br/>
-      <a href="mailto:<%= @contact.email %>"><%= @contact.email %></a><br/>
-      <a href="<%= @contact.website %>"><%= @contact.website %></a>
-    </p>
-  </body>
-</html>
+<% content_for :lead do %>
+  <%= t :contact_message_from, name: @contact.name %>:
+<% end %>
+<% content_for :panel do %>
+  /<%= @contact.name %><br/>
+  <a href="mailto:<%= @contact.email %>"><%= @contact.email %></a><br/>
+  <a href="<%= @contact.website %>"><%= @contact.website %></a>
+<% end %>
+
+<%= simple_format @contact.content %><br/>

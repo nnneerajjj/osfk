@@ -1,10 +1,9 @@
-<%= raw @letter.content %>
-
 <% content_for :lead do %>
   <%= t :hello %> <%= @user.firstname %>
 <% end %>
 
-
 <% content_for :panel do %>
   <a href="<%= @letter.link %>"><%= @letter.link %></a>
 <% end %>
+
+<%= raw @letter.content %>
