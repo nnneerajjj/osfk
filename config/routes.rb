@@ -10,7 +10,7 @@ Caraten::Application.routes.draw do
 
   resources :contacts, path: 'kontakt', only: [:index, :create]
   resources :members, path: 'medlemmar', only: [:index]
-  resources :users, only: [:index, :update]
+  resources :users, path: 'installningar', only: [:index, :update]
   resources :news, path: 'nyheter', only: [:index, :show] do
     post :comment, on: :member
   end
