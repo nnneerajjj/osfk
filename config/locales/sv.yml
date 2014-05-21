@@ -13,6 +13,7 @@ sv:
         house_number: Föreningens lägenhetsnummer
         website: Webbsida
         telephone: Telefonnummer
+        water: Vattenavläsning
         reset_password_token: Token
       contact:
         name: Namn
@@ -77,6 +78,7 @@ sv:
   lastname: "Efternamn"
   website: "Hemsida"
   telephone: "Telefonnummer"
+  water: Vattenavläsning
   street_number: "Gatunummer"
   house_number: "Föreningens lägenhetsnummer"
   house_number_short: "Lägenhetsnummer"
