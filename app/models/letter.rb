@@ -11,7 +11,7 @@ class Letter < ActiveRecord::Base
 
   def send_email
     if self.send_after_save
-      User.all.each do |user|
+      User.where(active: true).each do |user|
         LetterMailer.delay.email(self, user)
       end
 

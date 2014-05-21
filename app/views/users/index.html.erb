@@ -28,7 +28,7 @@
         <%#= f.text_field :website, placeholder: I18n.t(:website) %>
 
         <p><%= t :water %></p>
-        <%= f.text_field :water, placeholder: 'Läs av vattenmätaren och fyll i här.' %>
+        <%= f.text_field :water, placeholder: 'Läs av vattenmätaren och fyll i här.',  autocomplete: :off %>
 
         <%= f.submit I18n.t(:save), class: 'submit-button' %>
       <% end %>
