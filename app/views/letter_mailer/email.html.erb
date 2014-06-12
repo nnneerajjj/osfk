@@ -6,4 +6,4 @@
   <a href="<%= @letter.link %>"><%= @letter.link %></a>
 <% end %>
 
-<%= raw @letter.content %>
+<%= raw letter_variable_content(@letter, @user) %>

@@ -15,4 +15,15 @@ module ApplicationHelper
     return "&nbsp;#{number}".html_safe if number < 10
     number.to_s.html_safe
   end
+
+  def letter_variable_content(letter, user)
+    content = letter.content
+
+    content.scan(/__.*?__/).each do |var|
+      val = user.send(var.gsub('_', '')).to_s
+      content = content.gsub(var, val)
+    end
+
+    content
+  end
 end
