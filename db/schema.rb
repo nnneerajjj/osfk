@@ -161,6 +161,7 @@ ActiveRecord::Schema.define(:version => 20140611200249) do
     t.string   "telephone"
     t.boolean  "active",                 :default => true
     t.string   "water"
+    t.string   "stock"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
