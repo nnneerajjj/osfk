@@ -10,9 +10,25 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
-//= require jquery
-//= require jquery.flexslider
-//= require script
-//= require rich
-//= require jquery.validate
-//= require messages_sv
+//= require jquery.themepunch.tools.min
+//= require jquery.themepunch.revolution.min
+//= require jquery.sidr
+//= require jquery.fancybox
+//= require cleantabs.jquery
+//= require fitvids.min
+//= require jquery.scrollUp.min
+//= require mediaelement-and-player.min
+//= require owl.carousel
+//= require selectivizr-min
+//= require placeholder
+//= require jquery.stellar.min
+//= require mosaic.1.0.1
+//= require jquery.isotope
+//= require toggle
+//= require jquery.tooltipster
+//= require jquery.countdown
+//= require jquery.sticky
+//= require html5media
+//= require slider-1
+//= require main
+
