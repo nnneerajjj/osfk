@@ -8,7 +8,7 @@ class News < ActiveRecord::Base
 
   validates :subject, :content, presence: true
 
-  default_scope order('created_at DESC')
+  default_scope -> { order('created_at DESC') }
   scope :active, where(active: true)
 
   def text

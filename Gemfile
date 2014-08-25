@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.14'
+gem 'rails'
 
 gem 'pg'
 gem 'rails_admin'
@@ -19,17 +19,17 @@ gem 'acts_as_commentable_with_threading'
 gem 'delayed_job_active_record'
 gem 'friendly_id'
 gem 'nokogiri'
-gem "whenever", :require => false
+gem 'whenever', :require => false
 gem 'airbrake'
-gem 'postmark-rails', '~> 0.5.2'
+gem 'postmark-rails'
 gem 'rails_autolink'
 gem 'daemons'
 gem 'htmlentities'
+gem 'protected_attributes'
+gem 'paperclip'
 
 group :development do
-  gem 'sqlite3'
   gem 'quiet_assets'
-  gem 'debugger'
   gem 'af'
   gem 'mailcatcher'
 end
@@ -39,7 +39,7 @@ group :test do
 end
 
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
-  gem 'uglifier', '>= 1.0.3'
+  gem 'sass-rails'
+  gem 'coffee-rails'
+  gem 'uglifier'
 end

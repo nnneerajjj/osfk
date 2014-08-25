@@ -20,6 +20,12 @@ Caraten::Application.configure do
   # Generate digests for assets URLs
   config.assets.digest = true
 
+  # Eager load code on boot. This eager loads most of Rails and
+  # your application in memory, allowing both thread web servers
+  # and those relying on copy on write to perform better.
+  # Rake tasks automatically ignore this option for performance.
+  config.eager_load = true
+
   Delayed::Worker.destroy_failed_jobs = false
   # Defaults to nil and saved in location specified by config.assets.prefix
   # config.assets.manifest = YOUR_PATH
