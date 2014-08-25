@@ -1,7 +1,0 @@
-#!/usr/local/bin/ruby
-
-require File.expand_path(File.join(File.dirname(__FILE__), '..', 'config', 'environment'))
-require 'delayed/command'
-Delayed::Command.new(ARGV).daemonize
-
-# RAILS_ENV=production script/delayed_job -n 2 --pid-dir=tmp/pids restart

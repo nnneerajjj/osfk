@@ -41,6 +41,8 @@ Caraten::Application.configure do
   # config.action_mailer.delivery_method = :postmark
   # config.action_mailer.postmark_settings = { :api_key => "0db97861-d148-47d0-ab1c-d3286628c630" }
 
+  require 'sidekiq/testing/inline'
+
   # Paperclip::Attachment.default_options.merge!(
   #   :storage => :s3,
   #   :bucket => 'caraten',

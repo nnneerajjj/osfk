@@ -20,5 +20,5 @@ Caraten::Application.routes.draw do
 
   root :to => 'home#index'
 
-  get '*id' => 'pages#show'
+  #get '*id' => 'pages#show'
 end
