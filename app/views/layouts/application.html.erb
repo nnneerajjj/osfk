@@ -3,6 +3,7 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+
     <head>
         <meta charset="utf-8">
         <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><![endif]-->
@@ -53,12 +54,12 @@
     <body>
 
 
-  <!-- Pre Header Area -->
+  <%# Pre header %>
   <div class="outter-wrapper pre-header-area header-style-4">
     <div class="wrapper clearfix">
 
-      <div class="pre-header-left left"></div>
-      <div class="pre-header-right right"></div>
+      <div class="pre-header-left left">asdas</div>
+      <div class="pre-header-right right">asdas</div>
 
     </div>
   </div>
@@ -66,12 +67,11 @@
 
 
 
-  <!-- Header Area -->
+  <%# Header %>
   <div class="outter-wrapper header-area header-style-4">
 
     <div class="wrapper clearfix logo-container with-menu">
 
-      <!-- Start Mobile Menu Icon -->
       <div id="mobile-header" class="">
         <a id="responsive-menu-button" href="#sidr-main">
           <em class="fa fa-bars"></em> Menu
@@ -89,7 +89,7 @@
           <div class="main-header-left left adjust-left">
 
             <a class="logo" href="index.html">
-              <img src="img/osfk.png" alt="Scene" />
+              <img src="<%= image_path('osfk.png') %>" alt="Scene" />
             </a>
 
           </div>
@@ -697,11 +697,9 @@
         </ul>
       </div>
 
-
-      <!-- Start Widget -->
       <div class="col-1-4 widget last">
         <a class="logo" href="index.html">
-          <img src="img/osfk.png" alt="Sport" />
+          <img src="<%= image_path('osfk.png') %>" alt="Sport" />
         </a>
         <ul class="list-1">
           <li>
@@ -719,13 +717,10 @@
 
 
 
-
-  <!-- Start Outter Wrapper -->
   <div class="outter-wrapper base-wrapper">
     <div class="wrapper clearfix">
       <div class="left">© Copyright Sport 2014</div>
 
-      <!-- Social Icons -->
       <ul class="social-links right">
         <li><a class="fa" title="Facebook" href="#">&#xf09a;</a></li>
         <li><a class="fa" title="Twitter" href="#">&#xf099;</a></li>
