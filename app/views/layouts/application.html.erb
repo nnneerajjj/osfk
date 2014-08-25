@@ -45,11 +45,10 @@
         <link rel="stylesheet" type="text/css" href="css/tooltipster.css">
         <link rel="stylesheet" type="text/css" href="css/mega.css" />
  -->
-    <%= stylesheet_link_tag "application", media: "all" %>
+      <%= stylesheet_link_tag "application", media: "all" %>
 
 
-    <!-- Scripts -->
-        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+      <%= javascript_include_tag "modernizr-2.6.2-respond-1.1.0.min.js" %>
     </head>
     <body>
 
@@ -243,7 +242,7 @@
         <!-- SLIDE  -->
         <li data-transition="fade" data-masterspeed="500" >
           <!-- MAIN IMAGE -->
-          <img src="img/sportfiske1.jpg" alt="Slider Image 1" data-bgposition="left center" data-kenburns="on" data-duration="14000" data-ease="Linear.easeNone" data-bgfit="100" data-bgfitend="130" data-bgpositionend="right center">
+          <img src="<%= image_path('sportfiske1.jpg') %>" alt="Slider Image 1" data-bgposition="left center" data-kenburns="on" data-duration="14000" data-ease="Linear.easeNone" data-bgfit="100" data-bgfitend="130" data-bgpositionend="right center">
           <!-- LAYERS -->
           <!-- LAYER NR. 1 -->
           <div class="tp-caption fadeout sfr sport-rs-boxed sport-rs-heading"
@@ -259,8 +258,8 @@
             data-endelementdelay="0.1"
             data-endspeed="1000"
             data-endeasing="Power1.easeOut">
-            Fiska är det bästa<br/>
-            som finns <div>- Österåkers Sportfiskeklubb</div>
+            <br/>
+            som finns <div>- </div>
           </div>
 
           <!-- LAYER NR. 2 -->
@@ -302,7 +301,7 @@
         <!-- SLIDE  -->
         <li data-transition="fade" data-masterspeed="500" >
           <!-- MAIN IMAGE -->
-          <img src="img/sportfiske2.jpg" alt="Slider Image 1" data-bgposition="left center" data-kenburns="on" data-duration="14000" data-ease="Linear.easeNone" data-bgfit="100" data-bgfitend="130" data-bgpositionend="right center">
+          <img src="<%= image_path('sportfiske2.jpg') %>" alt="Slider Image 1" data-bgposition="left center" data-kenburns="on" data-duration="14000" data-ease="Linear.easeNone" data-bgfit="100" data-bgfitend="130" data-bgpositionend="right center">
           <!-- LAYERS -->
           <!-- LAYER NR. 1 -->
           <div class="tp-caption fadeout sfr sport-rs-boxed sport-rs-heading"
@@ -318,8 +317,8 @@
             data-endelementdelay="0.1"
             data-endspeed="1000"
             data-endeasing="Power1.easeOut">
-            Fiska är det bästa<br/>
-            som finns <div>- Österåkers Sportfiskeklubb</div>
+            <br/>
+            som finns <div>- </div>
           </div>
           <!-- LAYER NR. 2 -->
           <div class="tp-caption fadeout sfr sport-rs-boxed sport-rs-text"
@@ -736,10 +735,7 @@
   </div>
 
 
-
-
-  <!-- Load jQuery -->
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script> -->
 
    <%= javascript_include_tag "application" %>
 
