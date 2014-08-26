@@ -1,23 +1,140 @@
-<% content_for :title, @page.header %>
+<% content_for :banner do %>
+  <div class="tp-banner-container">
+    <div class="tp-banner" >
+      <ul>
 
-<div id="main-slider">
-    <div class="flexslider">
-       <ul class="slides">
-        <% @page.images.each do |image| %>
-        <li>
-            <%= image_tag image %>
-            <h1 class="flex-caption"><%= raw I18n.t(:home_text1).html_safe %></h1>
-            <h1 class="flex-caption1"><%= raw I18n.t(:home_text2).html_safe %></h1>
+        <!-- SLIDE  -->
+        <li data-transition="fade" data-masterspeed="500" >
+          <!-- MAIN IMAGE -->
+          <img src="<%= image_path('sportfiske1.jpg') %>" alt="Slider Image 1" data-bgposition="left center" data-kenburns="on" data-duration="14000" data-ease="Linear.easeNone" data-bgfit="100" data-bgfitend="130" data-bgpositionend="right center">
+          <!-- LAYERS -->
+          <!-- LAYER NR. 1 -->
+          <div class="tp-caption fadeout sfr sport-rs-boxed sport-rs-heading"
+            data-x="0" data-hoffset="0"
+            data-y="155" data-voffset="0"
+            data-captionhidden="off"
+            data-speed="800"
+            data-start="500"
+            data-easing="Power4.easeInOut"
+            data-splitin="none"
+            data-splitout="none"
+            data-elementdelay="0.05"
+            data-endelementdelay="0.1"
+            data-endspeed="1000"
+            data-endeasing="Power1.easeOut">
+            <br/>
+            som finns <div>- </div>
+          </div>
+
+          <!-- LAYER NR. 2 -->
+          <div class="tp-caption fadeout sfr sport-rs-boxed sport-rs-text"
+            data-x="0" data-hoffset="0"
+            data-y="280" data-voffset="0"
+            data-captionhidden="off"
+            data-speed="800"
+            data-start="750"
+            data-easing="Power4.easeInOut"
+            data-splitin="none"
+            data-splitout="none"
+            data-elementdelay="0.05"
+            data-endelementdelay="0.1"
+            data-endspeed="1000"
+            data-endeasing="Power1.easeOut">
+            Vi är en av landets större fiskeklubbar/föreningar med ca 600 medlemmar.<br/>
+            Sportfiskeklubben förvaltar samt har tillsynen av kommunens fiskevatten<br/>
+             men även av andra arrenderade vattenområden.
+          </div>
+
+          <!-- LAYER NR. 3 -->
+          <div class="tp-caption fadeout sfr tp-resizeme"
+            data-x="0" data-hoffset="0"
+            data-y="400" data-voffset="0"
+            data-speed="800"
+            data-start="1000"
+            data-easing="Power4.easeInOut"
+            data-splitin="none"
+            data-splitout="none"
+            data-elementdelay="0.05"
+            data-endelementdelay="0.1"
+            data-endspeed="1000"
+            data-endeasing="Power1.easeOut">
+            <a class="btn" href="pricing1.html">Bli medlem idag</a>&nbsp; <a class="btn-2" href="about.html">Läs mer</a>
+          </div>
         </li>
-        <% end %>
+
+        <!-- SLIDE  -->
+        <li data-transition="fade" data-masterspeed="500" >
+          <!-- MAIN IMAGE -->
+          <img src="<%= image_path('sportfiske2.jpg') %>" alt="Slider Image 1" data-bgposition="left center" data-kenburns="on" data-duration="14000" data-ease="Linear.easeNone" data-bgfit="100" data-bgfitend="130" data-bgpositionend="right center">
+          <!-- LAYERS -->
+          <!-- LAYER NR. 1 -->
+          <div class="tp-caption fadeout sfr sport-rs-boxed sport-rs-heading"
+            data-x="0" data-hoffset="0"
+            data-y="155" data-voffset="0"
+            data-captionhidden="off"
+            data-speed="800"
+            data-start="500"
+            data-easing="Power4.easeInOut"
+            data-splitin="none"
+            data-splitout="none"
+            data-elementdelay="0.05"
+            data-endelementdelay="0.1"
+            data-endspeed="1000"
+            data-endeasing="Power1.easeOut">
+            <br/>
+            som finns <div>- </div>
+          </div>
+          <!-- LAYER NR. 2 -->
+          <div class="tp-caption fadeout sfr sport-rs-boxed sport-rs-text"
+            data-x="0" data-hoffset="0"
+            data-y="280" data-voffset="0"
+            data-captionhidden="off"
+            data-speed="800"
+            data-start="750"
+            data-easing="Power4.easeInOut"
+            data-splitin="none"
+            data-splitout="none"
+            data-elementdelay="0.05"
+            data-endelementdelay="0.1"
+            data-endspeed="1000"
+            data-endeasing="Power1.easeOut">
+            Vi är en av landets större fiskeklubbar/föreningar med ca 600 medlemmar.<br/>
+            Sportfiskeklubben förvaltar samt har tillsynen av kommunens fiskevatten<br/>
+             men även av andra arrenderade vattenområden.
+          </div>
+          <!-- LAYER NR. 3 -->
+          <div class="tp-caption fadeout sfr tp-resizeme"
+            data-x="0" data-hoffset="0"
+            data-y="400" data-voffset="0"
+            data-speed="800"
+            data-start="1000"
+            data-easing="Power4.easeInOut"
+            data-splitin="none"
+            data-splitout="none"
+            data-elementdelay="0.05"
+            data-endelementdelay="0.1"
+            data-endspeed="1000"
+            data-endeasing="Power1.easeOut">
+            <a class="btn" href="pricing1.html">Bli medlem idag</a>&nbsp; <a class="btn-2" href="about.html">Läs mer</a>
+          </div>
+        </li>
+
       </ul>
     </div>
-</div>
-
-<% unless @page.empty_text? %>
-  <div class="inner-content page">
-    <%= raw @page.text.html_safe %>
   </div>
+
 <% end %>
 
+<div class="clearfix post">
+  <h1 class="title">Välkommen</h1>
 
+  <p class="lead">
+    Österåkers Sportfiskeklubb startade sin verksamhet den 25 juni 1943 då under namnet Österskärs fiskeklubb men bytte till nuvarande namn 1963. Vi är en av landets större fiskeklubbar/föreningar med ca 600 medlemmar.
+  </p>
+  <p>
+    Sportfiskeklubben förvaltar samt har tillsynen av kommunens fiskevatten men även av andra arrenderade vattenområden (se fiskeregler och fiskevatten)
+    Som medlem i fiskeklubben kan du förutom att fiska med handredskap (fiskespön som ingår i det fria handredskapfisket) fiska med ångrev,nät och angeldon till husbehov inom klubbens vattenområden i skärgården om detta intresse finns. Det finns 10 stycken roddbåtar, fördelade på olika vattenområden, som medlemmarna kan låna gratis.
+    ÖSFK är anslutet till “Sportfiskarnas Stockholmsdistrikt” samt “Stockholms Läns Fiskevattenägareförbund”. Dessa organisationer tillvaratar våra medlemmars intressen och önskemål i fiskefrågor gentemot myndigheterna.
+  </p>
+
+</div>
