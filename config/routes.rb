@@ -1,11 +1,7 @@
 Caraten::Application.routes.draw do
   mount Rich::Engine => '/rich', :as => 'rich'
 
-  devise_for :users do
-    get "/skapakonto" => "devise/registrations#new", as: :new_user_registration
-    post "/skapakonto" => "devise/registrations#create", as: :user_registration
-  end
-
+  devise_for :users
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
   resources :contacts, path: 'kontakt', only: [:index, :create]
@@ -21,4 +17,6 @@ Caraten::Application.routes.draw do
   root :to => 'home#index'
 
   #get '*id' => 'pages#show'
+  pp Page.all
 end
+

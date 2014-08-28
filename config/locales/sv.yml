@@ -15,6 +15,7 @@ sv:
         telephone: Telefonnummer
         water: Vattenavläsning
         reset_password_token: Token
+        remember_me: Kom ihåg mig
       contact:
         name: Namn
         email: Epost
@@ -60,6 +61,7 @@ sv:
   new_password_again: "Nytt lösenord igen"
   current_password: "Nuvarande lösenord"
   sign_in: "Logga in"
+  sign_out: Logga ut
   sign_up: "Skapa konto"
   sign_up_text : "Skapa konto för att få tillgång till nyhetsbrev, ta del av nyheter och delta i diskussioner. Ingen utanför föreningen kommer att kunna se din epostadress eller några skrivna kommentarer."
   remember_me: "Kom ihåg mig"

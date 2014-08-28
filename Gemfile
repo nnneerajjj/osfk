@@ -30,7 +30,6 @@ gem 'sidekiq'
 
 group :development do
   gem 'quiet_assets'
-  gem 'af'
   gem 'mailcatcher'
 end
 

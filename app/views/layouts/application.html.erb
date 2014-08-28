@@ -83,7 +83,7 @@
           <div class="main-header-right right adjust-right">
             <nav class="megamenu_container">
               <ul id="nav" class="right megamenu">
-                <li class="nav-parent"><a href="#">Hem</a></li>
+                <li class="nav-parent"><%= link_to 'Hem', '/' %></li>
                 <li class="nav-parent">
                   <a href="#">Sidor</a>
                   <ul>
@@ -98,6 +98,17 @@
                     </li>
                   </ul>
                 </li>
+
+                <% if current_user %>
+                  <li class="nav-parent"><%= link_to current_user.name, '#' %>
+                    <ul>
+                      <li class="nav-child"><a href="about.html"><%= t :settings %></a></li>
+                      <li><%= link_to I18n.t(:sign_out), destroy_user_session_path %></li>
+                    </ul>
+                  </li
+                <% else %>
+                  <li class="nav-parent"><%= link_to I18n.t(:sign_in), new_user_session_path %></li
+                <% end %>
                 </ul>
             </nav>
 

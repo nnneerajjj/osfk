@@ -2,19 +2,16 @@
 <% content_for :header, I18n.t(:sign_in) %>
 <% content_for :description, I18n.t(:forgot_password) %>
 
-<div class="page">
-  <h1><%= I18n.t(:forgot_password) %></h1>
 
-  <%= render 'layouts/flashmessage', alert: resource.errors.full_messages.to_sentence %>
+<h2><%= I18n.t(:forgot_password) %></h2>
 
-  <div class="eight column">
-    <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
+<%= render 'layouts/flashmessage', alert: resource.errors.full_messages.to_sentence %>
 
-      <%= f.label :email, I18n.t(:email), class: 'ie-label' %>
-      <%= f.email_field :email, autofocus: true, placeholder: I18n.t(:email), required: '' %>
+<div>
+  <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
 
-      <%= f.submit I18n.t(:send_me_reset_password), class: 'submit-button' %>
-    <% end %>
-  </div>
+    <%= f.email_field :email, autofocus: true, placeholder: I18n.t(:email), required: '' %>
 
+    <%= f.submit I18n.t(:send_me_reset_password) %>
+  <% end %>
 </div>
