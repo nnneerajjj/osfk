@@ -1,5 +1,5 @@
 class NewsController < ApplicationController
-  load_and_authorize_resource :news, only: :show
+  load_and_authorize_resource :news, only: [:show, :comment], find_by: :slug
   include NewsHelper
 
   def index
@@ -10,7 +10,6 @@ class NewsController < ApplicationController
   end
 
   def comment
-    @news = News.find_by_slug(params[:id])
     @comment = Comment.build_from( @news, current_user.id, params[:comment][:body] )
     @comment.save!
 

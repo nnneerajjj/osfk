@@ -4,35 +4,16 @@
 
 <% @news.each do |news| %>
 
-  <div class="blog-post image-post row">
-    <article class="blog-content nine column">
-      <% if news.images.any? %>
-        <div class="slider">
-          <div class="flexslider container">
-            <ul class="slides span12">
-              <% news.images.each do |image| %>
-                <li>
-                  <%= image_tag image %>
-                </li>
-              <% end %>
-            </ul>
-          </div>
-        </div>
-      <% end %>
-      <div class="blog-text">
-        <h1><%= link_to news.subject, news %></h1>
-        <p><%= auto_link(simple_format(truncate(news.text, length: 400)), html: { target: '_blank' }) { |text| text } %></p>
-        <%= link_to raw("#{I18n.t(:read_more)} <span></span>".html_safe), news %>
-      </div>
-    </article>
-
-    <article class="blog-inform three column">
-      <ul>
-        <li><p><%= I18n.t(:posted) %>: <br><span><%= l news.created_at, format: :short %></span></p></li>
-        <li><p><%= I18n.t(:comments) %>: <br><span><%= news.comment_threads.count %></span></p></li>
-      </ul>
-    </article>
-    <div class="blog-icon"></div>
+<div class="post-excerpt clearfix">
+  <div class="col-1-3 mosaic-block circle">
+    <a href="post.html" class="mosaic-overlay link" title="Insert Your Title" style="display: inline; opacity: 0;"></a><div class="mosaic-backdrop" style="display: block;">
+    <img src="img/fill-4.jpg" alt="Mock"></div>
   </div>
 
+  <div class="col-2-3 last">
+    <h3><%= link_to news.subject, news %></h3>
+    <p><%= auto_link(simple_format(truncate(news.text, length: 400)), html: { target: '_blank' }) { |text| text } %></p>
+      <%= link_to raw("#{I18n.t(:read_more)} <span></span>".html_safe), news, class: 'read-more' %>
+  </div>
+</div>
 <% end %>

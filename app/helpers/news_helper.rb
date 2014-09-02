@@ -7,7 +7,6 @@ module NewsHelper
   end
 
   def scoped_news
-    can?(:access, :admin) ? News.scoped : News.active
+    can?(:access, :admin) ? News.all : News.active
   end
-
 end

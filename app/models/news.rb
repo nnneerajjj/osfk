@@ -2,7 +2,7 @@ class News < ActiveRecord::Base
   extend FriendlyId
   acts_as_commentable
 
-  friendly_id :subject, use: :slugged
+  friendly_id :slug_candidates, use: :slugged
 
   attr_accessible :subject, :content, :active
 
@@ -25,5 +25,12 @@ class News < ActiveRecord::Base
     doc = Nokogiri::HTML( content )
     img = doc.css('img').map{ |i| i['src'] }[0] || 'newspaper.jpg'
     img.gsub('/original/', '/thumb/').gsub('/news/', '/thumb/')
+  end
+
+  def slug_candidates
+    [
+      :subject,
+      [:subject, :text]
+    ]
   end
 end
