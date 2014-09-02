@@ -60,7 +60,7 @@
 
       <div id="mobile-header" class="">
         <a id="responsive-menu-button" href="#sidr-main">
-          <em class="fa fa-bars"></em> Menu
+          <em class="fa fa-bars"></em> Meny
         </a>
       </div>
 
@@ -85,7 +85,7 @@
               <ul id="nav" class="right megamenu">
                 <li class="nav-parent"><%= link_to 'Hem', '/' %></li>
                 <li class="nav-parent">
-                  <a href="#">Sidor</a>
+                  <a href="#">Nyheter</a>
                   <ul>
                     <li><a href="about.html">Standard Pages &nbsp; <em class="fa">&#xf105;</em></a>
                       <ul>
@@ -105,17 +105,15 @@
                       <li class="nav-child"><a href="about.html"><%= t :settings %></a></li>
                       <li><%= link_to I18n.t(:sign_out), destroy_user_session_path %></li>
                     </ul>
-                  </li
+                  </li>
                 <% else %>
-                  <li class="nav-parent"><%= link_to I18n.t(:sign_in), new_user_session_path %></li
+                  <li class="nav-parent"><%= link_to I18n.t(:sign_up), new_user_registration_path %></li>
+                  <li class="nav-parent"><%= link_to I18n.t(:sign_in), new_user_session_path %></li>
                 <% end %>
                 </ul>
             </nav>
-
           </div>
-
-          </div>
-
+        </div>
       </header>
     </div>
   </div>

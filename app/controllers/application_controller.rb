@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
       redirect_to main_app.root_path
     else
       session[:user_return_to] = request.fullpath
-      redirect_to new_user_session_path
+      redirect_to main_app.new_user_session_path
     end
   end
 
