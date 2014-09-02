@@ -16,7 +16,6 @@ Caraten::Application.routes.draw do
 
   root :to => 'home#index'
 
-  #get '*id' => 'pages#show'
-  pp Page.all
+  get '*slug', to: 'pages#show', constraints: PageExistsConstraint.new
 end
 
