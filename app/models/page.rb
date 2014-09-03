@@ -5,6 +5,8 @@ class Page < ActiveRecord::Base
 
   attr_accessible :title, :content, :public, :header
 
+  has_many :texts
+
   validates :title, :content, presence: true
 
   scope :opened, where(public: true, key: nil)

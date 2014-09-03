@@ -70,6 +70,10 @@ GEM
     bootstrap-wysihtml5-rails (0.3.2.100)
       railties (>= 3.0)
     builder (3.2.2)
+    byebug (3.4.0)
+      columnize (~> 0.8)
+      debugger-linecache (~> 1.2)
+      slop (~> 3.6)
     cancan (1.6.10)
     celluloid (0.15.2)
       timers (~> 1.1.0)
@@ -85,8 +89,10 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.7.1)
+    columnize (0.8.9)
     connection_pool (2.0.0)
     daemons (1.1.9)
+    debugger-linecache (1.2.0)
     devise (3.3.0)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -276,6 +282,7 @@ GEM
     skinny (0.2.3)
       eventmachine (~> 1.0.0)
       thin (~> 1.5.0)
+    slop (3.6.0)
     sprockets (2.11.0)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -318,6 +325,7 @@ DEPENDENCIES
   airbrake
   aws-sdk!
   bootstrap-wysihtml5-rails
+  byebug
   cancan
   coffee-rails
   daemons

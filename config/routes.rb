@@ -11,6 +11,9 @@ Caraten::Application.routes.draw do
   resources :topic, path: 'forum' do
     post :comment, on: :member
   end
+  resources :texts, only: [] do
+    post :update, on: :collection
+  end
 
   root :to => 'home#index'
 

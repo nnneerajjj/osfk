@@ -29,6 +29,7 @@ gem 'paperclip'
 gem 'sidekiq'
 
 group :development do
+  gem 'byebug'
   gem 'quiet_assets'
   gem 'mailcatcher'
 end
