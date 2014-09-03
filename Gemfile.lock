@@ -74,9 +74,6 @@ GEM
     celluloid (0.15.2)
       timers (~> 1.1.0)
     chronic (0.10.2)
-    ckeditor (4.1.0)
-      mime-types
-      orm_adapter (~> 0.5.0)
     climate_control (0.0.3)
       activesupport (>= 3.0)
     cocaine (0.5.4)
@@ -322,7 +319,6 @@ DEPENDENCIES
   aws-sdk!
   bootstrap-wysihtml5-rails
   cancan
-  ckeditor
   coffee-rails
   daemons
   devise

@@ -1,6 +1,4 @@
 Caraten::Application.routes.draw do
-  mount Rich::Engine => '/rich', :as => 'rich'
-
   devise_for :users
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 

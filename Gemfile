@@ -27,7 +27,6 @@ gem 'htmlentities'
 gem 'protected_attributes'
 gem 'paperclip'
 gem 'sidekiq'
-gem 'ckeditor'
 
 group :development do
   gem 'quiet_assets'
