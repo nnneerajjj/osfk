@@ -28,6 +28,7 @@ gem 'protected_attributes'
 gem 'paperclip'
 gem 'sidekiq'
 gem 'kaminari'
+gem 'paper_trail'
 
 group :development do
   gem 'byebug'

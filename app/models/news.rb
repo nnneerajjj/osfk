@@ -1,6 +1,7 @@
 class News < ActiveRecord::Base
   extend FriendlyId
   acts_as_commentable
+  has_paper_trail
 
   friendly_id :slug_candidates, use: :slugged
 

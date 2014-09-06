@@ -1,6 +1,9 @@
 <% content_for :title, I18n.t(:news) %>
 <% content_for :header, I18n.t(:news) %>
 <% content_for :description, I18n.t(:news_header) %>
+<% content_for :breadcrumb do %>
+  <%= link_to t(:news), news_index_path %>
+<% end %>
 
 <% @news.each do |news| %>
 

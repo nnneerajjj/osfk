@@ -1,11 +1,15 @@
 <% content_for :title, @news.subject %>
 <% content_for :header, I18n.t(:news) %>
 <% content_for :description, @news.subject %>
+<% content_for :breadcrumb do %>
+  <%= link_to t(:news), news_index_path %>
+  <%= link_to @news.subject, news_path(@news) %>
+<% end %>
 
 <div class="single-blog-post row">
   <article class="blog-content twelve column">
     <div class="blog-text header">
-      <h1><div class="text-edit"><%= @news.subject %></div></h1>
+      <h1><div <%= edit_text_tags(@news, :subject) %>><%= @news.subject %></div></h1>
       <p><div <%= edit_text_tags(@news, :content) %>><%= auto_link(simple_format(@news.content), html: { target: '_blank' }) { |text| text } %></div></p>
     </div>
     <div class="blog-icon"></div>

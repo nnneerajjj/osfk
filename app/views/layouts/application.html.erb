@@ -53,7 +53,6 @@
     </head>
     <body>
 
-  <%# Header %>
   <div class="outter-wrapper header-area header-style-4">
 
     <div class="wrapper clearfix logo-container with-menu">
@@ -83,9 +82,9 @@
           <div class="main-header-right right adjust-right">
             <nav class="megamenu_container">
               <ul id="nav" class="right megamenu">
-                <li class="nav-parent"><%= link_to 'Hem', '/' %></li>
+                <li class="nav-parent"><%= link_to t(:home), root_path %></li>
                 <li class="nav-parent">
-                  <a href="<%= news_index_path %>">Nyheter</a>
+                  <%= link_to t(:news), news_index_path %>
                   <!-- <ul>
                     <li><a href="about.html">Standard Pages &nbsp; <em class="fa">&#xf105;</em></a>
                       <ul>
@@ -118,18 +117,22 @@
     </div>
   </div>
 
+<div class="outter-wrapper breadcrumb-wrapper">
+  <div class="wrapper">
+    <%= link_to '', root_path, class: 'fa' %>
+    <%= link_to t(:fishing), root_path %>
+    <%= yield :breadcrumb %>
+  </div>
+</div>
   <% banner = yield :banner %>
-  <% if banner %>
+  <% if banner.present? %>
     <%= banner %>
   <% else %>
-    <div class="outter-wrapper breadcrumb-wrapper">
-      <div class="wrapper">
-        <a href="index.html" class="fa"></a> <a href="index.html">Home</a> <a href="#">Widgets</a>
-      </div>
-    </div>
+
+
   <% end %>
 
-  <div class="wrapper ad-pad blog-roll clearfix">
+  <div class="wrapper ad-pad clearfix">
 
       <div class="col-3-4">
         <%= yield %>
