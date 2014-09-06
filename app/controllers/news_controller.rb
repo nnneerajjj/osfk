@@ -3,7 +3,8 @@ class NewsController < ApplicationController
   include NewsHelper
 
   def index
-    @news = scoped_news
+    page = params[I18n.t(:page)] || 1
+    @news = News.page(page)
   end
 
   def show

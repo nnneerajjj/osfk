@@ -12,16 +12,17 @@
 <div class="clearfix post">
   <h1 class="title">Välkommen</h1>
 
-  <p class="lead">
-    Österåkers Sportfiskeklubb startade sin verksamhet den 25 juni 1943 då under namnet Österskärs fiskeklubb men bytte till nuvarande namn 1963. Vi är en av landets större fiskeklubbar/föreningar med ca 600 medlemmar.
+  <p>
+    <% text = @page.texts.find_by_key('lead') %>
+    <div <%= edit_text_tags(text, :value) %>>
+      <%= text.value.html_safe %>
+    </div>
   </p>
-  <p class='text-edit' data-id='<%= @page.texts.first.id %>' data-title="asd" title="sads">
-    <%= @page.texts.first.value %>
-  </p>
-  <!--<p>
-    Sportfiskeklubben förvaltar samt har tillsynen av kommunens fiskevatten men även av andra arrenderade vattenområden (se fiskeregler och fiskevatten)
-    Som medlem i fiskeklubben kan du förutom att fiska med handredskap (fiskespön som ingår i det fria handredskapfisket) fiska med ångrev,nät och angeldon till husbehov inom klubbens vattenområden i skärgården om detta intresse finns. Det finns 10 stycken roddbåtar, fördelade på olika vattenområden, som medlemmarna kan låna gratis.
-    ÖSFK är anslutet till “Sportfiskarnas Stockholmsdistrikt” samt “Stockholms Läns Fiskevattenägareförbund”. Dessa organisationer tillvaratar våra medlemmars intressen och önskemål i fiskefrågor gentemot myndigheterna.
-  </p>-->
 
+  <p>
+    <% text = @page.texts.find_by_key('content') %>
+    <div <%= edit_text_tags(text, :value) %>>
+      <%= text.value.html_safe %>
+    </div>
+  </p>
 </div>

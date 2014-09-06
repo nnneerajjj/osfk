@@ -27,11 +27,13 @@ gem 'htmlentities'
 gem 'protected_attributes'
 gem 'paperclip'
 gem 'sidekiq'
+gem 'kaminari'
 
 group :development do
   gem 'byebug'
   gem 'quiet_assets'
   gem 'mailcatcher'
+  gem 'faker'
 end
 
 group :test do

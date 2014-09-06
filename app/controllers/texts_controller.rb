@@ -1,17 +1,24 @@
 class TextsController < ApplicationController
   skip_before_filter :verify_authenticity_token
+  respond_to :json
 
 
   def update
+    authorize! :access, :admin
+
     json = JSON.parse(params[:text])
 
-    id = json.keys.first
+    key = json.keys.first
     text = json.values.first
 
-    @text = Text.find(id)
-    @text.value = text
+    klass, id, attribute = key.split('-')
+
+    @text = klass.camelize.constantize.find(id)
+    @text.send("#{attribute}=", text)
     @text.save!
 
-    render nothing: true
+    respond_to do |format|
+      format.json { render :json => @text }
+    end
   end
 end

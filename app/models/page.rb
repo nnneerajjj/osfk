@@ -3,7 +3,7 @@ class Page < ActiveRecord::Base
 
   friendly_id :title, use: :slugged
 
-  attr_accessible :title, :content, :public, :header
+  attr_accessible :title, :content, :public, :header, :slug, :key, :text_ids
 
   has_many :texts
 

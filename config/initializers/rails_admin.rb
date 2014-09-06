@@ -120,20 +120,20 @@ RailsAdmin.config do |config|
     navigation_label 'Sidor'
     weight -1
 
-    edit do
-      field :title
-      field :header
-      field :public do
-        visible do
-          bindings[:object].nil? || !bindings[:object].locked?
-        end
-      end
-      field :content, :rich_editor do
-        config({
-          :insert_many => true
-        })
-      end
-    end
+    # edit do
+    #   field :title
+    #   field :header
+    #   field :public do
+    #     visible do
+    #       bindings[:object].nil? || !bindings[:object].locked?
+    #     end
+    #   end
+    #   field :content, :rich_editor do
+    #     config({
+    #       :insert_many => true
+    #     })
+    #   end
+    # end
   end
 
   config.model News do

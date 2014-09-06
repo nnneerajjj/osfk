@@ -85,8 +85,8 @@
               <ul id="nav" class="right megamenu">
                 <li class="nav-parent"><%= link_to 'Hem', '/' %></li>
                 <li class="nav-parent">
-                  <a href="#">Nyheter</a>
-                  <ul>
+                  <a href="<%= news_index_path %>">Nyheter</a>
+                  <!-- <ul>
                     <li><a href="about.html">Standard Pages &nbsp; <em class="fa">&#xf105;</em></a>
                       <ul>
                         <li><a href="about.html">Standard Feature</a></li>
@@ -96,7 +96,7 @@
                         <li><a href="full-content.html">Full Content</a></li>
                       </ul>
                     </li>
-                  </ul>
+                  </ul> -->
                 </li>
 
                 <% if current_user %>

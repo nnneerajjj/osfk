@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
   rescue_from CanCan::AccessDenied do |exception|
     if current_user.present?
-      redirect_to main_app.root_path
+      redirect_to main_app.news_index_path
     else
       session[:user_return_to] = request.fullpath
       redirect_to main_app.new_user_session_path
@@ -20,5 +20,9 @@ class ApplicationController < ActionController::Base
     else
       I18n.locale = :sv
     end
+  end
+
+  def after_sign_in_path_for(resource)
+    main_app.news_index_path
   end
 end
