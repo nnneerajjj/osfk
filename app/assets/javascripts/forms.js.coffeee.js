@@ -1,5 +1,4 @@
 //= require raptor
-//= require forms
 
 raptor(function($) {
 
@@ -71,4 +70,5 @@ raptor(function($) {
   }
 
   $('.text-edit').raptor(options('text'));
+
 });

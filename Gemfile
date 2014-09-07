@@ -12,9 +12,7 @@ gem 'devise-async'
 gem 'rails-i18n'
 gem 'i18n-active_record', :git => 'git://github.com/svenfuchs/i18n-active_record.git'
 gem 'cancan'
-gem 'bootstrap-wysihtml5-rails'
-gem 'rich', git: 'https://github.com/bastiaanterhorst/rich.git'
-gem 'aws-sdk', git: 'https://github.com/aws/aws-sdk-ruby.git'
+gem 'aws-sdk'
 gem 'acts_as_commentable_with_threading'
 gem 'friendly_id'
 gem 'nokogiri'
@@ -29,12 +27,15 @@ gem 'paperclip'
 gem 'sidekiq'
 gem 'kaminari'
 gem 'paper_trail'
+gem 's3_direct_upload'
+gem 'roles'
 
 group :development do
   gem 'byebug'
   gem 'quiet_assets'
   gem 'mailcatcher'
   gem 'faker'
+  gem 'dotenv-rails'
 end
 
 group :test do

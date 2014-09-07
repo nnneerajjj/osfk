@@ -5,28 +5,6 @@ GIT
     i18n-active_record (0.0.2)
       i18n (>= 0.5.0)
 
-GIT
-  remote: https://github.com/aws/aws-sdk-ruby.git
-  revision: cc2bf0e5fa683773d24aeb748500bcb4869ad176
-  specs:
-    aws-sdk (1.51.0)
-      aws-sdk-v1 (= 1.51.0)
-    aws-sdk-v1 (1.51.0)
-      json (~> 1.4)
-      nokogiri (>= 1.4.4)
-
-GIT
-  remote: https://github.com/bastiaanterhorst/rich.git
-  revision: a2d866f56277405cb91b648ec3091bda725999df
-  specs:
-    rich (1.4.8)
-      jquery-rails
-      kaminari
-      mime-types
-      rack-raw-upload
-      rails (>= 3.2.0)
-      sass-rails
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -66,9 +44,12 @@ GEM
     arel (5.0.1.20140414130214)
     awesome_nested_set (3.0.0)
       activerecord (>= 4.0.0, < 5)
+    aws-sdk (1.52.0)
+      aws-sdk-v1 (= 1.52.0)
+    aws-sdk-v1 (1.52.0)
+      json (~> 1.4)
+      nokogiri (>= 1.4.4)
     bcrypt (3.1.7)
-    bootstrap-wysihtml5-rails (0.3.2.100)
-      railties (>= 3.0)
     builder (3.2.2)
     byebug (3.4.0)
       columnize (~> 0.8)
@@ -101,6 +82,11 @@ GEM
       warden (~> 1.2.3)
     devise-async (0.9.0)
       devise (~> 3.2)
+    dotenv (0.11.1)
+      dotenv-deployment (~> 0.0.2)
+    dotenv-deployment (0.0.2)
+    dotenv-rails (0.11.1)
+      dotenv (= 0.11.1)
     erubis (2.7.0)
     eventmachine (1.0.3)
     execjs (2.2.1)
@@ -120,6 +106,9 @@ GEM
     hike (1.2.3)
     htmlentities (4.3.2)
     i18n (0.6.11)
+    jquery-fileupload-rails (0.4.1)
+      actionpack (>= 3.1)
+      railties (>= 3.1)
     jquery-rails (3.1.1)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
@@ -179,8 +168,6 @@ GEM
       rack (~> 1.1)
     rack-protection (1.5.3)
       rack
-    rack-raw-upload (1.1.1)
-      multi_json
     rack-test (0.6.2)
       rack (>= 1.0)
     rails (4.1.5)
@@ -267,6 +254,12 @@ GEM
     redis-namespace (1.5.1)
       redis (~> 3.0, >= 3.0.4)
     remotipart (1.2.1)
+    roles (0.2.1)
+    s3_direct_upload (0.1.7)
+      coffee-rails (>= 3.1)
+      jquery-fileupload-rails (~> 0.4.1)
+      rails (>= 3.1)
+      sass-rails (>= 3.1)
     safe_yaml (1.0.3)
     sass (3.2.19)
     sass-rails (4.0.3)
@@ -328,14 +321,14 @@ PLATFORMS
 DEPENDENCIES
   acts_as_commentable_with_threading
   airbrake
-  aws-sdk!
-  bootstrap-wysihtml5-rails
+  aws-sdk
   byebug
   cancan
   coffee-rails
   daemons
   devise
   devise-async
+  dotenv-rails
   faker
   friendly_id
   htmlentities
@@ -356,7 +349,8 @@ DEPENDENCIES
   rails_admin
   rails_admin_nestable
   rails_autolink
-  rich!
+  roles
+  s3_direct_upload
   sass-rails
   sidekiq
   thin

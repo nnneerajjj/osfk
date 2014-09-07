@@ -13,9 +13,13 @@ class TextsController < ApplicationController
 
     klass, id, attribute = key.split('-')
 
-    @text = klass.camelize.constantize.find(id)
-    @text.send("#{attribute}=", text)
-    @text.save!
+    if id.present?
+      @text = klass.camelize.constantize.find(id)
+      @text.send("#{attribute}=", text)
+      @text.save!
+    else
+      @text = Text.new
+    end
 
     respond_to do |format|
       format.json { render :json => @text }

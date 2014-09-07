@@ -1,6 +1,8 @@
 Caraten::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
+  Dotenv.load
+
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.
@@ -43,14 +45,13 @@ Caraten::Application.configure do
 
   require 'sidekiq/testing/inline'
 
-  # Paperclip::Attachment.default_options.merge!(
-  #   :storage => :s3,
-  #   :bucket => 'caraten',
-  #   :path => "/system/:class/:attachment/:id/:style/:filename",
-  #   :url => ':s3_domain_url',
-  #   :s3_credentials => {
-  #     :access_key_id => 'AKIAIWAAF4T3YZE6P6BA',
-  #     :secret_access_key => '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'
-  #   }
-  # )
+  config.paperclip_defaults = {
+    storage: :s3,
+    s3_permissions: :public_read,
+    bucket: ENV['S3_BUCKET'],
+    s3_credentials: {
+      access_key_id: ENV['S3_KEY'],
+      secret_access_key: ENV['S3_SECRET']
+    }
+  }
 end

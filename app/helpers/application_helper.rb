@@ -29,7 +29,7 @@ module ApplicationHelper
 
   def edit_text_tags(instance, attribute)
     if can? :access, :admin
-      "class='text-edit' data-type='#{instance.class.to_s.downcase}' data-id='#{instance.id}' data-attr='#{attribute}'".html_safe
+      "class='text-edit' data-type='#{instance.class.to_s.downcase}' data-id='#{instance.try(:id)}' data-attr='#{attribute}'".html_safe
     end
   end
 end

@@ -1,0 +1,19 @@
+<% content_for :title, t(:create_news) %>
+<% content_for :header, t(:news) %>
+<% content_for :description, t(:create_news) %>
+<% content_for :breadcrumb do %>
+  <%= link_to t(:news), news_index_path %>
+  <%= link_to t(:create_news), new_news_path %>
+<% end %>
+
+<div class="clearfix post">
+
+  <h1 class="title project-form"><div data-form="subject" <%= edit_text_tags(@news, :subject) %>>Skriv titel här</div></h1>
+
+  <%= render 'shared/upload' %>
+
+  <h6 class="meta"><a class="date" href="#"><%= l(Date.today) %></a></h6>
+  <div data-form="content" <%= edit_text_tags(@news, :content) %>>Skriv nyhet här</div>
+</div>
+
+<%= button_tag t(:create_news), class: 'form-post', data: { url: news_index_path, name: 'news'  } %>

@@ -38,6 +38,7 @@ sv:
   contact_information: "Kontaktinformation"
   contact_message_from: "Kontaktmeddelande från %{name}"
   news: "Nyheter"
+  create_news: "Skapa nyhet"
   forum: "Diskussioner"
   news_header: "Alla nyheter"
   new_post: "Skapa ny diskussionstråd"

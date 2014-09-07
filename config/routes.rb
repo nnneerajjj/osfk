@@ -6,7 +6,7 @@ Caraten::Application.routes.draw do
   resources :contacts, path: 'kontakt', only: [:index, :create]
   resources :members, path: 'medlemmar', only: [:index]
   resources :users, path: 'installningar', only: [:index, :update]
-  resources :news, path: 'nyheter', only: [:index, :show] do
+  resources :news, path: 'nyheter' do
     post :comment, on: :member
   end
   resources :topic, path: 'forum' do
@@ -16,8 +16,9 @@ Caraten::Application.routes.draw do
     post :update, on: :collection
   end
 
+  resources :uploads, only: :create
+
   root :to => 'home#index'
 
   get '*slug', to: 'pages#show', constraints: PageExistsConstraint.new
 end
-

@@ -9,6 +9,8 @@ class News < ActiveRecord::Base
 
   validates :subject, :content, presence: true
 
+  has_many :uploads, as: :uploader
+
   default_scope -> { order('created_at DESC') }
   scope :active, where(active: true)
 

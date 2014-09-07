@@ -5,54 +5,14 @@
   <%= link_to t(:news), news_index_path %>
   <%= link_to @news.subject, news_path(@news) %>
 <% end %>
+<div class="clearfix post">
+  <h1 class="title"><div <%= edit_text_tags(@news, :subject) %>><%= strip_tags(@news.subject) %></div></h1>
 
-<div class="single-blog-post row">
-  <article class="blog-content twelve column">
-    <div class="blog-text header">
-      <h1><div <%= edit_text_tags(@news, :subject) %>><%= @news.subject %></div></h1>
-      <p><div <%= edit_text_tags(@news, :content) %>><%= auto_link(simple_format(@news.content), html: { target: '_blank' }) { |text| text } %></div></p>
-    </div>
-    <div class="blog-icon"></div>
-    <ul>
-      <li><p><%= I18n.t(:posted) %>: <span><%= l @news.created_at, format: :short %></span></p></li>
-      <li><p><%= I18n.t(:comments) %>: <span><%= @news.comment_threads.count %></span></p></li>
-    </ul>
-  </article>
-</div>
-
-<div id="comments" class="row">
-  <div class="twelve column">
-    <% if @news.comment_threads.empty? %>
-    <h1><%= I18n.t(:no_comments) %></h1>
-    <% else %>
-    <h1><%= @news.comment_threads.count %> <%= I18n.t(:comment_count) %></h1>
-    <ul>
-      <% @news.comment_threads.asc.each do |comment| %>
-      <li class="depth1">
-        <div class="round-icon"><%= fix_number(comment.user.street_number) %></div>
-        <div>
-          <h5><%= comment.user.name %></h5>
-          <span><%= l comment.created_at, format: :short %></span>
-          <p><%= auto_link(simple_format(comment.body), html: { target: '_blank' }) { |text| text } %></p>
-        </div>
-        <div style="clear: both"></div>
-      </li>
-      <% end %>
-    </ul>
-    <% end %>
-  </div>
-</div>
-
-<div id="comment-leave" class="row">
-  <h1><%= I18n.t(:write_comment) %></h1>
-  <%= form_for Comment.new, url: comment_news_path, html: { id: "contact-form2" } do |f| %>
-  <div>
-    <div class="nine column">
-      <%= f.text_area :body, required: '' %>
-    </div>
-    <div class="three column">
-      <%= f.submit I18n.t(:reply) %>
-    </div>
-  </div>
-  <% end %>
+  <!-- <div class="mosaic-block circle">
+    <a href="post.html" class="mosaic-overlay link" title="Insert Your Title" style="display: inline; opacity: 0;"></a><div class="mosaic-backdrop" style="display: block;">
+    <img src="img/fill-3.jpg" alt="Mock"></div>
+  </div> -->
+  <h6 class="meta"><a class="date" href="#">20 July 2014</a></h6>
+  <p class="lead">Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Morbi leo risus, porta ac consectetur ac, vestibulum at erosCras mattis consectetur purus sit amet fermentum. Curabitur blandit tempus porttitor. Maecenas faucibus mollis interdum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+  <div <%= edit_text_tags(@news, :content) %>><%= auto_link(simple_format(@news.content), html: { target: '_blank' }) { |text| text } %></div>
 </div>
