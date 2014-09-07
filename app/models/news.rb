@@ -32,8 +32,7 @@ class News < ActiveRecord::Base
 
   def slug_candidates
     [
-      :subject,
-      [:subject, :text]
+      :subject
     ]
   end
 end

@@ -1,3 +1,23 @@
+<table class="table-style-1 mobile-table uploads" data-loader='<%= image_path('image-loader.png') %>'>
+  <thead>
+    <tr>
+      <th>Bild</th>
+      <th>Filnamn</th>
+      <th>Storlek</th>
+      <th>Ta bort?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- <tr>
+      <td>Brisbane</td>
+      <td>1</td>
+      <td>18</td>
+      <td>0</td>
+    </tr> -->
+  </tbody>
+</table>
+
+
 <%= s3_uploader_form callback_url: uploads_path,
                      callback_method: "POST",
                      callback_param: "upload[image_upload]",
@@ -9,7 +29,6 @@
                      class: "upload-form" do %>
   <%= file_field_tag :file, multiple: true %>
 <% end %>
-
 <script id="template-upload" type="text/x-tmpl">
   <div id="file-{%=o.unique_id%}" class="upload">
     {%=o.name%}

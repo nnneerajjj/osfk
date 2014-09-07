@@ -1,9 +1,5 @@
 <% if @upload.new_record? %>
   alert("<%= j @upload.errors.full_messages.join(', ').html_safe %>");
 <% else %>
-  console.log("<%= @upload.file.url %>");
-  console.log("<%= @upload.file.url %>");
-  console.log("<%= @upload.file.url %>");
-  console.log("<%= @upload.file.url %>");
-  console.log("<%= @upload.file.url %>");
+  $("#<%= params[:unique_id] %>").html('<img src="<%= @upload.file.url(:preview) %>">')
 <% end %>

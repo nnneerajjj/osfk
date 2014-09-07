@@ -11,7 +11,9 @@ class NewsController < ApplicationController
   end
 
   def create
-    pp params
+    news = News.new(params[:news])
+    news.save
+    render json: news
   end
 
   def show

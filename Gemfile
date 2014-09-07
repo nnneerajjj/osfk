@@ -29,6 +29,7 @@ gem 'kaminari'
 gem 'paper_trail'
 gem 's3_direct_upload'
 gem 'roles'
+gem 'active_model_serializers', '0.8.0'
 
 group :development do
   gem 'byebug'

@@ -5,7 +5,8 @@ $ ->
       attrs[$(attr).data('form')] = $(attr).html()
 
     data = {}
-    data[$(@).data('name')] = attrs
+    name = $(@).data('name')
+    data[name] = attrs
 
     $.ajax
       type: "POST",
@@ -13,7 +14,10 @@ $ ->
       data: data
       dataType: "json"
       success:(data) ->
-        alert data.id
+        if data[name].errors
+          alert(data[name].errors)
+        else
+          window.location.href = data[name].path
         return false
       error:(data, res, s) ->
         console.log s

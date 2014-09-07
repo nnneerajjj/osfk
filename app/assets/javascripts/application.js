@@ -33,11 +33,3 @@
 //= require slider-1
 //= require main
 //= require s3_direct_upload
-
-$(function() {
-  $("#s3-uploader").S3Uploader();
-
-  $('#s3-uploader').bind("s3_upload_complete", function(e, content) {
-    console.log(content);
-  });
-});

@@ -2,17 +2,21 @@ html {
     padding: 0;
 }
 
+body {
+  background-color: #fff;
+}
+
 .outter-wrapper {
     margin: 0 auto;
     max-width: 100%;
     padding: 0;
 }
 
-.wrapper { 
-	max-width: 1160px; 
+.wrapper {
+	max-width: 1160px;
 	margin: 0 auto;
-	-webkit-box-sizing: border-box; 
-	-moz-box-sizing: border-box; 
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	padding: 1em 20px;
 }
