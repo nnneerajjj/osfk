@@ -78,24 +78,22 @@ $(function() {
   $("#s3-uploader").S3Uploader();
 
   $('#s3-uploader').bind("s3_upload_complete", function(e, content) {
-    console.log(content);
-    $table = $('.uploads');
+    $loader = $('#image-loader').clone();
+    $tbody = $('.uploads tbody');
     $tr = $('<tr></tr>');
-    console.log($table.data('loader'));
-    var $img = $('<img>')
-    $img.attr('src', $table.data('loader'));
-    $td = $('<td id="' + content.unique_id + '"></td>')
-    $img.appendTo($td);
+    $td = $('<td id="' + content.unique_id + '"></td>');
+    $loader.show();
+    $loader.appendTo($td);
     $td.appendTo($tr);
     $('<td>' + content.filename + '</td>').appendTo($tr);
     $('<td>' + bytesToSize(content.filesize) + '</td>').appendTo($tr);
     $('<td></td>').appendTo($tr);
-    $tr.appendTo($table);
+    $tr.appendTo($tbody);
   });
 });
 
 $(document).ajaxSend(function(e, xhr, options) {
- var token = $("meta[name='csrf-token']").attr("content");
+  var token = $("meta[name='csrf-token']").attr("content");
   xhr.setRequestHeader("X-CSRF-Token", token);
 });
 

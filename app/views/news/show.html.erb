@@ -8,11 +8,21 @@
 <div class="clearfix post">
   <h1 class="title"><div <%= edit_text_tags(@news, :subject) %>><%= strip_tags(@news.subject) %></div></h1>
 
-  <!-- <div class="mosaic-block circle">
-    <a href="post.html" class="mosaic-overlay link" title="Insert Your Title" style="display: inline; opacity: 0;"></a><div class="mosaic-backdrop" style="display: block;">
-    <img src="img/fill-3.jpg" alt="Mock"></div>
-  </div> -->
-  <h6 class="meta"><a class="date" href="#">20 July 2014</a></h6>
-  <p class="lead">Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Morbi leo risus, porta ac consectetur ac, vestibulum at erosCras mattis consectetur purus sit amet fermentum. Curabitur blandit tempus porttitor. Maecenas faucibus mollis interdum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+  <% if @news.image_uploads.any? %>
+  <div class="owl-carousel-container">
+    <div class="customNavigation">
+                <a class="prev"></a>
+                <a class="next"></a>
+            </div>
+    <div class="owl-carousel">
+      <% @news.image_uploads.each do |image| %>
+        <div class="owl-item"><%= image_tag image.file.url(:large) %></div>
+      <% end %>
+    </div>
+            </div>
+  <% end %>
+
+  <h6 class="meta"><a class="date" href="#"><%= l @news.created_at, format: :long %></a></h6>
+  <%# <p class="lead">Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Morbi leo risus, porta ac consectetur ac, vestibulum at erosCras mattis consectetur purus sit amet fermentum. Curabitur blandit tempus porttitor. Maecenas faucibus mollis interdum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> %>
   <div <%= edit_text_tags(@news, :content) %>><%= auto_link(simple_format(@news.content), html: { target: '_blank' }) { |text| text } %></div>
 </div>

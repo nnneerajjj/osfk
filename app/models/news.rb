@@ -5,11 +5,11 @@ class News < ActiveRecord::Base
 
   friendly_id :slug_candidates, use: :slugged
 
-  attr_accessible :subject, :content, :active
+  attr_accessible :subject, :content, :active, :image_upload_ids
 
   validates :subject, :content, presence: true
 
-  has_many :uploads, as: :uploader
+  has_many :image_uploads, as: :uploader
 
   default_scope -> { order('created_at DESC') }
   scope :active, where(active: true)

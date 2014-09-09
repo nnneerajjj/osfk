@@ -1,5 +1,8 @@
 <% if @upload.new_record? %>
   alert("<%= j @upload.errors.full_messages.join(', ').html_safe %>");
 <% else %>
-  $("#<%= params[:unique_id] %>").html('<img src="<%= @upload.file.url(:preview) %>">')
+  $("#<%= params[:unique_id] %>")
+    .attr('data-form', 'image_upload_ids')
+    .attr('data-value', <%= @upload.id %>)
+    .html('<img src="<%= @upload.file.url(:preview) %>">')
 <% end %>
