@@ -9,17 +9,10 @@
   <h1 class="title"><div <%= edit_text_tags(@news, :subject) %>><%= strip_tags(@news.subject) %></div></h1>
 
   <% if @news.image_uploads.any? %>
-  <div class="owl-carousel-container">
-    <div class="customNavigation">
-                <a class="prev"></a>
-                <a class="next"></a>
-            </div>
-    <div class="owl-carousel">
-      <% @news.image_uploads.each do |image| %>
-        <div class="owl-item"><%= image_tag image.file.url(:large) %></div>
-      <% end %>
+    <div class="mosaic-block circle">
+      <a href="<%= @news.image_uploads.first.file.url(:large) %>" class="mosaic-overlay fancybox" data-fancybox-group="gallery" title="<%= @news.subject %>" style="display: inline; opacity: 0.8;"></a>
+      <div class="mosaic-backdrop" style="display: block;"><img src="<%= @news.image_uploads.first.file.url(:large) %>" alt="<%= @news.subject %>"></div>
     </div>
-            </div>
   <% end %>
 
   <h6 class="meta"><a class="date" href="#"><%= l @news.created_at, format: :long %></a></h6>
