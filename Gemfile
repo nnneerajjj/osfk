@@ -28,7 +28,7 @@ gem 'sidekiq'
 gem 'kaminari'
 gem 'paper_trail'
 gem 's3_direct_upload'
-gem 'roles'
+gem 'rolify'
 gem 'active_model_serializers', '0.8.0'
 
 group :development do
@@ -40,7 +40,7 @@ group :development do
 end
 
 group :test do
-  gem 'minitest-spec-rails'
+  gem 'rspec-rails'
 end
 
 group :assets do
