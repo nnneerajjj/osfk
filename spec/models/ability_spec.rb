@@ -1,9 +1,15 @@
 require 'rails_helper'
+require 'cancan/matchers'
+
 
 describe Ability do
-  subject { Ability.new(User.new) }
 
   context 'regular user' do
-    it { should_not be_able_to :read, Page.new(public: true) }
+    subject { Ability.new(nil) }
+
+    it { is_expected.to be_able_to :read, Page.new(public: true) }
+    it { is_expected.to_not be_able_to :read, Page.new }
+    it { is_expected.to be_able_to :read, News.new }
+    it { is_expected.to_not be_able_to :read, News.new(active: false) }
   end
 end

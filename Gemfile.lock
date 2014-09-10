@@ -57,7 +57,7 @@ GEM
       columnize (~> 0.8)
       debugger-linecache (~> 1.2)
       slop (~> 3.6)
-    cancan (1.6.10)
+    cancancan (1.9.2)
     celluloid (0.15.2)
       timers (~> 1.1.0)
     chronic (0.10.2)
@@ -340,7 +340,7 @@ DEPENDENCIES
   airbrake
   aws-sdk
   byebug
-  cancan
+  cancancan
   coffee-rails
   daemons
   devise
