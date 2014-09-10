@@ -6,6 +6,8 @@ class Topic < ActiveRecord::Base
 
   attr_accessible :user, :subject, :content
 
+  has_many :image_uploads, as: :uploader
+
   belongs_to :user
 
   validates :user, :subject, :content, presence: true

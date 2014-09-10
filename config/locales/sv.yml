@@ -49,10 +49,11 @@ sv:
   read_more: "Läs mer / Kommentera"
   posted: "Postad"
   comments: "Kommentarer"
+  comment_only_visible_by_members: Din kommentar kommer bara vara synlig för medlemmar.
   author: "Skriven av"
   no_comments: "Inga kommentarer"
   comment_count: "kommentarer"
-  write_comment: "Skriv kommentar"
+  write_comment: "Skriv en kommentar"
   reply: "Svara"
   email: "Epost"
   message: "Meddelande"

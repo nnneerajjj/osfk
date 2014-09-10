@@ -1,26 +1,19 @@
-<% content_for :title, I18n.t(:forum) %>
-<% content_for :header, I18n.t(:forum) %>
-<% content_for :description, I18n.t(:forum_header) %>
+<% content_for :title, t(:forum) %>
+<% content_for :header, t(:forum) %>
+<% content_for :description, t(:forum_header) %>
+<% content_for :breadcrumb do %>
+  <%= link_to t(:forum), topic_index_path %>
+<% end %>
 
 <% @topics.each do |topic| %>
 
-  <div class="blog-post image-post row">
-    <article class="blog-content nine column">
-      <div class="blog-text">
-        <h1><%= link_to topic.subject, topic %></h1>
-        <p><%= auto_link(simple_format(truncate(topic.content, length: 200)), html: { target: '_blank' }) { |text| text } %></p>
-        <%= link_to raw("#{I18n.t(:read_more)} <span></span>".html_safe), topic %>
-      </div>
-    </article>
-
-    <article class="blog-inform three column">
-      <ul>
-        <li><p><%= I18n.t(:posted) %>: <br><span><%= l topic.created_at, format: :short %></span></p></li>
-        <li><p><%= I18n.t(:comments) %>: <br><span><%= topic.comment_threads.count %></span></p></li>
-        <li><p><%= I18n.t(:author) %>: <br><span><%= topic.user.fullname %></span></p></li>
-      </ul>
-    </article>
-    <div class="blog-icon"></div>
+  <div class="post-excerpt clearfix">
+    <div class="col-2-3">
+    <h3><%= link_to topic.subject, topic %></h3>
+      <p><%= auto_link(simple_format(truncate(topic.content, length: 250, escape: false)), html: { target: '_blank' }) { |text| text } %></p>
+      <%= link_to I18n.t(:read_more), topic %>
+    </div>
   </div>
-
 <% end %>
+
+<%= paginate @topics %>

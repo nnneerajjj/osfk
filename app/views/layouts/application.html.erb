@@ -85,6 +85,10 @@
                 <li class="nav-parent"><%= link_to t(:home), root_path %></li>
                 <li class="nav-parent">
                   <%= link_to t(:news), news_index_path %>
+                </li>
+                <li class="nav-parent">
+                  <%= link_to t(:forum), topic_index_path %>
+                </li>
                   <!-- <ul>
                     <li><a href="about.html">Standard Pages &nbsp; <em class="fa">&#xf105;</em></a>
                       <ul>
@@ -96,7 +100,6 @@
                       </ul>
                     </li>
                   </ul> -->
-                </li>
 
                 <% if current_user %>
                   <li class="nav-parent"><%= link_to current_user.name, '#' %>
@@ -132,6 +135,7 @@
 
   <% end %>
 
+  <div class="outter-wrapper body-wrapper">
   <div class="wrapper ad-pad clearfix">
 
       <div class="col-3-4">
@@ -154,6 +158,7 @@
         <div class="ad"><a href="http://www.domarudden.se/"><img alt="" src="http://www.sportnik.com/file/show/1660516"></a></div>
         <div class="ad"><a href="http://www.flugspon.se/"><img alt="" src="http://www.sportnik.com/file/show/1965433"></a></div>
       </aside>
+    </div>
     </div>
 
   <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script> -->

@@ -1,8 +1,9 @@
 class TopicController < ApplicationController
-  load_and_authorize_resource :topic, except: :comment
+  load_and_authorize_resource :topic, only: [:show, :comment], find_by: :slug
 
   def index
-    @topics = Topic.order('updated_at DESC')
+    page = params[I18n.t(:page)] || 1
+    @topics = Topic.order('updated_at DESC').page(page)
   end
 
   def new
@@ -23,7 +24,6 @@ class TopicController < ApplicationController
   end
 
   def comment
-    @topic = Topic.find(params[:id])
     @comment = Comment.build_from( @topic, current_user.id, params[:comment][:body] )
     @comment.save!
 

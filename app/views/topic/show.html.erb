@@ -1,57 +1,46 @@
 <% content_for :title, @topic.subject %>
 <% content_for :header, I18n.t(:forum) %>
 <% content_for :description, @topic.subject %>
+<% content_for :breadcrumb do %>
+  <%= link_to t(:forum), topic_index_path %>
+  <%= link_to @topic.subject, topic_path(@topic) %>
+<% end %>
 
-  <div class="single-blog-post row">
-    <article class="blog-content twelve column">
-      <div class="blog-text header">
-        <h1><%= @topic.subject %></h1>
-        <p>
-        <%= auto_link(simple_format(@topic.content), html: { target: '_blank' }) { |text| text } %>
-        </p>
-      </div>
-      <div class="blog-icon"></div>
-      <ul>
-        <li><p><%= I18n.t(:posted) %>: <span><%= l @topic.created_at, format: :short %></span></p></li>
-        <li><p><%= I18n.t(:comments) %>: <span><%= @topic.comment_threads.count %></span></p></li>
-        <li><p><%= I18n.t(:author) %>: <span><%= @topic.user.fullname %></span></p></li>
-      </ul>
-    </article>
-  </div>
 
-  <div id="comments" class="row">
-    <div class="twelve column">
-      <% if @topic.comment_threads.empty? %>
-      <h1><%= I18n.t(:no_comments) %></h1>
-      <% else %>
-      <h1><%= @topic.comment_threads.count %> <%= I18n.t(:comment_count) %></h1>
-      <ul>
-        <% @topic.comment_threads.asc.each do |comment| %>
-        <li class="depth1">
-          <div class="round-icon"><%= fix_number(comment.user.street_number) %></div>
-          <div>
-            <h5><%= comment.user.name %></h5>
-            <span><%= l comment.created_at, format: :short %></span>
-            <p><%= auto_link(simple_format(comment.body), html: { target: '_blank' }) { |text| text } %></p>
-          </div>
-          <div style="clear: both"></div>
-        </li>
-        <% end %>
-      </ul>
-      <% end %>
-    </div>
-  </div>
+<div class="clearfix post">
+  <h1 class="title"><%= @topic.subject %></h1>
 
-  <div id="comment-leave" class="row">
-    <h1><%= I18n.t(:write_comment) %></h1>
-    <%= form_for Comment.new, url: comment_topic_path, html: { id: "contact-form2" } do |f| %>
-    <div>
-      <div class="nine column">
-        <%= f.text_area :body, required: '' %>
+
+  <h6 class="meta"><a class="date" href="#"><%= l @topic.created_at, format: :long %></a></h6>
+  <div><%= auto_link(simple_format(@topic.content), html: { target: '_blank' }) { |text| text } %></div>
+</div>
+<div class="paging clearfix"></div>
+
+<h3><%= @topic.comment_threads.count %> <%= I18n.t(:comment_count) %> till <span><%= @topic.subject %></span></h3>
+
+
+<ul class="comments">
+  <!-- comment -->
+  <% @topic.comment_threads.each_with_index do |comment, idx| %>
+    <li>
+      <div class="clearfix <%= idx % 2 == 0 ? 'odd' : '' %>">
+      <img src="<%= image_path('missingprofile.png') %>" alt="<%= comment.user.name %>" class="left stay">
+      <h6 class="meta"><a href="member.html"><%= comment.user.name %></a> <span class="date"><%= l comment.created_at, format: :long %></span></h6>
+      <%#<a class="reply right" href="#">Reply</a>%>
+      <p><%= auto_link(simple_format(comment.body), html: { target: '_blank' }) { |text| text } %></p>
       </div>
-      <div class="three column">
-        <%= f.submit I18n.t(:reply) %>
-      </div>
-    </div>
-    <% end %>
+    </li>
+  <% end %>
+</ul>
+
+
+<%= form_for Comment.new, url: comment_topic_path, html: { class: "contact-form2" } do |f| %>
+  <h2><%= t :write_comment %></h2>
+  <div class="clearfix">
+    <%= f.text_area :body, required: '', rows: '5', cols: '20', placeholder: I18n.t(:write_comment) %>
+
+    <%= f.submit I18n.t(:reply), class: 'btn left' %>
+    <em class="right hide-480"><%= t :comment_only_visible_by_members %></em>
+
   </div>
+<% end %>
