@@ -21,6 +21,7 @@ class Ability
       can :create, Topic
       can :manage, Topic, user_id: user.id
       can :read, :all
+      can :comment, News
     end
   end
 end

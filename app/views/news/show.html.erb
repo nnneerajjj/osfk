@@ -16,6 +16,9 @@
   <% end %>
 
   <h6 class="meta"><a class="date" href="#"><%= l @news.created_at, format: :long %></a></h6>
-  <%# <p class="lead">Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Morbi leo risus, porta ac consectetur ac, vestibulum at erosCras mattis consectetur purus sit amet fermentum. Curabitur blandit tempus porttitor. Maecenas faucibus mollis interdum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> %>
   <div <%= edit_text_tags(@news, :content) %>><%= auto_link(simple_format(@news.content), html: { target: '_blank' }) { |text| text } %></div>
 </div>
+
+<% if can? :comment, News %>
+  <%= render 'shared/comments', object: @news, path: comment_news_path %>
+<% end %>

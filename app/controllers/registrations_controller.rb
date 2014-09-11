@@ -1,7 +1,8 @@
-class RegistrationsController < ApplicationController
+class RegistrationsController < Devise::RegistrationsController
+
   protected
 
   def after_sign_up_path_for(resource)
-    raise main_app.news_index_path
+    main_app.news_index_path
   end
 end

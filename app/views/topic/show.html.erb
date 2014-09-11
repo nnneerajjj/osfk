@@ -10,37 +10,12 @@
 <div class="clearfix post">
   <h1 class="title"><%= @topic.subject %></h1>
 
-
-  <h6 class="meta"><a class="date" href="#"><%= l @topic.created_at, format: :long %></a></h6>
+  <h6 class="meta">
+    <a class="date" href="#"><%= l @topic.created_at, format: :long %></a><br/>
+    <%= t :author %> <%= @topic.user.name %>
+  </h6>
   <div><%= auto_link(simple_format(@topic.content), html: { target: '_blank' }) { |text| text } %></div>
 </div>
 <div class="paging clearfix"></div>
 
-<h3><%= @topic.comment_threads.count %> <%= I18n.t(:comment_count) %> till <span><%= @topic.subject %></span></h3>
-
-
-<ul class="comments">
-  <!-- comment -->
-  <% @topic.comment_threads.each_with_index do |comment, idx| %>
-    <li>
-      <div class="clearfix <%= idx % 2 == 0 ? 'odd' : '' %>">
-      <img src="<%= image_path('missingprofile.png') %>" alt="<%= comment.user.name %>" class="left stay">
-      <h6 class="meta"><a href="member.html"><%= comment.user.name %></a> <span class="date"><%= l comment.created_at, format: :long %></span></h6>
-      <%#<a class="reply right" href="#">Reply</a>%>
-      <p><%= auto_link(simple_format(comment.body), html: { target: '_blank' }) { |text| text } %></p>
-      </div>
-    </li>
-  <% end %>
-</ul>
-
-
-<%= form_for Comment.new, url: comment_topic_path, html: { class: "contact-form2" } do |f| %>
-  <h2><%= t :write_comment %></h2>
-  <div class="clearfix">
-    <%= f.text_area :body, required: '', rows: '5', cols: '20', placeholder: I18n.t(:write_comment) %>
-
-    <%= f.submit I18n.t(:reply), class: 'btn left' %>
-    <em class="right hide-480"><%= t :comment_only_visible_by_members %></em>
-
-  </div>
-<% end %>
+<%= render 'shared/comments', object: @topic, path: comment_topic_path %>
