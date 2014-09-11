@@ -1,14 +1,19 @@
 class User < ActiveRecord::Base
   rolify
+  has_paper_trail
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :async, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  # https://github.com/plataformatec/devise/wiki/How-To%3a-Require-admin-to-activate-account-before-sign_in
+
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :firstname,
-                  :street_number, :house_number, :lastname, :website, :telephone, :water, :stock
+                  :street_number, :house_number, :lastname, :website, :telephone, :water, :stock, :approved
+
+  has_attached_file :avatar, :styles => { :thumb => "250x250>", :preview => "80x80" }
 
   has_many :topics
 
@@ -38,6 +43,18 @@ class User < ActiveRecord::Base
     #date = 1.week.ago
 
     NotificationMailer.delay.email(self, date)
+  end
+
+  def active_for_authentication?
+    super && approved?
+  end
+
+  def inactive_message
+    if !approved?
+      :not_approved
+    else
+      super # Use whatever other message
+    end
   end
 
   private

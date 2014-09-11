@@ -34,6 +34,7 @@ sv:
   members: "Medlemmar"
   with: "med"
   menu: "Meny"
+  sections: "Sektioner"
   send_us_a_message: "Skicka oss ett meddelande"
   your_message_is_sent: "Ditt meddelande är skickat"
   try_send_again: "Något gick fel. Försök skicka meddelandet igen"
@@ -101,6 +102,9 @@ sv:
   copyright: "© Copyright 2013 Ludvig Dickman"
   unable_to_destroy_key_pages: "Denna sida går ej att ta bort"
 
+  activated_members: Aktiverade medlemmar
+  not_activated_members: Ännu inte aktiverade medlemmar
+
   hello: "Hej"
   link_to_reset_password: "Här kommer en länk för att återställa ditt lösenord:"
   change_my_password: "Ändra mitt lösenord"
@@ -126,6 +130,7 @@ sv:
   welcome_email_subject: "Välkommen till BRF Caraten"
 
   admin: "Administratör"
+  administrators: "Administratörer"
 
   page: "sida"
 

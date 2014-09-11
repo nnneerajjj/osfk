@@ -2,7 +2,8 @@ class MembersController < ApplicationController
   before_filter :load_page
 
   def index
-    @users = User.order(:street_number).where(active: true)
+    authorize! :access, :admin
+    @users = User.where(active: true)
   end
 
   private
