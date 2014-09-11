@@ -32,7 +32,7 @@ raptor(function($) {
         alignLeft: false,
         alignRight: false,
         tagMenu: false,
-        viewSource: false,
+        viewSource: true,
         textBlockQuote: false,
         hrCreate: false,
         embed: false,

@@ -1,5 +1,5 @@
 class TopicController < ApplicationController
-  load_and_authorize_resource :topic, only: [:show, :comment], find_by: :slug
+  load_and_authorize_resource :topic, except: :create, find_by: :slug
 
   def index
     page = params[I18n.t(:page)] || 1

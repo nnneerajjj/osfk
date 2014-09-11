@@ -23,15 +23,15 @@ sv:
         content: Meddelande
         secret: Allt
 
-  title: "BRF Caraten - "
+  title: "Österåkers Sportfiskeklubb - "
   home_text1: "Välkommen till <span>BRF Caraten</span>"
   home_text2: "Bostadsrättsföreningen i Åkersberga"
-  brf_caraten: "BRF Caraten"
   home: "Hem"
-  fishing: "Österåkers Sportfiskeklubb"
+  h1: "Österåkers Sportfiskeklubb"
   contact: "Kontakt"
   members: "Medlemmar"
   with: "med"
+  menu: "Meny"
   send_us_a_message: "Skicka oss ett meddelande"
   your_message_is_sent: "Ditt meddelande är skickat"
   try_send_again: "Något gick fel. Försök skicka meddelandet igen"
