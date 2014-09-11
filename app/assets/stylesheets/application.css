@@ -9,18 +9,18 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require normalize.min
- *= require styles
+ *= require styles.css
  *= require font-awesome.min
  *= require jquery.sidr.light
  *= require mediaelementplayer.min
  *= require owl.carousel
- *= require jquery.fancybox
- *= require mosaic
+ *= require jquery.fancybox.css
+ *= require mosaic.css
  *= require responsive
  *= require rs-plugin
  *= require rs-plugin-settings
  *= require tooltipster
- *= require mega
+ *= require mega.css
  *= require skin2
  *= require full
  *= require s3_direct_upload_progress_bars

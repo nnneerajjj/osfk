@@ -2,7 +2,7 @@
 
 /*  _______________________________________________
 
-    01 Mega Menu Colors 
+    01 Mega Menu Colors
     _______________________________________________  */
 
 
@@ -10,8 +10,8 @@
 
 /* Mega Menu Borders */
 .megamenu .tab-contents, .megamenu hr, .megamenu .text-seperator-line div,
-.megamenu blockquote.right, .megamenu blockquote.left, .megamenu pre, .megamenu table.table-style-1, 
-.megamenu table.table-style-1 th, .megamenu table.table-style-1 td, .megamenu table.table-style-2, 
+.megamenu blockquote.right, .megamenu blockquote.left, .megamenu pre, .megamenu table.table-style-1,
+.megamenu table.table-style-1 th, .megamenu table.table-style-1 td, .megamenu table.table-style-2,
 .megamenu table.table-style-2 th, .megamenu table.table-style-2 td
  {
 	border-color: #2b363c!important;
@@ -20,7 +20,7 @@
 
 /* Mega Menu Alt Block Color */
 .megamenu table.table-style-1 tr:nth-child(2n+2), .megamenu table.table-style-1 th, .megamenu .boxy,
-.megamenu input[type=text], .megamenu input[type=email], .megamenu input[type=password], .megamenu textarea, 
+.megamenu input[type=text], .megamenu input[type=email], .megamenu input[type=password], .megamenu textarea,
 .megamenu input[type=tel],  .megamenu input[type=range], .megamenu input[type=url], .megamenu input[type=number]{
 	background-color: #4c565c;
 }
@@ -40,16 +40,16 @@
 
     02 SIZE SETTINGS
     _______________________________________________  */
-    
+
 .megamenu_container{ }
 
-.megamenu li:hover .dropdown_container, 
-.megamenu li:hover .dropdown_fullwidth, 
+.megamenu li:hover .dropdown_container,
+.megamenu li:hover .dropdown_fullwidth,
 .megamenu li:hover .dropdown_right {
 	top:48px;
 }
- 
- 
+
+
 
 
 /*  _______________________________________________
@@ -158,7 +158,7 @@
 
 .centered-menu.megamenu .dropdown_fullwidth,
 .centered-menu.megamenu .dropdown_container {
-	text-align: left;	
+	text-align: left;
 }
 
 .megamenu_container #nav .dropdown_fullwidth ul{
@@ -270,7 +270,7 @@
 	position: relative;
 	margin-left: 2%;
 	margin-right: 2%;
-	/* 
+	/*
 	Rounding error with IE7.
 	Lower margin values will absorb the difference.
 	*/
@@ -309,8 +309,8 @@
 
     04 FLY-OUT MENU
     _______________________________________________  */
-    
-.megamenu .dropdown_flyout, 
+
+.megamenu .dropdown_flyout,
 .megamenu .dropdown_flyout .dropdown_flyout_level {
 	padding: 0;
 	margin: 0;
@@ -417,7 +417,7 @@
 
 @media only screen and (min-width:320px) and (max-width:767px) {
 
-	.megamenu .dropdown_flyout, 
+	.megamenu .dropdown_flyout,
 	.megamenu .dropdown_flyout .dropdown_flyout_level {
 		position: relative;
 		left:auto;
@@ -438,7 +438,7 @@
 		left:auto;
 		right:auto;
 	}
-	.megamenu_container .megamenu li .dropdown_flyout li ul,	
+	.megamenu_container .megamenu li .dropdown_flyout li ul,
 	.megamenu_light .megamenu li .dropdown_flyout li ul {
 		border:none;
 		background: none;
