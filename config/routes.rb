@@ -4,7 +4,9 @@ Caraten::Application.routes.draw do
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
   resources :contacts, path: 'kontakt', only: [:index, :create]
-  resources :members, path: 'medlemmar', only: [:index]
+  resources :members, path: 'medlemmar', only: [:index] do
+    put :update_multiple, on: :collection
+  end
   resources :users, path: 'installningar', only: [:index, :update]
   resources :news, path: 'nyheter' do
     post :comment, on: :member

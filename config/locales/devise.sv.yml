@@ -14,7 +14,7 @@ sv:
       timeout: Din session är inte längre giltig, vänligen logga in igen för att fortsätta.
       unauthenticated: Du måste logga in eller skapa ett konto innan du kan fortsätta.
       unconfirmed: Du måste bekräfta ditt konto innan du kan fortsätta.
-      not_approved: Ditt konto har inte blivit bekräftat av administratör ännu.
+      not_approved: Ditt konto har inte blivit godkänt av administratör ännu.
     mailer:
       confirmation_instructions:
         subject: Instruktioner för bekräftning av konto

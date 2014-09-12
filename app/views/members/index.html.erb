@@ -34,40 +34,64 @@
 
   <a href="#top" class="btn-3 xsmall-btn right fa"></a>
   <h3 id="section2"><%=  t :activated_members %></h3>
-  <div class="clearfix teams">
-    <% @users.select(&:approved).each do |user| %>
-      <div class="col-1-5 boxy">
-        <img src="<%= image_path('missingprofile.png') %>" alt="<%= user.name %>">
-        <div class="inner-box">
-          <h6><%= user.name %></h6>
-          <em><%= user.email %></em>
-        </div>
-      </div>
-    <% end %>
-  </div>
+  <%= form_tag update_multiple_members_path, method: :put do %>
+    <div class="clearfix teams">
+      <% @users.select(&:approved).each do |user| %>
+        <%= fields_for "users[]", user do |f| %>
+          <div class="col-1-5 boxy">
+            <img src="<%= image_path('missingprofile.png') %>" alt="<%= user.name %>">
+            <div class="inner-box">
+              <h6><%= user.name %></h6>
+              <%= f.text_field :firstname, placeholder: t(:firstname) %>
+              <%= f.text_field :lastname, placeholder: t(:lastname) %>
+              <em><%= user.email %></em>
+              <%= f.text_field :email, placeholder: t(:email) %>
+              <%= f.check_box :approved %>
+              <%= f.label :approved %>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+      <div class="clearfix">
 
+      </div>
+    </div>
+    <%= submit_tag t :save %>
+  <% end %>
 
   <hr>
 
   <a href="#top" class="btn-3 xsmall-btn right fa"></a>
   <h3 id="section3"><%= t :not_activated_members %></h3>
-  <div class="clearfix teams">
 
-    <% @users.select{|x| !x.approved }.each do |user| %>
-      <div class="col-1-5 boxy">
-        <img src="<%= image_path('missingprofile.png') %>" alt="<%= user.name %>">
-        <div class="inner-box">
-          <h6><%= user.name %></h6>
-          <em><%= user.email %></em>
-        </div>
+  <%= form_tag update_multiple_members_path, method: :put do %>
+    <div class="clearfix teams">
+      <% @users.select{|x| !x.approved }.each do |user| %>
+        <%= fields_for "users[]", user do |f| %>
+          <div class="col-1-5 boxy">
+            <img src="<%= image_path('missingprofile.png') %>" alt="<%= user.name %>">
+            <div class="inner-box">
+              <h6><%= f.label :firstname %></h6>
+              <%= f.text_field :firstname, placeholder: t(:firstname) %>
+              <%= f.text_field :lastname, placeholder: t(:lastname) %>
+              <em><%= user.email %></em>
+              <%= f.text_field :email, placeholder: t(:email) %>
+              <em><%= user.email %></em>
+              <%= f.check_box :approved %>
+              <%= f.label :approved %>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+      <div class="clearfix">
+
       </div>
-    <% end %>
+    </div>
+    <%= submit_tag t :save %>
+  <% end %>
 
-  </div>
 
 
-
-  <!-- Finish Main Content -->
   </div>
 
 
