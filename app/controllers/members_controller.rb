@@ -3,6 +3,9 @@ class MembersController < ApplicationController
 
   def index
     authorize! :access, :admin
+
+
+
     @users = User.where(active: true)
   end
 

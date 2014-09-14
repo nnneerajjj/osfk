@@ -34,7 +34,7 @@ gem 'active_model_serializers', '0.8.0'
 group :development do
   gem 'byebug'
   gem 'quiet_assets'
-  gem 'mailcatcher'
+  gem 'letter_opener'
   gem 'faker'
   gem 'dotenv-rails'
 end

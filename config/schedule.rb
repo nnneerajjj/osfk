@@ -14,11 +14,11 @@ set :output, "/home/deploy/www/caraten/log/cron_log.log"
 #set :job_template, "/usr/binbash -l -c ':job'"
 
 every :reboot do
-  script "delayed_job start"
+  # script "delayed_job start"
 end
 
 every 10.hours do
-  script "delayed_job restart"
+  # script "delayed_job restart"
 end
 
 every :saturday, :at => '10am' do # Use any day of the week or :weekend, :weekday

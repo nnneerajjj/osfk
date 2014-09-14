@@ -40,6 +40,7 @@ GEM
       activerecord (>= 3.0)
       activesupport (>= 3.0)
       awesome_nested_set (>= 2.0)
+    addressable (2.3.6)
     airbrake (4.0.0)
       builder
       multi_json
@@ -121,19 +122,13 @@ GEM
     kaminari (0.16.1)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
+    launchy (2.4.2)
+      addressable (~> 2.3)
+    letter_opener (1.2.0)
+      launchy (~> 2.2)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
-    mailcatcher (0.2.4)
-      eventmachine
-      haml
-      i18n
-      json
-      mail
-      sinatra
-      skinny (>= 0.1.2)
-      sqlite3-ruby
-      thin
     mime-types (1.25.1)
     mini_portile (0.6.0)
     minitest (5.4.0)
@@ -166,8 +161,6 @@ GEM
     rack-pjax (0.8.0)
       nokogiri (~> 1.5)
       rack (~> 1.1)
-    rack-protection (1.5.3)
-      rack
     rack-test (0.6.2)
       rack (>= 1.0)
     rails (4.1.5)
@@ -289,13 +282,6 @@ GEM
       json
       redis (>= 3.0.6)
       redis-namespace (>= 1.3.1)
-    sinatra (1.4.5)
-      rack (~> 1.4)
-      rack-protection (~> 1.4)
-      tilt (~> 1.3, >= 1.3.4)
-    skinny (0.2.3)
-      eventmachine (~> 1.0.0)
-      thin (~> 1.5.0)
     slop (3.6.0)
     sprockets (2.11.0)
       hike (~> 1.2)
@@ -306,9 +292,6 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (~> 2.8)
-    sqlite3 (1.3.9)
-    sqlite3-ruby (1.3.3)
-      sqlite3 (>= 1.3.3)
     thin (1.5.1)
       daemons (>= 1.0.9)
       eventmachine (>= 0.12.6)
@@ -352,7 +335,7 @@ DEPENDENCIES
   i18n-active_record!
   jquery-rails
   kaminari
-  mailcatcher
+  letter_opener
   nokogiri
   paper_trail
   paperclip

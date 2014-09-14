@@ -18,6 +18,12 @@ sv:
         water: Vattenavläsning
         reset_password_token: Token
         remember_me: Kom ihåg mig
+        regular: Välj
+        package1: Lägg till
+        package2: Lägg till
+        address: Adress
+        postal_address: Postadress
+        identity_number: Personnummer
       contact:
         name: Namn
         email: Epost
@@ -62,6 +68,7 @@ sv:
   email: "Epost"
   message: "Meddelande"
   send: "Skicka"
+  identity_number_hint: "(Fyra sista siffrorna behövs ej)"
   password: "Lösenord"
   password_confirmation: "Bekräfta lösenord"
   new_password: "Nytt lösenord"
@@ -126,8 +133,9 @@ sv:
   picker_browse: "Välj eller ladda upp"
 
   welcome: "Väkommen"
-  member_of: "Du är nu medlem på "
-  welcome_email_subject: "Välkommen till BRF Caraten"
+  member_of: "Du är nu medlem i "
+  you_can_login: "Du kommer kunna logga in när en administratör har godkänt ditt medlemskap."
+  welcome_email_subject: "Välkommen till Österåkers Fiskeklubb"
 
   admin: "Administratör"
   administrators: "Administratörer"

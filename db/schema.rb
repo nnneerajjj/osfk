@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140911204421) do
+ActiveRecord::Schema.define(version: 20140913221218) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -200,6 +200,13 @@ ActiveRecord::Schema.define(version: 20140911204421) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.boolean  "regular",                default: true
+    t.integer  "number"
+    t.integer  "identity_number"
+    t.string   "address"
+    t.string   "postal_address"
+    t.boolean  "package1"
+    t.boolean  "package2"
   end
 
   add_index "users", ["approved"], name: "index_users_on_approved", using: :btree

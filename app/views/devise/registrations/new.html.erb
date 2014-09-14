@@ -9,29 +9,112 @@
 
   <p><%= I18n.t(:sign_up_text) %></p>
 
-  <%#= render 'layouts/flashmessage', alert: resource.errors.full_messages.to_sentence %>
-
   <div class="eight column">
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <%= f.label :firstname %>
-      <%= f.text_field :firstname, autofocus: true %>
 
-      <%= f.label :lastname %>
-      <%= f.text_field :lastname %>
+      <div class="clearfix">
+        <div class="col-1-4 price">
+          <h3><span>300:-<span>/år</span></span>Vuxna</h3>
+          <div class="price-detail">
+          <p><strong>Ordinarie medlemsskap.</strong></p>
+          <ul>
+            <li>+200:- inträdesavgift</li>
+            <%= resource.regular %>
+            <li>Rabatterat fiske i Drängsjön</li>
+          </ul>
+            <%= f.radio_button :regular, '1', checked: resource.regular, data: { price: 300 } %>
+            <%= f.label :regular, value: '1' %>
+          </div>
+        </div>
 
-      <%= f.label :email %>
-      <%= f.email_field :email %>
+        <!-- Start Price -->
+        <div class="col-1-4 price price-feature">
+          <h3><span>175:-<span>/år</span></span>Junior /<br>Pensionärer</h3>
+          <div class="price-detail">
+          <p><strong>Ordinarie medlemsskap för personer under 18 eller över 65.</strong></p>
+          <ul>
+            <li>+200:- inträdesavgift</li>
+            <li>Rabatterat fiske i Drängsjön</li>
+          </ul>
+            <%= f.radio_button :regular, '0', checked: !resource.regular, data: { price: 175 } %>
+            <%= f.label :regular, value: '0' %>
+          </div>
+        </div>
 
-      <%= f.label :password %>
-      <%= f.password_field :password %>
+        <!-- Start Price -->
+        <div class="col-1-4 price price">
+          <h3><span>+200:-<span>/år</span></span>Tillgång till Stora Mossön</h3>
+          <div class="price-detail">
+          <p><strong>Aktiverad nyckelbricka Stora Mossön som ger tillgång till:</strong></p>
+          <ul>
+            <li>Övernattningsstuga och kök </li>
+            <li>Bastu</li>
+            <li>Harvia strandkök (fiskrök)</li>
+          </ul>
+          <%= f.check_box :package1, data: { price: 200 } %>
+          <%= f.label :package1 %>
+          </div>
+        </div>
 
-      <%= f.label :password_confirmation %>
-      <%= f.password_field :password_confirmation %>
 
+        <!-- Start Price -->
+        <div class="col-1-4 price last">
+          <h3><span>+700:-<span>/år</span></span>Årsfiskekort i drängsjön</h3>
+          <div class="price-detail">
+          <p><strong>Tillåtelse att fiska i drängsjön utan extra avgift.</strong></p>
+          <ul>
+            <li>Annars kostar det 50kr / fisketillfälle.</li>
+          </ul>
+          </div>
+          <%= f.check_box :package2, data: { price: 700 } %>
+          <%= f.label :package2 %>
+        </div>
+      </div>
 
-      <%= f.submit I18n.t(:sign_up) %>
+      <div>
+
+        <div>
+        <%= f.label 'Total kostnad:' %> <strong><span id='total-cost'></span> kr per år</strong> plus 200 kr inträdesavgift.
+
+        </div>
+        <br />
+
+        <%= f.label :firstname %>
+        <%= f.text_field :firstname, autofocus: true %>
+
+        <%= f.label :lastname %>
+        <%= f.text_field :lastname %>
+
+        <%= f.label :identity_number %> <%= t :'identity_number_hint' %>
+        <%= f.text_field :identity_number %>
+
+        <%= f.label :email %>
+        <%= f.email_field :email %>
+
+        <%= f.label :telephone %>
+        <%= f.text_field :telephone %>
+
+        <%= f.label :address %>
+        <%= f.text_field :address %>
+
+        <%= f.label :postal_address %>
+        <%= f.text_field :postal_address %>
+
+        <%= f.label :password %>
+        <%= f.password_field :password %>
+
+        <%= f.label :password_confirmation %>
+        <%= f.password_field :password_confirmation %>
+
+        <%= f.submit I18n.t(:sign_up) %>
+      </div>
   <% end %>
 
   </div>
 
 </div>
+
+
+<script type="text/javascript">
+
+</script>

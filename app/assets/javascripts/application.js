@@ -53,7 +53,23 @@ $(document).ready(function() {
 
   });
 
+  recalculate();
+  $('[data-price]').change(function() {
+    recalculate();
+  });
 });
+
+var recalculate = function() {
+  var sum = 0;
+  $('[data-price]').each(function(idx, attr) {
+    $attr = $(attr);
+
+    if ($attr.is(':checked') || $attr.is(':selected')) {
+      sum += $attr.data('price');
+    }
+    $('#total-cost').text(sum);
+  });
+}
 
 $('.date').click(function() {
   return false;

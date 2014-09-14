@@ -11,7 +11,8 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :firstname,
-                  :street_number, :house_number, :lastname, :website, :telephone, :water, :stock, :approved
+                  :street_number, :house_number, :lastname, :website, :telephone, :water, :stock, :approved,
+                  :identity_number, :package1, :package2, :regular, :address, :postal_address
 
   has_attached_file :avatar, :styles => { :thumb => "250x250>", :preview => "80x80" }
 
