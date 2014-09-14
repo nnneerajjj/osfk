@@ -80,6 +80,8 @@
                 <% if current_user %>
                   <li class="nav-parent"><%= link_to current_user.name, '#' %>
                     <ul>
+                      <li><%= link_to "Change your password", edit_user_registration_path %></li>
+
                       <li class="nav-child"><a href="about.html"><%= t :settings %></a></li>
                       <li><%= link_to I18n.t(:sign_out), destroy_user_session_path %></li>
                     </ul>

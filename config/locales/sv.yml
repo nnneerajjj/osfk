@@ -87,6 +87,7 @@ sv:
   login_below: "Det gör du genom att ange din epost och ditt lösenord här nedanför till vänster."
   settings: "Inställningar"
   about_me: "Mina inställningar"
+  update: Uppdatera
   password_changed: "Lösenord uppdaterat"
   settings_changed: "Inställningar uppdaterades"
   name: "Namn"

@@ -1,0 +1,52 @@
+<% content_for :title, I18n.t(:settings) %>
+<% content_for :header, I18n.t(:settings) %>
+<% content_for :description, I18n.t(:settings) %>
+<% content_for :meta do %>
+<% end %>
+
+<div class="inner-content page">
+  <h1><%= I18n.t(:settings) %></h1>
+
+  <div class="eight column">
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <div>
+
+        <%= f.label :firstname %>
+        <%= f.text_field :firstname %>
+
+        <%= f.label :lastname %>
+        <%= f.text_field :lastname %>
+
+        <%= f.label :identity_number %> <%= t :'identity_number_hint' %>
+        <%= f.text_field :identity_number %>
+
+        <%= f.label :email %>
+        <%= f.email_field :email %>
+
+        <%= f.label :telephone %>
+        <%= f.text_field :telephone %>
+
+        <%= f.label :address %>
+        <%= f.text_field :address %>
+
+        <%= f.label :postal_address %>
+        <%= f.text_field :postal_address %>
+
+        <%= f.label :password %>
+        <%= f.password_field :password %>
+
+        <%= f.label :password_confirmation %>
+        <%= f.password_field :password_confirmation %>
+
+        <%= f.submit I18n.t(:update) %>
+      </div>
+  <% end %>
+
+  </div>
+
+</div>
+
+
+<script type="text/javascript">
+
+</script>
