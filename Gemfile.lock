@@ -76,6 +76,8 @@ GEM
     columnize (0.8.9)
     connection_pool (2.0.0)
     daemons (1.1.9)
+    date_time_attribute (0.1.2)
+      activesupport (>= 3.0.0)
     debugger-linecache (1.2.0)
     devise (3.3.0)
       bcrypt (~> 3.0)
@@ -326,6 +328,7 @@ DEPENDENCIES
   cancancan
   coffee-rails
   daemons
+  date_time_attribute
   devise
   devise-async
   dotenv-rails

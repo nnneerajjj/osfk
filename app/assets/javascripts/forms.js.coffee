@@ -4,7 +4,7 @@ $ ->
     $('[data-form]').each (idx, attr) ->
       $attr = $(attr);
       key = $attr.data('form')
-      value = $attr.data('value') || $(attr).html()
+      value = $attr.data('value') || $attr.val() || $(attr).html()
       if attrs[key]
         if(!$.isArray(attrs[key]))
           attrs[key] = [value].concat(attrs[key])
@@ -25,7 +25,8 @@ $ ->
       dataType: "json"
       success:(data) ->
         if data[name].errors
-          alert(data[name].errors)
+          $('.message.error span').text(data[name].errors)
+          $('.message.error').removeClass('hide')
         else
           window.location.href = data[name].path
         return false

@@ -1,0 +1,116 @@
+<h1><%= t :'calendar' %></h1>
+<!-- <p>Fin kalender</p> -->
+
+<%= raw "<style>" %>
+  <%= raw "@media only screen and (max-width: 767px) {" %>
+  <% @days.each_with_index do |day, idx| %>
+    <%= raw "td:nth-of-type(#{idx + 1}):before { content: '#{day}'; }" %>
+  <% end %>
+  <%= raw "}" %>
+<%= raw "</style>" %>
+
+<div class="evt-month clearfix">
+  <h3 class="left"><span><%= month_date(@current_month) %></span></h3>
+  <ul class="right inline-list">
+    <li><a href="<%= month_path(@prev_month) %>" class="btn-3 small-btn"><em class="fa fa-angle-left"></em> <%= month_date(@prev_month) %></a></li>
+    <li><a href="<%= month_path(@next_month) %>" class="btn-3 small-btn"><%= month_date(@next_month) %> <em class="fa fa-angle-right"></em></a></li>
+  </ul>
+</div>
+
+<table class="event-table tt-1">
+  <thead>
+    <tr>
+      <% @days.each do |day| %>
+        <th><%= day %></th>
+      <% end %>
+    </tr>
+  </thead>
+  <tbody>
+
+  <% (@beginning.to_date..@end.to_date).each do |date| %>
+    <% if date.wday == 1 %>
+      <tr>
+    <% end %>
+
+    <% if date.month != @current_month.month %>
+      <td class="null-time"><div class="evt"></div></td>
+    <% else %>
+      <% events = @events.select { |ev| ev.start_date.to_date == date } %>
+      <td class="<%= date == @today ? 'current-day' : '' %> <%= events.any? ? ' active-time' : '' %>">
+        <div class="evt">
+          <b><%= date.day %></b>
+            <% if events.any? %>
+              <a class="tooltip tooltipstered" href="event.html">Melbourne VS Our Team</a>
+              <a class="tooltip" title="
+              <img class='col-1-1' src='img/fill-8.jpg'/>
+              <h5 class='tt-tile'>Melbourne VS Our Team - Home Game</h5>
+              <h6 class='tt-date'>3th August 2014</h6>
+              <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet.</p>
+              " href="event.html">Melbourne VS Our Team</a>
+            <% end %>
+          </div>
+        </td>
+    <% end %>
+
+    <% if date.wday == 7 %>
+      </tr>
+    <% end %>
+  <% end %>
+<!-- <td class="active-time"><div class="evt"><b>13</b>
+  <a class="tooltip tooltipstered" href="event.html">Melbourne VS Our Team</a></div>
+</td> -->
+<!--
+  <tr>
+    <td><div class="evt"><b>4</b></div></td>
+    <td class="active-time"><div class="evt"><b>5</b>
+      <a class="tooltip tooltipstered" href="event.html">Sydney VS Our Team - Away Game</a></div>
+    </td>
+    <td><div class="evt"><b>6</b></div></td>
+    <td><div class="evt"><b>7</b></div></td>
+    <td><div class="evt"><b>8</b></div></td>
+    <td><div class="evt"><b>9</b></div></td>
+    <td><div class="evt"><b>10</b></div></td>
+  </tr>
+
+  <tr>
+    <td><div class="evt"><b>11</b></div></td>
+    <td><div class="evt"><b>12</b></div></td>
+    <td class="active-time"><div class="evt"><b>13</b>
+      <a class="tooltip tooltipstered" href="event.html">Melbourne VS Our Team</a></div>
+    </td>
+    <td><div class="evt"><b>14</b></div></td>
+    <td><div class="evt"><b>15</b></div></td>
+    <td class="active-time"><div class="evt"><b>16</b>
+      <a class="tooltip tooltipstered" href="event.html">Quarter Finals - Tigers VS Our Team - Home Game</a></div>
+    </td>
+    <td><div class="evt"><b>17</b></div></td>
+  </tr>
+
+  <tr>
+    <td><div class="evt"><b>18</b></div></td>
+    <td><div class="evt"><b>19</b></div></td>
+    <td><div class="evt"><b>20</b></div></td>
+    <td class="active-time"><div class="evt"><b>21</b>
+      <a class="tooltip tooltipstered" href="event.html">Semi Finals - Tigers VS Our Team - Home Game</a></div>
+    </td>
+    <td><div class="evt"><b>22</b></div></td>
+    <td><div class="evt"><b>23</b></div></td>
+    <td><div class="evt"><b>24</b></div></td>
+  </tr>
+
+  <tr>
+    <td class="active-time"><div class="evt"><b>25</b>
+      <a class="tooltip tooltipstered" href="">Melbourne VS Our Team</a></div>
+    </td>
+    <td><div class="evt"><b>26</b></div></td>
+    <td><div class="evt"><b>27</b></div></td>
+    <td><div class="evt"><b>28</b></div></td>
+    <td><div class="evt"><b>29</b></div></td>
+    <td><div class="evt"><b>30</b></div></td>
+    <td><div class="evt"><b>31</b></div></td>
+  </tr>
+ -->
+  </tbody>
+</table>
+
+

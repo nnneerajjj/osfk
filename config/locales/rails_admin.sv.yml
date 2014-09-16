@@ -1,5 +1,22 @@
 sv:
   admin:
+    js:
+      true: Sant
+      false: Falskt
+      is_present: Är närvarande
+      is_blank: Är tom
+      date: Datum ...
+      between_and_: Mellan ... och ...
+      today: Idag
+      yesterday: Igår
+      this_week: Denna vecka
+      last_week: Förra veckan
+      number: Nummer ...
+      contains: Innehåller
+      is_exactly: Är exakt
+      starts_with: Börjar med
+      ends_with: Slutar med
+    loading: "Laddar..."
     home:
       name: "Hem"
     pagination:

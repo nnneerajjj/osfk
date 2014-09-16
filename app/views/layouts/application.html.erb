@@ -53,11 +53,26 @@
                 <% if can? :read, News %>
                   <li class="nav-parent">
                     <%= link_to t(:news), news_index_path %>
+                    <% if can? :create, News %>
+                      <ul>
+                        <li class="nav-parent"><%= link_to I18n.t(:create_news), new_news_path %></li>
+                      </ul>
+                    <% end %>
                   </li>
                 <% end %>
                 <% if can? :read, Topic %>
                   <li class="nav-parent">
                     <%= link_to t(:forum), topic_index_path %>
+                  </li>
+                <% end %>
+                <% if can? :read, Event %>
+                  <li class="nav-parent">
+                    <%= link_to t(:events), events_path %>
+                    <% if can? :create, Event %>
+                      <ul>
+                        <li class="nav-parent"><%= link_to I18n.t(:create_event), new_event_path %></li>
+                      </ul>
+                    <% end %>
                   </li>
                 <% end %>
                 <% if can? :access, :admin %>
@@ -80,9 +95,9 @@
                 <% if current_user %>
                   <li class="nav-parent"><%= link_to current_user.name, '#' %>
                     <ul>
-                      <li><%= link_to "Change your password", edit_user_registration_path %></li>
+                      <li></li>
 
-                      <li class="nav-child"><a href="about.html"><%= t :settings %></a></li>
+                      <li class="nav-child"><%= link_to t(:settings), edit_user_registration_path %></li>
                       <li><%= link_to I18n.t(:sign_out), destroy_user_session_path %></li>
                     </ul>
                   </li>
@@ -106,17 +121,13 @@
     </div>
   </div>
 
-  <% if flash[:alert].present? %>
-    <div class="message error">
-      <em class="fa"></em> <%= flash[:alert] %>
-    </div>
-  <% end %>
+  <div class="message error<%= flash[:alert].blank? ? ' hide' : '' %>">
+    <em class="fa"></em> <span><%= flash[:alert] %></span>
+  </div>
 
-  <% if flash[:notice].present? %>
-    <div class="message notice">
-      <em class="fa"></em> <%= flash[:notice] %>
-    </div>
-  <% end %>
+  <div class="message notice<%= flash[:notice].blank? ? ' hide' : '' %>">
+    <em class="fa"></em> <span><%= flash[:notice] %></span>
+  </div>
 
   <% banner = yield :banner %>
   <% if banner.present? %>

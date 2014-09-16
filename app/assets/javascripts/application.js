@@ -32,6 +32,7 @@
 //= require html5media
 //= require slider-1
 //= require main
+//= require pickaday
 //= require s3_direct_upload
 
 $(document).ready(function() {
@@ -57,6 +58,30 @@ $(document).ready(function() {
   $('[data-price]').change(function() {
     recalculate();
   });
+
+
+  var i = document.createElement('input');
+  i.setAttribute('type', 'date');
+
+  if (i.type === 'text') {
+
+    var i18nOptions = {
+      previousMonth : 'Tidigare månad',
+      nextMonth     : 'Nästa månad',
+      months        : ['Januari','Februari','Mars','April','Maj','Juni','Juli','Augusti','September','Oktober','November','December'],
+      weekdays      : ['Söndag','Måndag','Tisdag','Onsdag','Torsdag','Fredag','Lördag'],
+      weekdaysShort : ['Sön','Mån','Tis','Ons','Tor','Fre','Lör']
+    }
+
+    $('.datepicker').forEach(function(element) {
+      new Pikaday({
+        field: element,
+        firstDay: 1,
+        i18n: i18nOptions
+      });
+    });
+
+  }
 });
 
 var recalculate = function() {

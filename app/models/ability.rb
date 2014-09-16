@@ -12,10 +12,12 @@ class Ability
       can :manage, :all
       can :access, :admin
       can :create, News
+      can :create, Event
     else
       if user.has_role? :moderator
         can :moderate, :all
         can :create, News
+        can :create, Event
       end
       can :manage, User, id: user.id
       can :create, Topic

@@ -25,11 +25,16 @@ sv:
         postal_address: Postadress
         identity_number: Personnummer
       contact:
+        subject: Rubrik
         name: Namn
         email: Epost
         website: Webbsida
         content: Meddelande
         secret: Allt
+      event:
+        start_date: Datum
+        subject: Rubrik
+        content: Beskrivning
 
   title: "Österåkers Sportfiskeklubb - "
   home_text1: "Välkommen till <span>BRF Caraten</span>"
@@ -48,7 +53,10 @@ sv:
   contact_message_from: "Kontaktmeddelande från %{name}"
   news: "Nyheter"
   create_news: "Skapa nyhet"
+  create_event: "Skapa evenemang"
+  calendar: "Kalender"
   forum: "Diskussioner"
+  events: "Kalender"
   news_header: "Alla nyheter"
   new_post: "Skapa ny diskussionstråd"
   forum_header: "Diskussionstrådar"

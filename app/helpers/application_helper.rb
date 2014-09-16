@@ -32,4 +32,12 @@ module ApplicationHelper
       "class='text-edit' data-type='#{instance.class.to_s.downcase}' data-id='#{instance.try(:id)}' data-attr='#{attribute}'".html_safe
     end
   end
+
+  def month_path(date)
+    event_path(date.strftime('%Y-%m'))
+  end
+
+  def month_date(date)
+    l date, format: '%B %Y'
+  end
 end
