@@ -8,6 +8,7 @@ class News < ActiveRecord::Base
   attr_accessible :subject, :content, :active, :image_upload_ids
 
   validates :subject, :content, presence: true
+  validate :default_subject
 
   has_many :image_uploads, as: :uploader
 
@@ -34,5 +35,11 @@ class News < ActiveRecord::Base
     [
       :subject
     ]
+  end
+
+  def default_subject
+    if subject == I18n.t(:default_news_subject)
+      errors.add(:subject, :blank)
+    end
   end
 end

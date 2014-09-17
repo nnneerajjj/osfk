@@ -39,14 +39,8 @@
       <td class="<%= date == @today ? 'current-day' : '' %> <%= events.any? ? ' active-time' : '' %>">
         <div class="evt">
           <b><%= date.day %></b>
-            <% if events.any? %>
-              <a class="tooltip tooltipstered" href="event.html">Melbourne VS Our Team</a>
-              <a class="tooltip" title="
-              <img class='col-1-1' src='img/fill-8.jpg'/>
-              <h5 class='tt-tile'>Melbourne VS Our Team - Home Game</h5>
-              <h6 class='tt-date'>3th August 2014</h6>
-              <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet.</p>
-              " href="event.html">Melbourne VS Our Team</a>
+            <% events.each do |event| %>
+              <a class="tooltip tooltipstered" href="<%= event_path(event) %>"><%= strip_tags(event.subject) %></a>
             <% end %>
           </div>
         </td>

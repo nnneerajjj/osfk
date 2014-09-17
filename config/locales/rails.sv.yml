@@ -23,13 +23,13 @@ sv:
     - nov
     - dec
     day_names:
-    - söndag
     - måndag
-    - tisdag
+    - tisdagc
     - onsdag
     - torsdag
     - fredag
     - lördag
+    - söndag
     formats:
       default: ! '%Y-%m-%d'
       long: ! '%e %B %Y'

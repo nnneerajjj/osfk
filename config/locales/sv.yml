@@ -35,6 +35,8 @@ sv:
         start_date: Datum
         subject: Rubrik
         content: Beskrivning
+        location: Plats
+        address: Adress
 
   title: "Österåkers Sportfiskeklubb - "
   home_text1: "Välkommen till <span>BRF Caraten</span>"
@@ -58,6 +60,7 @@ sv:
   forum: "Diskussioner"
   events: "Kalender"
   news_header: "Alla nyheter"
+  details: Detaljer
   new_post: "Skapa ny diskussionstråd"
   forum_header: "Diskussionstrådar"
   new_post_header: "Skapa ny diskussionstråd"
@@ -107,6 +110,7 @@ sv:
   street_number: "Gatunummer"
   house_number: "Föreningens lägenhetsnummer"
   house_number_short: "Lägenhetsnummer"
+  date_details: "Datum"
   save: "Spara"
   latest_news: "Senaste nyheterna"
   latest_topics: "Senaste diskussionstrådarna"
@@ -117,6 +121,9 @@ sv:
   in_news: "i nyheten"
   copyright: "© Copyright 2013 Ludvig Dickman"
   unable_to_destroy_key_pages: "Denna sida går ej att ta bort"
+
+  default_event_subject: Skriv evenemangets rubrik här
+  default_news_subject: Skriv nyhetens rubrik här
 
   activated_members: Aktiverade medlemmar
   not_activated_members: Ännu inte aktiverade medlemmar

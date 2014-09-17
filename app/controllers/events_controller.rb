@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+  include ActionView::Helpers::TextHelper
 
   before_action :populate_dates, only: [:index, :show]
 
@@ -7,7 +8,9 @@ class EventsController < ApplicationController
   end
 
   def show
-    render :index
+    unless @event = Event.find_by_slug(params[:id])
+      render :index
+    end
   end
 
   def new
@@ -15,6 +18,10 @@ class EventsController < ApplicationController
   end
 
   def create
+    params[:event][:subject] = params[:event][:subject].present? ? strip_tags(params[:event][:subject]) : ''
+    params[:event][:location] = params[:event][:location].present? ? strip_tags(params[:event][:location]) : ''
+    params[:event][:address] = params[:event][:address].present? ? strip_tags(params[:event][:address]) : ''
+
     event = Event.new(params[:event].merge(created_by_id: current_user.id))
     event.save
     render json: event
@@ -23,7 +30,7 @@ class EventsController < ApplicationController
   private
 
   def populate_dates
-    @days = I18n.t(:'date.day_names').rotate(1)
+    @days = I18n.t(:'date.day_names')
 
     @current_month = Date.strptime(params[:id], "%Y-%m") rescue Time.now
 

@@ -91,11 +91,6 @@ RailsAdmin.config do |config|
 
     edit do
       field :subject
-      field :content, :rich_editor do
-        config({
-          :insert_many => true
-        })
-      end
       field :link
       field :send_after_save
 
@@ -119,21 +114,6 @@ RailsAdmin.config do |config|
     label_plural 'Sidor'
     navigation_label 'Sidor'
     weight -1
-
-    # edit do
-    #   field :title
-    #   field :header
-    #   field :public do
-    #     visible do
-    #       bindings[:object].nil? || !bindings[:object].locked?
-    #     end
-    #   end
-    #   field :content, :rich_editor do
-    #     config({
-    #       :insert_many => true
-    #     })
-    #   end
-    # end
   end
 
   config.model News do
@@ -144,11 +124,6 @@ RailsAdmin.config do |config|
 
     edit do
       field :subject
-      field :content, :rich_editor do
-        config({
-          :insert_many => true
-        })
-      end
       field :active
       # field :start_date
       # field :end_date

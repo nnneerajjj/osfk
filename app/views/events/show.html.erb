@@ -1,0 +1,40 @@
+<% content_for :title, @event.subject %>
+<% content_for :header, @event.subject %>
+<% content_for :description, @event.subject %>
+<% content_for :breadcrumb do %>
+  <%= link_to t(:calendar), events_path %>
+  <%= link_to @event.subject, events_path(@event) %>
+<% end %>
+
+<div class="main-content clearfix">
+
+<h1 class="title"><div><%= strip_tags(@event.subject) %></div></h1>
+
+<div class="clearfix evt-single-date">
+  <h6 class="left">
+    <% if @event.start_date.strftime("%H:%M") != "00:00" %>
+      <%= l @event.start_date, format: :long %>
+    <% else %>
+      <%= l @event.start_date, format: '%e %B' %>
+    <% end %>
+  </h6>
+  <div class="evt-price right"></div>
+</div>
+<div class="boxy boxy-pad col-1-3">
+  <h5><%= t :details %></h5>
+  <ul class="widget-list list-2">
+    <li>
+        <strong><%= t :date_details %>: </strong>
+        <% if @event.start_date.strftime("%H:%M") != "00:00" %>
+          <%= l @event.start_date, format: :long %>
+        <% else %>
+          <%= l @event.start_date, format: '%e %B' %>
+        <% end %>
+    </li>
+    <li><strong>Plats: </strong><%= @event.location %></li>
+    <li><strong>Adress: </strong><%= @event.address %></li>
+  </ul>
+</div>
+
+<div><%= @event.content %></div>
+</div>

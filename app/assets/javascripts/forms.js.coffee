@@ -1,5 +1,7 @@
 $ ->
   $('.form-post').click ->
+    $submit = $(this)
+    $submit.prop('disabled', true)
     attrs = {}
     $('[data-form]').each (idx, attr) ->
       $attr = $(attr);
@@ -25,8 +27,10 @@ $ ->
       dataType: "json"
       success:(data) ->
         if data[name].errors
+          $submit.prop('disabled', false)
           $('.message.error span').text(data[name].errors)
           $('.message.error').removeClass('hide')
+          $("html, body").animate({ scrollTop: 0 }, "fast");
         else
           window.location.href = data[name].path
         return false

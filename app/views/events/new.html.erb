@@ -2,39 +2,31 @@
 <% content_for :header, t(:calendar) %>
 <% content_for :description, t(:create_event) %>
 <% content_for :breadcrumb do %>
-  <%= link_to t(:calendar), news_index_path %>
+  <%= link_to t(:calendar), events_path %>
   <%= link_to t(:create_event), new_event_path %>
 <% end %>
 
 <div class="clearfix post">
 <%= form_for @event do |f| %>
 
-  <%= render 'shared/upload' %>
+  <%#= render 'shared/upload' %>
 
-  <h1 class="title project-form"><div data-form="subject" <%= edit_text_tags(@news, :subject) %>>Skriv evenemangets titel här</div></h1>
+  <h1 class="title project-form"><div data-form="subject" <%= edit_text_tags(@event, :subject) %>>Skriv evenemangets titel här</div></h1>
 
 
   <div class="boxy boxy-pad col-1-3">
-    <h5>Details</h5>
+    <h5><%= t :details %></h5>
     <ul class="widget-list list-2">
-      <li>
-        <div class="field">
-          <%= f.label :start_date %>
+      <li><strong><%= t :date_details %>: </strong>
           <%= f.date_field :start_date_date, class: 'datepicker', value: @event.start_date && l(@event.start_date.to_date), data: { form: 'start_date_date' } %>
-          <%= f.time_field :start_date_time, value: @event.start_date && l(@event.start_date, format: :shorter), data: { form: 'start_date_time' } %>
-        </div>
-        <% end %>
+          <%= f.time_field :start_date_time, value: @event.start_date && l(@event.start_date, format: :shorter), data: { form: 'start_date_time' } %><% end %>
       </li>
-      <li><strong>Start:</strong> 09:00 - 5 Aug 2014</li>
-      <li><strong>End:</strong> 15:00 - 5 Aug 2014</li>
-      <li><strong>Venue:</strong> John Bause Park </li>
-      <li><strong>Phone:</strong> 555 555 1234 </li>
-      <li><strong>Address:</strong> 310 Ashford Circuit, Suburbia, Australia, 4000  </li>
-      <li><strong>Web:</strong> <a href="#">www.sport.com</a></li>
+      <li><strong>Plats: </strong><input type="text" placeholder="Plats" data-form="location" style="background-color: white;"></li>
+      <li><strong>Adress: </strong><input type="text" placeholder="Adress" data-form="address" style="background-color: white;"></li>
     </ul>
   </div>
 
-  <div data-form="content" <%= edit_text_tags(@news, :content) %>>Skriv en beskrivning här</div>
+  <div data-form="content" <%= edit_text_tags(@event, :content) %>>Skriv en beskrivning här</div>
 </div>
 
 <%= button_tag t(:create_event), class: 'form-post', data: { url: events_path, name: 'event'  } %>

@@ -63,6 +63,7 @@ ActiveRecord::Schema.define(version: 20140915051728) do
     t.datetime "start_date",    null: false
     t.datetime "end_date"
     t.string   "location"
+    t.string   "address"
     t.string   "subject",       null: false
     t.text     "content"
     t.string   "slug"
