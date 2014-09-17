@@ -41,7 +41,7 @@
           <div class="main-header-left left adjust-left">
 
             <a class="logo" href="<%= root_path %>">
-              <img src="<%= image_path('osfk.png') %>" alt="<%= t :h1 %>" />
+              <img src="<%= image_path('osfk.png') %>" alt="<%= t :heading %>">
             </a>
 
           </div>
@@ -116,7 +116,7 @@
   <div class="outter-wrapper breadcrumb-wrapper">
     <div class="wrapper">
       <%= link_to '', root_path, class: 'fa' %>
-      <%= link_to t(:h1), root_path %>
+      <%= link_to t(:heading), root_path %>
       <%= yield :breadcrumb %>
     </div>
   </div>
