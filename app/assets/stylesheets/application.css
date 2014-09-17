@@ -25,4 +25,5 @@
  *= require skin2
  *= require full
  *= require s3_direct_upload_progress_bars
+ *= require selectize.default
  */

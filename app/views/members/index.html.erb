@@ -8,87 +8,42 @@
   <h1><%= t :members %></h1>
   <!-- <p class="lead">Our Team is the best around. Maecenas sed diam eget risus varius blandit sit amet non magna. Nullam quis risus eget urna mollis ornare vel eu leo.</p> -->
 
-<!--   <hr>
-
-  <h3 id="section1"><%= t :administrators %></h3>
-  <div class="clearfix teams">
-    <div class="col-1-3 boxy">
-      <div class="mosaic-block circle"><a href="member.html" class="mosaic-overlay link fancybox" data-fancybox-group="gallery" title="Insert Title" style="display: inline; opacity: 0.8;"></a>
-      <div class="mosaic-backdrop" style="display: block;"><img src="img/team-3.jpg" alt="Mock"></div></div>
-      <div class="inner-box">
-        <h4><a href="member.html">John Doe</a></h4>
-        <h5>President + Coach</h5>
-        <em>Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultri cies cula rabitur blanr.</em>
-        <ul class="social-link">
-          <li><a class="fa fa-facebook-square" href="#"></a></li>
-          <li><a class="fa fa-twitter-square" href="#"></a></li>
-          <li><a class="fa fa-linkedin-square" href="#"></a></li>
-          <li><a class="fa fa-instagram" href="#"></a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
- -->
-
   <hr>
+
+  <%
+    @roles = Role.all
+    %>
 
   <a href="#top" class="btn-3 xsmall-btn right fa"></a>
   <h3 id="section2"><%=  t :activated_members %></h3>
   <%= form_tag update_multiple_members_path, method: :put do %>
-    <div class="clearfix teams">
-      <% @users.select(&:approved).each do |user| %>
-        <%= fields_for "users[]", user do |f| %>
-          <div class="col-1-5 boxy">
-            <img src="<%= image_path('missingprofile.png') %>" alt="<%= user.name %>">
-            <div class="inner-box">
-              <h6><%= user.name %></h6>
-              <%= f.text_field :firstname, placeholder: t(:firstname) %>
-              <%= f.text_field :lastname, placeholder: t(:lastname) %>
-              <em><%= user.email %></em>
-              <%= f.text_field :email, placeholder: t(:email) %>
-              <%= f.check_box :approved %>
-              <%= f.label :approved %>
-            </div>
-          </div>
+    <table class="table-style-1 mobile-table" %>
+      <thead>
+        <tr>
+          <th>Förnamn</th>
+          <th>Efternamn</th>
+          <th>Email</th>
+          <th>Roller</th>
+          <th>Godkänd</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @users.each do |user| %>
+          <%= fields_for "users[]", user do |f| %>
+          <tr>
+              <td><%= f.text_field :firstname, placeholder: t(:firstname), style: 'background-color: white; width' %></td>
+              <td><%= f.text_field :lastname, placeholder: t(:lastname), style: 'background-color: white;' %></td>
+              <td><%= f.text_field :email, placeholder: t(:email), style: 'background-color: white;' %></td>
+              <td><%= f.collection_select :role_ids, @roles, :id, :name, { }, { multiple: true, class: 'multiple', style: 'width: 200px;' } %></td>
+              <td><%= f.check_box :approved %> <%= f.label :approved %></td>
+            </tr>
+          <% end %>
         <% end %>
-      <% end %>
-      <div class="clearfix">
-
-      </div>
-    </div>
+        </tbody>
+      </table>
     <%= submit_tag t :save %>
   <% end %>
 
-  <hr>
-
-  <a href="#top" class="btn-3 xsmall-btn right fa"></a>
-  <h3 id="section3"><%= t :not_activated_members %></h3>
-
-  <%= form_tag update_multiple_members_path, method: :put do %>
-    <div class="clearfix teams">
-      <% @users.select{|x| !x.approved }.each do |user| %>
-        <%= fields_for "users[]", user do |f| %>
-          <div class="col-1-5 boxy">
-            <img src="<%= image_path('missingprofile.png') %>" alt="<%= user.name %>">
-            <div class="inner-box">
-              <h6><%= f.label :firstname %></h6>
-              <%= f.text_field :firstname, placeholder: t(:firstname) %>
-              <%= f.text_field :lastname, placeholder: t(:lastname) %>
-              <em><%= user.email %></em>
-              <%= f.text_field :email, placeholder: t(:email) %>
-              <em><%= user.email %></em>
-              <%= f.check_box :approved %>
-              <%= f.label :approved %>
-            </div>
-          </div>
-        <% end %>
-      <% end %>
-      <div class="clearfix">
-
-      </div>
-    </div>
-    <%= submit_tag t :save %>
-  <% end %>
 
 
 

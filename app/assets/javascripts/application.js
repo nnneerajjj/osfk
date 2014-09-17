@@ -34,6 +34,8 @@
 //= require main
 //= require pickaday
 //= require s3_direct_upload
+//= require selectize
+
 
 $(document).ready(function() {
 
@@ -99,3 +101,5 @@ var recalculate = function() {
 $('.date').click(function() {
   return false;
 });
+
+$('.multiple').selectize();
