@@ -1,4 +1,4 @@
-<h3><%= object.comment_threads.count %> <%= I18n.t(:comment_count) %> på <span><%= object.subject %></span></h3>
+<h3><%= object.comment_threads.count %> <%= t(:comment_count) %> på <span><%= object.subject %></span></h3>
 
 <ul class="comments">
   <!-- comment -->
@@ -15,12 +15,12 @@
 </ul>
 
 
-<%= form_for Comment.new, url: path, html: { class: "contact-form2" } do |f| %>
+<%= form_for Comment.new, url: path do |f| %>
   <h2><%= t :write_comment %></h2>
   <div class="clearfix">
-    <%= f.text_area :body, required: '', rows: '5', cols: '20', placeholder: I18n.t(:write_comment) %>
+    <%= f.text_area :body, required: '', rows: '5', cols: '20', placeholder: t(:write_comment) %>
 
-    <%= f.submit I18n.t(:reply), class: 'btn left' %>
+    <%= f.submit t(:reply), class: 'btn left' %>
     <em class="right hide-480"><%= t :comment_only_visible_by_members %></em>
 
   </div>

@@ -133,7 +133,7 @@ h6.meta, .meta h6, .reply{
 blockquote cite{
 	font-style: normal;
 	text-decoration: none;
-	font-size: 18px;
+	font-size: 12px;
 }
 
 .read-more, .reply{
@@ -234,7 +234,7 @@ blockquote{
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
-	font-size: 22px;
+	font-size: 18px;
 }
 
 blockquote.right{
@@ -1860,8 +1860,8 @@ aside .widget-list{
 	border-bottom-style: solid;
 	border-bottom-width: 1px;
 	clear: left;
-	padding-bottom: 1em;
-	margin-bottom: 1em;
+	// padding-bottom: 1em;
+	// margin-bottom: 1em;
 }
 
 .thumb-list li a{
@@ -2688,12 +2688,12 @@ ul.tab-nav {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
-	padding: 1em .5em .5em;
+	// padding: 1em .5em .5em;
 }
 
 .widget .tab_content{
 	background: transparent;
-	padding: 1em 0 0;
+	// padding: 1em 0 0;
 }
 .tab_content > p{
 	margin-top: 0;

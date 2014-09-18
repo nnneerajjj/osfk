@@ -31,8 +31,8 @@ class Comment < ActiveRecord::Base
     self.children.any?
   end
 
-  scope :most_recent, order("created_at DESC").limit(3)
-  scope :asc, order("created_at ASC")
+  scope :most_recent, -> { order("id DESC").limit(3) }
+  scope :asc, -> { order("id ASC") }
 
   # Helper class method to lookup all comments assigned
   # to all commentable types for a given user.

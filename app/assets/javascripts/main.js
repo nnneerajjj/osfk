@@ -1,6 +1,6 @@
 /* ==========================================================================
    TABLE OF CONTENTS
-    
+
 	01. SIDR Close Menu on Resize
 	02. SIDR Menu
 	03. Tabs
@@ -21,7 +21,7 @@
    ========================================================================== */
 
 
-/* 
+/*
 01. SIDR CLOSE MENU ON RESIZE ______________________________________________ */
 jQuery(window).resize(function() {
        jQuery.sidr('close', 'sidr-main');
@@ -32,7 +32,7 @@ jQuery(window).resize(function() {
 $(document).ready(function() {
 
 
-/* 
+/*
 02. SIDR MENU ______________________________________________________________ */
 $('#responsive-menu-button').sidr({
     name: 'sidr-main',
@@ -45,7 +45,7 @@ $('#sidr-id-closebtn').click(function() {
 
 
 
-/* 
+/*
 03. TABS ___________________________________________________________________ */
 $("#tab-container1").cleanTabs({
 	"speed": 400
@@ -57,44 +57,44 @@ $("#tab-container2").cleanTabs({
 
 
 
-/* 
+/*
 04. PARALLAX ________________________________________________________________ */
 $(window).stellar()
 
 
 
 
-/* 
+/*
 05. FIT VIDS ________________________________________________________________ */
 $(".body-wrapper").fitVids();
 
 
 
 
-/* 
+/*
 06. FANCYBOX ________________________________________________________________ */
-$('.fancybox').fancybox(); 
+$('.fancybox').fancybox();
 
 
 
 
-/* 
+/*
 07. SCROLL UP ________________________________________________________________ */
 $.scrollUp({
-    scrollName: 'scrollUp', 
+    scrollName: 'scrollUp',
     topDistance: '300',
-    topSpeed: 300, 
+    topSpeed: 300,
     animation: 'fade',
-    animationInSpeed: 200, 
+    animationInSpeed: 200,
     animationOutSpeed: 200,
-    scrollText: '', 
-    activeOverlay: false, 
- });  
+    scrollText: '',
+    activeOverlay: false,
+ });
 
 
 
 
-/* 
+/*
 09. MOSAIC STYLES _____________________________________________________________ */
 $('.circle').mosaic({
 	opacity		:	0.8			//Opacity for overlay (0-1)
@@ -136,12 +136,12 @@ $('.cover3').mosaic({
 
 
 
-/* 
+/*
 10. OWL CAROUSEL ____________________________________________________________ */
 var owl = $("#carousel-1");
- 
+
  owl.owlCarousel({
-     
+
  items : 4,
  itemsCustom : false,
  itemsDesktop : [1199,3],
@@ -171,12 +171,12 @@ var owl = $("#carousel-1");
  pagination : true,
  paginationNumbers: false,
 
- // Responsive 
+ // Responsive
  responsive: true,
  responsiveRefreshRate : 200,
  responsiveBaseWidth: window,
-     
- 
+
+
 });
 
 
@@ -201,7 +201,7 @@ $(".stop").click(function(){
 var owl = $("#carousel-single");
 
   owl.owlCarousel({
-     
+
      items : 1,
      pagination : false,
      singleItem : true,
@@ -209,17 +209,17 @@ var owl = $("#carousel-single");
      slideSpeed : 300,
      paginationSpeed : 400,
      autoHeight:true,
- 
+
   });
-  
 
 
 
 
-/* 
-11. ISOTOPE GALLERY ________________________________________________________________ */ 
+
+/*
+11. ISOTOPE GALLERY ________________________________________________________________ */
 var $container = $('#thumb-gallery');
-  
+
     $container.isotope({
       masonry: {
         columnWidth: 1 //was 26
@@ -227,7 +227,7 @@ var $container = $('#thumb-gallery');
       sortBy: 'number',
       getSortData: {
         number: function( $elem ) {
-          var number = $elem.hasClass('element') ? 
+          var number = $elem.hasClass('element') ?
             $elem.find('.number').text() :
             $elem.attr('data-number');
           return parseInt( number, 10 );
@@ -239,8 +239,8 @@ var $container = $('#thumb-gallery');
         }
       }
     });
-     
-       
+
+
 var $optionSets = $('.option-set'),
           $optionLinks = $optionSets.find('a');
 
@@ -253,7 +253,7 @@ var $optionSets = $('.option-set'),
         var $optionSet = $this.parents('.option-set');
         $optionSet.find('.selected').removeClass('selected');
         $this.addClass('selected');
-  
+
         // make option object dynamically, i.e. { filter: '.my-filter-class' }
         var options = {},
             key = $optionSet.attr('data-option-key'),
@@ -268,24 +268,24 @@ var $optionSets = $('.option-set'),
           // otherwise, apply new options
           $container.isotope( options );
         }
-        
+
         return false;
       });
-      
-      
-  // initialize Isotope after all images have loaded
-  var $container = $('#thumb-gallery').imagesLoaded( function() {
-    $container.isotope({
-      // options
-    });
-  }); 
-  
-  
-  
- 
- 
-/* 
-12. TOGGLE ________________________________________________________________ */	  
+
+
+  // // initialize Isotope after all images have loaded
+  // var $container = $('#thumb-gallery').imagesLoaded( function() {
+  //   $container.isotope({
+  //     // options
+  //   });
+  // });
+
+
+
+
+
+/*
+12. TOGGLE ________________________________________________________________ */
 $('.toggle-btn').click(function(e){
 e.preventDefault();
 $(this).closest('li').find('.toggle-content').not(':animated').slideToggle();
@@ -302,8 +302,8 @@ $(this).toggleClass("active");
 
 
 
-/* 
-13. ACCORDION ________________________________________________________________ */	  
+/*
+13. ACCORDION ________________________________________________________________ */
 $('.accordion-btn').click(function(e){
 	e.preventDefault();
 	$this = $(this);
@@ -326,13 +326,13 @@ $('.accordion-btn').click(function(e){
 		$thisAccordionContent.addClass('active');
 	}
 });
- 	
- 	 
-  
 
 
 
-/* 
+
+
+
+/*
 14. SMOOTH SCROLL ________________________________________________________________ */
 $('a[href*=#]:not([href=#])').click(function() {
     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
@@ -346,13 +346,13 @@ $('a[href*=#]:not([href=#])').click(function() {
       }
     }
   });
-  
-  
-  
-  
-  
-  
-/* 
+
+
+
+
+
+
+/*
 15. TOOL TIPS ________________________________________________________________ */
 $('.tooltip').tooltipster({
 	contentAsHTML: true,
@@ -368,7 +368,7 @@ $('.tooltip').tooltipster({
 
 
 
-/* 
+/*
 16. COUNTDOWNS ________________________________________________________________ */
 
 var endDate = "August 27, 2087 15:03:25";
@@ -381,14 +381,14 @@ $('.countdown.styled').countdown({
     $(this.el).html("<div class='cd-years'>" + this.leadingZeros(data.years, 1) + " <span>years</span></div><div class='cd-days'>" + this.leadingZeros(data.days, 1) + " <span>days</span></div><div class='cd-hours'>" + this.leadingZeros(data.hours, 1) + " <span>hrs</span></div><div class='cd-mins'>" + this.leadingZeros(data.min, 1) + " <span>min</span></div><div class='cd-secs'>" + this.leadingZeros(data.sec, 2) + " <span>sec</span></div>");
   }
 });
-        
-                      
 
-/* 
+
+
+/*
 17. COUNTDOWNS ________________________________________________________________ */
-$("#page-sticky").sticky({ topSpacing: 0 });			
-     
-// End Call	 
+$("#page-sticky").sticky({ topSpacing: 0 });
+
+// End Call
 });
 
 

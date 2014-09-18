@@ -1,23 +1,20 @@
-<% content_for :title, I18n.t(:new_post_header) %>
-<% content_for :header, I18n.t(:forum) %>
-<% content_for :description, I18n.t(:new_post_header) %>
+<% content_for :title, t(:new_post_header) %>
+<% content_for :header, t(:forum) %>
+<% content_for :description, t(:new_post_header) %>
 
-<div id="comment-leave" class="row">
-  <h1><%= I18n.t(:new_post_header) %></h1>
+<div class="clearfix post">
+  <h1><%= t(:new_post_header) %></h1>
 
   <div>
-    <%= form_for Topic.new, url: topic_index_path, html: { id: "contact-form2"} do |f| %>
-      <div class="four column">
-        <label id="label" for="subject"><%= f.label :subject, I18n.t(:subject), class: 'ie-label-white' %></label>
-        <%= f.text_field :subject, placeholder: I18n.t(:subject), required: '' %>
+    <%= form_for @topic, url: topic_index_path do |f| %>
+      <div>
+        <%= f.text_field :subject, placeholder: Topic.human_attribute_name(:subject) , required: '' %>
       </div>
       <div>
-        <div class="nine column">
-          <%= f.text_area :content, required: '' %>
-        </div>
-        <div class="three column">
-          <%= f.submit I18n.t(:create) %>
-        </div>
+        <%= f.text_area :content, required: '', rows: '5', cols: '20', placeholder: Topic.human_attribute_name(:content)  %>
+      </div>
+      <div>
+        <%= f.submit t(:create_topic) %>
       </div>
     <% end %>
   </div>

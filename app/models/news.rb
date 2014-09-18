@@ -19,6 +19,10 @@ class News < ActiveRecord::Base
     content.gsub(/<img .*?>/i, '')
   end
 
+  def image
+    image_uploads.first
+  end
+
   def images
     doc = Nokogiri::HTML( content )
     imgs = doc.css('img').map{ |i| i['src'] }

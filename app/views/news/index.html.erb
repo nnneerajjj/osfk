@@ -11,7 +11,7 @@
     <div class="col-1-3 mosaic-block circle">
       <a href="<%= news_path(news) %>" class="mosaic-overlay link" title="<%= news.subject %>" style="display: inline; opacity: 0;"></a>
       <div class="mosaic-backdrop" style="display: block;">
-      <% if news.image_uploads.any? %>
+      <% if news.image.present? %>
         <img src="<%= news.image_uploads.first.file.url(:thumb) %>" alt="<%= news.subject %>">
         <% end %>
       </div>

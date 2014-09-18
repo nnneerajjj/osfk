@@ -13,6 +13,7 @@ class NewsController < ApplicationController
   def create
     news = News.new(params[:news])
     news.save
+    flash[:success] = "Du skapade nyheten #{news.subject}"
     render json: news
   end
 
@@ -22,6 +23,8 @@ class NewsController < ApplicationController
   def comment
     @comment = Comment.build_from( @news, current_user.id, params[:comment][:body] )
     @comment.save!
+
+    flash[:success] = "Du kommenterade nyheten #{@news.subject}"
 
     return redirect_to news_path(@news.slug)
   end

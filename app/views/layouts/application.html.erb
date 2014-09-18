@@ -55,7 +55,7 @@
                     <%= link_to t(:news), news_index_path %>
                     <% if can? :create, News %>
                       <ul>
-                        <li class="nav-parent"><%= link_to I18n.t(:create_news), new_news_path %></li>
+                        <li class="nav-parent"><%= link_to t(:create_news), new_news_path %></li>
                       </ul>
                     <% end %>
                   </li>
@@ -63,6 +63,11 @@
                 <% if can? :read, Topic %>
                   <li class="nav-parent">
                     <%= link_to t(:forum), topic_index_path %>
+                    <% if can? :create, Topic %>
+                      <ul>
+                        <li class="nav-parent"><%= link_to t(:create_topicdiskussionstråd), new_topic_path %></li>
+                      </ul>
+                    <% end %>
                   </li>
                 <% end %>
                 <% if can? :read, Event %>
@@ -70,7 +75,7 @@
                     <%= link_to t(:events), events_path %>
                     <% if can? :create, Event %>
                       <ul>
-                        <li class="nav-parent"><%= link_to I18n.t(:create_event), new_event_path %></li>
+                        <li class="nav-parent"><%= link_to t(:create_event), new_event_path %></li>
                       </ul>
                     <% end %>
                   </li>
@@ -98,12 +103,12 @@
                       <li></li>
 
                       <li class="nav-child"><%= link_to t(:settings), edit_user_registration_path %></li>
-                      <li><%= link_to I18n.t(:sign_out), destroy_user_session_path %></li>
+                      <li><%= link_to t(:sign_out), destroy_user_session_path %></li>
                     </ul>
                   </li>
                 <% else %>
-                  <li class="nav-parent"><%= link_to I18n.t(:sign_up), new_user_registration_path %></li>
-                  <li class="nav-parent"><%= link_to I18n.t(:sign_in), new_user_session_path %></li>
+                  <li class="nav-parent"><%= link_to t(:sign_up), new_user_registration_path %></li>
+                  <li class="nav-parent"><%= link_to t(:sign_in), new_user_session_path %></li>
                 <% end %>
                 </ul>
             </nav>
@@ -120,6 +125,11 @@
       <%= yield :breadcrumb %>
     </div>
   </div>
+
+  <div class="message success<%= flash[:success].blank? ? ' hide' : '' %>">
+    <em class="fa"></em> <span><%= flash[:success] %></span>
+  </div>
+
 
   <div class="message error<%= flash[:alert].blank? ? ' hide' : '' %>">
     <em class="fa"></em> <span><%= flash[:alert] %></span>

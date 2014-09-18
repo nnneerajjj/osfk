@@ -37,6 +37,12 @@ sv:
         content: Beskrivning
         location: Plats
         address: Adress
+      news:
+        subject: Rubrik
+        content: Innehåll
+      topic:
+        subject: Rubrik
+        content: Innehåll
 
   title: "Österåkers Sportfiskeklubb - "
   home_text1: "Välkommen till <span>BRF Caraten</span>"
@@ -55,6 +61,7 @@ sv:
   contact_message_from: "Kontaktmeddelande från %{name}"
   news: "Nyheter"
   create_news: "Skapa nyhet"
+  create_topic: "Skapa diskussionstråd"
   create_event: "Skapa evenemang"
   calendar: "Kalender"
   forum: "Diskussioner"
@@ -112,6 +119,7 @@ sv:
   house_number_short: "Lägenhetsnummer"
   date_details: "Datum"
   save: "Spara"
+  latest: "Senaste"
   latest_news: "Senaste nyheterna"
   latest_topics: "Senaste diskussionstrådarna"
   latest_comments: "Senaste kommentarerna"
@@ -187,3 +195,19 @@ sv:
   notification_subject: "Automatiskt veckobrev från brfcaraten.se"
   notification_all_empty: "Ingenting har hänt på brfcaraten.se sedan förra veckan. :/"
   notification_since_last_date: "Sedan förra veckan har följande hänt på brfcaraten.se:"
+  helpers:
+    page_entries_info:
+      more_pages:
+        display_entries: Displaying %{entry_name} <b>%{first}&nbsp;-&nbsp;%{last}</b> of <b>%{total}</b> in total
+      one_page:
+        display_entries:
+          one: Displaying <b>%{count}</b> %{entry_name}
+          other: Displaying <b>all %{count}</b> %{entry_name}
+          zero: No %{entry_name} found
+  views:
+    pagination:
+      first: "Första"
+      last: Sista &raquo;
+      next: "Nästa"
+      previous: "Föregående"
+      truncate: "&hellip;"

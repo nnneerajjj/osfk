@@ -1,0 +1,18 @@
+
+<div class="clearfix post">
+  <h1 class="title">Välkommen</h1>
+
+  <p>
+    <% text = @page.texts.find_by_key('lead') %>
+    <div <%= edit_text_tags(text, :value) %>>
+      <%= text.value.html_safe %>
+    </div>
+  </p>
+
+  <p>
+    <% text = @page.texts.find_by_key('content') %>
+    <div <%= edit_text_tags(text, :value) %>>
+      <%= text.value.html_safe %>
+    </div>
+  </p>
+</div>

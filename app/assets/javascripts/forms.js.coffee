@@ -25,9 +25,10 @@ $ ->
       url: url,
       data: data
       dataType: "json"
+      complete: ->
+        $submit.prop('disabled', false)
       success:(data) ->
         if data[name].errors
-          $submit.prop('disabled', false)
           $('.message.error span').text(data[name].errors)
           $('.message.error').removeClass('hide')
           $("html, body").animate({ scrollTop: 0 }, "fast");

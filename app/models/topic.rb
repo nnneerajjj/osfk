@@ -13,5 +13,5 @@ class Topic < ActiveRecord::Base
 
   validates :user, :subject, :content, presence: true
 
-  scope :most_recent, order("created_at desc").limit(3)
+  scope :most_recent, -> { order("id desc").limit(3) }
 end

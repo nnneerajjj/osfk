@@ -7,6 +7,7 @@ class TopicController < ApplicationController
   end
 
   def new
+    @topic = Topic.new
   end
 
   def show
@@ -17,9 +18,10 @@ class TopicController < ApplicationController
     @topic = Topic.new(params[:topic])
     @topic.user = current_user
     if @topic.save
+      flash[:success] = "Du skapade diskussionstråden #{@topic.subject}"
       return redirect_to topic_index_path
     else
-      render action: :new
+      render :new
     end
   end
 
