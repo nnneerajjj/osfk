@@ -1,0 +1,41 @@
+<% content_for :title, t(:letters) %>
+<% content_for :header, t(:letters) %>
+<% content_for :description, t(:letters) %>
+<% content_for :breadcrumb do %>
+  <%= link_to t(:letters), letters_path %>
+<% end %>
+
+<div class="post-excerpt clearfix">
+
+  <table class="table-style-1">
+    <thead>
+      <tr>
+        <th>
+          Rubrik
+        </th>
+        <th>
+          Meddelande
+        </th>
+        <th>
+          Skickat till alla
+        </th>
+        <th>
+          Skicka till
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% Letter.all.each do |letter| %>
+        <tr>
+          <td><%= link_to letter.subject, letter %></td>
+          <td><%= truncate(letter.content, length: 50, escape: false) %></td>
+          <td><%= l(letter.sent_to_all_at, format: :short) if letter.sent_to_all_at %></td>
+          <td>
+            <%= form_tag(send_me_letter_path(letter.id), method: "POST", style: "margin:0") do %><%= submit_tag('Mig') %><% end %>
+            <%= form_tag(send_all_letter_path(letter.id), method: "POST", style: "margin:0") do %><%= submit_tag('Alla', data: { confirm: 'Är du säker på att du vill skicka till alla?' }) %><% end %>
+          </td>
+        </tr>
+      <% end %>
+     </tbody>
+  </table>
+</div>

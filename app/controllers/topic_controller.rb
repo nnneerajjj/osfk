@@ -18,7 +18,7 @@ class TopicController < ApplicationController
     @topic = Topic.new(params[:topic])
     @topic.user = current_user
     if @topic.save
-      flash[:success] = "Du skapade diskussionstråden #{@topic.subject}"
+      flash[:notice] = "Du skapade diskussionstråden #{@topic.subject}"
       return redirect_to topic_index_path
     else
       render :new

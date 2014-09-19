@@ -43,6 +43,11 @@ sv:
       topic:
         subject: Rubrik
         content: Innehåll
+      letter:
+        subject: Rubrik
+        content: Innehåll
+        link: Länk
+
 
   title: "Österåkers Sportfiskeklubb - "
   home_text1: "Välkommen till <span>BRF Caraten</span>"
@@ -64,6 +69,8 @@ sv:
   create_news: "Skapa nyhet"
   create_topic: "Skapa diskussionstråd"
   create_event: "Skapa evenemang"
+  create_letter: "Skapa brev"
+  save_letter: "Spara brev"
   calendar: "Kalender"
   forum: "Diskussioner"
   the_discussions: "Diskussionerna"
@@ -86,6 +93,7 @@ sv:
   no_comments: "Inga kommentarer"
   comment_count: "kommentarer"
   write_comment: "Skriv en kommentar"
+  link: "Länk"
   reply: "Svara"
   email: "Epost"
   bank_account: "Bankgiro"
@@ -125,6 +133,7 @@ sv:
   house_number_short: "Lägenhetsnummer"
   date_details: "Datum"
   time_details: "Tid"
+  letters: "Brev"
   save: "Spara"
   latest: "Senaste"
   latest_news: "Senaste nyheterna"

@@ -3,7 +3,7 @@ class RegistrationsController < Devise::RegistrationsController
 
   def create
     result = super
-    flash[:alert] = resource.errors.full_messages.to_sentence
+    flash[:error] = resource.errors.full_messages.to_sentence
   end
 
   # def update

@@ -1,0 +1,22 @@
+<% content_for :title, @letter.subject %>
+<% content_for :header, t(:letters) %>
+<% content_for :description, @letter.subject %>
+<% content_for :breadcrumb do %>
+  <%= link_to t(:letters), letters_path %>
+  <%= link_to @letter.subject, letter_path(@letter) %>
+<% end %>
+<div class="clearfix post">
+  <label><%= t :subject %></label>
+  <input type="text" data-form="subject" placeholder="<%= t :subject %>" value="<%= @letter.subject %>">
+
+  <div <%= edit_text_tags(@letter, :content) %>><%= auto_link(simple_format(@letter.content), html: { target: '_blank' }) { |text| text } %></div>
+
+  <label><%= t :link %></label>
+  <input type="text" data-form="link" placeholder="<%= t :link %>" value="<%= @letter.link %>">
+
+</div>
+
+<%= button_tag t(:save_letter), class: 'form-post', data: { method: 'PUT', url: letter_path(@letter), name: 'letter' } %>
+<%= link_to 'Tillbaka', letters_path, style: 'margin-left: 20px;' %>
+
+<%= form_tag(send_me_letter_path(@letter.id), method: "POST", class: 'right', style: "margin:0; display: inline-block;") do %><%= submit_tag('Skicka brev till mig') %><% end %>

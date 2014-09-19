@@ -6,7 +6,9 @@ $ ->
     $('[data-form]').each (idx, attr) ->
       $attr = $(attr);
       key = $attr.data('form')
+      console.log(key)
       value = $attr.data('value') || $attr.val() || $(attr).html()
+      console.log(value)
       if attrs[key]
         if(!$.isArray(attrs[key]))
           attrs[key] = [value].concat(attrs[key])
@@ -18,10 +20,12 @@ $ ->
     data = {}
     name = $(this).data('name')
     url = $(this).data('url')
+
     data[name] = attrs
+    console.log data
 
     $.ajax
-      type: "POST",
+      type: $submit.data('method') || "POST",
       url: url,
       data: data
       dataType: "json"

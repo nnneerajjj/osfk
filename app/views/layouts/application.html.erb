@@ -100,17 +100,14 @@
                     <%= link_to t(:members), members_path %>
                   </li>
                 <% end %>
-                  <!-- <ul>
-                    <li><a href="about.html">Standard Pages &nbsp; <em class="fa">&#xf105;</em></a>
-                      <ul>
-                        <li><a href="about.html">Standard Feature</a></li>
-                        <li><a href="full-feature.html">Full Feature</a></li>
-                        <li><a href="parallax-feature.html">Parallax Feature</a></li>
-                        <li><a href="no-feature.html">No Feature Page</a></li>
-                        <li><a href="full-content.html">Full Content</a></li>
-                      </ul>
-                    </li>
-                  </ul> -->
+                <% if can? :create, Letter %>
+                  <li class="nav-parent">
+                    <%= link_to t(:letters), letters_path %>
+                    <ul>
+                      <li class="nav-parent"><%= link_to t(:create_letter), new_letter_path %></li>
+                    </ul>
+                  </li>
+                <% end %>
 
                 <% if current_user %>
                   <li class="nav-parent"><%= link_to current_user.name, '#' %>
@@ -141,17 +138,17 @@
     </div>
   </div>
 
-  <div class="message success<%= flash[:success].blank? ? ' hide' : '' %>">
-    <em class="fa"></em> <span><%= flash[:success] %></span>
+  <div class="message success<%= flash[:notice].blank? ? ' hide' : '' %>">
+    <em class="fa"></em> <span><%= flash[:notice] %></span>
   </div>
 
 
-  <div class="message error<%= flash[:alert].blank? ? ' hide' : '' %>">
-    <em class="fa"></em> <span><%= flash[:alert] %></span>
+  <div class="message error<%= flash[:error].blank? ? ' hide' : '' %>">
+    <em class="fa"></em> <span><%= flash[:error] %></span>
   </div>
 
-  <div class="message notice<%= flash[:notice].blank? ? ' hide' : '' %>">
-    <em class="fa"></em> <span><%= flash[:notice] %></span>
+  <div class="message notice<%= flash[:alert].blank? ? ' hide' : '' %>">
+    <em class="fa"></em> <span><%= flash[:alert] %></span>
   </div>
 
   <% banner = yield :banner %>

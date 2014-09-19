@@ -1,21 +1,20 @@
 class Letter < ActiveRecord::Base
-  attr_accessible :subject, :content, :link, :send_after_save, :user_id
-
-  after_save :send_email
+  attr_accessible :subject, :content, :link, :user_id, :sent_to_all_at
 
   belongs_to :user
 
   validates :subject, :content, :user, presence: true
 
-  private
 
-  def send_email
-    if self.send_after_save
-      User.where(active: true).each do |user|
-        LetterMailer.delay.email(self, user)
-      end
 
-      self.update_column(:send_after_save, false)
+  def send_to(user)
+    LetterMailer.delay.email(self, user)
+  end
+
+  def send_to_all
+    User.where(active: true).each do |user|
+      send_to(user)
     end
+    update_attribute(:sent_to_all_at, Time.now)
   end
 end

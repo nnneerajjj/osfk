@@ -82,8 +82,16 @@ $(document).ready(function() {
         i18n: i18nOptions
       });
     });
-
   }
+
+
+  $('[data-confirm]').click(function() {
+    if (!confirm($(this).data('confirm'))) {
+      return false;
+    }
+  });
+
+
 });
 
 var recalculate = function() {
@@ -99,3 +107,4 @@ var recalculate = function() {
 }
 
 $('.multiple').selectize();
+

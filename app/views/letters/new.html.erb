@@ -1,0 +1,21 @@
+<% content_for :title, t(:create_letter) %>
+<% content_for :header, t(:letter) %>
+<% content_for :description, t(:create_letter) %>
+<% content_for :breadcrumb do %>
+  <%= link_to t(:letters), letters_path %>
+  <%= link_to t(:create_letter), new_letter_path %>
+<% end %>
+
+<div class="clearfix post">
+
+  <label><%= t :subject %></label>
+  <input type="text" data-form="subject" placeholder="<%= t :subject %>" value="<%= @letter.subject %>">
+
+  <div data-form="content" style="margin: 40px; 0 20px; 0" <%= edit_text_tags(@letter, :content) %>><%= auto_link(simple_format(@letter.content), html: { target: '_blank' }) { |text| text } %>Skriv brev här</div>
+
+  <label><%= t :link %></label>
+  <input type="text" data-form="link" placeholder="<%= t :link %>" value="<%= @letter.link %>">
+
+</div>
+
+<%= button_tag t(:create_letter), class: 'form-post', data: { url: letters_path, name: 'letter' } %>

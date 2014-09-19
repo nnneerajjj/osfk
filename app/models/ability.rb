@@ -13,6 +13,7 @@ class Ability
       can :access, :admin
       can :create, News
       can :create, Event
+      can :create, Letter
     else
       if user.has_role? :moderator
         can :moderate, :all
