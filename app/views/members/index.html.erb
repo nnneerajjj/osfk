@@ -17,7 +17,7 @@
   <a href="#top" class="btn-3 xsmall-btn right fa"></a>
   <h3 id="section2"><%=  t :activated_members %></h3>
   <%= form_tag update_multiple_members_path, method: :put do %>
-    <table class="table-style-1 mobile-table" %>
+    <table class="table-style-2" %>
       <thead>
         <tr>
           <th>Förnamn</th>
@@ -31,10 +31,10 @@
         <% @users.each do |user| %>
           <%= fields_for "users[]", user do |f| %>
           <tr>
-              <td><%= f.text_field :firstname, placeholder: t(:firstname), style: 'background-color: white; width' %></td>
+              <td><%= f.text_field :firstname, placeholder: t(:firstname), style: 'background-color: white;' %></td>
               <td><%= f.text_field :lastname, placeholder: t(:lastname), style: 'background-color: white;' %></td>
               <td><%= f.text_field :email, placeholder: t(:email), style: 'background-color: white;' %></td>
-              <td><%= f.collection_select :role_ids, @roles, :id, :name, { }, { multiple: true, class: 'multiple', style: 'width: 200px;' } %></td>
+              <td><%= f.collection_select :role_ids, @roles, :id, :name, { }, { multiple: true, class: 'multiple', style: 'width: 250px;' } %></td>
               <td><%= f.check_box :approved %> <%= f.label :approved %></td>
             </tr>
           <% end %>
@@ -43,18 +43,12 @@
       </table>
     <%= submit_tag t :save %>
   <% end %>
-
-
-
-
   </div>
-
 
   <aside class="col-1-5">
     <div class="widget">
         <h3 class="widget-title"><%= t :sections %></h3>
         <ul class="widget-list  list-1">
-          <!-- <li><a href="#section1">Club Committee</a></li> -->
           <li><a href="#section2"><%= t :activated_members %></a></li>
           <li><a href="#section3"><%= t :not_activated_members %></a></li>
         </ul>

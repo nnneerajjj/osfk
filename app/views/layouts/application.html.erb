@@ -20,6 +20,21 @@
     </head>
     <body>
 
+<%# <div class="outter-wrapper pre-header-area header-style-5 sticky">
+    <div class="wrapper clearfix">
+
+      <div class="pre-header-left left">
+        <ul>
+        </ul>
+        </div>
+
+      <div class="pre-header-right right">
+        <strong>Next Game:</strong> <div class="countdown styled"><div class="cd-years">72 <span>years</span></div><div class="cd-days">342 <span>days</span></div><div class="cd-hours">15 <span>hrs</span></div><div class="cd-mins">19 <span>min</span></div><div class="cd-secs">18 <span>sec</span></div></div>
+      </div>
+
+    </div>
+  </div>
+ %>
   <div class="outter-wrapper header-area header-style-4">
 
     <div class="wrapper clearfix logo-container with-menu">
@@ -65,7 +80,7 @@
                     <%= link_to t(:forum), topic_index_path %>
                     <% if can? :create, Topic %>
                       <ul>
-                        <li class="nav-parent"><%= link_to t(:create_topicdiskussionstråd), new_topic_path %></li>
+                        <li class="nav-parent"><%= link_to t(:create_topic), new_topic_path %></li>
                       </ul>
                     <% end %>
                   </li>
@@ -172,9 +187,20 @@
           <div class="ad"><a href="http://www.domarudden.se/"><img alt="" src="http://www.sportnik.com/file/show/1660516"></a></div>
           <div class="ad"><a href="http://www.flugspon.se/"><img alt="" src="http://www.sportnik.com/file/show/1965433"></a></div>
         </aside>
+
+        <% aside = yield :aside %>
+        <% if aside.present? %>
+          <%= aside %>
+        <% end %>
       <% end %>
     </div>
   </div>
+
+  <%= render 'layouts/footer' %>
+
+
+
+
 
   <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script> -->
 

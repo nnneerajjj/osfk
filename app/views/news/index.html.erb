@@ -19,6 +19,7 @@
 
     <div class="col-2-3 last">
       <h3><%= link_to news.subject, news %></h3>
+      <h6 class="meta"><a class="date" href="<%= news_path(news) %>"><%= l news.created_at, format: :long %></a></h6>
       <p><%= auto_link(simple_format(truncate(news.text, length: 250, escape: false)), html: { target: '_blank' }) { |text| text } %></p>
         <% if can? :comment, news %>
           <%= link_to t(:read_more_comment), news %>

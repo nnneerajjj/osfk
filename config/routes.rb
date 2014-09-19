@@ -12,7 +12,7 @@ Caraten::Application.routes.draw do
   resources :news, path: 'nyheter' do
     post :comment, on: :member
   end
-  resources :topic, path: 'forum' do
+  resources :topic, path: 'diskussioner' do
     post :comment, on: :member
   end
   resources :texts, only: [] do

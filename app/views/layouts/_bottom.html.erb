@@ -1,51 +1,57 @@
-<% if can? :read, :all %>
-<footer class="row">
-
-  <div class="four column contact-info popular-post">
-    <div class="back-title">
-      <h2><%= I18n.t(:latest_news) %></h2>
+<div class="outter-wrapper footer-wrapper">
+  <div class="wrapper clearfix">
+    <!-- Start Widget -->
+    <div class="col-1-4 widget">
+      <h3 class="widget-title">Contact Us</h3>
+      <ul class="list-1">
+        <li>
+          <strong>Telephone Enquiry:</strong><br>
+           +61 555 555 1234
+        </li>
+        <li>
+          <strong>Facsimile:</strong><br>
+          +61 555 555 1234
+        </li>
+        <li><a href="#">info@sports.com</a></li>
+      </ul>
     </div>
-    <% most_recent_news.each do |news| %>
-      <div class="post">
-        <a href="<%= news_path news %>">
-          <%= image_tag news.thumbnail %>
-          <%= image_tag 'image.png', class: 'hover-image' %>
-        </a>
-        <%= link_to raw("<p>#{news.subject}</p>".html_safe), news %>
-        <span><%= l news.created_at, format: :short %></span>
-      </div>
-    <% end %>
+
+
+
+    <!-- Start Widget -->
+    <div class="col-1-4 widget">
+      <h3 class="widget-title">Our Mission</h3>
+      <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Maecenas sed diam eget risus varius blandit sit amet non magna. Fusce dapibus.</p>
+    </div>
+
+
+
+    <!-- Start Widget -->
+    <div class="col-1-4 widget">
+      <h3 class="widget-title">Club House Hours</h3>
+      <ul class="open-hours">
+        <li>Mondays <span>9am - 10pm</span></li>
+        <li>Tue - Fri <span>9am - 9pm</span></li>
+        <li>Sat - Sun <span>7am - 9pm</span></li>
+        <li>Public Holidays <span>7am - 1am</span></li>
+      </ul>
+    </div>
+
+
+    <!-- Start Widget -->
+    <div class="col-1-4 widget last">
+      <a class="logo" href="index.html">
+        <img src="img/osfk.png" alt="Sport">
+      </a>
+      <ul class="list-1">
+        <li>
+            <strong>Address:</strong><br>
+            310 Ashfield Ave, Suburbia, Brisbane, Australia, 4000
+        </li>
+        <li>
+          <strong><a href="contact.html">View on Map</a></strong>
+        </li>
+      </ul>
+    </div>
   </div>
-
-  <div class="four column contact-info twiter">
-    <div class="back-title">
-      <h2><%= I18n.t(:latest_topics) %></h2>
-    </div>
-    <% Topic.most_recent.each do |topic| %>
-    <div class="forum">
-      <div class="blog-icon"></div><%= link_to topic.subject, topic %><br>
-      <span><%= I18n.t(:by) %> <%= topic.user.fullname %></span><br>
-      <span><%= time_ago_in_words(topic.created_at) %> <%= I18n.t(:ago) %></span>
-    </div>
-    <% end %>
-  </div>
-
-  <div class="four column twiter">
-    <div class="back-title">
-      <h2><%= I18n.t(:latest_comments) %></h2>
-    </div>
-    <% Comment.most_recent.each do |comment| %>
-    <div>
-      <p><%= image_tag 'icons/17.png' %>
-        <%= comment.body %><br>
-        <span><%= I18n.t(:by) %> <%= comment.user.fullname %></span><br>
-        <span><%= in_commentable(comment.commentable) %> <%= link_to comment.commentable.subject, comment.commentable %></span><br>
-        <span><%= time_ago_in_words(comment.created_at) %> <%= I18n.t(:ago) %></span>
-      </p>
-    </div>
-
-    <% end %>
-  </div>
-
-</footer>
-<% end %>
+</div>

@@ -3809,3 +3809,16 @@ img.aligncenter {display: block; margin-left: auto; margin-right: auto}
 .hide {
   display: none;
 }
+
+.ad {
+  margin-top: 10px;
+}
+
+
+.sticky {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  z-index: 1000;
+}

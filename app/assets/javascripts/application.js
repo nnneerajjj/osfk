@@ -98,8 +98,4 @@ var recalculate = function() {
   });
 }
 
-$('.date').click(function() {
-  return false;
-});
-
 $('.multiple').selectize();

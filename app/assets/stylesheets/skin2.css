@@ -225,7 +225,7 @@ td.active-time b:first-child,
 /*
 012. PRE HEADER AREA BACKGROUND _____________________________________________ */
 .pre-header-area, .pre-header-area ul{
-	background: #232323;
+	background: #d23b3b;
 }
 
 
@@ -322,7 +322,7 @@ td.active-time b:first-child,
 /*
 018. HEADER AREA BORDERS ___________________________________________________ */
 .outter-wrapper.post-header-area *{
-	border-color: #831212!important;
+	border-color: rgba(255, 255, 255, 0.1)!important;
 }
 
 
@@ -595,7 +595,7 @@ input[type=number], .widget-event-list li, ul.widget-list li, ul.toggle li, ul.a
 .footer-wrapper .wrapper > .col-1-2, .footer-wrapper .wrapper > .col-1-3, .footer-wrapper .wrapper > .col-1-4, .footer-wrapper .wrapper > .col-1-5,
 .footer-wrapper .wrapper > .col-2-3, .footer-wrapper .wrapper > .col-3-4, .footer-wrapper .wrapper > .col-2-5, .footer-wrapper .wrapper > .col-3-5,
 .footer-wrapper .wrapper > .col-4-5{
-	border-color: #831212;
+	border-color: rgba(255, 255, 255, 0.1);
 }
 
 

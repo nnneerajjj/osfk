@@ -24,13 +24,15 @@
   <h5><%= t :details %></h5>
   <ul class="widget-list list-2">
     <li>
-        <strong><%= t :date_details %>: </strong>
-        <% if @event.start_date.strftime("%H:%M") != "00:00" %>
-          <%= l @event.start_date, format: :long %>
-        <% else %>
-          <%= l @event.start_date, format: '%e %B' %>
-        <% end %>
+      <strong><%= t :date_details %>: </strong>
+      <%= l @event.start_date, format: '%e %B' %>
     </li>
+    <% if @event.start_date.strftime("%H:%M") != "00:00" %>
+      <li>
+      <strong><%= t :time_details %>: </strong>
+      <%= l @event.start_date, format: '%H:%M' %>
+      </li>
+    <% end %>
     <li><strong>Plats: </strong><%= @event.location %></li>
     <li><strong>Adress: </strong><%= @event.address %></li>
   </ul>

@@ -12,8 +12,8 @@ class News < ActiveRecord::Base
 
   has_many :image_uploads, as: :uploader
 
-  default_scope -> { order('created_at DESC') }
-  scope :active, where(active: true)
+  default_scope -> { order('id DESC') }
+  scope :active, -> { where(active: true) }
 
   def text
     content.gsub(/<img .*?>/i, '')

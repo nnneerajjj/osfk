@@ -1,3 +1,10 @@
+<% content_for :title, t(:calendar) %>
+<% content_for :header, t(:calendar) %>
+<% content_for :description, t(:calendar) %>
+<% content_for :breadcrumb do %>
+  <%= link_to t(:calendar), events_path %>
+<% end %>
+
 <h1><%= t :'calendar' %></h1>
 <!-- <p>Fin kalender</p> -->
 

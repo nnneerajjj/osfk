@@ -8,6 +8,8 @@ class Event < ActiveRecord::Base
   validate :default_subject
   attr_accessible :subject, :content, :start_date_date, :end_date_date, :start_date_time, :end_date_time, :created_by, :created_by_id, :address, :location
 
+  scope :coming, -> { where(['start_date >= ?', Time.now]).order(:start_date) }
+
   def date_slug
     if start_date.present?
       "#{start_date.strftime('%Y-%m-%d')}-#{subject}"
