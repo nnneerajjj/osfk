@@ -11,6 +11,7 @@ sv:
         lastname: Efternamn
         password: Lösenord
         password_confirmation: Lösenord igen
+        current_password: Nuvarande lösenord
         street_number: Gatunummer
         house_number: Föreningens lägenhetsnummer
         website: Webbsida
