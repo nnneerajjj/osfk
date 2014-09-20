@@ -35,7 +35,7 @@ module Caraten
     config.i18n.default_locale = :sv
     I18n.locale = :sv
 
-    I18n.enforce_available_locales = true
+    config.i18n.enforce_available_locales = true
 
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"
@@ -62,6 +62,10 @@ module Caraten
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    config.action_view.field_error_proc = Proc.new do |html_tag, instance|
+      "<div class=\"field_with_errors control-group error\">#{html_tag}</div>".html_safe
+    end
 
     config.time_zone = 'Stockholm'
   end

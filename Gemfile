@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+#source 'https://ruby.taobao.org'
 
 ruby '2.1.3'
 
@@ -33,6 +34,11 @@ gem 's3_direct_upload'
 gem 'rolify'
 gem 'active_model_serializers', '0.8.0'
 gem 'unicorn'
+
+group :production do
+  # Needed for heroku
+  gem 'rails_12factor'
+end
 
 group :development do
   gem 'byebug'

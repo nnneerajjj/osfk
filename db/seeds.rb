@@ -4,9 +4,13 @@
 #
 # Examples:
 #
-user = User.new(email: "luddement@gmail.com", password: "hejsan123")
+user = User.new(email: "luddement@gmail.com", password: "hejsan123", approved: true)
 user.admin = true
 user.save
+
+role = Role.new
+role.name = "administrator"
+role.save
 
 page = Page.create(title: 'Hem', header: 'Bostadsrättsförening', content: '.', public: true)
 page.key = 'home'

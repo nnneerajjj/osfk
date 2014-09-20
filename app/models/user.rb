@@ -16,6 +16,8 @@ class User < ActiveRecord::Base
 
   has_attached_file :avatar, :styles => { :thumb => "250x250>", :preview => "80x80" }
 
+  validates :firstname, :lastname, presence: true
+
   has_many :topics
   has_many :participants
   has_many :events, through: :participants
