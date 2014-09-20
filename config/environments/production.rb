@@ -26,7 +26,6 @@ Caraten::Application.configure do
   # Rake tasks automatically ignore this option for performance.
   config.eager_load = true
 
-  Delayed::Worker.destroy_failed_jobs = false
   # Defaults to nil and saved in location specified by config.assets.prefix
   # config.assets.manifest = YOUR_PATH
 
