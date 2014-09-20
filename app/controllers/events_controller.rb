@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
   include ActionView::Helpers::TextHelper
 
-  load_and_authorize_resource :event, only: [:edit, :participate], find_by: :slug
+  load_and_authorize_resource :event, only: [:edit, :participate, :update], find_by: :slug
 
   before_action :populate_dates, only: [:index, :show]
 
@@ -43,6 +43,13 @@ class EventsController < ApplicationController
     event = Event.new(params[:event].merge(created_by_id: current_user.id))
     event.save
     render json: event
+  end
+
+  def update
+    if @event.update_attributes(params[:event])
+      flash[:notice] = "Du sparade eventet"
+    end
+    render json: @event
   end
 
   private

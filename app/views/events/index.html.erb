@@ -42,7 +42,13 @@
     <% if date.month != @current_month.month %>
       <td class="null-time"><div class="evt"></div></td>
     <% else %>
-      <% events = @events.select { |ev| ev.start_date.to_date == date } %>
+      <% events = @events.select do |ev|
+         if ev.end_date.nil?
+           ev.start_date.to_date == date
+         else
+           (ev.start_date.to_date..ev.end_date.to_date).include?(date)
+         end
+       end %>
       <td class="<%= date == @today ? 'current-day' : '' %> <%= events.any? ? ' active-time' : '' %>">
         <div class="evt">
           <b><%= date.day %></b>

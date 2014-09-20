@@ -8,7 +8,8 @@
 
 <div class="clearfix post">
 
-  <h1 class="title project-form"><div data-form="subject" <%= edit_text_tags(@news, :subject) %>><%= t :default_news_subject %></div></h1>
+  <label><%= t :subject %></label>
+  <input type="text" data-form="project" placeholder="<%= t :subject %>" value="<%= @news.subject %>">
 
   <%= render 'shared/upload' %>
 

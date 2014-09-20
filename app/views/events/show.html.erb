@@ -13,10 +13,10 @@
 
   <div class="clearfix evt-single-date">
     <h6 class="left">
-      <% if @event.start_date.strftime("%H:%M") != "00:00" %>
-        <%= l @event.start_date, format: :long %>
-      <% else %>
-        <%= l @event.start_date, format: '%e %B' %>
+      <%= l @event.start_date, format: '%e %B' %>
+
+      <% if @event.end_date.present? %>
+        - <%= l @event.end_date, format: '%e %B' %>
       <% end %>
     </h6>
     <div class="evt-price right"></div>
@@ -57,12 +57,26 @@
       </li>
       <% if @event.start_date.strftime("%H:%M") != "00:00" %>
         <li>
-        <strong><%= t :time_details %>: </strong>
-        <%= l @event.start_date, format: '%H:%M' %>
+          <strong><%= t :time_details %>: </strong>
+          <%= l @event.start_date, format: '%H:%M' %>
         </li>
       <% end %>
+      <% if @event.end_date.present? %>
+        <li>
+          <strong><%= t :end_date %></strong>
+          <%= l @event.end_date, format: '%e %B' %>
+        </li>
+        <% if @event.end_date.strftime("%H:%M") != "00:00" %>
+          <li>
+            <strong><%= t :end_date_time %>: </strong>
+            <%= l @event.end_date, format: '%H:%M' %>
+          </li>
+        <% end %>
+      <% end %>
       <li><strong>Plats: </strong><%= @event.location %></li>
-      <li><strong>Adress: </strong><%= @event.address %></li>
+      <% if @event.address.present? %>
+        <li><strong>Adress: </strong><%= @event.address %></li>
+      <% end %>
     </ul>
   </div>
 

@@ -100,4 +100,48 @@ news.content = '<strong>Fiskeintresserade medlemmar träffas och umgås under de
 news.image_upload_ids = [ image.id ]
 news.save!
 
+
+user = User.new(email: "luddement+arlen@gmail.com", firstname: "Arlen", lastname: "Rios", password: "arlen123", approved: true)
+user.admin = true
+user.save
+
+topic = Topic.new
+topic.subject = "Vad saknas?"
+topic.content = "Hej!\r\n\r\nVad saknas på nya hemsidan?\r\n\r\nOch vad skulle kunna förbättras?"
+topic.user = user
+topic.save!
+
+
+
+event = Event.new
+event.subject = "Fiskehelg"
+event.start_date =  "2014-09-26 10:00:00"
+event.end_date =  "2014-09-28 00:00:00"
+event.location = "Stora mossön"
+event.created_by = user
+event.can_participate = true
+event.content = "<strong>Fiskeintresserade medlemmar träffas och umgås under dessa tre dagar på ön med fokus på fiske och beredning av fisk. Bl.annat röker vi fisk vi fångar. Erfarna medlemmar delar med sig av sina kunskaper.</strong><p>Med fokus på fiske, trevlig samvaro och tillagning av fångad fisk träffas vi som kan och vill denna helg på Mossön. Lördagen blir huvuddag. Vi lägger vårt stora strömmingssköte fredag eftermiddag, upptag lördag morgon, och tror på mycket strömming!</p><p>Vi satsar på olika fiskemetoder. De som kan lite mer delar gärna med sig av sina kunskaper till de som vill lära sig mer.</p><p>Vi får våra fiskar varma (och oss själva) med hjälp av bastun, röken, grillen, kaminen i stugan och medhavt (varma kläder viktigt!?</p><p>Lördagens fångster använder vi i första hand för gemensam tillagning. T.ex.(preliminärt beroende på tillgång) rökt strömming och sik, flamstekta gös, abborr och sikfileer. Lördag afton satsar vi på gravad havsörings (alt. norsk lax)file eller annat gott, som tillagas i förväg.</p><p>Klubben införskaffar och bjuder på tillbehör till fiskfrosseriet på lördagen såsom potatis, såser/röror, grönsaker och smör o bröd och gravad havsöring (norsk lax) file eller annat gott. Drycker tar var och en med själv!</p><p>Varmt välkomna alla medlemmar med familj (gärna ser vi barn och ungdomar)</p><br>"
+event.save!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 puts "Seed OK!"

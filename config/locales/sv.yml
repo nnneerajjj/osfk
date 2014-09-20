@@ -33,7 +33,8 @@ sv:
         content: Meddelande
         secret: Allt
       event:
-        start_date: Datum
+        start_date: Startdatum
+        end_date: Slutdatum
         subject: Rubrik
         content: Beskrivning
         location: Plats
@@ -135,7 +136,10 @@ sv:
   house_number: "Föreningens lägenhetsnummer"
   house_number_short: "Lägenhetsnummer"
   date_details: "Datum"
+  start_date: "Startdatum"
+  end_date:  "Slutdatum"
   time_details: "Tid"
+  end_date_time: "Sluttid"
   letters: "Brev"
   save: "Spara"
   latest: "Senaste"

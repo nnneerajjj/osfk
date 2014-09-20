@@ -3,6 +3,7 @@ class NewsController < ApplicationController
   include NewsHelper
 
   def new
+    @news = News.new
   end
 
   def index
