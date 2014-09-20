@@ -72,6 +72,8 @@ sv:
   create_event: "Skapa evenemang"
   create_letter: "Skapa brev"
   save_letter: "Spara brev"
+  save_event: "Spara evenemang"
+  edit_event: "Redigera evenemang"
   calendar: "Kalender"
   forum: "Diskussioner"
   the_discussions: "Diskussionerna"

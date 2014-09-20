@@ -371,17 +371,19 @@ $('.tooltip').tooltipster({
 /*
 16. COUNTDOWNS ________________________________________________________________ */
 
-var endDate = "August 27, 2087 15:03:25";
+//endDate = "August 27, 2087 15:03:25";
 
-$('.countdown.simple').countdown({ date: endDate });
+if (typeof(endDate) != 'undefined') {
 
-$('.countdown.styled').countdown({
-  date: endDate,
-  render: function(data) {
-    $(this.el).html("<div class='cd-years'>" + this.leadingZeros(data.years, 1) + " <span>years</span></div><div class='cd-days'>" + this.leadingZeros(data.days, 1) + " <span>days</span></div><div class='cd-hours'>" + this.leadingZeros(data.hours, 1) + " <span>hrs</span></div><div class='cd-mins'>" + this.leadingZeros(data.min, 1) + " <span>min</span></div><div class='cd-secs'>" + this.leadingZeros(data.sec, 2) + " <span>sec</span></div>");
-  }
-});
+  $('.countdown.simple').countdown({ date: endDate });
 
+  $('.countdown.styled').countdown({
+    date: endDate,
+    render: function(data) {
+      $(this.el).html("<div class='cd-years'>" + this.leadingZeros(data.years, 1) + " <span>år</span></div><div class='cd-days'>" + this.leadingZeros(data.days, 1) + " <span>dagar</span></div><div class='cd-hours'>" + this.leadingZeros(data.hours, 1) + " <span>timmar</span></div><div class='cd-mins'>" + this.leadingZeros(data.min, 1) + " <span>minuter</span></div><div class='cd-secs'>" + this.leadingZeros(data.sec, 2) + " <span>sekunder</span></div>");
+    }
+  });
+}
 
 
 /*

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140919051920) do
+ActiveRecord::Schema.define(version: 20140919232443) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,16 +59,17 @@ ActiveRecord::Schema.define(version: 20140919051920) do
   add_index "delayed_jobs", ["priority", "run_at"], name: "delayed_jobs_priority", using: :btree
 
   create_table "events", force: true do |t|
-    t.integer  "created_by_id", null: false
-    t.datetime "start_date",    null: false
+    t.integer  "created_by_id",                   null: false
+    t.datetime "start_date",                      null: false
     t.datetime "end_date"
     t.string   "location"
     t.string   "address"
-    t.string   "subject",       null: false
+    t.string   "subject",                         null: false
     t.text     "content"
     t.string   "slug"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "can_participate", default: false
   end
 
   add_index "events", ["slug"], name: "index_events_on_slug", unique: true, using: :btree
@@ -109,6 +110,15 @@ ActiveRecord::Schema.define(version: 20140919051920) do
   end
 
   add_index "pages", ["slug"], name: "index_pages_on_slug", unique: true, using: :btree
+
+  create_table "participants", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "event_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "participants", ["user_id", "event_id"], name: "index_participants_on_user_id_and_event_id", unique: true, using: :btree
 
   create_table "rails_admin_histories", force: true do |t|
     t.text     "message"

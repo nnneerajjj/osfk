@@ -5,6 +5,7 @@ class Ability
     if user.nil?
       can :read, Page, public: true
       can :read, News, active: true
+      can :read, Event
       return
     end
 
@@ -19,12 +20,14 @@ class Ability
         can :moderate, :all
         can :create, News
         can :create, Event
+        can :create, Letter
       end
       can :manage, User, id: user.id
       can :create, Topic
       can :manage, Topic, user_id: user.id
       can :read, :all
       can :comment, News
+      can :participate, Event
     end
   end
 end

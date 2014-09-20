@@ -1,6 +1,8 @@
 class EventsController < ApplicationController
   include ActionView::Helpers::TextHelper
 
+  load_and_authorize_resource :event, only: [:edit, :participate], find_by: :slug
+
   before_action :populate_dates, only: [:index, :show]
 
   def index
@@ -15,6 +17,22 @@ class EventsController < ApplicationController
 
   def new
     @event = Event.new
+  end
+
+  def edit
+  end
+
+  def participate
+    if current_user.participates_in? @event
+      current_user.events.delete(@event)
+    else
+      flash[:notice] = "Du är nu uppskriven på att deltaga på #{@event.subject}"
+      current_user.events << @event
+    end
+
+    current_user.save!
+
+    redirect_to :back
   end
 
   def create

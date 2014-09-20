@@ -23,9 +23,8 @@
       <li><strong>Deltagande?: </strong><input type="checkbox" data-form="can_participate"></li>
     </ul>
   </div>
-  <div class="col-3-5 boxy-pad">
-    <div data-form="content" <%= edit_text_tags(@event, :content) %>>Skriv en beskrivning här</div>
-  </div>
+
+  <div data-form="content" <%= edit_text_tags(@event, :content) %>>Skriv en beskrivning här</div>
 </div>
 
-<%= button_tag t(:create_event), class: 'form-post', data: { url: events_path, name: 'event'  } %>
+<%= button_tag t(:save_event), class: 'form-post', data: { url: event_path(@event), name: 'event'  } %>

@@ -18,7 +18,10 @@ Caraten::Application.routes.draw do
     post :update, on: :collection
   end
 
-  resources :events, path: 'kalender'
+  resources :events, path: 'kalender' do
+    post :participate, on: :member
+  end
+
   resources :letters, path: 'brev' do
     post :send_me, on: :member
     post :send_all, on: :member

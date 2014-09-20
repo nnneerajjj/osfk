@@ -8,35 +8,89 @@
 
 <div class="main-content clearfix">
 
-<h1 class="title"><div><%= strip_tags(@event.subject) %></div></h1>
+  <a href="<%= edit_event_path(@event) %>" class="right"><button><%= t :edit_event %></button></a>
+  <h1 class="title"><div><%= strip_tags(@event.subject) %></div></h1>
 
-<div class="clearfix evt-single-date">
-  <h6 class="left">
-    <% if @event.start_date.strftime("%H:%M") != "00:00" %>
-      <%= l @event.start_date, format: :long %>
-    <% else %>
-      <%= l @event.start_date, format: '%e %B' %>
-    <% end %>
-  </h6>
-  <div class="evt-price right"></div>
-</div>
-<div class="boxy boxy-pad col-1-3">
-  <h5><%= t :details %></h5>
-  <ul class="widget-list list-2">
-    <li>
-      <strong><%= t :date_details %>: </strong>
-      <%= l @event.start_date, format: '%e %B' %>
-    </li>
-    <% if @event.start_date.strftime("%H:%M") != "00:00" %>
+  <div class="clearfix evt-single-date">
+    <h6 class="left">
+      <% if @event.start_date.strftime("%H:%M") != "00:00" %>
+        <%= l @event.start_date, format: :long %>
+      <% else %>
+        <%= l @event.start_date, format: '%e %B' %>
+      <% end %>
+    </h6>
+    <div class="evt-price right"></div>
+  </div>
+
+  <script type="text/javascript">
+    endDate = new Date(<%= @event.start_date.utc.to_i*1000 %>);
+  </script>
+
+  <% if @event.can_participate? %>
+    <div class="message promo centered">
+      <h3>Vill du vara med på evenemanget?</h3>
+      <div class="countdown styled big-count">
+        <div class="cd-years">0 <span>år</span></div>
+        <div class="cd-days">0 <span>dagar</span></div>
+        <div class="cd-hours">0 <span>timmar</span></div>
+        <div class="cd-mins">0 <span>minuter</span></div>
+        <div class="cd-secs">0 <span>sekunder</span></div>
+      </div>
+        <% if can? :participant, @event %>
+            <div>
+          <% if current_user.participates_in?(@event) %>
+            <h5 style="display: inline-block;">Jag kommer att deltaga</h5><%= form_tag(participate_event_path(@event), method: "POST", style: "margin-left: 20px; display: inline-block;") do %><%= submit_tag('Ångra') %><% end %>
+          <% else %>
+              <%= form_tag(participate_event_path(@event), method: "POST", style: "margin:0") do %><%= submit_tag('Jag kommer att detltaga') %><% end %>
+        <% end %>
+            </div>
+      <% end %>
+    </div>
+  <% end %>
+
+  <div class="boxy boxy-pad col-1-3">
+    <h5><%= t :details %></h5>
+    <ul class="widget-list list-2">
       <li>
-      <strong><%= t :time_details %>: </strong>
-      <%= l @event.start_date, format: '%H:%M' %>
+        <strong><%= t :date_details %>: </strong>
+        <%= l @event.start_date, format: '%e %B' %>
       </li>
-    <% end %>
-    <li><strong>Plats: </strong><%= @event.location %></li>
-    <li><strong>Adress: </strong><%= @event.address %></li>
-  </ul>
-</div>
+      <% if @event.start_date.strftime("%H:%M") != "00:00" %>
+        <li>
+        <strong><%= t :time_details %>: </strong>
+        <%= l @event.start_date, format: '%H:%M' %>
+        </li>
+      <% end %>
+      <li><strong>Plats: </strong><%= @event.location %></li>
+      <li><strong>Adress: </strong><%= @event.address %></li>
+    </ul>
+  </div>
 
-<div><%= @event.content %></div>
+  <div class="col-3-5 boxy-pad">
+    <div><%= @event.content.html_safe %></div>
+  </div>
+
+  <% if @event.can_participate? && can?(:create, Event) %>
+    <div class="col-4-5">
+      <h2>Anmälda (<%= @event.users.length %> st.)</h2>
+      <table class="table-style-2" %>
+        <thead>
+          <tr>
+            <th>Namn</th>
+            <th>Email</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @event.users.each do |user| %>
+            <tr>
+                <td><%= user.name %></td>
+                <td><%= user.email %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+
+    </div>
+  <% end %>
+
 </div>

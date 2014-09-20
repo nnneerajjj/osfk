@@ -4,9 +4,13 @@ class Event < ActiveRecord::Base
   date_time_attribute :start_date, :end_date
   belongs_to :created_by, class_name: 'User'
 
+  has_many :participants
+  has_many :users, through: :participants
+
   validates :created_by, :subject, :start_date, presence: true
   validate :default_subject
-  attr_accessible :subject, :content, :start_date_date, :end_date_date, :start_date_time, :end_date_time, :created_by, :created_by_id, :address, :location
+  attr_accessible :subject, :content, :start_date_date, :end_date_date, :start_date_time, :end_date_time,
+                  :created_by, :created_by_id, :address, :location, :can_participate
 
   scope :coming, -> { where(['start_date >= ?', Time.now]).order(:start_date) }
 
