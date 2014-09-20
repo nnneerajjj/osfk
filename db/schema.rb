@@ -197,6 +197,8 @@ ActiveRecord::Schema.define(version: 20140919232443) do
     t.datetime "file_updated_at"
   end
 
+  add_index "uploads", ["uploader_id", "uploader_type"], name: "index_uploads_on_uploader_id_and_uploader_type", using: :btree
+
   create_table "users", force: true do |t|
     t.string   "email",                  default: "",    null: false
     t.string   "encrypted_password",     default: "",    null: false
