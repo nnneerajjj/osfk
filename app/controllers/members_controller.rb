@@ -2,15 +2,13 @@ class MembersController < ApplicationController
   before_filter :load_page
 
   def index
-    authorize! :access, :admin
-
-
+    authorize! :manage, User
 
     @users = User.where(active: true)
   end
 
   def update_multiple
-    authorize! :access, :admin
+    authorize! :manage, User
     @users = User.update(params[:users].keys, params[:users].values)
     flash[:alert] = @users.select { |x| x.errors.any? } .map { |x| x.errors.full_messages.to_sentence }.to_sentence
 

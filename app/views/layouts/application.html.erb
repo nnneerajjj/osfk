@@ -95,7 +95,7 @@
                     <% end %>
                   </li>
                 <% end %>
-                <% if can? :access, :admin %>
+                <% if can? :manage, User %>
                   <li class="nav-parent">
                     <%= link_to t(:members), members_path %>
                   </li>

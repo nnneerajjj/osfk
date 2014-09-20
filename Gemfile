@@ -32,6 +32,11 @@ gem 'rolify'
 gem 'active_model_serializers', '0.8.0'
 gem 'unicorn'
 
+group :production do
+  # Needed for heroku
+  gem 'rails_12factor'
+end
+
 group :development do
   gem 'byebug'
   gem 'quiet_assets'

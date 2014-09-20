@@ -9,7 +9,7 @@ user.admin = true
 user.save
 
 role = Role.new
-role.name = "Administrator"
+role.name = "administrator"
 role.save
 
 page = Page.create(title: 'Hem', header: 'Bostadsrättsförening', content: '.', public: true)

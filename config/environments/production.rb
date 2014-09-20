@@ -59,7 +59,7 @@ Caraten::Application.configure do
 
   # Precompile additional assets.
   # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
-config.assets.precompile += %w( admin.js )
+config.assets.precompile += %w( admin.js, modernizr-2.6.2-respond-1.1.0.min.js )
 
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
