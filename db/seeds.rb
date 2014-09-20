@@ -4,7 +4,7 @@
 #
 # Examples:
 #
-user = User.new(email: "luddement@gmail.com", password: "hejsan123")
+user = User.new(email: "luddement@gmail.com", password: "hejsan123", approved: true)
 user.admin = true
 user.save
 
