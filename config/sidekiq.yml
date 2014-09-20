@@ -6,3 +6,4 @@
 :queues:
   - default
   - mailer
+  - paperclip

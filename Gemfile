@@ -34,6 +34,7 @@ gem 's3_direct_upload'
 gem 'rolify'
 gem 'active_model_serializers', '0.8.0'
 gem 'unicorn'
+gem 'delayed_paperclip'
 
 group :production do
   # Needed for heroku

@@ -1,10 +1,11 @@
 <li data-transition="fade" data-masterspeed="500" >
 
-  <img src="<%= image_path(slide) %>" alt="Slider Image 1" data-bgposition="left center" data-kenburns="on" data-duration="14000" data-ease="Linear.easeNone" data-bgfit="100" data-bgfitend="130" data-bgpositionend="right center">
-
+<% if slide.image_upload.present? %>
+  <img src="<%= image_path(slide.image_upload.file.url(:xxl)) %>" alt="<%= slide.header %>" data-bgposition="left center" data-kenburns="on" data-duration="14000" data-ease="Linear.easeNone" data-bgfit="100" data-bgfitend="130" data-bgpositionend="right center">
+<% end %>
   <div class="tp-caption fadeout sfr sport-rs-boxed sport-rs-heading"
     data-x="0" data-hoffset="0"
-    data-y="155" data-voffset="0"
+    data-y="105" data-voffset="0"
     data-captionhidden="off"
     data-speed="800"
     data-start="500"
@@ -15,13 +16,14 @@
     data-endelementdelay="0.1"
     data-endspeed="1000"
     data-endeasing="Power1.easeOut">
+    <%= slide.header %>
     <br/>
-    som finns <div>- </div>
+    <div><%= slide.header2 %></div>
   </div>
 
   <div class="tp-caption fadeout sfr sport-rs-boxed sport-rs-text"
     data-x="0" data-hoffset="0"
-    data-y="280" data-voffset="0"
+    data-y="230" data-voffset="0"
     data-captionhidden="off"
     data-speed="800"
     data-start="750"
@@ -32,9 +34,7 @@
     data-endelementdelay="0.1"
     data-endspeed="1000"
     data-endeasing="Power1.easeOut">
-    Vi är en av landets större fiskeklubbar/föreningar med ca 600 medlemmar.<br/>
-    Sportfiskeklubben förvaltar samt har tillsynen av kommunens fiskevatten<br/>
-     men även av andra arrenderade vattenområden.
+    <%= slide.content %>
   </div>
 
   <div class="tp-caption fadeout sfr tp-resizeme"
@@ -49,6 +49,11 @@
     data-endelementdelay="0.1"
     data-endspeed="1000"
     data-endeasing="Power1.easeOut">
-    <a class="btn" href="pricing1.html">Bli medlem idag</a>&nbsp; <a class="btn-2" href="about.html">Läs mer</a>
+    <% unless current_user %>
+        <a class="btn" href="pricing1.html">Bli medlem idag</a>&nbsp;
+    <% end %>
+    <% if slide.link.present? %>
+        <a class="btn-2" href="<= slide.link %>">Läs mer</a>
+    <% end %>
   </div>
 </li>
