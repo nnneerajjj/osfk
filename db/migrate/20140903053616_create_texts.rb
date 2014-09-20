@@ -3,7 +3,7 @@ class CreateTexts < ActiveRecord::Migration
     create_table :texts do |t|
       t.references :page, null: false
       t.string :key, null: false
-      t.text   :value
+      t.text   :value, default: ''
     end
   end
 end

@@ -13,14 +13,14 @@
   <h1 class="title">Välkommen</h1>
 
   <p>
-    <% text = @page.texts.find_by_key('lead') %>
+    <% text = @page.texts.find_or_create_by(key: 'lead') %>
     <div <%= edit_text_tags(text, :value) %>>
       <%= text.value.html_safe %>
     </div>
   </p>
 
   <p>
-    <% text = @page.texts.find_by_key('content') %>
+    <% text = @page.texts.find_or_create_by(key: 'content') %>
     <div <%= edit_text_tags(text, :value) %>>
       <%= text.value.html_safe %>
     </div>

@@ -158,9 +158,9 @@ ActiveRecord::Schema.define(version: 20140919232443) do
   add_index "roles", ["name"], name: "index_roles_on_name", using: :btree
 
   create_table "texts", force: true do |t|
-    t.integer "page_id", null: false
-    t.string  "key",     null: false
-    t.text    "value"
+    t.integer "page_id",              null: false
+    t.string  "key",                  null: false
+    t.text    "value",   default: ""
   end
 
   create_table "topics", force: true do |t|

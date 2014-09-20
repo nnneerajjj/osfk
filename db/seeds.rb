@@ -4,20 +4,20 @@
 #
 # Examples:
 #
-# user = User.new(email: "caterpiller@gmail.com", password: "hejsan", password_confirmation: "hejsan")
-# user.admin = true
-# user.save
+user = User.new(email: "luddement@gmail.com", password: "hejsan123")
+user.admin = true
+user.save
 
-# page = Page.create(title: 'Hem', header: 'Bostadsrättsförening', content: '.', public: true)
-# page.key = 'home'
-# page.save!
+page = Page.create(title: 'Hem', header: 'Bostadsrättsförening', content: '.', public: true)
+page.key = 'home'
+page.save!
 
-# page = Page.create(title: 'Kontakt', header: 'Kontakta oss', content: '.', public: true)
-# page.key = 'contact'
-# page.save!
+page = Page.create(title: 'Kontakt', header: 'Kontakta oss', content: '.', public: true)
+page.key = 'contact'
+page.save!
 
-# page = Page.create(title: 'Medlemmar', header: 'Lista på registrerade medlemmar', content: '.', public: false)
-# page.key = 'members'
-# page.save!
+page = Page.create(title: 'Medlemmar', header: 'Lista på registrerade medlemmar', content: '.', public: false)
+page.key = 'members'
+page.save!
 
-(1..20).each {|x| News.create(subject: Faker::Lorem.sentence, content: Faker::Lorem.paragraph(200, false)) }
+#(1..20).each {|x| News.create(subject: Faker::Lorem.sentence, content: Faker::Lorem.paragraph(200, false)) }
