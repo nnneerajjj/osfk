@@ -35,7 +35,7 @@ module Caraten
     config.i18n.default_locale = :sv
     I18n.locale = :sv
 
-    I18n.enforce_available_locales = true
+    config.i18n.enforce_available_locales = true
 
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"
