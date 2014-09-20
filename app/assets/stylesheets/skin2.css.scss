@@ -804,11 +804,11 @@ h6.meta, .meta h6, .corner, .date, .reply {
 
 @font-face {
     font-family: 'antic_slabregular';
-    src: url('anticslab-regular-webfont.eot');
-    src: url('anticslab-regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('anticslab-regular-webfont.woff') format('woff'),
-         url('anticslab-regular-webfont.ttf') format('truetype'),
-         url('anticslab-regular-webfont.svg#antic_slabregular') format('svg');
+    src: font-url('anticslab-regular-webfont.eot');
+    src: font-url('anticslab-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         font-url('anticslab-regular-webfont.woff') format('woff'),
+         font-url('anticslab-regular-webfont.ttf') format('truetype'),
+         font-url('anticslab-regular-webfont.svg#antic_slabregular') format('svg');
     font-weight: normal;
     font-style: normal;
 
@@ -817,11 +817,11 @@ h6.meta, .meta h6, .corner, .date, .reply {
 
 @font-face {
     font-family: 'robotobold';
-    src: url('roboto-bold-webfont.eot');
-    src: url('roboto-bold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('roboto-bold-webfont.woff') format('woff'),
-         url('roboto-bold-webfont.ttf') format('truetype'),
-         url('roboto-bold-webfont.svg#robotobold') format('svg');
+    src: font-url('roboto-bold-webfont.eot');
+    src: font-url('roboto-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         font-url('roboto-bold-webfont.woff') format('woff'),
+         font-url('roboto-bold-webfont.ttf') format('truetype'),
+         font-url('roboto-bold-webfont.svg#robotobold') format('svg');
     font-weight: normal;
     font-style: normal;
 
@@ -830,11 +830,11 @@ h6.meta, .meta h6, .corner, .date, .reply {
 
 @font-face {
     font-family: 'robotobold_italic';
-    src: url('roboto-bolditalic-webfont.eot');
-    src: url('roboto-bolditalic-webfont.eot?#iefix') format('embedded-opentype'),
-         url('roboto-bolditalic-webfont.woff') format('woff'),
-         url('roboto-bolditalic-webfont.ttf') format('truetype'),
-         url('roboto-bolditalic-webfont.svg#robotobold_italic') format('svg');
+    src: font-url('roboto-bolditalic-webfont.eot');
+    src: font-url('roboto-bolditalic-webfont.eot?#iefix') format('embedded-opentype'),
+         font-url('roboto-bolditalic-webfont.woff') format('woff'),
+         font-url('roboto-bolditalic-webfont.ttf') format('truetype'),
+         font-url('roboto-bolditalic-webfont.svg#robotobold_italic') format('svg');
     font-weight: normal;
     font-style: normal;
 
@@ -843,11 +843,11 @@ h6.meta, .meta h6, .corner, .date, .reply {
 
 @font-face {
     font-family: 'robotoitalic';
-    src: url('roboto-italic-webfont.eot');
-    src: url('roboto-italic-webfont.eot?#iefix') format('embedded-opentype'),
-         url('roboto-italic-webfont.woff') format('woff'),
-         url('roboto-italic-webfont.ttf') format('truetype'),
-         url('roboto-italic-webfont.svg#robotoitalic') format('svg');
+    src: font-url('roboto-italic-webfont.eot');
+    src: font-url('roboto-italic-webfont.eot?#iefix') format('embedded-opentype'),
+         font-url('roboto-italic-webfont.woff') format('woff'),
+         font-url('roboto-italic-webfont.ttf') format('truetype'),
+         font-url('roboto-italic-webfont.svg#robotoitalic') format('svg');
     font-weight: normal;
     font-style: normal;
 
@@ -856,11 +856,11 @@ h6.meta, .meta h6, .corner, .date, .reply {
 
 @font-face {
     font-family: 'robotomedium';
-    src: url('roboto-medium-webfont.eot');
-    src: url('roboto-medium-webfont.eot?#iefix') format('embedded-opentype'),
-         url('roboto-medium-webfont.woff') format('woff'),
-         url('roboto-medium-webfont.ttf') format('truetype'),
-         url('roboto-medium-webfont.svg#robotomedium') format('svg');
+    src: font-url('roboto-medium-webfont.eot');
+    src: font-url('roboto-medium-webfont.eot?#iefix') format('embedded-opentype'),
+         font-url('roboto-medium-webfont.woff') format('woff'),
+         font-url('roboto-medium-webfont.ttf') format('truetype'),
+         font-url('roboto-medium-webfont.svg#robotomedium') format('svg');
     font-weight: normal;
     font-style: normal;
 
@@ -869,11 +869,11 @@ h6.meta, .meta h6, .corner, .date, .reply {
 
 @font-face {
     font-family: 'robotoregular';
-    src: url('roboto-regular-webfont.eot');
-    src: url('roboto-regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('roboto-regular-webfont.woff') format('woff'),
-         url('roboto-regular-webfont.ttf') format('truetype'),
-         url('roboto-regular-webfont.svg#robotoregular') format('svg');
+    src: font-url('roboto-regular-webfont.eot');
+    src: font-url('roboto-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         font-url('roboto-regular-webfont.woff') format('woff'),
+         font-url('roboto-regular-webfont.ttf') format('truetype'),
+         font-url('roboto-regular-webfont.svg#robotoregular') format('svg');
     font-weight: normal;
     font-style: normal;
 
@@ -882,11 +882,11 @@ h6.meta, .meta h6, .corner, .date, .reply {
 
 @font-face {
     font-family: 'robotolight';
-    src: url('roboto-light-webfont.eot');
-    src: url('roboto-light-webfont.eot?#iefix') format('embedded-opentype'),
-         url('roboto-light-webfont.woff') format('woff'),
-         url('roboto-light-webfont.ttf') format('truetype'),
-         url('roboto-light-webfont.svg#robotolight') format('svg');
+    src: font-url('roboto-light-webfont.eot');
+    src: font-url('roboto-light-webfont.eot?#iefix') format('embedded-opentype'),
+         font-url('roboto-light-webfont.woff') format('woff'),
+         font-url('roboto-light-webfont.ttf') format('truetype'),
+         font-url('roboto-light-webfont.svg#robotolight') format('svg');
     font-weight: normal;
     font-style: normal;
 
@@ -895,11 +895,11 @@ h6.meta, .meta h6, .corner, .date, .reply {
 
 @font-face {
     font-family: 'robotolight_italic';
-    src: url('roboto-lightitalic-webfont.eot');
-    src: url('roboto-lightitalic-webfont.eot?#iefix') format('embedded-opentype'),
-         url('roboto-lightitalic-webfont.woff') format('woff'),
-         url('roboto-lightitalic-webfont.ttf') format('truetype'),
-         url('roboto-lightitalic-webfont.svg#robotolight_italic') format('svg');
+    src: font-url('roboto-lightitalic-webfont.eot');
+    src: font-url('roboto-lightitalic-webfont.eot?#iefix') format('embedded-opentype'),
+         font-url('roboto-lightitalic-webfont.woff') format('woff'),
+         font-url('roboto-lightitalic-webfont.ttf') format('truetype'),
+         font-url('roboto-lightitalic-webfont.svg#robotolight_italic') format('svg');
     font-weight: normal;
     font-style: normal;
 
@@ -908,11 +908,11 @@ h6.meta, .meta h6, .corner, .date, .reply {
 
 @font-face {
     font-family: 'star';
-    src: url('star.eot');
-    src: url('star.eot?#iefix') format('embedded-opentype'),
-    url('star.woff') format('woff'),
-    url('star.ttf') format('truetype'),
-    url('star.svg#star') format('svg');
+    src: font-url('star.eot');
+    src: font-url('star.eot?#iefix') format('embedded-opentype'),
+    font-url('star.woff') format('woff'),
+    font-url('star.ttf') format('truetype'),
+    font-url('star.svg#star') format('svg');
     font-weight: normal;
     font-style: normal;
 }
