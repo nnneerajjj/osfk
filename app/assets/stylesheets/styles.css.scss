@@ -3822,3 +3822,12 @@ img.aligncenter {display: block; margin-left: auto; margin-right: auto}
   left: 0px;
   z-index: 1000;
 }
+
+.field_with_errors input {
+  background-color: #ffd4ce !important;
+}
+.field_with_errors label:after {
+    color: #ffd4ce;
+    content: ' *';
+    display:inline;
+}
