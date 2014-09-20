@@ -11,7 +11,7 @@
   <% if @news.image.present? %>
     <div class="mosaic-block circle">
       <a href="<%= @news.image.file.url(:large) %>" class="mosaic-overlay fancybox" data-fancybox-group="gallery" title="<%= @news.subject %>" style="display: inline; opacity: 0.8;"></a>
-      <div class="mosaic-backdrop" style="display: block;"><img src="<%= @news.image.file.url(:large) %>" alt="<%= @news.subject %>"></div>
+      <div class="mosaic-backdrop" style="display: block;"><img src="<%= @news.image.file.url(:medium) %>" alt="<%= @news.subject %>"></div>
     </div>
 
     <% images = @news.image_uploads.drop(1) %>
@@ -20,8 +20,8 @@
         <% images.each do |image| %>
           <div class="col-1-3 cat-1 isotope-item">
             <div class="mosaic-block circle">
-              <a href="<%= image.file.url(:large) %>" class="mosaic-overlay fancybox" data-fancybox-group="gallery" title="Insert Title"></a>
-            <div class="mosaic-backdrop" style="display: block;"><img src="<%= image.file.url(:thumb) %>" alt="<%= @news.subject %>"></div></div>
+              <a href="<%= image.file.url(:large) %>" class="mosaic-overlay fancybox" data-fancybox-group="gallery" title="<%= @news.subject %>"></a>
+            <div class="mosaic-backdrop" style="display: block;"><img src="<%= image.file.url(:small) %>" alt="<%= @news.subject %>" style="min-height: 200px;"></div></div>
           </div>
         <% end %>
       </div>
@@ -30,7 +30,7 @@
   <div class="clearfix"></div>
 
   <h6 class="meta"><a class="date" href="#"><%= l @news.created_at, format: :long %></a></h6>
-  <div <%= edit_text_tags(@news, :content) %>><%= auto_link(simple_format(@news.content), html: { target: '_blank' }) { |text| text } %></div>
+  <div <%= edit_text_tags(@news, :content) %>><%= raw(@news.content) %></div>
 </div>
 
 <% if can? :comment, News %>

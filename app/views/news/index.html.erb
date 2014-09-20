@@ -12,21 +12,21 @@
       <a href="<%= news_path(news) %>" class="mosaic-overlay link" title="<%= news.subject %>" style="display: inline; opacity: 0;"></a>
       <div class="mosaic-backdrop" style="display: block;">
       <% if news.image.present? %>
-        <img src="<%= news.image_uploads.first.file.url(:thumb) %>" alt="<%= news.subject %>">
+        <img src="<%= news.image_uploads.first.file.url(:preview) %>" alt="<%= news.subject %>">
         <% end %>
       </div>
     </div>
 
-    <div class="col-2-3 last">
+<div class="col-2-3 last">
       <h3><%= link_to news.subject, news %></h3>
       <h6 class="meta"><a class="date" href="<%= news_path(news) %>"><%= l news.created_at, format: :long %></a></h6>
-      <p><%= auto_link(simple_format(truncate(news.text, length: 250, escape: false)), html: { target: '_blank' }) { |text| text } %></p>
-        <% if can? :comment, news %>
-          <%= link_to t(:read_more_comment), news %>
-        <% else %>
-          <%= link_to t(:read_more), news %>
-        <% end %>
-    </div>
+      <p><%= raw(truncate(strip_tags(HTMLEntities.new.decode(news.text)), length: 250)) %></p>
+      <% if can? :comment, news %>
+        <%= link_to t(:read_more_comment), news %>
+      <% else %>
+        <%= link_to t(:read_more), news %>
+      <% end %>
+  </div>
   </div>
 <% end %>
 

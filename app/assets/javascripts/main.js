@@ -73,7 +73,8 @@ $(".body-wrapper").fitVids();
 
 /*
 06. FANCYBOX ________________________________________________________________ */
-$('.fancybox').fancybox();
+//$('.fancybox').fancybox();
+
 
 
 

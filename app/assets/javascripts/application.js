@@ -91,6 +91,19 @@ $(document).ready(function() {
     }
   });
 
+  $('.fancybox').click(function(ev) {
+    ev.preventDefault();
+    url = $(this).attr('href');
+    title = $(this).attr('title')
+    $.fancybox.open({
+      href : url,
+      title: title,
+      type : 'image'
+    });
+    return false;
+  });
+
+
 
 });
 
