@@ -30,6 +30,7 @@ gem 'paper_trail'
 gem 's3_direct_upload'
 gem 'rolify'
 gem 'active_model_serializers', '0.8.0'
+gem 'unicorn'
 
 group :development do
   gem 'byebug'
