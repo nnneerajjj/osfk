@@ -3,6 +3,7 @@
 <% content_for :description, t(:create_news) %>
 <% content_for :breadcrumb do %>
   <%= link_to t(:news), news_index_path %>
+  <%= link_to @news.subject, news_path(@news) %>
   <%= link_to t(:edit_news), edit_news_path(@news) %>
 <% end %>
 
