@@ -1,6 +1,4 @@
 class UserMailer < ActionMailer::Base
-  default from: 'kontakt@brfcaraten.se'
-
   layout 'mailer'
 
   def welcome_email(user)

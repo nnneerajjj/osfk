@@ -52,8 +52,6 @@ sv:
 
 
   title: "Österåkers Sportfiskeklubb - "
-  home_text1: "Välkommen till <span>BRF Caraten</span>"
-  home_text2: "Bostadsrättsföreningen i Åkersberga"
   home: "Hem"
   heading: "Österåkers Sportfiskeklubb"
   contact: "Kontakt"
@@ -165,7 +163,7 @@ sv:
   link_to_reset_password: "Här kommer en länk för att återställa ditt lösenord:"
   change_my_password: "Ändra mitt lösenord"
   your_password_wont_change: "Ditt lösenord kommer inte ändras fören du går in på länken ovan."
-  greetings: "Mvh BRF Caraten"
+  greetings: "Mvh Österåkers Sportfiskeklubb"
 
   available_styles: "Valbara typer"
   upload_a_file: "Ladda upp en fil"
@@ -216,9 +214,9 @@ sv:
   the_news: "Nyheten:"
   the_thread: "Diskussionstråden:"
 
-  notification_subject: "Automatiskt veckobrev från brfcaraten.se"
-  notification_all_empty: "Ingenting har hänt på brfcaraten.se sedan förra veckan. :/"
-  notification_since_last_date: "Sedan förra veckan har följande hänt på brfcaraten.se:"
+  notification_subject: "Automatiskt veckobrev från österåkers Sportfiskeklubb"
+  notification_all_empty: "Ingenting har hänt på osfk.org sedan förra veckan. :/"
+  notification_since_last_date: "Sedan förra veckan har följande hänt på osfk.org:"
   helpers:
     page_entries_info:
       more_pages:

@@ -2,8 +2,6 @@ class NotificationMailer < ActionMailer::Base
   include ActionView::Helpers::TextHelper
   add_template_helper(NotificationHelper)
 
-  default from: "\"BRF Caraten\" <kontakt@brfcaraten.se>"
-
   layout 'mailer'
 
   def email(user, date)
