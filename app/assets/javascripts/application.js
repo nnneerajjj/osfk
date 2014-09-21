@@ -115,7 +115,8 @@ var recalculate = function() {
     if ($attr.is(':checked') || $attr.is(':selected')) {
       sum += $attr.data('price');
     }
-    $('#total-cost').text(sum);
+    $('#total-cost').text(sum + 200);
+    $('#total-year-cost').text(sum);
   });
 }
 
