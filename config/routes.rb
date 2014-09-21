@@ -10,6 +10,7 @@ Caraten::Application.routes.draw do
   # resources :users, path: 'installningar', only: [:index, :update]
   resources :news, path: 'nyheter' do
     post :comment, on: :member
+    post :create_letter, on: :member
   end
   resources :topic, path: 'diskussioner' do
     post :comment, on: :member

@@ -3840,3 +3840,8 @@ img.aligncenter {display: block; margin-left: auto; margin-right: auto}
   white-space: -o-pre-wrap;   /* Opera 7 */
   word-wrap: break-word;      /* IE */
 }
+
+.form-right {
+  float: right;
+  margin: 0 10px 0 0;
+}

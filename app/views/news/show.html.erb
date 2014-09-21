@@ -9,6 +9,7 @@
 
   <% if can? :create, News %>
     <a href="<%= edit_news_path(@news) %>" class="right"><button><%= t :edit_news %></button></a>
+    <%= button_to 'Skapa brev', { action: "create_letter", id: @news.slug }, { form_class: 'form-right', data: { confirm: "Är du säker på att du vill skapa ett brev från denna nyhet?", disable_with: 'Skapar...' } } %>
   <% end %>
 
   <h1 class="title"><div <%= edit_text_tags(@news, :subject) %>><%= strip_tags(@news.subject) %></div></h1>

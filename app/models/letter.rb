@@ -5,8 +5,6 @@ class Letter < ActiveRecord::Base
 
   validates :subject, :content, :user, presence: true
 
-
-
   def send_to(user)
     LetterMailer.delay.email(self, user)
   end

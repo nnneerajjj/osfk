@@ -1,5 +1,5 @@
 class NewsController < ApplicationController
-  load_and_authorize_resource :news, only: [:show, :edit, :update, :comment], find_by: :slug
+  load_and_authorize_resource :news, only: [:show, :edit, :update, :comment, :create_letter], find_by: :slug
   include NewsHelper
 
   def new
@@ -26,6 +26,17 @@ class NewsController < ApplicationController
       flash[:notice] = "Du sparade nyheten"
     end
     render json: @news
+  end
+
+  def create_letter
+    letter = Letter.new
+    letter.subject = @news.subject
+    letter.content = @news.content
+    letter.user = current_user
+    letter.link = news_url(@news)
+    letter.save!
+    flash[:notice] = "Du skapade upp brevet från nyheten."
+    return redirect_to letter_path(letter)
   end
 
   def show
