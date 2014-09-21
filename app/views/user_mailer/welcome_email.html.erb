@@ -3,7 +3,7 @@
 <% end %>
 
 <p>
-  <%= I18n.t(:member_of) %> <a href="<%= Rails.application.routes.default_url_options[:host] %>"><%= Rails.application.routes.default_url_options[:host] %></a>
+  <%= I18n.t(:member_of) %> <a href="<%= ActionMailer::Base.default_url_options %>"><%= ActionMailer::Base.default_url_options %></a>
 </p>
 
 <p>

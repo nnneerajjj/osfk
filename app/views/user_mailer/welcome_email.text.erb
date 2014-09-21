@@ -1,6 +1,6 @@
 <%= I18n.t(:welcome)%>, <%= @user.name %>
 
-<%= I18n.t(:member_of) %> <%= Rails.application.routes.default_url_options[:host] %>
+<%= I18n.t(:member_of) %> <%= ActionMailer::Base.default_url_options %>
 
 <%= I18n.t(:regards) %>
 <%= FROM_EMAIL %>
