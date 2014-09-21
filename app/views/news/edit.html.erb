@@ -3,7 +3,7 @@
 <% content_for :description, t(:create_news) %>
 <% content_for :breadcrumb do %>
   <%= link_to t(:news), news_index_path %>
-  <%= link_to t(:create_news), new_news_path %>
+  <%= link_to t(:edit_news), edit_news_path(@news) %>
 <% end %>
 
 <div class="clearfix post">
@@ -11,10 +11,10 @@
   <label><%= t :subject %></label>
   <input type="text" data-form="subject" placeholder="<%= t :subject %>" value="<%= @news.subject %>">
 
-  <%= render 'shared/upload' %>
+  <%= render 'shared/upload', uploads: @news.image_uploads %>
 
   <h6 class="meta"><a class="date" href="#"><%= l(Date.today) %></a></h6>
-  <div data-form="content" <%= edit_text_tags(@news, :content) %>>Skriv nyhet här</div>
+  <div data-form="content" <%= edit_text_tags(@news, :content) %>><%= raw @news.content %></div>
 </div>
 
-<%= button_tag t(:create_news), class: 'form-post', data: { url: news_index_path, name: 'news' } %>
+<%= button_tag t(:save_news), class: 'form-post', data: { method: 'PUT', url: news_path(@news), name: 'news' } %>

@@ -8,7 +8,10 @@
 
 <div class="main-content clearfix">
 
-  <a href="<%= edit_event_path(@event) %>" class="right"><button><%= t :edit_event %></button></a>
+  <% if can? :create, Event %>
+    <a href="<%= edit_event_path(@event) %>" class="right"><button><%= t :edit_event %></button></a>
+  <% end %>
+
   <h1 class="title"><div><%= strip_tags(@event.subject) %></div></h1>
 
   <div class="clearfix evt-single-date">
@@ -28,7 +31,9 @@
 
   <% if @event.can_participate? %>
     <div class="message promo centered">
-      <h3>Vill du vara med på evenemanget?</h3>
+      <% if can? :participant, @event %>
+        <h3>Vill du vara med på evenemanget?</h3>
+      <% end %>
       <div class="countdown styled big-count">
         <div class="cd-years">0 <span>år</span></div>
         <div class="cd-days">0 <span>dagar</span></div>

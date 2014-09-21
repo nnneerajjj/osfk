@@ -87,8 +87,19 @@ $(function() {
     $td.appendTo($tr);
     $('<td>' + content.filename + '</td>').appendTo($tr);
     $('<td>' + bytesToSize(content.filesize) + '</td>').appendTo($tr);
-    $('<td></td>').appendTo($tr);
+    $('<td><button class="remove-image">Ta bort</button></td>').appendTo($tr);
     $tr.appendTo($tbody);
+  });
+
+  $('[data-size]').each(function() {
+    $(this).text(bytesToSize($(this).data('size')));
+  });
+
+  $('.uploads').on('click',' .remove-image', function() {
+    $tr = $(this).parent().parent();
+    if (confirm('Är du säker på att du vill ta bort bilden?')) {
+      $tr.remove();
+    }
   });
 });
 

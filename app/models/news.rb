@@ -23,18 +23,6 @@ class News < ActiveRecord::Base
     image_uploads.first
   end
 
-  def images
-    doc = Nokogiri::HTML( content )
-    imgs = doc.css('img').map{ |i| i['src'] }
-    imgs.map { |img| img.gsub('/thumb/', '/news/').gsub('/original/', '/news/') }
-  end
-
-  def thumbnail
-    doc = Nokogiri::HTML( content )
-    img = doc.css('img').map{ |i| i['src'] }[0] || 'newspaper.jpg'
-    img.gsub('/original/', '/thumb/').gsub('/news/', '/thumb/')
-  end
-
   def slug_candidates
     [
       :subject

@@ -36,10 +36,6 @@ class EventsController < ApplicationController
   end
 
   def create
-    params[:event][:subject] = params[:event][:subject].present? ? strip_tags(params[:event][:subject]) : ''
-    params[:event][:location] = params[:event][:location].present? ? strip_tags(params[:event][:location]) : ''
-    params[:event][:address] = params[:event][:address].present? ? strip_tags(params[:event][:address]) : ''
-
     event = Event.new(params[:event].merge(created_by_id: current_user.id))
     event.save
     render json: event

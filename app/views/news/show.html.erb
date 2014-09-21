@@ -6,6 +6,11 @@
   <%= link_to @news.subject, news_path(@news) %>
 <% end %>
 <div class="clearfix post">
+
+  <% if can? :create, News %>
+    <a href="<%= edit_news_path(@news) %>" class="right"><button><%= t :edit_news %></button></a>
+  <% end %>
+
   <h1 class="title"><div <%= edit_text_tags(@news, :subject) %>><%= strip_tags(@news.subject) %></div></h1>
 
   <% if @news.image.present? %>

@@ -1,5 +1,5 @@
 class NewsController < ApplicationController
-  load_and_authorize_resource :news, only: [:show, :comment], find_by: :slug
+  load_and_authorize_resource :news, only: [:show, :edit, :update, :comment], find_by: :slug
   include NewsHelper
 
   def new
@@ -11,11 +11,21 @@ class NewsController < ApplicationController
     @news = News.page(page)
   end
 
+  def edit
+  end
+
   def create
     news = News.new(params[:news])
     news.save
     flash[:notice] = "Du skapade nyheten #{news.subject}"
     render json: news
+  end
+
+  def update
+    if @news.update_attributes(params[:news])
+      flash[:notice] = "Du sparade nyheten"
+    end
+    render json: @news
   end
 
   def show

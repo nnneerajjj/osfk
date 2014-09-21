@@ -1,3 +1,5 @@
+<% uploads ||= [] %>
+
 <%= image_tag 'image-loader.gif', id: 'image-loader', style: 'display: none;' %>
 <table class="table-style-1 mobile-table uploads" %>
   <thead>
@@ -9,6 +11,14 @@
     </tr>
   </thead>
   <tbody>
+    <% uploads.each do |upload| %>
+      <tr>
+        <td><%= image_tag upload.file.url(:thumb), data: { value: upload.id, form: 'image_upload_ids' } %></td>
+        <td><%= upload.file_file_name %></td>
+        <td data-size='<%= upload.file_file_size %>'></td>
+        <td><button class="remove-image">Ta bort</button></td>
+      </tr>
+    <% end %>
   </tbody>
 </table>
 
