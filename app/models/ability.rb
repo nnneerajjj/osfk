@@ -17,6 +17,7 @@ class Ability
       can :create, Letter
       can :manage, Text
       can :manage, User
+      can :import, [User]
     else
       if user.has_role? :administrator
         can :moderate, :all

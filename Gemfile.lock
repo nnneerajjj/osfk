@@ -189,6 +189,7 @@ GEM
       remotipart (~> 1.0)
       safe_yaml (~> 1.0)
       sass-rails (~> 4.0)
+    rails_admin_import (0.1.9)
     rails_admin_nestable (0.2.0)
       coffee-rails
       haml-rails
@@ -312,6 +313,7 @@ DEPENDENCIES
   rails-i18n
   rails_12factor
   rails_admin
+  rails_admin_import
   rails_admin_nestable
   rails_autolink
   rolify

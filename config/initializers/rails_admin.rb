@@ -24,6 +24,7 @@ RailsAdmin.config do |config|
     new
     export
     history_index
+    import
     bulk_delete
     # member actions
     show

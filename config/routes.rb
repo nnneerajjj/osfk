@@ -4,6 +4,7 @@ Caraten::Application.routes.draw do
   get 'inaktiv', to: 'home#inactive', as: 'inactive_registration'
 
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
+  mount RailsAdminImport::Engine => '/rails_admin_import', :as => 'rails_admin_import'
 
   resources :contacts, path: 'kontakt', only: [:index, :create]
   resources :members, path: 'medlemmar', only: [:index] do

@@ -35,6 +35,7 @@ gem 'rolify'
 gem 'active_model_serializers', '0.8.0'
 gem 'unicorn'
 gem 'delayed_paperclip'
+gem 'rails_admin_import'
 
 group :production do
   # Needed for heroku
