@@ -15,6 +15,7 @@ class Ability
       can :create, News
       can :create, Event
       can :create, Letter
+      can :manage, Text
       can :manage, User
     else
       if user.has_role? :administrator
@@ -23,6 +24,7 @@ class Ability
         can :create, News
         can :create, Event
         can :create, Letter
+        can :manage, Text
         can :manage, User
       end
       can :manage, User, id: user.id

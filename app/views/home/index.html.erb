@@ -15,14 +15,22 @@
   <p>
     <% text = @page.texts.find_or_create_by(key: 'lead') %>
     <div <%= edit_text_tags(text, :value) %>>
-      <%= text.value.html_safe %>
+      <% if can? :create, Text %>
+        <%= text.value.present? ? text.value.html_safe : 'Skriv en inledning' %>
+      <% else %>
+        <%= text.value.html_safe %>
+      <% end %>
     </div>
   </p>
 
   <p>
     <% text = @page.texts.find_or_create_by(key: 'content') %>
     <div <%= edit_text_tags(text, :value) %>>
-      <%= text.value.html_safe %>
+      <% if can? :create, Text %>
+        <%= text.value.present? ? text.value.html_safe : 'Skriv en text' %>
+      <% else %>
+        <%= text.value.html_safe %>
+      <% end %>
     </div>
   </p>
 </div>

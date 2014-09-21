@@ -4,7 +4,7 @@ class TextsController < ApplicationController
 
 
   def update
-    authorize! :access, :admin
+    authorize! :update, Text
 
     json = JSON.parse(params[:text])
 
