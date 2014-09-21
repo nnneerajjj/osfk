@@ -3,7 +3,7 @@
 <% end %>
 
 <p>
-  <%= I18n.t(:member_of) %> <a href="<%= ActionMailer::Base.default_url_options %>"><%= ActionMailer::Base.default_url_options %></a>
+  <%= I18n.t(:member_of) %> <a href="<%= ActionMailer::Base.default_url_options[:host] %>"><%= ActionMailer::Base.default_url_options[:host] %></a>
 </p>
 
 <p>
