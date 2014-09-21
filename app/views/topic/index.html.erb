@@ -10,7 +10,11 @@
   <div class="post-excerpt clearfix">
     <div class="col-2-3">
       <h3><%= link_to topic.subject, topic %></h3>
-      <h6 class="meta"><a class="date" href="<%= topic_path(topic) %>"><%= l topic.created_at, format: :long %></a></h6>
+      <h6 class="meta">
+        <a class="date" href="<%= topic_path(topic) %>"><%= l topic.created_at, format: :long %></a><br/>
+        <%= t :author %> <%= topic.user.name %>
+      </h6>
+
       <p><%= auto_link(simple_format(truncate(topic.content, length: 250, escape: false)), html: { target: '_blank' }) { |text| text } %></p>
       <%= link_to I18n.t(:read_more), topic %>
     </div>
