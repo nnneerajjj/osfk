@@ -30,8 +30,6 @@ class EventsController < ApplicationController
       current_user.events << @event
     end
 
-    current_user.save!
-
     redirect_to :back
   end
 
