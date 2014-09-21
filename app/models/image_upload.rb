@@ -4,5 +4,10 @@ class ImageUpload < Upload
 
   attr_accessible :uploader_id, :uploader_type, :type, :uuid, :file
 
-  process_in_background :file
+  process_in_background :file, :processing_image_url => :processing_image_fallback
+
+  def processing_image_fallback
+    options = file.options
+    options[:interpolator].interpolate(options[:url], file, :original)
+  end
 end

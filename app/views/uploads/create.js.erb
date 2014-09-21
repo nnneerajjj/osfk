@@ -4,5 +4,5 @@
   $("#<%= params[:unique_id] %>")
     .attr('data-form', 'image_upload_ids')
     .attr('data-value', <%= @upload.id %>)
-    .html('<img src="<%= @upload.file.url(:thumb) %>">')
+    .html('<img src="<%= @upload.file.url(:thumb) %>" style="width: 80px; height: 80px;">')
 <% end %>
