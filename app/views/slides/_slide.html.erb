@@ -1,7 +1,7 @@
 <li data-transition="fade" data-masterspeed="500" >
 
 <% if slide.image_upload.present? %>
-  <img src="<%= image_path(slide.image_upload.file.url(:large)) %>" alt="<%= slide.header %>" data-bgposition="left center" data-kenburns="on" data-duration="14000" data-ease="Linear.easeNone" data-bgfit="100" data-bgfitend="130" data-bgpositionend="right center">
+  <img src="<%= image_path(slide.image_upload.file.url(:slider)) %>" alt="<%= slide.header %>" data-bgposition="left center" data-kenburns="on" data-duration="14000" data-ease="Linear.easeNone" data-bgfit="100" data-bgfitend="130" data-bgpositionend="right center">
 <% end %>
   <div class="tp-caption fadeout sfr sport-rs-boxed sport-rs-heading"
     data-x="0" data-hoffset="0"
