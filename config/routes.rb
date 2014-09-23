@@ -1,6 +1,8 @@
 Caraten::Application.routes.draw do
   devise_for :users, :controllers => { :registrations => "registrations" }
 
+  get 'inaktiv', to: 'home#inactive', as: 'inactive_registration'
+
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
   resources :contacts, path: 'kontakt', only: [:index, :create]

@@ -130,6 +130,7 @@ sv:
   lastname: "Efternamn"
   website: "Hemsida"
   telephone: "Telefonnummer"
+  inactive: "Inaktiv"
   water: Vattenavläsning
   street_number: "Gatunummer"
   view_on_map: "Visa på karta"

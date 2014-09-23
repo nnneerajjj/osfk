@@ -73,6 +73,10 @@ class RegistrationsController < Devise::RegistrationsController
     edit_user_registration_path
   end
 
+  def after_inactive_sign_up_path_for(resouce)
+    main_app.inactive_registration_path
+  end
+
   private
 
   # check if we need password to update user data

@@ -5,7 +5,7 @@
   <%= link_to t(:news), news_index_path %>
   <%= link_to @news.subject, news_path(@news) %>
 <% end %>
-<div class="clearfix post">
+  <div class="clearfix post">
 
   <% if can? :create, News %>
     <a href="<%= edit_news_path(@news) %>" class="right"><button><%= t :edit_news %></button></a>
