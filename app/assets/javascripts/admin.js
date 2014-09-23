@@ -101,6 +101,14 @@ $(function() {
       $tr.remove();
     }
   });
+
+  $('[data-form="start_date_date"]').focusout(function() {
+    var $startDate = $(this);
+    var $endDate = $('[data-form="end_date_date"')
+    if ($startDate.val() && !$endDate.val()) {
+      $endDate.val($startDate.val());
+    }
+  });
 });
 
 $(document).ajaxSend(function(e, xhr, options) {

@@ -6,7 +6,11 @@ $ ->
     $('[data-form]').each (idx, attr) ->
       $attr = $(attr);
       key = $attr.data('form')
-      value = $attr.data('value') || $attr.val() || $(attr).html()
+      value = null
+      if $attr.attr('type') == 'checkbox'
+        value = $attr.prop('checked')
+      else
+        value = $attr.data('value') || $attr.val() || $(attr).html()
       if attrs[key]
         if(!$.isArray(attrs[key]))
           attrs[key] = [value].concat(attrs[key])

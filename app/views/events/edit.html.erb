@@ -25,7 +25,7 @@
       </li>
       <li><strong>Plats: </strong><input type="text" placeholder="Plats" data-form="location" value="<%= @event.location %>" style="background-color: white;"></li>
       <li><strong>Adress: </strong><input type="text" placeholder="Adress" data-form="address" value="<%= @event.address %>" style="background-color: white;"></li>
-      <li><strong>Deltagande?: </strong><input type="checkbox" checked="<%= @event.can_participate? ? 'checked' : '' %>" data-form="can_participate"></li>
+      <li><strong>Deltagande?: </strong><input type="checkbox" <%= @event.can_participate? ? 'checked=checked' : '' %> data-form="can_participate"></li>
     </ul>
   </div>
 

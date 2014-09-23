@@ -12,13 +12,13 @@
     <a href="<%= edit_event_path(@event) %>" class="right"><button><%= t :edit_event %></button></a>
   <% end %>
 
-  <h1 class="title"><div><%= strip_tags(@event.subject) %></div></h1>
+  <h1 class="title"><%= @event.subject %></h1>
 
   <div class="clearfix evt-single-date">
     <h6 class="left">
       <%= l @event.start_date, format: '%e %B' %>
 
-      <% if @event.end_date.present? %>
+      <% if @event.end_date.present? && @event.start_date.to_date != @event.end_date.to_date %>
         - <%= l @event.end_date, format: '%e %B' %>
       <% end %>
     </h6>
@@ -67,10 +67,12 @@
         </li>
       <% end %>
       <% if @event.end_date.present? %>
-        <li>
-          <strong><%= t :end_date %></strong>
-          <%= l @event.end_date, format: '%e %B' %>
-        </li>
+        <% if @event.start_date.to_date != @event.end_date.to_date %>
+          <li>
+            <strong><%= t :end_date %></strong>
+            <%= l @event.end_date, format: '%e %B' %>
+          </li>
+        <% end %>
         <% if @event.end_date.strftime("%H:%M") != "00:00" %>
           <li>
             <strong><%= t :end_date_time %>: </strong>
