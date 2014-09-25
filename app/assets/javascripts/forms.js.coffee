@@ -3,9 +3,12 @@ $ ->
     $submit = $(this)
     $submit.prop('disabled', true)
     attrs = {}
+
     $('[data-form]').each (idx, attr) ->
+      console.log(idx);
       $attr = $(attr);
       key = $attr.data('form')
+
       value = null
       if $attr.attr('type') == 'checkbox'
         value = $attr.prop('checked')
@@ -24,6 +27,8 @@ $ ->
     url = $(this).data('url')
 
     data[name] = attrs
+    console.log(data)
+    return
 
     $.ajax
       type: $submit.data('method') || "POST",

@@ -61,70 +61,7 @@
 
           </div>
 
-          <div class="main-header-right right adjust-right">
-            <nav class="megamenu_container">
-              <ul id="nav" class="right megamenu">
-                <li class="nav-parent"><%= link_to t(:home), root_path %></li>
-                <% if can? :read, News %>
-                  <li class="nav-parent">
-                    <%= link_to t(:news), news_index_path %>
-                    <% if can? :create, News %>
-                      <ul>
-                        <li class="nav-parent"><%= link_to t(:create_news), new_news_path %></li>
-                      </ul>
-                    <% end %>
-                  </li>
-                <% end %>
-                <% if can? :read, Topic %>
-                  <li class="nav-parent">
-                    <%= link_to t(:forum), topic_index_path %>
-                    <% if can? :create, Topic %>
-                      <ul>
-                        <li class="nav-parent"><%= link_to t(:create_topic), new_topic_path %></li>
-                      </ul>
-                    <% end %>
-                  </li>
-                <% end %>
-                <% if can? :read, Event %>
-                  <li class="nav-parent">
-                    <%= link_to t(:events), events_path %>
-                    <% if can? :create, Event %>
-                      <ul>
-                        <li class="nav-parent"><%= link_to t(:create_event), new_event_path %></li>
-                      </ul>
-                    <% end %>
-                  </li>
-                <% end %>
-                <% if can? :manage, User %>
-                  <li class="nav-parent">
-                    <%= link_to t(:members), members_path %>
-                  </li>
-                <% end %>
-                <% if can? :create, Letter %>
-                  <li class="nav-parent">
-                    <%= link_to t(:letters), letters_path %>
-                    <ul>
-                      <li class="nav-parent"><%= link_to t(:create_letter), new_letter_path %></li>
-                    </ul>
-                  </li>
-                <% end %>
-
-                <% if current_user %>
-                  <li class="nav-parent"><%= link_to current_user.name, '#' %>
-                    <ul>
-                      <li></li>
-
-                      <li class="nav-child"><%= link_to t(:settings), edit_user_registration_path %></li>
-                      <li><%= link_to t(:sign_out), destroy_user_session_path %></li>
-                    </ul>
-                  </li>
-                <% else %>
-                  <li class="nav-parent"><%= link_to t(:sign_up), new_user_registration_path %></li>
-                  <li class="nav-parent"><%= link_to t(:sign_in), new_user_session_path %></li>
-                <% end %>
-                </ul>
-            </nav>
-          </div>
+          <%= render 'shared/menu' %>
         </div>
       </header>
     </div>

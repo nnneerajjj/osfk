@@ -49,6 +49,10 @@ sv:
         subject: Rubrik
         content: Innehåll
         link: Länk
+      page:
+        title: Titel
+        public: Publik sida
+
 
 
   title: "Österåkers Sportfiskeklubb - "
@@ -70,6 +74,7 @@ sv:
   create_topic: "Skapa diskussionstråd"
   create_event: "Skapa evenemang"
   create_letter: "Skapa brev"
+  create_page: "Skapa sida"
   save_letter: "Spara brev"
   save_event: "Spara evenemang"
   save_news: "Spara nyhet"

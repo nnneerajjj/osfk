@@ -30,6 +30,8 @@ Caraten::Application.routes.draw do
     post :send_all, on: :member
   end
 
+  resources :pages, only: [:new, :create, :update]
+
   resources :uploads, only: :create
 
   root :to => 'home#index'

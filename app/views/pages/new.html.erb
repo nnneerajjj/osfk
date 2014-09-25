@@ -1,0 +1,21 @@
+<% content_for :title, t(:create_page) %>
+<% content_for :header, t(:page) %>
+<% content_for :description, t(:create_page) %>
+<% content_for :breadcrumb do %>
+  <%= link_to t(:create_page), new_page_path %>
+<% end %>
+
+<div class="clearfix post">
+
+  <input id="public-page" type="checkbox" data-form="public">
+  <label for="public-page"><%= Page.human_attribute_name(:public) %></label>
+
+  <label><%= Page.human_attribute_name(:title) %></label>
+  <input type="text" data-form="title" placeholder="<%= Page.human_attribute_name(:title) %>" value="<%= @page.title %>">
+
+  <%= render 'shared/upload' %>
+
+  <div data-form="content" <%= edit_text_tags(@page, :content) %>>Skriv innehåll här</div>
+</div>
+
+<%= button_tag t(:create_page), class: 'form-post', data: { url: pages_path, name: 'page' } %>
