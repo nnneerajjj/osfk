@@ -3,9 +3,11 @@ class Page < ActiveRecord::Base
 
   friendly_id :title, use: :slugged
 
-  attr_accessible :title, :content, :public, :header, :slug, :key, :text_ids
+  attr_accessible :title, :content, :public, :header, :slug, :key, :text_ids, :page_id
 
   has_many :texts
+  belongs_to :page
+  has_many :children, class_name: 'Page'
 
   validates :title, :content, presence: true
 

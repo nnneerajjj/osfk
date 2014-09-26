@@ -12,14 +12,7 @@
 <div class="clearfix post">
   <h1 class="title">Välkommen</h1>
 
-    <% text = @page.texts.find_or_create_by(key: 'lead') %>
-    <div <%= edit_text_tags(text, :value) %>>
-      <% if can? :create, Text %>
-        <%= text.value.present? ? text.value.html_safe : 'Skriv en välkomsttext' %>
-      <% else %>
-        <%= text.value.html_safe %>
-      <% end %>
-    </div>
+    <%= render 'shared/text', page: @page, key: 'lead', default: 'Skriv en välkomsttext' %>
 </div>
 
 <div class="col-1-2">

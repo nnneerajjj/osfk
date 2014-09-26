@@ -1,0 +1,8 @@
+<% text = page.texts.find_or_create_by(key: key) %>
+<div <%= edit_text_tags(text, :value) %>>
+  <% if can? :create, Text %>
+    <%= text.value.present? ? text.value.html_safe : default %>
+  <% else %>
+    <%= text.value.html_safe %>
+  <% end %>
+</div>

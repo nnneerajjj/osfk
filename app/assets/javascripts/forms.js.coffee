@@ -5,7 +5,6 @@ $ ->
     attrs = {}
 
     $('[data-form]').each (idx, attr) ->
-      console.log(idx);
       $attr = $(attr);
       key = $attr.data('form')
 
@@ -22,13 +21,14 @@ $ ->
       else
         attrs[key] = value
 
+      # Continue loop
+      true
+
     data = {}
     name = $(this).data('name')
     url = $(this).data('url')
 
     data[name] = attrs
-    console.log(data)
-    return
 
     $.ajax
       type: $submit.data('method') || "POST",

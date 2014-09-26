@@ -4,5 +4,36 @@
 
 <div class="inner-content page">
   <h1>Välkommen</h1>
-  När du har betalat avgiften kommer ditt medlemsskap bli aktiverat.
+    <div class="clearfix">
+      <div class="col-1-4 price">
+        <h3><span>300:-<span>/år</span></span>Vuxna</h3>
+        <!-- <div class="price-detail">
+          <p><strong>Ordinarie medlemsskap.</strong></p>
+        </div> -->
+      </div>
+
+      <!-- price-feature -->
+      <div class="col-1-4 price">
+        <h3><span>175:-<span>/år</span></span>Junior /<br>Pensionärer</h3>
+        <!-- <div class="price-detail">
+          <p><strong>Ordinarie medlemsskap för personer under 18 eller över 65.</strong></p>
+        </div> -->
+      </div>
+
+      <div class="col-1-4 price price">
+        <h3><span>+200:-<span>/år</span></span>Tillgång till Stora Mossön</h3>
+        <!-- <div class="price-detail">
+         <p><strong>Aktiverad nyckelbricka Stora Mossön som ger tillgång till:</strong></p>
+        </div> -->
+      </div>
+
+      <div class="col-1-4 price last">
+        <h3><span>+700:-<span>/år</span></span>Årsfiskekort i drängsjön</h3>
+        <!-- <div class="price-detail">
+          <p><strong>Tillåtelse att fiska i drängsjön utan extra avgift.</strong></p>
+        </div> -->
+      </div>
+    </div>
+
+  <%= render 'shared/text', page: @page, key: 'inactive', default: 'När du har betalat avgiften kommer ditt medlemsskap bli aktiverat.' %>
 </div>

@@ -5,5 +5,6 @@ class HomeController < ApplicationController
   end
 
   def inactive
+    @page = Page.find_by_key('inactive')
   end
 end

@@ -1,7 +1,17 @@
 <div class="main-header-right right adjust-right">
   <nav class="megamenu_container">
     <ul id="nav" class="right megamenu">
-      <li class="nav-parent"><%= link_to t(:home), root_path %></li>
+      <li class="nav-parent">
+        <%= link_to t(:home), root_path %>
+          <% children = Page.find_by_key('home').children %>
+          <% if children.any? %>
+            <ul>
+              <% children.each do |child| %>
+                <li><%= link_to child.title, '/' + child.slug %></li>
+              <% end %>
+            </ul>
+          <% end %>
+      </li>
       <% if can? :read, News %>
         <li class="nav-parent">
           <%= link_to t(:news), news_index_path %>

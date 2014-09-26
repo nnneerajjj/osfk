@@ -29,6 +29,7 @@
 page = Page.create(title: 'Inaktiv', header: 'Inaktivt medlemsskap', content: 'När du har betalat avgiften kommer ditt medlemsskap bli aktiverat.', public: true)
 page.key = 'inactive'
 page.save!
+page.texts.create(key: 'content', value: page.content)
 
 
 # image = ImageUpload.new
