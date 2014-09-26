@@ -1,5 +1,6 @@
 $ ->
   $('.form-post').click ->
+    $('.raptor-ui-save').click()
     $submit = $(this)
     $submit.prop('disabled', true)
     attrs = {}

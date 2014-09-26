@@ -11,6 +11,7 @@ class PagesController < ApplicationController
 
   def create
     page = Page.new(params[:page].merge({page_id: Page.find_by_key('home').id}))
+
     if page.save
       page.texts.create(key: 'content', value: page.content)
       flash[:notice] = "Du skapade sidan #{page.title}"
