@@ -10,6 +10,10 @@
 <div class="clearfix post">
 <%= form_for @event do |f| %>
 
+  <% if can? :create, Event %>
+    <%= button_to t(:delete_event), { action: :destroy, id: @event }, { method: :delete, class: 'btn-2 right', form_class: 'form-right', data: { confirm: "Är du säker på att du vill ta bort evenemanget?", disable_with: 'Tar bort...' } } %>
+  <% end %>
+
   <input type="text" data-form="subject" placeholder="<%= t :subject %>" value="<%= @event.subject %>">
 
   <div class="boxy boxy-pad col-1-3">

@@ -75,6 +75,8 @@ sv:
   create_event: "Skapa evenemang"
   create_letter: "Skapa brev"
   create_page: "Skapa sida"
+  delete_event: "Radera evenemang"
+  delete_news: "Radera nyhet"
   save_letter: "Spara brev"
   save_event: "Spara evenemang"
   save_news: "Spara nyhet"

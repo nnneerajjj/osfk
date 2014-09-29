@@ -9,7 +9,7 @@
 <div class="main-content clearfix">
 
   <% if can? :create, Event %>
-    <a href="<%= edit_event_path(@event) %>" class="right"><button><%= t :edit_event %></button></a>
+    <a href="<%= edit_event_path(@event) %>" class="right"><button button class="btn-2"><%= t :edit_event %></button></a>
   <% end %>
 
   <h1 class="title"><%= @event.subject %></h1>

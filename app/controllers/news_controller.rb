@@ -1,5 +1,5 @@
 class NewsController < ApplicationController
-  load_and_authorize_resource :news, only: [:show, :edit, :update, :comment, :create_letter], find_by: :slug
+  load_and_authorize_resource :news, only: [:show, :edit, :update, :comment, :create_letter, :destroy], find_by: :slug
   include NewsHelper
 
   def new
@@ -26,6 +26,12 @@ class NewsController < ApplicationController
       flash[:notice] = "Du sparade nyheten"
     end
     render json: @news
+  end
+
+  def destroy
+    @news.destroy
+    flash[:notice] = "Du tog bort nyheten."
+    redirect_to action: :index
   end
 
   def create_letter

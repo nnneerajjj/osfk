@@ -3844,4 +3844,15 @@ img.aligncenter {display: block; margin-left: auto; margin-right: auto}
 .form-right {
   float: right;
   margin: 0 10px 0 0;
+  input {
+    background-color: #ff7800;
+  }
+}
+
+.form-left {
+  float: left;
+  margin: 0 10px 0 0;
+  input {
+    background-color: #ff7800;
+  }
 }
