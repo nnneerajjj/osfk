@@ -35,7 +35,8 @@ gem 'rolify'
 gem 'active_model_serializers', '0.8.0'
 gem 'unicorn'
 gem 'delayed_paperclip'
-gem 'rails_admin_import'
+gem 'rails_admin_import', git: 'https://github.com/luddement/rails_admin_import.git', branch: 'utf8'
+#gem 'rails_admin_import', path: '../Temp/rails_admin_import'
 
 group :production do
   # Needed for heroku

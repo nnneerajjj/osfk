@@ -110,6 +110,9 @@ sv:
         title: "History for %{model_label} '%{object_label}'"
         menu: "History"
         breadcrumb: "History"
+      import:
+        menu: "Importera"
+        breadcrumb: "Importera"
     form:
       cancel: "Avbryt"
       basic_info: "Grundinformation"

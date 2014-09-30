@@ -4,7 +4,11 @@ class MembersController < ApplicationController
   def index
     authorize! :manage, User
 
-    @users = User.where(active: true)
+    @users = User.includes(:roles).where(active: true)
+  end
+
+  def edit
+
   end
 
   def update_multiple

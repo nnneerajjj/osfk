@@ -4,22 +4,39 @@
 
 <% content_for :contents do%>
 
-<div class="main-content col-4-5 right last">
-  <h1><%= t :members %></h1>
-  <!-- <p class="lead">Our Team is the best around. Maecenas sed diam eget risus varius blandit sit amet non magna. Nullam quis risus eget urna mollis ornare vel eu leo.</p> -->
+<style>
+  ul {
+    display: inline;
+  }
+  li {
+    display: inline;
+    margin-left: 10px;
+  }
+  input {
+    background-color: white !important;
+  }
+</style>
 
-  <hr>
+<div class="main-content col-5-5 right last">
+  <h1><%= t :members %></h1>
+  <div class="widget">
+    <ul class="widget-list list-1">
+    </ul>
+  </div>
 
   <%
     @roles = Role.all
-    %>
+   %>
 
   <a href="#top" class="btn-3 xsmall-btn right fa"></a>
-  <h3 id="section2"><%=  t :activated_members %></h3>
+
+  <h3><%=  t :all_members %></h3>
+
   <%= form_tag update_multiple_members_path, method: :put do %>
     <table class="table-style-2" %>
       <thead>
         <tr>
+          <th>Nummer</th>
           <th>Förnamn</th>
           <th>Efternamn</th>
           <th>Email</th>
@@ -30,10 +47,11 @@
       <tbody>
         <% @users.each do |user| %>
           <%= fields_for "users[]", user do |f| %>
-          <tr>
-              <td><%= f.text_field :firstname, placeholder: t(:firstname), style: 'background-color: white;' %></td>
-              <td><%= f.text_field :lastname, placeholder: t(:lastname), style: 'background-color: white;' %></td>
-              <td><%= f.text_field :email, placeholder: t(:email), style: 'background-color: white;' %></td>
+            <tr>
+              <td><%= f.text_field :number, placeholder: t(:number) %></td>
+              <td><%= f.text_field :firstname, placeholder: t(:firstname) %></td>
+              <td><%= f.text_field :lastname, placeholder: t(:lastname) %></td>
+              <td><%= f.text_field :email, placeholder: t(:email) %></td>
               <td><%= f.collection_select :role_ids, @roles, :id, :name, { }, { multiple: true, class: 'multiple', style: 'width: 250px;' } %></td>
               <td><%= f.check_box :approved %> <%= f.label :approved %></td>
             </tr>
@@ -43,15 +61,9 @@
       </table>
     <%= submit_tag t :save %>
   <% end %>
-  </div>
 
-  <aside class="col-1-5">
-    <div class="widget">
-        <h3 class="widget-title"><%= t :sections %></h3>
-        <ul class="widget-list list-1">
-        </ul>
-      </div>
-  </aside>
+  <a href="#top" class="btn-3 xsmall-btn right fa"></a>
+</div>
 
 
 <% end %>

@@ -12,7 +12,8 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :firstname,
                   :street_number, :house_number, :lastname, :website, :telephone, :water, :stock, :approved,
-                  :identity_number, :package1, :package2, :regular, :address, :postal_address, :role_ids
+                  :identity_number, :package1, :package2, :regular, :address, :postal_address, :role_ids,
+                  :number, :home_phone
 
   has_attached_file :avatar, :styles => { :thumb => "250x250>", :preview => "80x80" }
 
@@ -25,8 +26,6 @@ class User < ActiveRecord::Base
   def participates_in?(event)
     events.where(id: event.id).any?
   end
-
-  after_create :send_welcome_email
 
   def name
     name = "#{firstname} #{lastname}"
@@ -58,11 +57,34 @@ class User < ActiveRecord::Base
     super && approved?
   end
 
+  # mosso
+
   def inactive_message
-    if !approved?
+    unless approved?
       :not_approved
     else
       super # Use whatever other message
+    end
+  end
+
+  def before_import_save(row, map)
+    if map.has_key?(:pre_email)
+      if row[map[:pre_email]].blank?
+        self.email = "#{number}@temp.osfk.org"
+      else
+        self.email = row[map[:pre_email]].to_s.gsub(/\s|:/, '')
+      end
+    end
+
+    name = row[map[:name]]
+    if name.present?
+      self.firstname = name.split[0..-2].join(' ')
+      self.firstname = name if self.firstname.blank?
+      self.lastname = name.split.last
+    end
+
+    unless self.encrypted_password.present?
+      self.password = SecureRandom.hex(8)
     end
   end
 

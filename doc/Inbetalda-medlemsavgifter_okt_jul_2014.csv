@@ -1,0 +1,407 @@
+number;name;address;postal_code
+1;Rudolf Engelbrecht;Skiljevägen 5 A;182 56 DANDERYD
+10;Runö Folkhögskola;Näsvägen 100;184 92 Åkersberga
+100;Karsten Sandal;Karlsundsvägen 9;184 33 Åkersberga
+1002;Börje Danielsson;Slussbrovägen 6 2 tr;184 41 Åkersberga
+1003;Kristian Högberg;Skrakvägen 35;184 62 Åkersberga
+1004;Alf Öhman;Lotsvägen 34;184 92 Åkersberga
+1005;Elvi Nelly;Norrgårdsvägen 5;184 36 Åkersberga
+1015;Pekka Ylhäisi;Hemgårdsvägen 9;191 44 Sollentuna
+1020;Roger Ljungsér;Ryttargatan 172;194 71 UpplandsVäsby
+1024;Mikael Jonsson;Dragontorpsvägen 11;184 38 Åkersberga
+1028;Jose Castaneda;Ängsholmsgränd 25, 2tr;127 42 Skärholmen
+1029;Igor Radovanovic;Kärrtorpsvägen 23;121 45 Johanneshov
+1036;Toivo Paaso;Ängsvägen 7;871 50 Härnösand
+1046;Axel Bengtsson;Ruddamnsvägen 60;18442 Åkersberga
+1047;Curt Sjöblad;Urannusvägen 9;184 60 Åkersberga
+1048;Magnus Axelsson;Sköldvägen 31;184 60 Åkersberga
+1050;Henrik Pettersson;Gransättravägen 75;184 61 Åkersberga
+1051;Daniel Göransson;Badvägen 12;184 50 Åkersberga
+1055;Pekka Westerlund;Skogsstjernevägen 33;184 35 Åkersberga
+1059;Mats Lönnqvist;Söralidsvägen 34;184 60 Åkersberga
+1060;Philipp Klinkhardt;Hantverksvägen 30;184  32 Åkersberga
+1061;Mateusz Slabicka;Slussbrovägen 6;184 41 Åkersberga
+1062;Johanna Slabicka;Slussbrovägen 6;184 41 Åkersberga
+1063;Jimmy Wallerstein;Vitfagravägen 51;184 61 Åkersberga
+1065;Jan-Olov Lundberg;Mönstringsvägen 64;184 33 Åkersberga
+107;Christofer Adding;Orionvägen 5;184 50 Åkersberga
+1072;Niklas Wahlström;Kullabergsvägen 13;186 42 Vallentuna
+1075;Ulf Matsson;Radarvägen 16;183 59 Täby
+1076;Bo Andersson;Björkholmen 26;18696 Vallentuna
+1077;Karin Andersson/Nordström;Björkholmen 26;186 96 Vallentuna
+1078;Tommy Wahlström;Kullabergsvägen 13;186 42 Vallentuna
+1079;Göran Berggren;Hargs by  37;760 21 Vätö
+1080;Veysi Ikincisoy;Rusthållrevägen 17;192 78 Sollentuna
+1082;Lukasz Piotr Lazarz;c/o Fågelström    Smedbyvägen 76;184 32 Åkersberga
+1086;Taisto Ronkainen;Trägårdsvägen 9;194 46 Upplandsväsby
+1087;Aulis Kananen;Rivtorpsvägen 7;194 52 Upplandsväsby
+1089;Heikki Nevalainen;Stallgatan 16 B;194 32 Upplandsväsby
+109;Lars Kallin;Spånlötsvägen  15;184 34 Åkersberga
+1094;Joakim Jonsson;Norra Skogsrundan 38;184 63 Åkersberga
+1095;Tommy Berggren;Malstavägen 257;761 71 Norrtälje
+1097;Franz Heinel;N. Skogsrundan 34;184 63 Åkersberga
+110;John-Michael Kurtti;Karslundvägen 13;184 33 Åkersberga
+1100;Peter Höögs;Knipvägen 97;184 62 Åkersberga
+1102;Ulf Björklin;Moga Eknäs 1;740 10 Almunge
+1105;Fredrik Severin;Åkersbergavägen 2 C;184 50 Åkersberga
+1106;Björn Zacco;Österskärsvägen 2;184 50 Åkersberga
+1109;Niclas Juthage;Tyrgränd 1;187 70 Täby
+1112;Michael Hammarling;Hantverksvägen 54;184 32 Åkersberga
+1113;Tommy Haataja;Skolvägen 5 A;186 41 Vallentuna
+1115;Tomas Kranén;Andvägen 3;184 61 Åkersberga
+1118;Göran Åsén;Koltrastvägen 22;186 47 Vallentuna
+1120;Ronny Ekström;Norra Attriumvägen 88;184 91 Åkersberga
+1121;Åsa Carbell;Norra skogsrundan 45;184 63 Åkersberga
+1123;Berra Löfgren;Sunnerstavägen 56;186 70 Brottby
+1124;Paulina Gustafsson;Disavägen 5;193 52 Upplands-Väsby
+1127;Rafal Markowski;Norrgårdsvägen 21, 6tr;184 36 Åkersberga
+1128;Andréas Persson;Söravägen 1;184 37 Åkersberga
+1129;Simon Karlsson;Gruvbacken 56;184 63 Åkersberga
+113;Michael Aglén;Badvägen 14;184 50 Åkersberga
+1130;Tommy Berglind;Vitfåravägen 4;184 61 Åkersberga
+1135;Carlo Libelt;Forminnesvägen 26;186 32 Vallentuna
+1136;Ivar Lööf;Lillkalmarvägen  11;182 65 Djursholm
+1137;Bengt Jönsson;Veckovägen 30;177 62 Järfälla
+1140;Gamboa Garcia Fargo;Drottning Kristinas Väg 67 E;761 42 Norrtälje
+1142;Johan Ekstam;Otto Bondes Väg 112;184 62 Åkersberga
+1143;Martin Hallberg;Stavstavägen 33;184 43 kersberga
+1145;Marek Kowalski;Rättar vigs väg 108;102 72 Vällinby
+1151;Kent Svensson;Bammarbodavägen 52;184 91 Åkersberga
+1159;Jesper Sjölin;Bangatan 15;171 63 Solna
+1160;Jenny Eltebo Johansson;Översätravägen 64;187 70 Åkersberga
+1161;Börje Phil;Tofsmesvägen 8;184 61 Åkersberga
+1162;Jimmy Wallèn;Armborstvägen 11;184 60 Åkersberga
+1163;Mio Weisten;Vinkelvägen 12 B;184 52 Österskär
+1164;Olle Ramm;c/o Michael Steen Vikgränd 6;184 63 Åkersberga
+1168;Leif Edlund;Varvsvägen 3;184 52 Österskär
+1174;Robin Brottman;Flrettvägen 18 co gumer;186 40 Åkersberga
+1176;Ari Drake;Torsvägen 5;184 92 Åkersberga
+1177;Robert Wallin;Arbetaregatan 27 A  5 tr;112 45 Stockholm
+1178;Seppo Honkanen;Margeretelundsvägen 21 B;184 60 Åkersberga
+1179;Billy Malmgren;Runöbacken 139;184 41 Åkersberga
+1180;Michael Schuo;Oxenstiernas väg 23;184 32 Åkersberga
+1201;Roger Sys;Tångvägen 6;126 42 Hägersten
+1205;Börje Hindrikes;Slussbrovägen 14;184 41 Åkersberga
+1206;Sylwester Jan Zymon;Lillbbrostigen 6;184  41 Åkersberga
+121;Mikael Persaud;Rödbosundsvägen 40;184 60 Åkersberga
+1210;Emil Hillung;Rosendalsvägen 39 B;184 31 Åkersberga
+1213;Christian Leixtrait;Amiralsvägen 23;184 92 Åkersberga
+1232;Eva Lööf;Strandvägen 20;184 51 Österskär
+1233;Leif Nöjd;Västerskärsringen 32;184 92 Åkersberga
+1234;Andres Flores;Storängsvägen 13 A;184 31 Åkersberga
+124;Tommy Almquist;Storängsvägen 7A;184 31 Åkersberga
+126;Lars Andersson;Myrvägen 17;184 38 Åkersberga
+128;Sune Rickenberg;Reimersholmsgatan 11;117 40 STOCKHOLM
+129;Jan Blomqvist;Fiskare Gustavs väg 4;184 70 Åkersberga
+13;Lars Erik Hultgren;Värdshusvägen 6;184 33 Åkersberga
+1311;Esben Skogluncd c/o Bent Bartholdy;Strandvägen 28;613 35 Öxelösund
+1315;Anton Lundmark;Mariebergsvägen 46;184 38 Åkerberga
+1318;Johan  Dahlin Angenberg;Slåtterängsvägen 14;184 62 Åkersberga
+1322;Göran Andersson;Hantverksvägen 51;184 32 Åkersberga
+1323;Filip Karlsson;Mamrevägen;163 43 Spånga
+1324;Peter Thomelius;Kulladalsvägen 32;185 37 Vaxholm
+1325;Munir Nilsson Ben Suliman;Centralvägen 4 e;194 76 Upplands Väsby
+1328;Peter Fehrm;Åkersbergavägen 9 B;184 50 Åkersberga
+1329;Stefan Andersson;Stövelvägen 21;126 40 Hägersten
+133;Göran Bergling;Brytarvägen 21;184 70 Åkersberga
+1331;Daniel Öijerstedt;Ruddammsvägen 36;184 42 Åkersberga
+1332;Stefan Karlsson;Åbergssons väg 3;170 77 Solna
+1336;Leif Holm;Centralvägen 25;184 32 Åkersberga
+1338;Per Björsund;Össebyvägen 63;184 33 Åkersberga
+134;Ulf Ström;Rydbo Bergväg 4A;184 92 Åkersberga
+1340;Toni Jouhkimow;Norrgårdsvägen 103;184 36 Åkersberga
+1343;Robert Seipäjärvi;Hantverksvägen 52;184 32 Åkersberga
+1344;Göran Husgafvel;Alvägen 5;163 43 Spånga
+1345;Zhengyang Wu;Mistelvägen 9;184 35 Åkersberga
+1347;Andreas Lindgren;Storängsvägen 15 H;184 31 Åkersbergas
+1348;Leif Källström;Frejvägen 35;184 92 Åkersberga
+1350;Teresa Kolwaski;Rättarvigs Väg 108;162 72 Vällingby
+1351;Simon Molin;Otto Bondes Väg 111;184 62 Åkersberga
+1352;Kristian Rantaniitty;Knipvägen 8;184 62 Åkersberga
+1353;Grzegorz Sadowy;Slussbrovägen 6;184 41 Åkersberga
+1354;Anette Olsson;Bammarbodavägen 52;184 91 Åkersberga
+1355;Erika Svensson;Bammarbodavägen 52;184 91 Åkersberga
+1356;Rolf Lindahl;Nioörtsvägen 16;126 32 Hägersten
+1357;Safet Youssouf;Bagarbyvägen 50;191 34 Sollentuna
+1359;Orathai Khuchaidit;Storängsvägen 7 A;184 31 Åkersberga
+136;Bengt Andersson;Häggkullev. 53;184 37 Åkersberga
+1362;Jimmy Danielsson;Söralidsvägen 36;184 60 Åkersberga
+1363;Martin Munkhammar;Wedtorpsvägen 54;184 34 Åkersberga
+1364;Fredrick Berg;Skolvägen 10;184 30 Åkersberga
+1366;Anders Lorentzon;Skånegatan 68 B;116 37 Stockholm
+1367;Jesper Enberg;Mönstrinigsvägen 46;184 33 Åkersberga
+1368;Anette Båskén;Ljungvägen 63;186 34 Vallentuna
+1369;Jan Lindqvist;Valhallsvägen 12;184 52 Åkersberga
+1371;Gunnar Hedlund;Härsbackavägen 9;184 63 Åkersberga
+1372;Helena Agervald;Margaretelundsvägen 31;184 60 Åkersberga
+1375;Petri Lehtonen;Sjöbergsvägen 12;184 43 Åkersberga
+1376;Percy Öhlander;Ekoxevägen 11;184 38 Åkersberga
+1377;Stefan Berggren;Malvavägen 37;184 35 Åkersberga
+1379;Pentti Virtanen;Gumraröbacken 5;184 91 Åkersberga
+138;Arne Eriksson;Klockarvägen 28;184 33 Åkersberga
+1382;Robert Frankesson;Murkelvägen 6;184 34 Äkersberga
+1383;Rosita Johansson;Bergaparksvägen 48;184 30 Åkersberga
+1384;Thomas Berglund;Gullvivevägen 9;184 52 Åkersberga
+1386;Carl Gustav Lindgren;Pallgränd 6;187 62 Täby
+1392;Annika Åhlin;Högbackavägen 24;184 37 Åkersberga
+1393;Axel Wallenborg;Hansbergsvägen 12;184 38 Åkersberga
+1394;Alfons Åkerström;Spjutvägen 6 B;184 6O Åkersberga
+1395;Lars-Göran Andersson;Grindtorpsvägen 45 lgh 1601;183 49 Täby
+1396;Fredrrik Lundberg;Sörahemsvägen 4;184 37 Åkersberga
+1397;Dan Pernersten;Nedre Bynom 445;830 01 Hallen
+1398;Stanislaw Janik;Wergelandsgatan 16 B;168 48 Bromma
+14;Thomas Borelid;Sörahemsvägen 1;184 37 Åkersberga
+1402;Patrik Lindqvist;Skjutsbacken 13;184 91 Åkersberga
+1404;Ulf Edvarsson;Saimagatan 19;164 75 KISTA
+1406;Risto Granvik;Rosengårdsvägen 69;186 33 Vallentuna
+1410;Andreas Dehlvin;Ekuddsvägen 5;193 91 Sigtuna
+1412;Roger Salen;Larsbergsvägen 15;181 38 Lidingä
+1415;Mikael Asp;Vågens gata 446;136 61 Haninge
+1418;Martin Romero;Spårvägen 12;169 32 Solna
+1420;Alimorag Khosravy;Norrgårdsvägen37;184 36 Åkersberga
+1421;Eric Emmoth;Tre Gruvors Väg 36;184 70 Åkersberga
+1422;Rune Bergqvist;Ytterbyvägen 22;185 94 Vaxholm
+1423;Safet Memisahovic;Runö Backe 48;184 41 Åkersberga
+1424;Michael Reid Zoller;Sörahemsvägen 40;184 37 Åkersberga
+1428;Robin Öhlin;Gransättravägen 3;184 61 Äkersberga
+149;Tommy Metz;Lindholmsvägen 3;184 52 Österskär
+150;Stefan Berggren;Wedtorpsvägen 18;184 34 Åkersberga
+160;Markku Pursiainen;Grindvägen 3;184 91 Åkersberga
+161;Sixten Hjalmarsson;Lindholmsvägen 12 B;184 52 Österskär
+162;Bengt Berg;Tegelbruksvägen 21;184 32 Åkersberga
+167;Tommy Molander;Södra Årvägen 21;19456 UPPLANDS VÄSBY
+170;Bengt Klaréus;Skogsstjärnevägen 28;184 35 Åkersberga
+175;Thomas Ivarsson;Ripstigen 4 4tr;170 74 Solna
+178;Tord Falk;Östra Banvägen 43;184 52 Österskär
+182;Mikael Smidemark;Ansgariusvägen 11;184 50 Åkersberga
+186;Morgan Borg;Stallgruve .v 14;18470 Åkersberga
+188;Conny Eriksson;Klockarvägen 28;184 33 Åkersberga
+19;Kenneth Eriksson;Häggkullevägen 49;184237 Åkersberga
+198;Per Olof Palm;Sprängarvägen 20;184 70 Åkersberga
+20;Simon Strömberg;Murkelvägen 186;184 34 Åkersberga
+206;Håkan Söderholm;Wedtorpsvägen 38;184 34 Åkersberga
+209;Lars-Åke Linander;Pärononkröken 30;184 60 Åkersberga
+212;Christer Nilsson;Rödbosundsvägen 18 B;184 60 Åkersberga
+219;Tommy Wallin;Kajutan 19;184 30 Åkersberga
+220;Per Ahlberg;Norrgårdsvägen 87;184 36 Åkersberga
+227;Harry Hartikainen;Godbyvägen 1048;AX-22410 Godby
+233;Svante Eriksson;Kogervägen 14;184 60 Åkersberga
+235;Dennis Ahlgren;Smedbyvägen 24;184 32 Åkersberga
+24;Per Wållers;Lillström;184 97 LJUSTERÖ
+241;Roy Larsén;Hantverksvägen 62;184 32 Åkersberga
+246;Kurt Witt;Kardinalvägen 16;18492 Åkersberga
+247;Helge Rosenholm;Österskärsvägen 1A, 2tr;184 50 Åkersberga
+248;Torgny Johansson;Fredenvägen 27;184 33 Åkersberga
+250;Bo Petersson;Margaretavägen 2;187 74 Täby
+251;Lennart Frisk;Klockarvägen 14;184 33 Åkersberga
+252;Joakim Eklund;Orionvägen 8;184  50 Åkersberga
+27;Gun Eineman;Södra Åsvägen 67;184 52 Österskär
+273;Jonny Rönnvall;Bergaparksvägen 12 2tr;184 31 Åkersberga
+282;Bertil Larsson;Andvägen 35;184 61 Åkersberga
+284;Martin Flygare;Klingsta Gård 1;182 33 Danderyd
+29;Rolf Johansson;Svartnö  207;760 19 FURUSUND
+294;Olle Ramström;Lavettvägen 38;184 60 Åkersberga
+295;Heinz Leppänen;Gårdslötsvägen 40;184 63 Åkersberga
+296;Per Pettersson;Florettvägen 10;184 60 Åkersberga
+297;Bengt Haugen;Spånlötsvägen 31;184 34 Åkersberga
+30;Andreas Jönsson;Myrvägen 28;184 38 Åkersberga
+302;Roger Sjöberg;Smedbyvägen 16;184 32 Åkersberga
+308;Roland Strandell;Torstunagränd 52;194 55 UPPLANDS VÄSBY
+309;Lars Ekblad;Laddarvägen 1;184 70 Åkersberga
+311;Pekka Kari;Fridhemsgränd 6;184 91 Åkersberga
+315;Frej Furu;Svärdsysslevägen 18;184 35 Åkersberga
+320;Reijo Pursiainen;Näsvägen 74;184 92 Åkersberga
+325;Erik Steen;Portalgatan 73;75418 Uppsala
+326;Johan Dahlberg;Wedtorpsvägen 5;184 34 Åkersberga
+332;Bo (Putte) Johansson;Åsgatan 14  3 tr.;774 41 AVESTA
+335;Tony Werner;Bodavägen 3;184 94 Åkersberga
+34;Lars Marmestedt;Ortdrivarvägen 5;184 70 Åkersberga
+341;Matilde Panduro;Sabelvägen 28;18460 Åkersberga
+343;Kurt Krätzel;Sleipnervägen  9;184 52 Österskär
+344;Ulf Andersson;Tre Gruvors Väg 28;184 70 Åkersberga
+345;Gunnar Erlandsson;Catalinatorget 11;183 68 Täby
+347;Lennart Björn;Bågevägen 10;187 41 TÄBY
+349;Jan Willlborg;S Åsvägen 37;184 52 Österskär
+35;Robert Wahlstedt;Margretelundsvägen 153;184 63 Åkersberga
+357;Dag Lotsander;Rönnvägen 4;182 47 ENEBYBERG
+364;Howard Reichel;Ilerstigen 40;170 71 SOLNA
+368;Nils Hedström;Hammarvägen 35;177 35 JÄRFÄLLA
+37;Mats Thomson;Johannelunds  Gård;184 92 Åkersberga
+374;Göran Klingblom;Södra Skogsrundan 31;184 63 Åkersberga
+379;Mikael Norlén;Riddarvägen 27;184 51 Österskär
+385;Tord Ganmark;Hackstavägen 8 A 2 tr;184 31 Åkersberga
+390;Peter Wallerstein;Gruvbacken 17;184 63 Åkersberga
+391;Mauri Sarin;Slussbrovägen 12;184 41 Åkersberga
+395;Anders Sjöborg;Andvägen 50;184 61 Åkersberga
+397;Kauko Selkälä;Wedtorpsvägen 92;184 34 Åkersberga
+399;Per-Åke Rydberg;Spillkråkevägen 21;184 61 Åkersberga
+4;Inga Haugen;Riddarvägen 65;184 51 Österskär
+403;Lars Hjelm;Stekelvägen 37;184 38 Åkersberga
+404;Lars Ringberg;Smedbyvägen 74;184 32 Åkersberga
+405;Måns V. Jonsson;Södra Åsvägen 55;184 52 Österskär
+406;Krister Nylund;Simborgarvägen  14;184 37 Åkersberga
+414;Anna Karlsson;Solbergavägen  9;184 91 Åkersberga
+415;Daniel Martinez;Slussbrovägen 12   3 tr;184 41 Åkersberga
+425;Stefan Lundin;Vitfåravägen 6;184 61 Åkersberga
+428;Seppo Leppänen;Arkeologgatan 1;644 35 Torshälla
+436;Stefan Dahl;Gruvbacken 19;184 63 Åkersberga
+438;Anders Barkengren;Sörahemsvägen 27;184 37 Åkersberga
+442;Leif Jönsson;Saturnusvägen 33;184 50 Åkersberga
+448;Fors Ragnar;Vindkallsvägen 4a;182 61 DJURSHOLM
+449;Dag Bäckström;Vegavägen 41;184 50 Åkersberga
+457;Lars Franzén;Enebacksvägen 3;184 91 Åkersberga
+458;Evert Eriksson;Smebyvägen 15;184 32 Åkersberga
+459;Håkan Sundqvist;S Skogsrundan 28;184 63 Åkersberga
+461;Stig Jansson;Kvarngärdesv. 15;184 62 Åkersberga
+463;Erland Johansson;Länsmansvägen 1 A;184 32 Åkersberga
+466;John Kassman;Eklidsvägen 9 c;184 52 Österskär
+467;Rolf Carlberg;Knipvägen 47;184 62 Åkersberga
+476;Tommy Samuelsson;Lavendelvägen  4;184 51 Österskär
+486;Hans Linde;Seveniusvägen 49;184 33 Åkersberga
+489;Olav Dale;Harneskvägen  1;184 60 Åkersberga
+49;Kristin Bååth;Skeppsvägen  11;182 76 STOCKSUND
+492;Lars Holm;Brunnsgatan 9 5 tr;172 68 SUNDBYBERG
+497;Roger Borg;Nyhagens Gård;184 91 Åkersberga
+499;Erik Clefberg;Översättarvägen 41;184 70 Åkersberga
+509;Tony Nilsson;Söravägen 189;184 37 Åkersberga
+511;Sören Jansson;Lostigen 5;184 42 Åkersberga
+518;Mikael Klint;Norrgårdsvägen 107 5tr;18436 Åkersberga
+52;Arne Larsson;Centralvägen  21;184 32 Åkersberga
+524;Lennart Eriksson;Söralidsvägen  23;184 38 Åkersberga
+526;Anders Pernås;Lycke 319 Dalen;718 94 ERVALLA
+530;Kjell Edbom;Ångbåtsbryggan 3;805 95 Gävle
+534;Hans Bylund;Hygelvägen  4,  Byle;186 52 VALLENTUNA
+535;Lars-Olof Larsson;Storängsslingan 6;184 97 LJUSTERÖ
+539;Per Granfält;Sörahemsvägen  82;184 37 Åkersberga
+544;Leif Karlsson;S  Åsvägen 47;184 52 Österskär
+548;Anders Sjöström;Storhagenvägen 31;184 33 Åkersberga
+55;Hannu Hakala;Kövlinge;186 91 VALLENTUNA
+553;Gudrun Borg;Nyhagens gård;184 91 Åkersberga
+57;Jan Hed;Varvsvägen 2;184 52 Österskär
+570;Jan Noring;Fredenvägen 39;184 33 Åkersberga
+577;Marlene Blomqvist;Bergshamravägen 179;760 10 Begrshamra
+579;Unto-Oiva Paloranta;Söravägen 99;184 37 Åkersberga
+583;Rodemil Dinamarca;V Banvägen 4 A;184 50 Åkersberga
+586;Nicklas Westberg;Spjutvägten 36b;184 60 Åkersberga
+591;Bernt Abrahamsson;S. Skogsrundan 24;184 63 Åkersberga
+594;Rolf Jönsson;S Skogsrundan 26;184 63 Åkersberga
+596;Yvonne Wallerstein;Gruvbacken 17;184 63 Åkersberga
+597;Kalle Delin;Skallbrovägen  10;184 91 Åkersberga
+599;John Kelly;Myrvägen 14;184 38 Åkersberga
+6;Glenn Ekström;Lavettvägen 19 B;184 61 Åkersberga
+601;Roger Kvist;Vitfåravägen 52;184 61 Åkersberga
+618;Kenneth Jesmin;Sköldvägen 33 B;184 60 Åkersberga
+620;Arne Konnmann;Oxenstiernas väg 139;184 32 Åkersberga
+624;Damir Sapina;Slussbrovägen 9;184 41 Åkersberga
+626;Håkan Fredström;Spånlötsvägen  46;184 34 Åkersberga
+630;Sören Skog;Södra Åsvägen 38;184 52 Österskär
+634;Stefan Andersson;Vasavägen 71;177 53 JÄRFÄLLA
+644;Jean Salminen;Spjutvägen 34;184 60 Åkersberga
+646;Magnus Wester;Centralvägen 18 C;184 32 Åkersberga
+651;Erkki Vehniäinen;Herrgårdsvägen 26;194 78 Upplands Väsby
+653;Sven Svärd;Gumraröbacken 2;184 91 Åkersberga
+655;Pär Lundmark;Rödbosundsvägen 24;184 60 Åkersberga
+658;Matti Karjalainen;C/o MK Jakt & Fritid;184 40 kersberga
+659;Mattias Karlström;C/o MK Jakt & Fritid;184 40 Åkersberga
+664;Hans Smeds;Bergaparksvägen 48;184 30 Åkerberga
+668;Björn Lundin;Mariehällsvägen 49;184 38 Åkersberga
+675;Anders Elfving;Mönstringsvägen 70;184 33 Åkersberga
+679;Thony Wallerstein;Malmstigen 23;184 63 Åkersberga
+680;Siw Larsson;Bergaparksvägen 40 4tr;184 30 Åkersberga
+686;Jonas Gustafsson;Storängsvägen 13  A;184 31 Åkersberga
+689;Terje Ruong;Smedbyskolväg 122;184 33 Åkersberga
+695;Ulf Tysklind;Södra Åsvägen 125;184 52 Österskär
+70;Ingemar Tornemo;Saturnusvägen  32;184 50 Åkersberga
+700;Tommy Råshammar;Kvarngärdesvägen 22;184 62 Åkersberga
+701;Tommy Eriksson;Västanhagsvägen 8;184 91 Åkersberga
+702;John Baxter;Simborgarvägen 56;184 37 Åkersberga
+703;Tor-Björn Eriksson;Krontorpsvägen 9;184 91 Åkersberga
+707;Jeanette Bjerager;Orionvägen 24;184 50 Åkersberga
+708;Bo Carlsson;Bergaparksvägen 32;184 30 Åkersberga
+709;Yngve Eriksson;Bergsätravägen 24;184 61 Åkersberga
+71;Tommy Sundberg;Bergaparksvägen 40, 2 tr;184 30 Åkersberga
+711;Jan Dahlberg;Stallgruvevägen 20;184 70 Åkersberga
+713;Henry Virta;Prakteidervägen 21;184 61 Åkersberga
+714;Bo Örtenblad;Aprikosgatan 90;165 66 Hässelby
+715;Teodor Carselind;Åsbrinken 3;184 52 Österskär
+716;Hannu Öhman;Vikgränd  4;184 63 Åkersberga
+720;Kjell Kågestedt;Varvsvägen 4;184 52 Österskär
+721;Harald Lindström;Apoteksvägen 3a;184 30 kersberga
+724;Tommy Angling;Åsgårdsvägen 41;191 45 Sollentuna
+725;Tina Hanell;Ekbacksvägen 1A;184 32 Åkersberga
+738;Lars Almström;Grimstagatan 37;162 56 VÄLLINGBY
+739;Marcus Holmqvist;Västra Banvägen 90;184 50 Åkersberga
+745;Arne Hedin;Södra atriumvägen 63;184 v33 Åkersberga
+746;Henning Bengtsson;Harvvägen 4;184 33 Åkersberga
+748;Kurt Sundberg;Talltitevägen 33;18461 Åkersberga
+749;Anders Egelrud;Rödsysslevägen 1;184 35 Åkersberga
+751;Pierre Fällman;Borgargatan 6d;76160 Norrtälje
+752;Conny Abrahamsson;Södra Atriumvägen 11;184 33 Åkersberga
+756;Morgan Stenberg;Smedbyvägen 21;184 32 Åkersberga
+76;Christer Freander;Birger Jarlsgatan 114;11420 Stockholm
+760;Piotr Sobiecki;Strömfallsvägen 94;184 41 Åkersberga
+761;Jens Bergström;Bivägen 1;184 38 Åkersberga
+764;Yord Uneborg;Skrakvägen 123;184 62 kersberga
+766;Heimo Reunanen;Sorögatan 27;164 41 Kista
+771;Jan Höglund;Bergaparksvägen 6 nb.;184 30 Åkersberga
+773;Bengt Höjbrandt;Österskärsvägen 2;18450 Åkersberga
+775;Hans Friberg;Västandalsvägen 9;184 91 Åkersberga
+776;Pauli Ahtiainen;Stidsbergavägen 3;163 41 Spånga
+777;Kyösti Lämsä;Stallgatan 13A, 1 tr;194 32 Upplands Väsby
+778;Ove Öhman;Bandhagsplan 11;124 32 BANDHAGEN
+779;Björn Svensson;Skidbacken 38;174 54 Sundbyberg
+780;Göte Carlebjörk;Muskötvägen 15 A;184 60 Åkersberga
+781;Roland Andersson;V  Banvägen 24 A;184 50 Åkersberga
+783;Antonio Brazete;Blåvingevägen 2;194 53 Upplands Väsby
+784;Leo Oikarinen;Törndalsv 12;194 91 Upplands Väsby
+787;Stavros Alexandridis;Rinkebysvängen 83;163 74 Spånga
+788;Charalambos Panagiotidis;Kråksätrabacken 63;127 30 Skärholmen
+797;Anders Johnsson;Murkelvägen  117;184 34 Åkersberga
+798;Jan Hellström;Pokalvägen 6;11740 Stockholm
+802;Mats Nilsson;Österskärsvägen 11;184 52 Österskär
+807;Reijo Rantala;Grenvägen 12;184 32 Åkersberga
+814;Thomas Engström;Skånstavägen 46;184 38 Åkersberga
+815;Hans Ekholm;Lavettvägen 17 B;184 60 Åkersberga
+817;Bengt Hellstedt;Box 350;184 24 Åkersberga
+818;Ulf Larsson;Hödervägen 10;184 52 Österskär
+822;Graham Taylor;Von Essens väg 5b;184 94 Åkersberga
+829;Lage Nordgren;Kullasundsvägen 1;185 37 Vaxholm
+830;Tommy Gustavsson;Solbergavägen 19;184 91 Åkersberga
+835;Jens Mackegård;Badbergsvägen 8A;184 60 Åkersberga
+843;Kalevi Salo;Dackevägen 25, 6 tr;177 34 Järfälla
+844;Roland Alfsson;Besmansliden 6;184 97 Ljusterö
+845;Mattias Wallinder;Smedbyvägen 9;184 32 Åkersberga
+846;Björn Wesström;Generalsvägen 56;184 51 Österskär
+85;Johan Lindstöm;Södra Åsvägen 77;184 52 Österskär
+850;Sven Sund;Lerviksvägen 10;184 63 Åkersberga
+851;Ahti Karttunen;Gumrarövägen 94;184 91 Åkersberga
+855;Ivarsson;Svärdsysslevägen 43;184 35 Åkersberga
+87;Tommy Svensson;Lotsvägen 4;184 92 Åkersberga
+870;Lars Helsing;Tre Gruvors väg 34;184 70 Åkersberga
+88;Tomas Tronning;Andvägen  4;184 61 Åkersberga
+882;Dag Zotterman;Fridhemsgatan 6;112 40 Stockholm
+889;Åke Jacobsson;Fästigen 12, Lervik;184 63 Åkersberga
+895;Lars Rydberg;Wedtorpsvägen 28;184 34 Åkersberga
+901;Laila Selkälä;Wedtorpsvägen 92;184 34 Åkersberga
+908;Lars-Åke Olsson;Sabelvägen  21;184 60 Åkersberga
+915;Thomas Trägårdh;Storängsvägen 5 C;184 31 Åkersberga
+916;Marcus Berntsen;Skolvägen 8;184 30 Åkersberga
+919;Johan Noring;N:a Atriumvägen 53;184 33 Åkersberga
+92;Per-Olof Schilling;Sabelvägen 28;184 60 Åkersberga
+923;Roland Alvarsson;Häggkullevägen 3;184 37 Åkersberga
+929;Susanne Skantz;Amiralsvägen 3;184 92 Åkersberga
+935;Stefan Aldebo;Tallsättravägen 129;184 61 Åkersberga
+936;Claes-Göran Kylén;Päronkröken 3;184 60 Åkersberga
+940;Hans Franson;Kvisslingbyvägen 4;184 33 Åkersberga
+942;Christer Bergström;Sörahemsvägen 144;184 37 Åkersberga
+943;Bengt-Olof Nilsson;Gårdslötsvägen 42;184 63 Åkersberga
+951;Bo Lundin;Isätraviksvägen 48;184 63 Åkersberga
+954;Chlaes Ortman;Disavägen 5;194 52 Upplands Väsby
+96;Joacim Lindqvist;Åkerstorpsvägen 27;184 33 Åkersberga
+962;Daniel Carlström;Fårtickevägen35;184 34 Åkersberga
+968;Dan Gustavsson;Kungsbacken 8;184 63 Åkersberga
+979;Lennart Öberg;Östervägen 1;184 97 LJUSTERÖ
+98;Tommy Matsson;Rabattvägen 38     Lgh 1405;163 43 Vällingby
+99;Peter Lindroos;Loviselundsvägen 71;165 59 Hässelby
+993;William Barawi;Prästgårdsallen 40 C;191 44 Upplands Väsby
+999;Ronnie Westerberg;Hasselbacken 3;194 38 Upplands Väsby

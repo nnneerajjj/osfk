@@ -140,6 +140,7 @@ sv:
   inactive: "Inaktiv"
   water: Vattenavläsning
   street_number: "Gatunummer"
+  number: "Nummer"
   view_on_map: "Visa på karta"
   house_number: "Föreningens lägenhetsnummer"
   house_number_short: "Lägenhetsnummer"
