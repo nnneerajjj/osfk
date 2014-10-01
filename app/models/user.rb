@@ -88,8 +88,6 @@ class User < ActiveRecord::Base
     end
   end
 
-  private
-
   def send_welcome_email
     UserMailer.delay.welcome_email(self)
   end
