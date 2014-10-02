@@ -54,7 +54,7 @@ class User < ActiveRecord::Base
   end
 
   def active_for_authentication?
-    super && approved?
+    super && (approved? || admin?)
   end
 
   # mosso
