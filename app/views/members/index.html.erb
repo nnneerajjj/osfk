@@ -5,10 +5,10 @@
 <% content_for :contents do%>
 
 <style>
-  ul {
+  .table-style-2 ul {
     display: inline;
   }
-  li {
+  .table-style-2 li {
     display: inline;
     margin-left: 10px;
   }
@@ -30,7 +30,7 @@
 
   <a href="#top" class="btn-3 xsmall-btn right fa"></a>
 
-  <h3><%=  t :all_members %></h3>
+<!--   <h3><%#=  t :all_members %></h3> -->
 
   <%= form_tag update_multiple_members_path, method: :put do %>
     <table class="table-style-2" %>
