@@ -4,7 +4,7 @@ class MembersController < ApplicationController
   def index
     authorize! :manage, User
 
-    @users = User.includes(:roles)
+    @users = User.order([:number, :lastname])
   end
 
   def edit

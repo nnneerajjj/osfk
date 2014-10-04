@@ -118,7 +118,7 @@ sv:
   current_password: "Nuvarande lösenord"
   sign_in: "Logga in"
   sign_out: Logga ut
-  sign_up: "Bli medlem"
+  sign_up: "Ansök om medlemskap"
   sign_up_text : "Skapa konto för att få tillgång till nyhetsbrev, ta del av nyheter och delta i diskussioner. Ingen utanför föreningen kommer att kunna se din epostadress eller några skrivna kommentarer."
   remember_me: "Kom ihåg mig"
   forgot_password: "Glömt ditt lösenord?"

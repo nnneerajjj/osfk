@@ -1,5 +1,7 @@
 //= require raptor
 //= require forms
+//= require list
+//= require jquery.highlight-4
 
 raptor(function($) {
 
@@ -109,6 +111,18 @@ $(function() {
       $endDate.val($startDate.val());
     }
   });
+
+  var options = {
+    valueNames: [ 'number', 'firstname', 'lastname' ]
+  };
+
+  var userList = new List('users', options);
+  $usersCount = $('.users-count');
+  $('.search').on('keyup', function() {
+    val = $(this).val();
+    $usersCount.text(userList.matchingItems.length);
+  });
+
 });
 
 $(document).ajaxSend(function(e, xhr, options) {
@@ -124,4 +138,3 @@ function bytesToSize(bytes) {
    var i = Math.floor(Math.log(bytes) / Math.log(k));
    return (bytes / Math.pow(k, i)).toPrecision(3) + ' ' + sizes[i];
 }
-

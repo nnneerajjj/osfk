@@ -17,50 +17,51 @@
   }
 </style>
 
-<div class="main-content col-5-5 right last">
+
+<%= raw "<style>" %>
+  <%= raw "@media only screen and (max-width: 767px) {" %>
+  <% ['Nummer', 'Förnamn', 'Efternamn', 'Betalat?', 'Mer info'].each_with_index do |day, idx| %>
+    <%= raw "td:nth-of-type(#{idx + 1}):before { content: '#{day}'; }" %>
+  <% end %>
+  <%= raw "}" %>
+  <%= raw "#users-count-display { display: block; margin-bottom: 5px; }" %>
+<%= raw "</style>" %>
+
+
+<div class="main-content col-5-5 last" id="users">
   <h1><%= t :members %></h1>
   <div class="widget">
     <ul class="widget-list list-1">
     </ul>
   </div>
 
-  <%
-    @roles = Role.all
-   %>
+  <input class="search" placeholder="Filtrera" />
+  <div id="users-count-display">Visar <span class="users-count"><%= @users.length %></span> av totalt <%= @users.length %></div>
 
-  <a href="#top" class="btn-3 xsmall-btn right fa"></a>
 
-<!--   <h3><%#=  t :all_members %></h3> -->
-
-  <%= form_tag update_multiple_members_path, method: :put do %>
-    <table class="table-style-2" %>
+    <table class="table-style-1 mobile-table">
       <thead>
         <tr>
-          <th>Nummer</th>
-          <th>Förnamn</th>
-          <th>Efternamn</th>
-          <th>Email</th>
-          <th>Roller</th>
-          <th>Godkänd</th>
+          <th class="sort" data-sort="number">Nummer</th>
+          <th class="sort" data-sort="firstname">Förnamn</th>
+          <th class="sort" data-sort="lastname">Efternamn</th>
+          <th>Betalat?</th>
+          <th>Mer info</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody class="list">
         <% @users.each do |user| %>
-          <%= fields_for "users[]", user do |f| %>
             <tr>
-              <td><%= f.text_field :number, placeholder: t(:number) %></td>
-              <td><%= f.text_field :firstname, placeholder: t(:firstname) %></td>
-              <td><%= f.text_field :lastname, placeholder: t(:lastname) %></td>
-              <td><%= f.text_field :email, placeholder: t(:email) %></td>
-              <td><%= f.collection_select :role_ids, @roles, :id, :name, { }, { multiple: true, class: 'multiple', style: 'width: 250px;' } %></td>
-              <td><%= f.check_box :approved %> <%= f.label :approved %></td>
+              <td class="number"><%= t user.number %></td>
+              <td class="firstname"><%= t user.firstname %></td>
+              <td class="lastname"><%= t user.lastname %></td>
+              <td class="approved"><%= raw '<em class="fa fa-check"></em>' if user.approved? %></td>
+              <td><%= link_to 'Mer info', 'user' %></td>
             </tr>
           <% end %>
-        <% end %>
         </tbody>
       </table>
     <%= submit_tag t :save %>
-  <% end %>
 
   <a href="#top" class="btn-3 xsmall-btn right fa"></a>
 </div>

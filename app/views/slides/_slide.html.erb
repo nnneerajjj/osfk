@@ -50,7 +50,7 @@
     data-endspeed="1000"
     data-endeasing="Power1.easeOut">
     <% unless current_user %>
-        <a class="btn" href="pricing1.html">Bli medlem idag</a>&nbsp;
+        <a class="btn" href="<%= new_user_registration_path %>"><%= t(:sign_up) %></a>&nbsp;
     <% end %>
     <% if slide.link.present? %>
         <a class="btn-2" href="<= slide.link %>">Läs mer</a>
