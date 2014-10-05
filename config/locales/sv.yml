@@ -8,6 +8,8 @@ sv:
         password: Lösenord
         email: Epost
         firstname: Förnamn
+        number: Medlemsnummer
+        approved: Betalat
         lastname: Efternamn
         password: Lösenord
         password_confirmation: Lösenord igen
@@ -23,6 +25,7 @@ sv:
         package1: Lägg till
         package2: Lägg till
         address: Adress
+        home_phone: Hemtelefon
         postal_address: Postadress
         identity_number: Personnummer
       contact:

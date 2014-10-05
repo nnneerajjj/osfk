@@ -7,8 +7,19 @@ class MembersController < ApplicationController
     @users = User.order([:number, :lastname])
   end
 
-  def edit
+  def show
+    @user = User.find(params[:id])
+  end
 
+  def update
+    @user = User.find(params[:id])
+    if @user.update_attributes(params[:user])
+      flash[:notice] = "Användaren uppdaterad"
+    else
+      flash[:error] = @user.errors.full_messages.to_sentence
+    end
+
+    redirect_to :back
   end
 
   def update_multiple

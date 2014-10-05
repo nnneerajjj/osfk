@@ -1,8 +1,11 @@
 <% content_for :title, @page.title %>
 <% content_for :header, @page.title %>
 <% content_for :description, @page.description %>
+<% content_for :breadcrumb do %>
+  <%= link_to @page.title, members_path %>
+<% end %>
 
-<% content_for :contents do%>
+<% content_for :contents do %>
 
 <style>
   .table-style-2 ul {
@@ -56,7 +59,7 @@
               <td class="firstname"><%= t user.firstname %></td>
               <td class="lastname"><%= t user.lastname %></td>
               <td class="approved"><%= raw '<em class="fa fa-check"></em>' if user.approved? %></td>
-              <td><%= link_to 'Mer info', 'user' %></td>
+              <td><%= link_to 'Mer info', member_path(user) %></td>
             </tr>
           <% end %>
         </tbody>

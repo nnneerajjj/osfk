@@ -7,7 +7,7 @@ Caraten::Application.routes.draw do
   mount RailsAdminImport::Engine => '/rails_admin_import', :as => 'rails_admin_import'
 
   resources :contacts, path: 'kontakt', only: [:index, :create]
-  resources :members, path: 'medlemmar', only: [:index] do
+  resources :members, path: 'medlemmar' do
     put :update_multiple, on: :collection
   end
   # resources :users, path: 'installningar', only: [:index, :update]

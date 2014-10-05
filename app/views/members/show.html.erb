@@ -1,42 +1,75 @@
-<% content_for :title, I18n.t(:members) %>
-<% content_for :header, I18n.t(:members) %>
-<% content_for :description, I18n.t(:list_of_members) %>
+<% content_for :title, @user.name %>
+<% content_for :header, @user.name %>
+<% content_for :breadcrumb do %>
+  <%= link_to @page.title, members_path %>
+  <%= link_to @user.name, member_path(@user) %>
+<% end %>
 
-  <div class="inner-content">
+<% content_for :contents do %>
 
-    <h1><%= I18n.t(:members) %></h1>
-    <p>
-      <ul>
-        <% @users.each do |user| %>
-          <li><%= user.name %></li>
-        <% end %>
-        <% @users.each do |user| %>
-          <li><%= user.name %></li>
-        <% end %>
-        <% @users.each do |user| %>
-          <li><%= user.name %></li>
-        <% end %>
-        <% @users.each do |user| %>
-          <li><%= user.name %></li>
-        <% end %>
-        <% @users.each do |user| %>
-          <li><%= user.name %></li>
-        <% end %>
-        <% @users.each do |user| %>
-          <li><%= user.name %></li>
-        <% end %>
-        <% @users.each do |user| %>
-          <li><%= user.name %></li>
-        <% end %>
-        <% @users.each do |user| %>
-          <li><%= user.name %></li>
-        <% end %>
-        <% @users.each do |user| %>
-          <li><%= user.name %></li>
-        <% end %>
-        <% @users.each do |user| %>
-          <li><%= user.name %></li>
-        <% end %>
-      </ul>
-    </p>
-  </div>
+<div class="main-content clearfix">
+
+<%= form_for(@user, url: member_path(@user)) do |f| %>
+
+      <div class="clearfix">
+        <div>
+            <%= f.radio_button :regular, '1', checked: @user.regular, data: { price: 300 } %>
+            <strong><%= f.label 'Senior', value: '1' %></strong>
+
+            <%= f.radio_button :regular, '0', checked: !@user.regular, data: { price: 175 } %>
+            <strong><%= f.label 'Ungdom/pensionär', value: '0' %></strong>
+        </div>
+
+        <div>
+          <%= f.check_box :package1, data: { price: 200 } %>
+          <strong><%= f.label 'Mossön' %></strong>
+        </div>
+
+        <div>
+          <%= f.check_box :package2, data: { price: 700 } %>
+          <strong><%= f.label 'Dommaruden' %></strong>
+        </div>
+        <%= f.label 'Total kostnad:' %> <strong><span id='total-cost'></span> kr</strong>. Därefter <span id='total-year-cost'></span> kr per år.
+      </div>
+
+      <div>
+
+        <br />
+
+        <%= f.check_box :approved %>
+        <%= f.label :approved %>
+
+        <br />
+
+        <%= f.label :number %>
+        <%= f.text_field :number %>
+
+        <%= f.label :firstname %>
+        <%= f.text_field :firstname %>
+
+        <%= f.label :lastname %>
+        <%= f.text_field :lastname %>
+
+        <%= f.label :identity_number %> <%= t :'identity_number_hint' %>
+        <%= f.text_field :identity_number %>
+
+        <%= f.label :email %>
+        <%= f.email_field :email %>
+
+        <%= f.label :telephone %>
+        <%= f.text_field :telephone %>
+
+        <%= f.label :home_phone %>
+        <%= f.text_field :home_phone %>
+
+        <%= f.label :address %>
+        <%= f.text_field :address %>
+
+        <%= f.label :postal_address %>
+        <%= f.text_field :postal_address %>
+
+        <%= f.submit I18n.t(:update) %>
+      <% end %>
+
+</div>
+<% end %>
