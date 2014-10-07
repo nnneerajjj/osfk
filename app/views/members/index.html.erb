@@ -55,9 +55,9 @@
       <tbody class="list">
         <% @users.each do |user| %>
             <tr>
-              <td class="number"><%= t user.number %></td>
-              <td class="firstname"><%= t user.firstname %></td>
-              <td class="lastname"><%= t user.lastname %></td>
+              <td class="number"><%= user.number %></td>
+              <td class="firstname"><%= user.firstname %></td>
+              <td class="lastname"><%= user.lastname %></td>
               <td class="approved"><%= raw '<em class="fa fa-check"></em>' if user.approved? %></td>
               <td><%= link_to 'Mer info', member_path(user) %></td>
             </tr>
