@@ -8,9 +8,6 @@ class UserMailer < ActionMailer::Base
   end
 
   def user_changed_email(email, updated_user, updater_user, updates)
-
-    pp updates
-    pp updates["email"]
     @created = updates["email"].first.blank? && updates["email"].last.present?
 
     if @created
