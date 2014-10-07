@@ -25,6 +25,7 @@ class RegistrationsController < Devise::RegistrationsController
       flash[:notice] = "Din profil är uppdaterad"
       # Sign in the user bypassing validation in case their password changed
       sign_in @user, :bypass => true
+      User.send_updated_email(@user, @user, @user)
       redirect_to after_update_path_for(@user)
     else
       flash[:error] = resource.errors.full_messages.to_sentence
@@ -39,6 +40,7 @@ class RegistrationsController < Devise::RegistrationsController
     yield resource if block_given?
     if resource_saved
       resource.send_welcome_email
+      User.send_updated_email(resource, resource)
       if resource.active_for_authentication?
         set_flash_message :notice, :signed_up if is_flashing_format?
         sign_up(resource_name, resource)

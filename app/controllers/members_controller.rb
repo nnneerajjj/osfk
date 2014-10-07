@@ -14,6 +14,7 @@ class MembersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(params[:user])
+      User.send_updated_email(@user, current_user)
       flash[:notice] = "Användaren uppdaterad"
     else
       flash[:error] = @user.errors.full_messages.to_sentence

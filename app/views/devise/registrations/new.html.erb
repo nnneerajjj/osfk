@@ -22,7 +22,7 @@
             <li>Rabatterat fiske i Drängsjön</li>
           </ul>
             <%= f.radio_button :regular, '1', checked: resource.regular, data: { price: 300 } %>
-            <strong><%= f.label :regular, value: '1' %></strong>
+            <strong><%= f.label :regular, 'Välj', value: '1' %></strong>
           </div>
         </div>
 
@@ -36,7 +36,7 @@
             <li>Rabatterat fiske i Drängsjön</li>
           </ul>
             <%= f.radio_button :regular, '0', checked: !resource.regular, data: { price: 175 } %>
-            <strong><%= f.label :regular, value: '0' %></strong>
+            <strong><%= f.label :regular, 'Välj', value: '0' %></strong>
           </div>
         </div>
 
@@ -50,7 +50,7 @@
             <li>Harvia strandkök (fiskrök)</li>
           </ul>
           <%= f.check_box :package1, data: { price: 200 } %>
-          <strong><%= f.label :package1 %></strong>
+          <strong><%= f.label :package1, 'Lägg till' %></strong>
           </div>
         </div>
 
@@ -63,7 +63,7 @@
           </ul>
           </div>
           <%= f.check_box :package2, data: { price: 700 } %>
-          <strong><%= f.label :package2 %></strong>
+          <strong><%= f.label :package2, 'Lägg till' %></strong>
         </div>
       </div>
 

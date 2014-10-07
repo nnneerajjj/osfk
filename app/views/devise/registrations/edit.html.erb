@@ -34,6 +34,9 @@
 
         <h6>För att uppdatera följande inställningar behövs nuvarande lösenord anges:</h6>
 
+        <%= f.label :current_password %>
+        <%= f.password_field :current_password %>
+
         <%= f.label :email %>
         <%= f.email_field :email %>
 
@@ -42,9 +45,6 @@
 
         <%= f.label :password_confirmation %>
         <%= f.password_field :password_confirmation %>
-
-        <%= f.label :current_password %>
-        <%= f.password_field :current_password %>
 
         <%= f.submit I18n.t(:update) %>
         <%= link_to 'Ångra', edit_user_registration_path, style: "margin-left: 20px;" %>

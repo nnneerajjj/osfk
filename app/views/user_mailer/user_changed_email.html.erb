@@ -1,0 +1,36 @@
+<p>
+
+  <h3><%= @subject %></h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th></th>
+        <% unless @created %>
+          <th>Från</th>
+        <% end %>
+        <th>Till</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @updates.each do |key, changes| %>
+      <tr>
+        <td style="padding: 10px;"><strong><%= User.human_attribute_name(key) %></strong></td>
+        <% unless @created %>
+          <td style="border: 1px solid #ccc; padding: 10px;"><%= changes.first %></td>
+        <% end %>
+        <td style="border: 1px solid #ccc; padding: 10px;"><%= changes.last %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+
+</p>
+<p>
+
+  <a href="<%= member_url(@updated_user.id) %>" target="_blank">
+    <h4>
+      Visa användare i admin
+    </h4>
+  </a>
+</p>

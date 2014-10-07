@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   rolify
   has_paper_trail
+  include ActiveModel::Dirty
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
@@ -90,5 +91,15 @@ class User < ActiveRecord::Base
 
   def send_welcome_email
     UserMailer.delay.welcome_email(self)
+  end
+
+  def self.send_updated_email(updated, updater)
+    updates = updated.previous_changes.except("encrypted_password",
+                                              "updated_at",
+                                              "created_at",
+                                              "id")
+    if updates.any?
+      UserMailer.delay.user_changed_email(ENV['UPDATE_EMAIL_RECEIVERS'], updated, updater, updates)
+    end
   end
 end

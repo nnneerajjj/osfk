@@ -17,13 +17,14 @@ sv:
         street_number: Gatunummer
         house_number: Föreningens lägenhetsnummer
         website: Webbsida
-        telephone: Telefonnummer
+        telephone: Mobiltelefonnummer
+        home_phone: Hemtelefonnummer
         water: Vattenavläsning
         reset_password_token: Token
         remember_me: Kom ihåg mig
-        regular: Välj
-        package1: Lägg till
-        package2: Lägg till
+        regular: Senior?
+        package1: Stora mossön
+        package2: Drängsjön
         address: Adress
         home_phone: Hemtelefon
         postal_address: Postadress
