@@ -8,7 +8,7 @@ class UserMailer < ActionMailer::Base
   end
 
   def user_changed_email(email, updated_user, updater_user, updates)
-    @created = updates["email"].first.blank? && updates["email"].last.present?
+    @created = updates["email"] && updates["email"].first.blank? && updates["email"].last.present?
 
     if @created
       @subject = "Ny medlemsansökan: #{updated_user.name}"
