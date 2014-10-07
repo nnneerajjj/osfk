@@ -14,7 +14,7 @@ class UserMailer < ActionMailer::Base
       @subject = "Ny medlemsansökan: #{updated_user.name}"
     else
       updater = updated_user != updater_user ? " (Ändrad av #{updater_user.name})" : ''
-      @subject = "Uppdaterad medlem: [#{updated_user.number}] #{updater_user.name} #{updater}"
+      @subject = "Uppdaterad medlem: [#{updated_user.number}] #{updated_user.name} #{updater}"
     end
 
     @updated_user = updated_user
