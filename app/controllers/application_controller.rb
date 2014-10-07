@@ -9,8 +9,4 @@ class ApplicationController < ActionController::Base
       redirect_to main_app.new_user_session_path
     end
   end
-
-  def after_sign_in_path_for(resource)
-    main_app.news_index_path
-  end
 end
