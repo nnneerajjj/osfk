@@ -15,6 +15,7 @@ class Ability
       can :create, News
       can :create, Event
       can :create, Letter
+      can :create, Slide
       can :manage, Text
       can :manage, User
       can :import, [User]
@@ -25,6 +26,7 @@ class Ability
         can :create, News
         can :create, Event
         can :create, Letter
+        can :create, Slide
         can :manage, Text
         can :manage, User
       end

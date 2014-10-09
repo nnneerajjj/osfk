@@ -79,6 +79,12 @@ raptor(function($) {
 $(function() {
   $("#s3-uploader").S3Uploader();
 
+  $('#s3-uploader').bind("s3_uploads_start", function(e, content) {
+    if ($("#s3-uploader").data('single')) {
+      $("#file").hide();
+    }
+  });
+
   $('#s3-uploader').bind("s3_upload_complete", function(e, content) {
     $loader = $('#image-loader').clone();
     $tbody = $('.uploads tbody');
@@ -101,6 +107,7 @@ $(function() {
     $tr = $(this).parent().parent();
     if (confirm('Är du säker på att du vill ta bort bilden?')) {
       $tr.remove();
+      $("#file").show();
     }
   });
 

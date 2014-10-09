@@ -31,6 +31,8 @@ Caraten::Application.routes.draw do
     post :send_all, on: :member
   end
 
+  resources :slides
+
   resources :pages, only: [:new, :create, :update]
 
   resources :uploads, only: :create

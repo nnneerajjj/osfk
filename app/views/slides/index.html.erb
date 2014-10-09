@@ -1,0 +1,44 @@
+<% content_for :title, t(:slides) %>
+<% content_for :header, t(:slides) %>
+<% content_for :description, t(:slides) %>
+<% content_for :breadcrumb do %>
+  <%= link_to t(:slides), letters_path %>
+<% end %>
+
+<div class="post-excerpt clearfix">
+
+  <table class="table-style-1">
+    <thead>
+      <tr>
+        <th></th>
+        <th>
+          Rubrik
+        </th>
+        <th>
+          Underrubrik
+        </th>
+        <th>
+          Text
+        </th>
+        <th>
+          Länk
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% Slide.all.each do |slide| %>
+        <tr>
+          <td>
+          <% if slide.image_upload.present? %>
+            <img src="<%= image_path(slide.image_upload.file.url(:thumb)) %>" alt="<%= slide.header %>">
+          <% end %>
+          </td>
+          <td><%= link_to slide.header, slide %></td>
+          <td><%= slide.header2 %></td>
+          <td><%= truncate(slide.content, length: 50, escape: false) %></td>
+          <td><%= slide.link %></td>
+        </tr>
+      <% end %>
+     </tbody>
+  </table>
+</div>
