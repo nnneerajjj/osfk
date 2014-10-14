@@ -1,0 +1,26 @@
+<% content_for :title, @slide.header %>
+<% content_for :header, t(:slides) %>
+<% content_for :description, @slide.header %>
+<% content_for :breadcrumb do %>
+  <%= link_to t(:slides), slides_path %>
+  <%= link_to t(:create_slide), new_slide_path %>
+<% end %>
+<div class="clearfix post">
+  <%= render 'shared/upload', upload: @slide.image_upload, single: true %>
+
+  <label><%= t :header %></label>
+  <input type="text" data-form="header" placeholder="<%= t :header %>" value="<%= @slide.header %>">
+
+  <label><%= t :header2 %></label>
+  <input type="text" data-form="header2" placeholder="<%= t :header2 %>" value="<%= @slide.header2 %>">
+
+  <label><%= t :content %></label>
+  <textarea data-form="content"><%= @slide.content %></textarea>
+
+  <label><%= t :link %></label>
+  <input type="text" data-form="link" placeholder="<%= t :link %>" value="<%= @slide.link %>">
+
+</div>
+
+<%= button_tag t(:save_slide), class: 'form-post', data: { url: slides_path, name: 'slide' } %>
+<%= link_to 'Tillbaka', slides_path, style: 'margin-left: 20px;' %>

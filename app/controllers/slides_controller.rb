@@ -19,7 +19,6 @@ class SlidesController < ApplicationController
   end
 
   def update
-    pp params
     if @slide.update_attributes(params[:slide])
       flash[:notice] = "Du sparade slidern #{@slide.header}"
     end

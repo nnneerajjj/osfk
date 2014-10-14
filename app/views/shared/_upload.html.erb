@@ -1,6 +1,7 @@
 <% upload ||= nil %>
 <% uploads ||= upload ? [upload] : [] %>
 <% single ||= false %>
+<% display_uploader = !single || !upload %>
 
 <%= image_tag 'image-loader.gif', id: 'image-loader', style: 'display: none;' %>
 <table class="table-style-1 mobile-table uploads" %>
@@ -35,7 +36,7 @@
                      class: "upload-form",
                      data: { single: single } do %>
 
-  <%= file_field_tag :file, multiple: true, style: single ? 'display: none;' : '' %>
+  <%= file_field_tag :file, multiple: true, style: display_uploader ? '' : 'display: none;' %>
 <% end %>
 <script id="template-upload" type="text/x-tmpl">
   <div id="file-{%=o.unique_id%}" class="upload">
