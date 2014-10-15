@@ -10,7 +10,7 @@
 <div class="clearfix post">
 
   <% if can? :create, News %>
-    <%= button_to t(:delete_news), { action: :destroy, id: @news }, { method: :delete, class: 'btn-2 right', form_class: 'form-right', data: { confirm: "Är du säker på att du vill ta bort nyheten?", disable_with: 'Tar bort...' } } %>
+    <%= button_to t(:delete_news), { action: :destroy, id: @news.id }, { method: :delete, class: 'btn-2 right', form_class: 'form-right', data: { confirm: "Är du säker på att du vill ta bort nyheten?", disable_with: 'Tar bort...' } } %>
   <% end %>
 
   <label><%= t :subject %></label>

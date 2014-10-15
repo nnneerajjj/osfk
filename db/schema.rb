@@ -166,7 +166,7 @@ ActiveRecord::Schema.define(version: 20141007182639) do
     t.string "link"
   end
 
-  create_table "texts", force: true do |t|
+  create_table "texts", forcwe: true do |t|
     t.integer "page_id",              null: false
     t.string  "key",                  null: false
     t.text    "value",   default: ""

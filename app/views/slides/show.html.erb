@@ -6,6 +6,12 @@
   <%= link_to @slide.header, slide_path(@slide) %>
 <% end %>
 <div class="clearfix post">
+
+  <% if can? :create, Slide %>
+    <%= button_to t(:delete_slide), { action: :destroy, id: @slide.id }, { method: :delete, class: 'btn-2 right', form_class: 'form-right', data: { confirm: "Är du säker på att du vill ta bort sliden?", disable_with: 'Tar bort...' } } %>
+  <% end %>
+
+
   <%= render 'shared/upload', upload: @slide.image_upload, single: true %>
 
   <label><%= t :header %></label>
