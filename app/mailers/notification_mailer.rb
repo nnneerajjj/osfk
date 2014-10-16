@@ -1,6 +1,5 @@
 class NotificationMailer < ActionMailer::Base
   include ActionView::Helpers::TextHelper
-  add_template_helper(NotificationHelper)
 
   layout 'mailer'
 
