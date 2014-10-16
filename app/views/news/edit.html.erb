@@ -9,9 +9,6 @@
 
 <div class="clearfix post">
 
-  <% if can? :create, News %>
-    <%= button_to t(:delete_news), { action: :destroy, id: @news.id }, { method: :delete, class: 'btn-2 right', form_class: 'form-right', data: { confirm: "Är du säker på att du vill ta bort nyheten?", disable_with: 'Tar bort...' } } %>
-  <% end %>
 
   <label><%= t :subject %></label>
   <input type="text" data-form="subject" placeholder="<%= t :subject %>" value="<%= @news.subject %>">
@@ -21,5 +18,9 @@
   <h6 class="meta"><a class="date" href="#"><%= l(Date.today) %></a></h6>
   <div data-form="content" <%= edit_text_tags(@news, :content) %>><%= raw @news.content %></div>
 </div>
+
+<% if can? :create, News %>
+  <%= button_to t(:delete_news), { action: :destroy, id: @news.id }, { method: :delete, class: 'btn-4 right', form_class: 'form-right', data: { confirm: "Är du säker på att du vill ta bort nyheten?", disable_with: 'Tar bort...' } } %>
+<% end %>
 
 <%= button_tag t(:save_news), class: 'form-post', data: { method: 'PUT', url: news_path(@news), name: 'news' } %>

@@ -42,7 +42,6 @@ class User < ActiveRecord::Base
   def send_notification!
     if self.notification_date.nil?
       self.update_attribute(:notification_date, Time.now)
-      return
     end
 
     date = Time.now - (Time.now - self.notification_date)

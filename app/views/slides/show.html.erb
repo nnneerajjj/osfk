@@ -7,10 +7,6 @@
 <% end %>
 <div class="clearfix post">
 
-  <% if can? :create, Slide %>
-    <%= button_to t(:delete_slide), { action: :destroy, id: @slide.id }, { method: :delete, class: 'btn-2 right', form_class: 'form-right', data: { confirm: "Är du säker på att du vill ta bort sliden?", disable_with: 'Tar bort...' } } %>
-  <% end %>
-
 
   <%= render 'shared/upload', upload: @slide.image_upload, single: true %>
 
@@ -27,6 +23,10 @@
   <input type="text" data-form="link" placeholder="<%= t :link %>" value="<%= @slide.link %>">
 
 </div>
+
+  <% if can? :create, Slide %>
+    <%= button_to t(:delete_slide), { action: :destroy, id: @slide.id }, { method: :delete, class: 'btn-4 right', form_class: 'form-right', data: { confirm: "Är du säker på att du vill ta bort sliden?", disable_with: 'Tar bort...' } } %>
+  <% end %>
 
 <%= button_tag t(:save_slide), class: 'form-post', data: { method: 'PUT', url: slide_path(@slide), name: 'slide' } %>
 <%= link_to 'Tillbaka', slides_path, style: 'margin-left: 20px;' %>

@@ -361,13 +361,13 @@ td.active-time b:first-child,
 .pre-header-area ul > li > ul > li ul,
 .header-area ul > li > ul > li ul,
 .post-header-area ul > li > ul > li ul{
-	background: #4e0000;
+	background: #001A53;
 }
 /* FLY OUT MENU NIB */
 .pre-header-area ul > li > ul > li ul:before,
 .header-area ul > li > ul > li ul:before,
 .post-header-area ul > li > ul > li ul:before{
-	border-color:transparent #4e0000 transparent transparent;
+	border-color:transparent #001A53 transparent transparent;
 }
 
 
@@ -425,12 +425,27 @@ button.btn-2{
 	background-color: #ff7800;
 }
 
+a.btn-4,
+input[type=button].btn-4,
+input[type=submit].btn-4,
+button.btn-4{
+	background-color: #d44040;
+}
+
+
 /*
 031. BUTTON 2 HOVER BACKGROUND  ____________________________________________ */
 a.btn-2:hover,
 input[type=button].btn-2:hover,
 input[type=submit].btn-2:hover,
 button.btn-2:hover{
+	// background-color: #004080;
+}
+
+a.btn-4:hover,
+input[type=button].btn-4:hover,
+input[type=submit].btn-4:hover,
+button.btn-4:hover{
 	// background-color: #004080;
 }
 
@@ -441,10 +456,18 @@ a.btn-2{
 	color: #ffffff;
 }
 
+a.btn-4{
+	color: #ffffff;
+}
+
 
 /*
 033. BUTTON 2 HOVER TEXT  _________________________________________________ */
 .btn-2:hover, .btn-3:hover{
+	color: #ffffff;
+}
+
+.btn-4:hover{
 	color: #ffffff;
 }
 
