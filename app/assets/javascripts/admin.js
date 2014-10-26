@@ -120,7 +120,7 @@ $(function() {
   });
 
   var options = {
-    valueNames: [ 'number', 'firstname', 'lastname' ]
+    valueNames: [ 'number', 'name' ]
   };
 
   var userList = new List('users', options);
