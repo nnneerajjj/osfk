@@ -36,6 +36,8 @@ Caraten::Application.configure do
   # Do not eager load code on boot.
   config.eager_load = false
 
+  config.exceptions_app = ->(env) { ExceptionController.action(:show).call(env) }
+
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
   config.action_mailer.perform_deliveries = true
   config.action_mailer.delivery_method = :letter_opener

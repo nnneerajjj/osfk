@@ -14,6 +14,7 @@ Caraten::Application.routes.draw do
   resources :news, path: 'nyheter' do
     post :comment, on: :member
     post :create_letter, on: :member
+    get :raise, on: :collection
   end
   resources :topic, path: 'diskussioner' do
     post :comment, on: :member

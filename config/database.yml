@@ -25,8 +25,8 @@ test:
 
 production:
   adapter: postgresql
-  database: caraten
+  database: osfk_dev
   host: localhost
-  username: promote2
+  username: promote
   password: promote
   pool: 5

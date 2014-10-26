@@ -1,0 +1,10 @@
+<div class="col-3-4">
+  <% if response.status == 404 %>
+    <h1><span>404</span> Sidan kunde inte hittas</h1>
+    <p class="lead">Felet kan bero på att du skrivit in fel adress i webbläsaren eller att sidan tagits bort.</p>
+  <% else %>
+    <h1>Någonting gick fel</h1>
+    <p class="lead">Försök igen eller kontakta ansvarig på <%= mail_to FROM_EMAIL, FROM_EMAIL %></p>
+  <% end %>
+  <p><a href="http://<%= ActionMailer::Base.default_url_options[:host] %>"><%= ActionMailer::Base.default_url_options[:host] %></a>
+</div>
