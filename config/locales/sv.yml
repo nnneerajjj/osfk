@@ -7,6 +7,7 @@ sv:
       user:
         password: Lösenord
         email: Epost
+        login: Epost eller medlemsnummer
         firstname: Förnamn
         number: Medlemsnummer
         approved: Betalat

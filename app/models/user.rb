@@ -14,11 +14,13 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me, :firstname,
                   :street_number, :house_number, :lastname, :website, :telephone, :water, :stock, :approved,
                   :identity_number, :package1, :package2, :regular, :address, :postal_address, :role_ids,
-                  :number, :home_phone
+                  :number, :home_phone, :login
 
   has_attached_file :avatar, :styles => { :thumb => "250x250>", :preview => "80x80" }
 
   validates :firstname, :lastname, presence: true
+
+  attr_accessor :login
 
   has_many :topics
   has_many :participants
@@ -26,6 +28,20 @@ class User < ActiveRecord::Base
 
   def participates_in?(event)
     events.where(id: event.id).any?
+  end
+
+  def self.find_for_database_authentication(warden_conditions)
+    conditions = warden_conditions.dup
+    if login = conditions.delete(:login)
+
+      if login =~ /^\d+$/
+        where(conditions).where(["number = :value", value: login]).first
+      else
+        where(conditions).where(["lower(email) = :value", value: login.downcase]).first
+      end
+    else
+      where(conditions).first
+    end
   end
 
   def name

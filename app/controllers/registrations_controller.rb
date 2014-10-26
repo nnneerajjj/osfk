@@ -64,6 +64,7 @@ class RegistrationsController < Devise::RegistrationsController
   protected
 
   def configure_permitted_parameters
+    devise_parameter_sanitizer.for(:sign_in) << [:login, :number, :email, :password, :remember_me ]
     devise_parameter_sanitizer.for(:sign_up) << [:firstname, :lastname, :telephone, :package1, :package2, :regular, :identity_number, :address, :postal_address ]
     devise_parameter_sanitizer.for(:account_update) << [:firstname, :lastname, :telephone, :identity_number, :address, :postal_address ]
   end

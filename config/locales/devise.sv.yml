@@ -42,7 +42,7 @@ sv:
       user:
         signed_up_but_not_approved: Registrering lyckades men ditt konto har inte blivit godkänt av någon administratör ännu.
     sessions:
-      signed_in: Loggade in.
+      signed_in: Välkommen till Österåkers fiskeklubb.
       signed_out: Loggade ut.
     unlocks:
       send_instructions: Du kommer få epost med instruktioner om hur du kan låsa upp ditt konto inom några minuter.
