@@ -56,6 +56,9 @@ https://github.com/artberri/sidr/issues/8
             <% if can? :manage, User %>
               <li class="nav-parent">
                 <%= link_to t(:members), members_path %>
+                <ul>
+                  <li class="nav-parent"><%= link_to t(:create_member), new_member_path %></li>
+                </ul>
               </li>
             <% end %>
             <% if can? :create, Letter %>

@@ -80,6 +80,7 @@ sv:
   create_event: "Skapa evenemang"
   create_letter: "Skapa brev"
   create_page: "Skapa sida"
+  create_member: "Skapa medlem"
   create_slide: "Skapa slide"
   delete_event: "Radera evenemang"
   delete_news: "Radera nyhet"

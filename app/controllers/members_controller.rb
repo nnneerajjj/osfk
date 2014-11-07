@@ -16,11 +16,28 @@ class MembersController < ApplicationController
     if @user.update_attributes(params[:user])
       User.send_updated_email(@user, current_user)
       flash[:notice] = "Användaren uppdaterad"
+      redirect_to member_path(@user)
     else
       flash[:error] = @user.errors.full_messages.to_sentence
+      return redirect_to :show
     end
+  end
 
-    redirect_to :back
+  def new
+    @user = User.new
+  end
+
+  def create
+    @user = User.new(params[:user])
+    @user.password = SecureRandom.hex(8)
+    if @user.save
+      User.send_updated_email(@user, current_user)
+      flash[:notice] = "Användaren skapad"
+      redirect_to member_path(@user)
+    else
+      flash[:error] = @user.errors.full_messages.to_sentence
+      render :new
+    end
   end
 
   def update_multiple

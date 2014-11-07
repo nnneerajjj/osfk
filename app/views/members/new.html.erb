@@ -1,17 +1,15 @@
-<% content_for :title, @user.name %>
-<% content_for :header, @user.name %>
+<% content_for :title, t(:'create_member') %>
+<% content_for :header, t(:'create_member') %>
 <% content_for :breadcrumb do %>
   <%= link_to @page.title, members_path %>
-  <%= link_to @user.name, member_path(@user) %>
+  <%= link_to t(:'create_member'), new_member_path %>
 <% end %>
 
 <% content_for :contents do %>
 
 <div class="main-content clearfix">
 
-<h1><%= @user.name %></h1>
-
-<%= form_for(@user, url: member_path(@user)) do |f| %>
+<%= form_for(@user, url: members_path) do |f| %>
 
       <div class="clearfix">
         <div>
@@ -70,7 +68,7 @@
         <%= f.label :postal_address %>
         <%= f.text_field :postal_address %>
 
-        <%= f.submit I18n.t(:update) %>
+        <%= f.submit I18n.t(:create) %>
       <% end %>
 
 </div>
