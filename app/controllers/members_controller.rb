@@ -19,7 +19,7 @@ class MembersController < ApplicationController
       redirect_to member_path(@user)
     else
       flash[:error] = @user.errors.full_messages.to_sentence
-      return :show
+      render :show
     end
   end
 
