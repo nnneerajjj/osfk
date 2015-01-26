@@ -34,7 +34,7 @@ Caraten::Application.routes.draw do
 
   resources :slides
 
-  resources :pages, only: [:new, :create, :update]
+  resources :pages
 
   resources :uploads, only: :create
 

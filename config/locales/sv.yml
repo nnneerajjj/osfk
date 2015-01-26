@@ -57,6 +57,9 @@ sv:
       page:
         title: Titel
         public: Publik sida
+        page: Förälder
+        below: Visa under i menyn
+        top: Högst upp
 
 
 
@@ -91,6 +94,7 @@ sv:
   save_news: "Spara nyhet"
   edit_event: "Redigera evenemang"
   edit_news: "Redigera nyhet"
+  edit_page: "Redigera sida"
   calendar: "Kalender"
   forum: "Diskussioner"
   content: "Innehåll"

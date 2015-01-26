@@ -3,6 +3,13 @@
 <% content_for :description, @page.description %>
 
 <div class="inner-content page">
+  <% if can? :create, News %>
+    <a href="<%= edit_page_path(@page) %>" class="right"><button class="btn-2"><%= t :edit_page %></button></a>
+  <% end %>
+
   <h1><%= @page.title %></h1>
-  <%= render 'shared/text', page: @page, key: 'content', default: 'Skriv sidan innehåll här' %>
+  <div>
+    <% text = @page.texts.find_or_create_by(key: 'content') %>
+    <%= text.value.html_safe %>
+  </div>
 </div>
