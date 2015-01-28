@@ -56,8 +56,4 @@ class NewsController < ApplicationController
 
     return redirect_to news_path(@news.slug)
   end
-
-  def raise
-    raise 'Hohohohoho'
-  end
 end

@@ -11,10 +11,13 @@ class PagesController < ApplicationController
 
   def edit
     @page = Page.find_by_slug(params[:id])
+    authorize! :update, @page
   end
 
   def create
     page = Page.new(params[:page])
+
+    authorize! :create, page
 
     if page.save
       page.texts.create(key: 'content', value: page.content)
@@ -38,7 +41,7 @@ class PagesController < ApplicationController
   def destroy
     @page.destroy
     flash[:notice] = "Du tog bort sidan."
-    redirect_to action: :index
+    redirect_to root_path
   end
 
 end

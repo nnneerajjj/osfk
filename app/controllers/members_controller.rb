@@ -1,5 +1,4 @@
 class MembersController < ApplicationController
-  before_filter :load_page
 
   def index
     authorize! :manage, User
@@ -46,12 +45,5 @@ class MembersController < ApplicationController
     flash[:alert] = @users.select { |x| x.errors.any? } .map { |x| x.errors.full_messages.to_sentence }.to_sentence
 
     redirect_to action: :index
-  end
-
-  private
-
-  def load_page
-    @page = Page.find_by_key('members')
-    authorize! :read, @page
   end
 end

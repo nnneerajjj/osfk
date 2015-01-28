@@ -1,6 +1,6 @@
-<% content_for :title, t(:inactive) %>
-<% content_for :header, t(:inactive) %>
-<% content_for :description, t(:inactive) %>
+<% content_for :title, 'Inaktiv' %>
+<% content_for :header, 'Inaktiv' %>
+<% content_for :description, 'Inaktiv' %>
 
 <div class="inner-content page">
   <h1>Välkommen</h1>
@@ -35,5 +35,6 @@
       </div>
     </div>
 
-  <%= render 'shared/text', page: @page, key: 'inactive', default: 'När du har betalat avgiften kommer ditt medlemsskap bli aktiverat.' %>
+    <br>
+  <div>När du har betalat avgiften kommer ditt medlemsskap bli aktiverat.</div>
 </div>

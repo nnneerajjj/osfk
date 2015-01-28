@@ -1,8 +1,8 @@
-<% content_for :title, @page.title %>
-<% content_for :header, @page.title %>
-<% content_for :description, @page.description %>
+<% content_for :title, 'Medlemmar' %>
+<% content_for :header, 'Medlemmar' %>
+<% content_for :description, 'Medlemmar' %>
 <% content_for :breadcrumb do %>
-  <%= link_to @page.title, members_path %>
+  <%= link_to 'Medlemmar', members_path %>
 <% end %>
 
 <% content_for :contents do %>

@@ -9,15 +9,29 @@ https://github.com/artberri/sidr/issues/8
     <ul id="nav" class="right megamenu">
       <li class="nav-parent">
         <%= link_to t(:home), root_path %>
-          <% children = Page.find_by_key('home').children %>
+          <% children = @menu.find { |x| x.key == 'home' }.children.select { |page| can? :read, page } %>
           <% if children.any? %>
             <ul>
               <% children.each do |child| %>
-                <li><%= link_to child.title, '/' + child.slug %></li>
+                <li><%= link_to child.title, child.path %></li>
               <% end %>
             </ul>
           <% end %>
       </li>
+
+      <% @menu.reject { |x| x.key == 'home' }.select { |page| can? :read, page }.each do |root| %>
+        <li class="nav-parent">
+          <%= link_to root.title, root.path %>
+          <% children = root.children %>
+          <% if children.any? %>
+            <ul>
+              <% children.each do |child| %>
+                <li><%= link_to child.title, child.path %></li>
+              <% end %>
+            </ul>
+          <% end %>
+        </li>
+      <% end %>
       <% if can? :read, News %>
         <li class="nav-parent">
           <%= link_to t(:news), news_index_path %>
@@ -53,7 +67,7 @@ https://github.com/artberri/sidr/issues/8
         <li class="nav-parent"><%= link_to current_user.name, '#' %>
           <ul>
             <li class="nav-child"><%= link_to t(:settings), edit_user_registration_path %></li>
-            <% if can? :manage, User %>
+            <% if can? :manage, User.new %>
               <li class="nav-parent">
                 <%= link_to t(:members), members_path %>
                 <ul>
