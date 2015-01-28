@@ -6,7 +6,7 @@
 
 development:
   adapter: postgresql
-  database: osfk_dev
+  database: osfk_dev_bak
   host: localhost
   username: promote
   password: promote
