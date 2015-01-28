@@ -1,6 +1,9 @@
-<% content_for :title, @page.description %>
+<% content_for :title, @page.title %>
 <% content_for :header, @page.title %>
 <% content_for :description, @page.description %>
+<% content_for :breadcrumb do %>
+  <%= link_to @page.title, @page.path %>
+<% end %>
 
 <div class="inner-content page">
   <% if can? :create, News %>

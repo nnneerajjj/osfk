@@ -57,13 +57,15 @@ sv:
       page:
         title: Titel
         public: Publik sida
+        header: Rubrik
         page: Förälder
         below: Visa under i menyn
         top: Högst upp
 
 
 
-  title: "Österåkers Sportfiskeklubb - "
+  root_title: "Österåkers Sportfiskeklubb - "
+  title: "Titel"
   home: "Hem"
   heading: "Österåkers Sportfiskeklubb"
   contact: "Kontakt"
@@ -88,10 +90,12 @@ sv:
   delete_event: "Radera evenemang"
   delete_news: "Radera nyhet"
   delete_slide: "Radera slide"
+  delete_page: "Radera sida"
   save_letter: "Spara brev"
   save_slide: "Spara slide"
   save_event: "Spara evenemang"
   save_news: "Spara nyhet"
+  save_page: "Spara sida"
   edit_event: "Redigera evenemang"
   edit_news: "Redigera nyhet"
   edit_page: "Redigera sida"

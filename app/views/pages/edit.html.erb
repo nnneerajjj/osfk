@@ -1,0 +1,22 @@
+<% content_for :title, @page.description %>
+<% content_for :title, @page.title %>
+<% content_for :description, @page.description %>
+<% content_for :breadcrumb do %>
+  <%= link_to @page.title, @page.path %>
+  <%= link_to t(:edit_page), "#{@page.path}/edit" %>
+<% end %>
+
+
+<div class="inner-content page">
+
+  <label><%= t :title %></label>
+  <input type="text" data-form="title" placeholder="<%= t :title %>" value="<%= @page.title %>">
+
+  <%= render 'shared/text', page: @page, key: 'content', default: 'Skriv sidan innehåll här' %>
+
+  <% if can? :create, Page %>
+    <%= button_to t(:delete_page), { action: :destroy, id: @page.id }, { method: :delete, class: 'btn-4 right', form_class: 'form-right', data: { confirm: "Är du säker på att du vill ta bort sidan?", disable_with: 'Tar bort...' } } %>
+  <% end %>
+
+  <%= button_tag t(:save_page), class: 'form-post', data: { method: 'PUT', url: page_path(@page), name: 'page' } %>
+</div>

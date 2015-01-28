@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
-  load_resource
+  #load_resource only: [ :new, :destroy, :update ]
+  load_and_authorize_resource only: [ :destroy, :update ]
 
   def show
     @page = Page.find_by_slug(params[:slug])
@@ -7,6 +8,10 @@ class PagesController < ApplicationController
   end
 
   def new
+  end
+
+  def edit
+    @page = Page.find_by_slug(params[:id])
   end
 
   def create
@@ -18,4 +23,18 @@ class PagesController < ApplicationController
     end
     render json: page
   end
+
+  def update
+    if @news.update_attributes(params[:news])
+      flash[:notice] = "Du sparade nyheten"
+    end
+    render json: @news
+  end
+
+  def destroy
+    @page.destroy
+    flash[:notice] = "Du tog bort sidan."
+    redirect_to action: :index
+  end
+
 end
