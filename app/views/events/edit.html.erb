@@ -3,7 +3,7 @@
 <% content_for :description, t(:create_event) %>
 <% content_for :breadcrumb do %>
   <%= link_to t(:calendar), events_path %>
-  <%= link_to @event.subject, events_path(@event) %>
+  <%= link_to @event.subject, event_path(@event) %>
   <%= link_to t(:edit_event), edit_event_path(@event) %>
 <% end %>
 

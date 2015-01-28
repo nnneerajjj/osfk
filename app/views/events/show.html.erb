@@ -3,7 +3,7 @@
 <% content_for :description, @event.subject %>
 <% content_for :breadcrumb do %>
   <%= link_to t(:calendar), events_path %>
-  <%= link_to @event.subject, events_path(@event) %>
+  <%= link_to @event.subject, event_path(@event) %>
 <% end %>
 
 <div class="main-content clearfix">
