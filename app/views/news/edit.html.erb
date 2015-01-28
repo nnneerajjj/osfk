@@ -20,7 +20,7 @@
 </div>
 
 <% if can? :create, News %>
-  <%= button_to t(:delete_news), { action: :destroy, id: @news.id }, { method: :delete, class: 'btn-4 right', form_class: 'form-right', data: { confirm: "Är du säker på att du vill ta bort nyheten?", disable_with: 'Tar bort...' } } %>
+  <%= button_to t(:delete_news), { action: :destroy, id: @news.slug }, { method: :delete, class: 'btn-4 right', form_class: 'form-right', data: { confirm: "Är du säker på att du vill ta bort nyheten?", disable_with: 'Tar bort...' } } %>
 <% end %>
 
 <%= button_tag t(:save_news), class: 'form-post', data: { method: 'PUT', url: news_path(@news), name: 'news' } %>

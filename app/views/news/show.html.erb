@@ -11,7 +11,9 @@
     <a href="<%= edit_news_path(@news) %>" class="right"><button class="btn-2"><%= t :edit_news %></button></a>
   <% end %>
 
-  <h1 class="title"><div <%= edit_text_tags(@news, :subject) %>><%= strip_tags(@news.subject) %></div></h1>
+  <h1 class="title"><%= @news.subject %></h1>
+
+  <br>
 
   <% if @news.image.present? %>
     <div class="mosaic-block circle">
@@ -35,7 +37,7 @@
   <div class="clearfix"></div>
 
   <h6 class="meta"><a class="date" href="#"><%= l @news.created_at, format: :long %></a></h6>
-  <div <%= edit_text_tags(@news, :content) %>><%= raw(@news.content) %></div>
+  <div><%= raw(@news.content) %></div>
 </div>
 
 <% if can? :comment, News %>
