@@ -5,7 +5,7 @@
   <%= link_to @page.title, @page.path %>
 <% end %>
 
-<div class="inner-content page">
+<div class="clearfix post">
   <% if can? :create, News %>
     <a href="<%= edit_page_path(@page) %>" class="right"><button class="btn-2"><%= t :edit_page %></button></a>
   <% end %>

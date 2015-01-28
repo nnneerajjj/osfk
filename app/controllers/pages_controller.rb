@@ -1,6 +1,5 @@
 class PagesController < ApplicationController
-  #load_resource only: [ :new, :destroy, :update ]
-  load_and_authorize_resource only: [ :destroy, :update ]
+  load_and_authorize_resource only: [ :new, :destroy ]
 
   def show
     @page = Page.find_by_slug(params[:slug])
@@ -15,7 +14,7 @@ class PagesController < ApplicationController
   end
 
   def create
-    page = Page.new(params[:page].merge({page_id: Page.find_by_key('home').id}))
+    page = Page.new(params[:page])
 
     if page.save
       page.texts.create(key: 'content', value: page.content)
@@ -25,10 +24,15 @@ class PagesController < ApplicationController
   end
 
   def update
-    if @news.update_attributes(params[:news])
+    @page = Page.find_by_slug(params[:id])
+    @page.public = params[:page][:public] == 'true'
+
+    authorize! :update, @page
+
+    if @page.update_attributes(params[:page])
       flash[:notice] = "Du sparade nyheten"
     end
-    render json: @news
+    render json: @page
   end
 
   def destroy

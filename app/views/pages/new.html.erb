@@ -8,13 +8,13 @@
 <div class="clearfix post">
 
   <div>
-    <input id="public-page" type="checkbox" data-form="public">
+    <%= check_box_tag("public-page", '1', @page.public?, :'data-form' => "public") %>
     <label for="public-page"><%= Page.human_attribute_name(:public) %></label>
   </div>
+
   <div>
     <label for="page-id"><%= Page.human_attribute_name(:below) %></label>
-    <%= select("post", "person_id", Page.all.map {|p| [ p.header, p.id ] }, {include_blank: "- #{Page.human_attribute_name(:top)} -" }) %>
-
+    <%= select("post", "person_id", Page.all.map {|p| [ p.title, p.id ] }, {include_blank: "- #{Page.human_attribute_name(:top)} -" }, {:'data-form' => 'page_id' }) %>
   </div>
   <label><%= Page.human_attribute_name(:title) %></label>
   <input type="text" data-form="title" placeholder="<%= Page.human_attribute_name(:title) %>" value="<%= @page.title %>">

@@ -7,7 +7,17 @@
 <% end %>
 
 
-<div class="inner-content page">
+<div class="clearfix post">
+
+  <div>
+    <%= check_box_tag("public-page", '1', @page.public?, :'data-form' => "public") %>
+    <label for="public-page"><%= Page.human_attribute_name(:public) %></label>
+  </div>
+
+  <div>
+    <label for="page-id"><%= Page.human_attribute_name(:below) %></label>
+    <%= select("post", "person_id", Page.all.map {|p| [ p.title, p.id ] }, { selected: @page.page_id, include_blank: "- #{Page.human_attribute_name(:top)} -" }, {:'data-form' => 'page_id' }) %>
+  </div>
 
   <label><%= t :title %></label>
   <input type="text" data-form="title" placeholder="<%= t :title %>" value="<%= @page.title %>">
