@@ -7,6 +7,7 @@ class ExceptionController < ActionController::Base
   layout :layout_status
 
   def show
+    @menu = Page.where("page_id = '0' OR page_id is null").includes(:children)
     respond_with status: @status
   end
 
