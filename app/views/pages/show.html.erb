@@ -6,11 +6,45 @@
 <% end %>
 
 <div class="clearfix post">
+
   <% if can? :create, News %>
     <a href="<%= edit_page_path(@page) %>" class="right"><button class="btn-2"><%= t :edit_page %></button></a>
   <% end %>
 
   <h1><%= @page.title %></h1>
+
+  <% first = true %>
+  <% count = @page.image_uploads.count %>
+  <% if count > 0 %>
+    <% @page.image_uploads.each do |image| %>
+      <% if first %>
+        <div class="mosaic-block circle">
+          <a href="<%= image.file.url(:large) %>" class="mosaic-overlay fancybox" data-fancybox-group="gallery" title="<%= @page.title %>" style="display: inline; opacity: 0.8;"></a>
+          <div class="mosaic-backdrop" style="display: block;"><img src="<%= image.file.url(:medium) %>" alt="<%= @page.title %>"></div>
+        </div>
+        <% first = false %>
+        <% if count > 1 %>
+          <div class="col-4-4 thumb-gallery super-list variable-sizes clearfix isotope" id="thumb-gallery" style="position: relative;">
+        <% end %>
+
+      <% else %>
+
+        <div class="col-1-3 cat-1 isotope-item">
+          <div class="mosaic-block circle">
+            <a href="<%= image.file.url(:large) %>" class="mosaic-overlay fancybox" data-fancybox-group="gallery" title="<%= @page.title %>"></a>
+          <div class="mosaic-backdrop" style="display: block;"><img src="<%= image.file.url(:small) %>" alt="<%= @page.title %>" style="min-height: 200px;"></div></div>
+        </div>
+
+      <% end %>
+
+    <% end %>
+  <% end %>
+  <% if count > 1 %>
+    </div>
+  <% end %>
+
+  <div class="clearfix"></div>
+
   <div>
     <% text = @page.texts.find_or_create_by(key: 'content') %>
     <%= text.value.html_safe %>

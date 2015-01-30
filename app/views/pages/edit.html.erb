@@ -22,6 +22,8 @@
   <label><%= t :title %></label>
   <input type="text" data-form="title" placeholder="<%= t :title %>" value="<%= @page.title %>">
 
+  <%= render 'shared/upload', uploads: @page.image_uploads %>
+
   <%= render 'shared/text', page: @page, key: 'content', default: 'Skriv sidan innehåll här' %>
 
   <% if can? :create, Page %>

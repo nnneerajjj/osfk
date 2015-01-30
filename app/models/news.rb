@@ -19,10 +19,6 @@ class News < ActiveRecord::Base
     content.gsub(/<img .*?>/i, '')
   end
 
-  def image
-    image_uploads.first
-  end
-
   def slug_candidates
     [
       :subject

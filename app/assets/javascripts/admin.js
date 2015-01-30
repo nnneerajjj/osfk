@@ -95,7 +95,7 @@ $(function() {
     $td.appendTo($tr);
     $('<td>' + content.filename + '</td>').appendTo($tr);
     $('<td>' + bytesToSize(content.filesize) + '</td>').appendTo($tr);
-    $('<td><button class="remove-image">Ta bort</button></td>').appendTo($tr);
+    $('<td><button class="remove-image">Ta bort bild</button></td>').appendTo($tr);
     $tr.appendTo($tbody);
   });
 
