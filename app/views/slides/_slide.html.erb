@@ -16,11 +16,12 @@
     data-endelementdelay="0.1"
     data-endspeed="1000"
     data-endeasing="Power1.easeOut">
-    <%= slide.header %>
+    <%= slide.header if slide.header.present? %>
     <br/>
-    <div><%= slide.header2 %></div>
+    <% if slide.header2.present? %><div><%= slide.header2 %></div><% end %>
   </div>
 
+  <% if slide.content.present? %>
   <div class="tp-caption fadeout sfr sport-rs-boxed sport-rs-text"
     data-x="0" data-hoffset="0"
     data-y="230" data-voffset="0"
@@ -36,6 +37,7 @@
     data-endeasing="Power1.easeOut">
     <%= slide.content %>
   </div>
+  <% end %>
 
   <div class="tp-caption fadeout sfr tp-resizeme"
     data-x="0" data-hoffset="0"
