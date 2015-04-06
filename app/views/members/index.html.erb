@@ -54,17 +54,18 @@
       </thead>
       <tbody class="list">
         <% @users.each do |user| %>
-            <tr>
-              <td class="number"><%= user.number %></td>
-              <td class="name" style="display:none;"><%= user.name %></td>
-              <td class="firstname"><%= user.firstname %></td>
-              <td class="lastname"><%= user.lastname %></td>
-              <td class="approved"><%= raw '<em class="fa fa-check"></em>' if user.approved? %></td>
-              <td><%= link_to 'Mer info', member_path(user) %></td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
+          <tr>
+            <td class="number"><%= user.number %></td>
+            <td class="firstname"><%= user.firstname %></td>
+            <td class="lastname"><%= user.lastname %></td>
+            <td class="approved"><%= raw '<em class="fa fa-check"></em>' if user.approved? %></td>
+            <td><%= link_to 'Mer info', member_path(user) %></td>
+            <td class="name" style="display:none;"><%= user.name %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
     <%= submit_tag t :save %>
 
   <a href="#top" class="btn-3 xsmall-btn right fa"></a>
