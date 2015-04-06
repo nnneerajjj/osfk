@@ -20,7 +20,6 @@
   }
 </style>
 
-
 <%= raw "<style>" %>
   <%= raw "@media only screen and (max-width: 767px) {" %>
   <% ['Nummer', 'Förnamn', 'Efternamn', 'Paket', "Betalat #{Time.now.year}", ''].each_with_index do |day, idx| %>
@@ -46,7 +45,7 @@
           <th class="sort" data-sort="number">Nummer</th>
           <th class="sort" data-sort="firstname">Förnamn</th>
           <th class="sort" data-sort="lastname">Efternamn</th>
-          <th class="packages" data-sort="packages">Paket</th>
+          <th class="" data-sort="packages">Paket</th>
           <th><%= "Betalat #{Time.now.year}" %></th>
           <% if @can_manage %>
             <th></th>

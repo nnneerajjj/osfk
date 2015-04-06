@@ -105,7 +105,7 @@ $(document).ready(function() {
   });
 
   var options = {
-    valueNames: [ 'number', 'name' ]
+    valueNames: [ 'number', 'name', 'firstname', 'lastname', 'packages' ]
   };
 
   var userList = new List('users', options);
