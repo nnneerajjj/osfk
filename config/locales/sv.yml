@@ -30,6 +30,7 @@ sv:
         home_phone: Hemtelefon
         postal_address: Postadress
         identity_number: Personnummer
+        roles: Roller
       contact:
         subject: Rubrik
         name: Namn

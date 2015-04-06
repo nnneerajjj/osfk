@@ -120,5 +120,5 @@ var recalculate = function() {
   });
 }
 
-$('.multiple').selectize();
+$('.multiple').selectize({plugins: ['remove_button']});
 

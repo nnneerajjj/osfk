@@ -36,12 +36,16 @@
 
       <div>
 
+
         <br />
 
         <%= f.check_box :approved %>
         <%= f.label :approved %>
 
         <br />
+
+        <%= f.label :roles %>
+        <%= f.collection_select :role_ids, Role.all, :id, :display_name, { }, { multiple: true, class: 'multiple', style: 'width: 200px;' } %>
 
         <%= f.label :number %>
         <%= f.text_field :number %>
@@ -51,6 +55,7 @@
 
         <%= f.label :lastname %>
         <%= f.text_field :lastname %>
+
 
         <%= f.label :identity_number %> <%= t :'identity_number_hint' %>
         <%= f.text_field :identity_number %>
