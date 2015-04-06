@@ -104,6 +104,13 @@ class User < ActiveRecord::Base
     end
   end
 
+  def packages
+    packages = []
+    packages << 'Mossön' if package1
+    packages << 'Drängsjön' if package2
+    packages.to_sentence
+  end
+
   def send_welcome_email
     UserMailer.delay.welcome_email(self)
   end

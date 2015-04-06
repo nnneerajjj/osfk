@@ -1,17 +1,24 @@
 class MembersController < ApplicationController
 
   def index
-    authorize! :manage, User
+    authorize! :function, User.new
 
-    @users = User.order([:number, :lastname])
+    @can_manage = can? :manage, User.new
+
+    @users = User.order(:number)
   end
 
   def show
     @user = User.find(params[:id])
+
+    authorize! :manage, @user
   end
 
   def update
     @user = User.find(params[:id])
+
+    authorize! :manage, @user
+
     if @user.update_attributes(params[:user])
       User.send_updated_email(@user, current_user)
       flash[:notice] = "Användaren uppdaterad"

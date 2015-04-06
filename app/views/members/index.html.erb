@@ -23,13 +23,12 @@
 
 <%= raw "<style>" %>
   <%= raw "@media only screen and (max-width: 767px) {" %>
-  <% ['Nummer', 'Förnamn', 'Efternamn', 'Betalat?', 'Mer info'].each_with_index do |day, idx| %>
+  <% ['Nummer', 'Förnamn', 'Efternamn', 'Paket', "Betalat #{Time.now.year}", ''].each_with_index do |day, idx| %>
     <%= raw "td:nth-of-type(#{idx + 1}):before { content: '#{day}'; }" %>
   <% end %>
   <%= raw "}" %>
   <%= raw "#users-count-display { display: block; margin-bottom: 5px; }" %>
 <%= raw "</style>" %>
-
 
 <div class="main-content col-5-5 last" id="users">
   <h1><%= t :members %></h1>
@@ -41,15 +40,17 @@
   <input class="search" placeholder="Filtrera" />
   <div id="users-count-display">Visar <span class="users-count"><%= @users.length %></span> av totalt <%= @users.length %></div>
 
-
     <table class="table-style-1 mobile-table">
       <thead>
         <tr>
           <th class="sort" data-sort="number">Nummer</th>
           <th class="sort" data-sort="firstname">Förnamn</th>
           <th class="sort" data-sort="lastname">Efternamn</th>
-          <th>Betalat?</th>
-          <th>Mer info</th>
+          <th class="packages" data-sort="packages">Paket</th>
+          <th><%= "Betalat #{Time.now.year}" %></th>
+          <% if @can_manage %>
+            <th></th>
+          <% end %>
         </tr>
       </thead>
       <tbody class="list">
@@ -58,8 +59,11 @@
             <td class="number"><%= user.number %></td>
             <td class="firstname"><%= user.firstname %></td>
             <td class="lastname"><%= user.lastname %></td>
+            <td class="packages"><%= user.packages %></td>
             <td class="approved"><%= raw '<em class="fa fa-check"></em>' if user.approved? %></td>
-            <td><%= link_to 'Mer info', member_path(user) %></td>
+            <% if @can_manage %>
+              <td><%= link_to 'Mer info', member_path(user) %></td>
+            <% end %>
             <td class="name" style="display:none;"><%= user.name %></td>
           </tr>
         <% end %>
@@ -70,6 +74,5 @@
 
   <a href="#top" class="btn-3 xsmall-btn right fa"></a>
 </div>
-
 
 <% end %>

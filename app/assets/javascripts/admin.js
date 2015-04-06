@@ -1,6 +1,5 @@
 //= require raptor
 //= require forms
-//= require list
 //= require jquery.highlight-4
 
 raptor(function($) {
@@ -118,18 +117,6 @@ $(function() {
       $endDate.val($startDate.val());
     }
   });
-
-  var options = {
-    valueNames: [ 'number', 'name' ]
-  };
-
-  var userList = new List('users', options);
-  $usersCount = $('.users-count');
-  $('.search').on('keyup', function() {
-    val = $(this).val();
-    $usersCount.text(userList.matchingItems.length);
-  });
-
 });
 
 $(document).ajaxSend(function(e, xhr, options) {

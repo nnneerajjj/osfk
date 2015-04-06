@@ -33,6 +33,7 @@
 //= require slider-1
 //= require main
 //= require pickaday
+//= require list
 //= require s3_direct_upload
 //= require selectize
 
@@ -103,8 +104,16 @@ $(document).ready(function() {
     return false;
   });
 
+  var options = {
+    valueNames: [ 'number', 'name' ]
+  };
 
-
+  var userList = new List('users', options);
+  $usersCount = $('.users-count');
+  $('.search').on('keyup', function() {
+    val = $(this).val();
+    $usersCount.text(userList.matchingItems.length);
+  });
 });
 
 var recalculate = function() {
@@ -121,4 +130,3 @@ var recalculate = function() {
 }
 
 $('.multiple').selectize({plugins: ['remove_button']});
-
