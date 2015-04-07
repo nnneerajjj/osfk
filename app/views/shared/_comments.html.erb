@@ -5,7 +5,7 @@
     <li>
       <div class="clearfix <%= idx % 2 == 0 ? 'odd' : '' %>">
       <img src="<%= image_path('missingprofile.png') %>" alt="<%= comment.user.name %>" class="left stay">
-      <h6 class="meta"><a href="member.html"><%= comment.user.name %></a> <span class="date"><%= l comment.created_at, format: :long %></span></h6>
+      <h6 class="meta"><%= comment.user.name %> <span class="date"><%= l comment.created_at, format: :long %></span></h6>
       <%#<a class="reply right" href="#">Reply</a>%>
       <p><%= auto_link(simple_format(comment.body), html: { target: '_blank' }) { |text| text } %></p>
       </div>
