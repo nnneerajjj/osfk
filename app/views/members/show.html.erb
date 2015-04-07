@@ -77,4 +77,7 @@
   <% end %>
 
   </div>
+
+  <%= button_to "Skicka ett 'lösenord återställnings'-mail till användaren", reset_password_member_path(@user), class: 'btn-2 right', onclick: "javascript:return confirm('Vill du skicka? Tänk på att användaren måste ha en epost-adress')" %>
+
 <% end %>

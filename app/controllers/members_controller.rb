@@ -29,6 +29,18 @@ class MembersController < ApplicationController
     end
   end
 
+  def reset_password
+    @user = User.find(params[:id])
+
+    authorize! :manage, @user
+
+    @user.send_reset_password_instructions
+
+    flash[:notice] = "'Lösenord återställnings'-mail skickat till användaren"
+
+    redirect_to member_path(@user)
+  end
+
   def new
     @user = User.new
   end

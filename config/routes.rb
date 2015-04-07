@@ -9,6 +9,7 @@ Caraten::Application.routes.draw do
   resources :contacts, path: 'kontakt', only: [:index, :create]
   resources :members, path: 'medlemmar' do
     put :update_multiple, on: :collection
+    post :reset_password, on: :member
   end
   # resources :users, path: 'installningar', only: [:index, :update]
   resources :news, path: 'nyheter' do
