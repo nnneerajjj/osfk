@@ -30,6 +30,16 @@ class Ability
       can :read, :all
       can :comment, News
       can :participate, Event
+
+      cannot :read, Page
+      can :read, Page do |page|
+        role = page.role
+        if role.blank?
+          true
+        else
+          user.has_role?(role.name)
+        end
+      end
     end
   end
 end

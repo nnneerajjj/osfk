@@ -10,8 +10,8 @@
 <div class="clearfix post">
 
   <div>
-    <%= check_box_tag("public-page", '1', @page.public?, :'data-form' => "public") %>
-    <label for="public-page"><%= Page.human_attribute_name(:public) %></label>
+    <label>Synlig för roll</label>
+    <%= select_tag :role_id, options_for_select(@roles, @selected_role_id), :'data-form' => "role_id" %>
   </div>
 
   <div>

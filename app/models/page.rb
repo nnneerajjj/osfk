@@ -3,10 +3,11 @@ class Page < ActiveRecord::Base
 
   friendly_id :title, use: :slugged
 
-  attr_accessible :title, :content, :public, :header, :slug, :key, :text_ids, :page_id, :image_upload_ids
+  attr_accessible :title, :content, :public, :header, :slug, :key, :text_ids, :page_id, :image_upload_ids, :role_id
 
   has_many :texts
   belongs_to :page
+  belongs_to :role
   has_many :children, class_name: 'Page'
 
   has_many :image_uploads, as: :uploader
