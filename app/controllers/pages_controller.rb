@@ -43,7 +43,7 @@ class PagesController < ApplicationController
     authorize! :update, @page
 
     if @page.update_attributes(page_params)
-      flash[:notice] = "Du sparade nyheten"
+      flash[:notice] = "Du sparade sidan."
     end
     render json: @page
   end
