@@ -9,10 +9,10 @@ raptor(function($) {
       plugins: {
         statistics: false,
         languageMenu: false,
-        colorMenuBasic: false,
+        colorMenuBasic: true,
         alignJustify: false,
-        textSizeDecrease: false,
-        textSizeIncrease: false,
+        textSizeDecrease: true,
+        textSizeIncrease: true,
 
         tableCreate: true,
         tableDeleteColumn: true,
