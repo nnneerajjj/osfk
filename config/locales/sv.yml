@@ -26,9 +26,9 @@ sv:
         regular: Senior?
         package1: Mossön - Aktiverad nyckelbricka
         package2: Drängsjön - Årsfiskekort
-        address: Adress
+        address: Gatuadress
         home_phone: Hemtelefon
-        postal_address: Postadress
+        postal_address: Postnummer och ort
         identity_number: Personnummer
         roles: Roller
       contact:
