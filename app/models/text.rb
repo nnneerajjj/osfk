@@ -6,4 +6,8 @@ class Text < ActiveRecord::Base
   def name
     key
   end
+
+  def text
+    HTMLEntities.new.decode(HTML::FullSanitizer.new.sanitize(value)).squish
+  end
 end
