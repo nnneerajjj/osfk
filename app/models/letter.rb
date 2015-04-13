@@ -9,8 +9,8 @@ class Letter < ActiveRecord::Base
     LetterMailer.delay.email(self, user)
   end
 
-  def send_to_all
-    User.where(active: true).each do |user|
+  def send_to_all(users)
+    users.each do |user|
       send_to(user)
     end
     update_attribute(:sent_to_all_at, Time.now)

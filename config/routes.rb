@@ -29,8 +29,7 @@ Caraten::Application.routes.draw do
   end
 
   resources :letters, path: 'brev' do
-    post :send_me, on: :member
-    post :send_all, on: :member
+    post :send_letter, on: :member
   end
 
   resources :slides

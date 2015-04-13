@@ -17,10 +17,10 @@
           Meddelande
         </th>
         <th>
-          Skickat till alla
+          Senast skickad
         </th>
         <th>
-          Skicka till
+          Skicka till grupp
         </th>
       </tr>
     </thead>
@@ -31,8 +31,11 @@
           <td><%= truncate(letter.content, length: 50, escape: false) %></td>
           <td><%= l(letter.sent_to_all_at, format: :short) if letter.sent_to_all_at %></td>
           <td>
-            <%= form_tag(send_me_letter_path(letter.id), method: "POST", style: "margin:0") do %><%= submit_tag('Mig') %><% end %>
-            <%= form_tag(send_all_letter_path(letter.id), method: "POST", style: "margin:0") do %><%= submit_tag('Alla', data: { confirm: 'Är du säker på att du vill skicka till alla?' }) %><% end %>
+            <%= form_tag(send_letter_letter_path(letter.id), method: "POST", style: "margin:0") do %>
+              <%= select_tag :role_id, options_for_select(@roles) %>
+
+              <%= submit_tag('Skicka') %>
+            <% end %>
           </td>
         </tr>
       <% end %>

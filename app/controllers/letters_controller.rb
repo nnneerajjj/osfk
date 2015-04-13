@@ -1,5 +1,6 @@
 class LettersController < ApplicationController
-  load_and_authorize_resource :letter, only: [:show, :update, :send_me, :send_all]
+  load_and_authorize_resource :letter, only: [:show, :update, :send_letter]
+  before_filter :setup_roles, only: [ :index, :send_letter ]
 
   def index
     authorize! :create, Letter
@@ -28,15 +29,28 @@ class LettersController < ApplicationController
   def show
   end
 
-  def send_me
-    LetterMailer.email(@letter, current_user).deliver!
-    flash[:notice] = "Du skickade brevet \"#{@letter.subject}\" till dig själv"
+  def send_letter
+    role = @roles.find { |role, role_id| role_id.to_s == params[:role_id] }.first
+    users = retreive_users
+    @letter.send_to_all(users)
+    flash[:notice] = "Du skickade brevet \"#{@letter.subject}\" till totalt #{users.size} st. i gruppen #{role}"
     redirect_to :back
   end
 
-  def send_all
-    @letter.send_to_all
-    flash[:notice] = "Du skickade brevet \"#{@letter.subject}\" till alla"
-    redirect_to :back
+  private
+
+  def setup_roles
+    @roles = [["Mig själv", Page::PRIVATE_PAGE_ID],["Alla aktiva", Page::PUBLIC_PAGE_ID]] + Role.all.reverse.map { |role| [ role.display_name, role.id ] }
+  end
+
+  def retreive_users
+    role_id = params[:role_id]
+    if role_id == Page::PRIVATE_PAGE_ID
+      [ current_user ]
+    elsif role_id == Page::PUBLIC_PAGE_ID
+      User.where(approved: true)
+    else
+      Role.find(role_id).users
+    end
   end
 end

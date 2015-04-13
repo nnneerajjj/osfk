@@ -19,4 +19,8 @@
 <%= button_tag t(:save_letter), class: 'form-post', data: { method: 'PUT', url: letter_path(@letter), name: 'letter' } %>
 <%= link_to 'Tillbaka', letters_path, style: 'margin-left: 20px;' %>
 
-<%= form_tag(send_me_letter_path(@letter.id), method: "POST", class: 'right', style: "margin:0; display: inline-block;") do %><%= submit_tag('Skicka brev till mig') %><% end %>
+<%= form_tag(send_letter_letter_path(@letter.id), method: "POST", class: 'right', style: "margin:0; display: inline-block;") do %>
+  <%= hidden_field_tag :role_id, Page::PRIVATE_PAGE_ID %>
+
+  <%= submit_tag('Skicka brev till mig') %>
+<% end %>

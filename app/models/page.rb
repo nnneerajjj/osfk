@@ -19,6 +19,9 @@ class Page < ActiveRecord::Base
 
   before_destroy :never_destroy_key_pages
 
+  PUBLIC_PAGE_ID = "100000"
+  PRIVATE_PAGE_ID = "200000"
+
   def description
     self.header.present? ? self.header : self.title
   end
