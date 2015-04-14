@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   before_action :load_menu
 
   def load_menu
-    @menu = Page.where("page_id = '0' OR page_id is null").includes(:children)
+    @menu = Page.where("page_id = '0' OR page_id is null").includes(children: :children)
   end
 
   rescue_from CanCan::AccessDenied do |exception|

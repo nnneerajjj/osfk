@@ -13,7 +13,17 @@ https://github.com/artberri/sidr/issues/8
           <% if children.any? %>
             <ul>
               <% children.each do |child| %>
-                <li><%= link_to child.title, child.path %></li>
+                <li>
+                  <%= link_to child.title, child.path %>
+                  <% sub_children = child.children.select { |page| can? :read, page } %>
+                  <% if sub_children.any? %>
+                    <ul>
+                      <% sub_children.each do |sub_child | %>
+                        <li class="nav-parent"><%= link_to t(:create_member), new_member_path %></li>
+                      <% end %>
+                    </ul>
+                  <% end %>
+                </li>
               <% end %>
             </ul>
           <% end %>
