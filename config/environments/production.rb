@@ -93,7 +93,7 @@ Caraten::Application.configure do
 
   FROM_EMAIL = "fiske@osfk.org"
   FROM_HOST  = "http://#{config.action_mailer.default_url_options[:host]}"
-  ActionMailer::Base.default from: "\"Österåkers sportfiskeklubb\" <kontakt@brfcaraten.se>"
+  ActionMailer::Base.default from: "\"Österåkers sportfiskeklubb\" <#{FROM_EMAIL}>"
 
   # Enable threaded mode
   # config.threadsafe!
