@@ -1,3 +1,10 @@
+<% content_for :title, @page.title %>
+<% content_for :header, @page.title %>
+<% content_for :description, @page.description %>
+<% content_for :breadcrumb do %>
+  <%= link_to @page.title, @page.path %>
+<% end %>
+
 <% content_for :banner do %>
   <div class="tp-banner-container">
     <div class="tp-banner" >
@@ -12,7 +19,7 @@
 <div class="clearfix post">
   <h1 class="title">Välkommen</h1>
 
-  <%= render 'shared/text', page: @page, key: 'lead', default: 'Skriv en välkomsttext' %>
+  <%= render 'shared/text', page: @page, key: 'content', default: 'Skriv en välkomsttext' %>
 </div>
 
 <div class="col-1-2">

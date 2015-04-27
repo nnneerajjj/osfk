@@ -2,7 +2,7 @@ class PageSerializer < ActiveModel::Serializer
   attributes :id, :title, :content, :path, :errors
 
   def path
-    "/" + object.slug if object.persisted?
+    object.path if object.persisted?
   end
 
   def errors

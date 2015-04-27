@@ -1,13 +1,15 @@
-<% content_for :title, I18n.t(:sign_up) %>
-<% content_for :header, I18n.t(:sign_up) %>
-<% content_for :description, I18n.t(:sign_up) %>
+<% content_for :title, t(:sign_up) %>
+<% content_for :header, t(:sign_up) %>
+<% content_for :description, t(:sign_up) %>
 <% content_for :meta do %>
 <% end %>
 
 <div class="inner-content page">
-  <h1><%= I18n.t(:sign_up) %></h1>
+  <h1><%= t(:sign_up) %></h1>
 
-  <p><%= I18n.t(:sign_up_text) %></p>
+  <div>
+    <%= render 'shared/text', page: Page.find_by_key('sign_up'), key: 'content', default: 'Skriv en välkomsttext' %>
+  </div>
 
   <div class="eight column">
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -106,7 +108,7 @@
         <%= f.label :password_confirmation %>
         <%= f.password_field :password_confirmation %>
 
-        <%= f.submit I18n.t(:sign_up) %>
+        <%= f.submit t(:sign_up) %>
       </div>
   <% end %>
 

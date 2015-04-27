@@ -1,10 +1,16 @@
 class PagesController < ApplicationController
   load_and_authorize_resource only: [ :new, :destroy ]
-  before_filter :load_roles, only: [ :new, :edit ]
+  before_filter :load_roles, only: [ :new, :edit, :index ]
 
   def show
     @page = Page.find_by_slug(params[:slug])
     authorize! :read, @page
+  end
+
+  def index
+    authorize! :create, Page.new
+
+    @pages = Page.order(:key).includes(:page).all
   end
 
   def new
@@ -52,11 +58,7 @@ class PagesController < ApplicationController
   end
 
   def set_selected_role_id
-    @selected_role_id = @page.public? ? Page::PUBLIC_PAGE_ID : Page::PRIVATE_PAGE_ID
-    role = @page.role
-    if role.present?
-      @selected_role_id = role.id
-    end
+    @selected_role_id = @page.selected_role_id
   end
 
   def get_page_params

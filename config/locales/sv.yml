@@ -100,6 +100,7 @@ sv:
   edit_event: "Redigera evenemang"
   edit_news: "Redigera nyhet"
   edit_page: "Redigera sida"
+  edit: "Redigera"
   calendar: "Kalender"
   forum: "Diskussioner"
   content: "Innehåll"
@@ -140,7 +141,6 @@ sv:
   sign_in: "Logga in"
   sign_out: Logga ut
   sign_up: "Ansök om medlemskap"
-  sign_up_text : "Skapa konto för att få tillgång till nyhetsbrev, ta del av nyheter och delta i diskussioner. Ingen utanför föreningen kommer att kunna se din epostadress eller några skrivna kommentarer."
   remember_me: "Kom ihåg mig"
   forgot_password: "Glömt ditt lösenord?"
   logout: "Logga ut"
@@ -172,6 +172,7 @@ sv:
   end_date_time: "Sluttid"
   letters: "Brev"
   slides: "Slides"
+  pages: "Sidor"
   save: "Spara"
   latest: "Senaste"
   latest_news: "Senaste nyheterna"

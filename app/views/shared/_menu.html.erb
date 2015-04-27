@@ -29,7 +29,7 @@ https://github.com/artberri/sidr/issues/8
           <% end %>
       </li>
 
-      <% @menu.reject { |x| x.key == 'home' }.select { |page| can? :read, page }.each do |root| %>
+      <% @menu.reject(&:read_only?).select { |page| can? :read, page }.each do |root| %>
         <li class="nav-parent">
           <%= link_to root.title, root.path %>
           <% children = root.children %>
@@ -105,7 +105,10 @@ https://github.com/artberri/sidr/issues/8
             <% end %>
             <% if can? :create, Page %>
               <li class="nav-parent">
-                <%= link_to t(:create_page), new_page_path %>
+                <%= link_to t(:pages), pages_path %>
+                <ul>
+                  <li class="nav-parent"><%= link_to t(:create_page), new_page_path %></li>
+                </ul>
               </li>
             <% end %>
 

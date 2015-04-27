@@ -8,21 +8,24 @@
 
 
 <div class="clearfix post">
+  <% unless @page.read_only? %>
+    <div>
+      <label>Synlig för roll</label>
+      <%= select_tag :role_id, options_for_select(@roles, @selected_role_id), :'data-form' => "role_id" %>
+    </div>
 
-  <div>
-    <label>Synlig för roll</label>
-    <%= select_tag :role_id, options_for_select(@roles, @selected_role_id), :'data-form' => "role_id" %>
-  </div>
-
-  <div>
-    <label for="page-id"><%= Page.human_attribute_name(:below) %></label>
-    <%= select("post", "person_id", Page.all.map {|p| [ p.title, p.id ] }, { selected: @page.page_id, include_blank: "- #{Page.human_attribute_name(:top)} -" }, {:'data-form' => 'page_id' }) %>
-  </div>
+    <div>
+      <label for="page-id"><%= Page.human_attribute_name(:below) %></label>
+      <%= select("post", "person_id", Page.all.map {|p| [ p.title, p.id ] }, { selected: @page.page_id, include_blank: "- #{Page.human_attribute_name(:top)} -" }, {:'data-form' => 'page_id' }) %>
+    </div>
+  <% end %>
 
   <label><%= t :title %></label>
   <input type="text" data-form="title" placeholder="<%= t :title %>" value="<%= @page.title %>">
 
-  <%= render 'shared/upload', uploads: @page.image_uploads %>
+  <% unless @page.read_only? %>
+    <%= render 'shared/upload', uploads: @page.image_uploads %>
+  <% end %>
 
   <%= render 'shared/text', page: @page, key: 'content', default: 'Skriv sidan innehåll här' %>
 

@@ -1,0 +1,37 @@
+<% content_for :title, t(:pages) %>
+<% content_for :header, t(:pages) %>
+<% content_for :description, t(:pages) %>
+<% content_for :breadcrumb do %>
+  <%= link_to t(:pages), letters_path %>
+<% end %>
+
+<div class="post-excerpt clearfix">
+
+  <table class="table-style-1">
+    <thead>
+      <tr>
+        <th>
+          Sida
+        </th>
+        <th>
+          Synlig för roll
+        </th>
+        <th>
+          Visa under i menyn
+        </th>
+        <th>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @pages.each do |page| %>
+        <tr>
+          <td><%= link_to page.title, page.path %></td>
+          <td><%= @roles.find { |role, id| id == page.selected_role_id }.first unless page.read_only? %></td>
+          <td><%= page.page.try(:title) %></td>
+          <td><%= link_to t(:edit), edit_page_path(page.slug) %></td>
+        </tr>
+      <% end %>
+     </tbody>
+  </table>
+</div>

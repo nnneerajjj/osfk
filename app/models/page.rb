@@ -45,7 +45,17 @@ class Page < ActiveRecord::Base
   end
 
   def path
-    "/#{self.slug}"
+    read_only? ? "/#{url}" : "/#{self.slug}"
+  end
+
+  def selected_role_id
+    selected_role_id = public? ? PUBLIC_PAGE_ID : PRIVATE_PAGE_ID
+    selected_role_id = role.id if role.present?
+    selected_role_id
+  end
+
+  def read_only?
+    key.present?
   end
 
   private
