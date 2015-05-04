@@ -9,6 +9,10 @@
 
 <div class="clearfix post">
 
+  <div>
+    <label>Synlig för roll</label>
+    <%= select_tag :role_id, options_for_select(@roles, @news.selected_role_id), :'data-form' => "role_id" %>
+  </div>
 
   <label><%= t :subject %></label>
   <input type="text" data-form="subject" placeholder="<%= t :subject %>" value="<%= @news.subject %>">

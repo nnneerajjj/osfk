@@ -1,5 +1,6 @@
 class TopicController < ApplicationController
   load_and_authorize_resource :topic, except: :create, find_by: :slug
+  before_filter :load_roles, only: [ :new, :edit ]
 
   def index
     page = params[I18n.t(:page)] || 1
@@ -11,7 +12,6 @@ class TopicController < ApplicationController
   end
 
   def show
-
   end
 
   def create

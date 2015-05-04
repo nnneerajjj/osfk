@@ -25,7 +25,7 @@
 <div class="col-1-2">
   <h3><%= t(:latest_news) %></h3>
   <ul class="widget-event-list">
-    <% most_recent_news.each do |news| %>
+    <% @news.each do |news| %>
       <li>
         <div class="date" style="margin-top: 5px;"><%= l news.created_at, format: :long %></div>
         <h6 class="title" style="margin-top: 5px;"><%= link_to news.subject, news %></h6>

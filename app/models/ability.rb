@@ -3,8 +3,8 @@ class Ability
 
   def initialize(user)
     if user.nil?
-      can :read, Page, public: true
-      can :read, News, active: true
+      can :read, Page, role_id: nil, public: true
+      can :read, News, active: true, role_id: nil, public: true
       can :read, Event
       return
     end
@@ -21,9 +21,8 @@ class Ability
       can :import, [User]
       can :function, User
     else
-      if user.has_role?(:functionary)
-        can :function, User
-      end
+      can :function, User, roles: { name: :functionary }
+
       can :manage, User, id: user.id
       can :create, Topic
       can :manage, Topic, user_id: user.id
@@ -31,15 +30,9 @@ class Ability
       can :comment, News
       can :participate, Event
 
-      cannot :read, Page
-      can :read, Page do |page|
-        role = page.role
-        if role.blank?
-          true
-        else
-          user.has_role?(role.name)
-        end
-      end
+      cannot :read, [Page, News, Topic]
+      can :read, [Page, News, Topic], role: nil
+      can :read, [Page, News, Topic], role: { users: { id: user.id } }
     end
   end
 end

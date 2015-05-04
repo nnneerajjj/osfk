@@ -1,5 +1,6 @@
 class NewsController < ApplicationController
-  load_and_authorize_resource :news, only: [:show, :edit, :update, :comment, :create_letter, :destroy], find_by: :slug
+  load_and_authorize_resource :news, except: [:new, :create], find_by: :slug
+  before_filter :load_roles, only: [ :new, :edit ]
   include NewsHelper
 
   def new
@@ -7,22 +8,22 @@ class NewsController < ApplicationController
   end
 
   def index
-    page = params[I18n.t(:page)] || 1
-    @news = News.page(page)
+    page = params[t(:page)] || 1
+    @news = @news.includes(:image_uploads).page(page)
   end
 
   def edit
   end
 
   def create
-    news = News.new(params[:news])
+    news = News.new(role_params(:news))
     news.save
     flash[:notice] = "Du skapade nyheten #{news.subject}"
     render json: news
   end
 
   def update
-    if @news.update_attributes(params[:news])
+    if @news.update_attributes(role_params(:news))
       flash[:notice] = "Du sparade nyheten"
     end
     render json: @news

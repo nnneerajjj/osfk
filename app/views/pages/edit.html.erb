@@ -11,7 +11,7 @@
   <% unless @page.read_only? %>
     <div>
       <label>Synlig för roll</label>
-      <%= select_tag :role_id, options_for_select(@roles, @selected_role_id), :'data-form' => "role_id" %>
+      <%= select_tag :role_id, options_for_select(@roles, @page.selected_role_id), :'data-form' => "role_id" %>
     </div>
 
     <div>

@@ -5,11 +5,12 @@ class Topic < ActiveRecord::Base
 
   friendly_id :subject, use: :slugged
 
-  attr_accessible :user, :subject, :content
+  attr_accessible :user, :subject, :content, :role_id, :public
 
   has_many :image_uploads, as: :uploader
 
   belongs_to :user
+  belongs_to :role
 
   validates :user, :subject, :content, presence: true
 
