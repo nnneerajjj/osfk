@@ -10,4 +10,8 @@ class ImageUpload < Upload
     options = file.options
     options[:interpolator].interpolate(options[:url], file, :original)
   end
+
+  def image?
+    true
+  end
 end

@@ -49,4 +49,15 @@
     <% text = @page.texts.find_or_create_by(key: 'content') %>
     <%= text.value.html_safe %>
   </div>
+
+  <% if @page.file_uploads.any? %>
+    <div>
+      <h3>Filer</h3>
+      <ul class="list-4 col-1-2 last">
+        <% @page.file_uploads.each do |file| %>
+          <li><a target="_blank" href="<%= file.file.url %>"><%= file.file_file_name %></a></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
 </div>

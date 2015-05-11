@@ -5,13 +5,15 @@ class News < ActiveRecord::Base
 
   friendly_id :slug_candidates, use: :slugged
 
-  attr_accessible :subject, :content, :active, :image_upload_ids, :role_id, :public
+  attr_accessible :subject, :content, :active, :upload_ids, :role_id, :public
 
   validates :subject, :content, presence: true
   validate :default_subject
 
   belongs_to :role
   has_many :image_uploads, as: :uploader
+  has_many :file_uploads, as: :uploader
+  has_many :uploads, as: :uploader
 
   default_scope -> { order(id: :desc) }
   scope :active, -> { where(active: true) }

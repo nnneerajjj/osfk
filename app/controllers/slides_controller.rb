@@ -10,7 +10,7 @@ class SlidesController < ApplicationController
   end
 
   def create
-    image_upload = ImageUpload.find(params[:slide].delete(:image_upload_id))
+    image_upload = ImageUpload.find(params[:slide].delete(:upload_id))
     slide = Slide.new(params[:slide])
     slide.image_upload = image_upload
 
@@ -21,7 +21,7 @@ class SlidesController < ApplicationController
   end
 
   def update
-    @slide.image_upload = ImageUpload.find(params[:slide].delete(:image_upload_id))
+    @slide.image_upload = ImageUpload.find(params[:slide].delete(:upload_id))
     if @slide.update_attributes(params[:slide])
       flash[:notice] = "Du sparade slidern #{@slide.header}"
     end

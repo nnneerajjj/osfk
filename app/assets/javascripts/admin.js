@@ -76,15 +76,15 @@ raptor(function($) {
 
 
 $(function() {
-  $("#s3-uploader").S3Uploader();
+  $(".upload-form").S3Uploader();
 
-  $('#s3-uploader').bind("s3_uploads_start", function(e, content) {
-    if ($("#s3-uploader").data('single')) {
+  $('.upload-form').bind("s3_uploads_start", function(e, content) {
+    if ($(".upload-form").data('single')) {
       $("#file").hide();
     }
   });
 
-  $('#s3-uploader').bind("s3_upload_complete", function(e, content) {
+  $('.upload-form').bind("s3_upload_complete", function(e, content) {
     $loader = $('#image-loader').clone();
     $tbody = $('.uploads tbody');
     $tr = $('<tr></tr>');
@@ -94,7 +94,7 @@ $(function() {
     $td.appendTo($tr);
     $('<td>' + content.filename + '</td>').appendTo($tr);
     $('<td>' + bytesToSize(content.filesize) + '</td>').appendTo($tr);
-    $('<td><button class="remove-image">Ta bort bild</button></td>').appendTo($tr);
+    $('<td><button class="remove-image">Ta bort fil</button></td>').appendTo($tr);
     $tr.appendTo($tbody);
   });
 
@@ -104,7 +104,7 @@ $(function() {
 
   $('.uploads').on('click',' .remove-image', function() {
     $tr = $(this).parent().parent();
-    if (confirm('Är du säker på att du vill ta bort bilden?')) {
+    if (confirm('Är du säker på att du vill ta bort filen?')) {
       $tr.remove();
       $("#file").show();
     }

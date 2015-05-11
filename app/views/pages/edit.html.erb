@@ -6,7 +6,6 @@
   <%= link_to t(:edit_page), "#{@page.path}/edit" %>
 <% end %>
 
-
 <div class="clearfix post">
   <% unless @page.read_only? %>
     <div>
@@ -24,7 +23,7 @@
   <input type="text" data-form="title" placeholder="<%= t :title %>" value="<%= @page.title %>">
 
   <% unless @page.read_only? %>
-    <%= render 'shared/upload', uploads: @page.image_uploads %>
+    <%= render 'shared/upload', uploads: @page.uploads %>
   <% end %>
 
   <%= render 'shared/text', page: @page, key: 'content', default: 'Skriv sidan innehåll här' %>

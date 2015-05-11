@@ -2,7 +2,11 @@
   alert("<%= j @upload.errors.full_messages.join(', ').html_safe %>");
 <% else %>
   $("#<%= params[:unique_id] %>")
-    .attr('data-form', $("#s3-uploader").data('single') ? 'image_upload_id' : 'image_upload_ids')
+    .attr('data-form', $("#s3-uploader").data('single') ? 'upload_id' : 'upload_ids')
     .attr('data-value', <%= @upload.id %>)
-    .html('<img src="<%= @upload.file.url(:thumb) %>" style="width: 80px; height: 80px;">')
+    <% if @upload.image? %>
+      .html('<img src="<%= @upload.file.url(:thumb) %>" style="width: 80px; height: 80px;">');
+    <% else %>
+      .html('<img src="<%= image_path("file.png") %>" style="width: 80px; height: 80px;">');
+    <% end %>
 <% end %>

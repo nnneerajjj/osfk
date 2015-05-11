@@ -5,6 +5,10 @@ class Upload < ActiveRecord::Base
 
   before_save :generate_uuid
 
+  def image?
+    false
+  end
+
   private
 
   def generate_uuid

@@ -7,41 +7,88 @@
 <table class="table-style-1 mobile-table uploads" %>
   <thead>
     <tr>
-      <th>Bild</th>
+      <th>Fil</th>
       <th>Filnamn</th>
       <th>Storlek</th>
       <th>Ta bort?</th>
-
     </tr>
   </thead>
   <tbody>
     <% uploads.each do |upload| %>
       <tr>
-        <td><%= image_tag upload.file.url(:thumb), data: { value: upload.id, form: single ? 'image_upload_id' : 'image_upload_ids' } %></td>
-        <td><%= upload.file_file_name %></td>
+        <td>
+          <% if upload.image? %>
+            <%= image_tag upload.file.url(:thumb), data: { value: upload.id, form: single ? 'upload_id' : 'upload_ids' } %>
+          <% else %>
+            <%= image_tag image_path('file.png'), data: { value: upload.id, form: single ? 'upload_id' : 'upload_ids' } %>
+          <% end %>
+        </td>
+        <td><%= link_to upload.file_file_name, upload.file.url %></td>
         <td data-size='<%= upload.file_file_size %>'></td>
-        <td><button class="remove-image">Ta bort bild</button></td>
+        <td><button class="remove-image">Ta bort <%= upload.image? ? 'bild' : 'fil' %></button></td>
       </tr>
       <% break if single %>
     <% end %>
   </tbody>
 </table>
 
-<%= s3_uploader_form callback_url: uploads_path,
-                     callback_method: "POST",
-                     callback_param: "upload[image_upload]",
-                     key: "files/{timestamp}-{unique_id}-#{SecureRandom.hex}/${filename}",
-                     key_starts_with: "files/",
-                     max_file_size: 50.megabytes,
-                     id: "s3-uploader",
-                     class: "upload-form",
-                     data: { single: single } do %>
+<div>
+  <div class="left">
+    <%= s3_uploader_form callback_url: uploads_path,
+                         callback_method: "POST",
+                         callback_param: "upload[image_upload]",
+                         key: "files/{timestamp}-{unique_id}-#{SecureRandom.hex}/${filename}",
+                         key_starts_with: "files/",
+                         max_file_size: 50.megabytes,
+                         id: "s3-uploader",
+                         class: "upload-form",
+                         data: { single: single } do %>
 
-  <%= file_field_tag :file, multiple: true, style: display_uploader ? '' : 'display: none;' %>
-<% end %>
+      <label class="upload-label btn btn-3">
+        <%= file_field_tag :file, multiple: true, style: display_uploader ? '' : 'display: none;' %>
+        <span><%= 'Ladda upp bild' %></span>
+      </label>
+    <% end %>
+  </div>
+  <% unless single %>
+    <div class="left" style="margin-left: 20px;">
+      <%= s3_uploader_form callback_url: uploads_path,
+                           callback_method: "POST",
+                           callback_param: "upload[file_upload]",
+                           key: "files/{timestamp}-{unique_id}-#{SecureRandom.hex}/${filename}",
+                           key_starts_with: "files/",
+                           max_file_size: 50.megabytes,
+                           id: "s3-uploader",
+                           class: "upload-form",
+                           data: { single: single } do %>
+
+        <label class="upload-label btn btn-3">
+          <%= file_field_tag :file, multiple: true, style: display_uploader ? '' : 'display: none;' %>
+          <span><%= 'Ladda upp fil' %></span>
+        </label>
+
+      <% end %>
+    </div>
+  <% end %>
+
+  <div class="clearfix"></div>
+</div>
+
 <script id="template-upload" type="text/x-tmpl">
   <div id="file-{%=o.unique_id%}" class="upload">
     {%=o.name%}
     <div class="progress"><div class="bar" style="width: 0%"></div></div>
   </div>
 </script>
+
+<style>
+  label.upload-label input[type="file"] {
+    position: fixed;
+    top: -1000px;
+    cursor: pointer;
+  }
+
+  .upload-label {
+    cursor: pointer;
+  }
+</style>

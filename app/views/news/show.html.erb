@@ -49,6 +49,17 @@
 
   <h6 class="meta"><a class="date" href="#"><%= l @news.created_at, format: :long %></a></h6>
   <div><%= raw(@news.content) %></div>
+
+  <% if @news.file_uploads.any? %>
+    <div>
+      <h3>Filer</h3>
+      <ul class="list-4 col-1-2 last">
+        <% @news.file_uploads.each do |file| %>
+          <li><a target="_blank" href="<%= file.file.url %>"><%= file.file_file_name %></a></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
 </div>
 
 <% if can? :comment, News %>
