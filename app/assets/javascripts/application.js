@@ -76,7 +76,7 @@ $(document).ready(function() {
       weekdaysShort : ['Sön','Mån','Tis','Ons','Tor','Fre','Lör']
     }
 
-    $('.datepicker').forEach(function(element) {
+    $('.datepicker').each(function(element) {
       new Pikaday({
         field: element,
         firstDay: 1,
