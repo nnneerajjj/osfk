@@ -10,6 +10,12 @@
       <div>
         <%= f.text_field :subject, placeholder: Topic.human_attribute_name(:subject) , required: '' %>
       </div>
+      <% if @roles.size > 1 %>
+        <div>
+          <label>Synlig för roll</label>
+          <%= f.select :role_id, options_for_select(@roles, @topic.selected_role_id) %>
+        </div>
+      <% end %>
       <div>
         <%= f.text_area :content, required: '', rows: '5', cols: '20', placeholder: Topic.human_attribute_name(:content)  %>
       </div>

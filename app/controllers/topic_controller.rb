@@ -4,18 +4,19 @@ class TopicController < ApplicationController
 
   def index
     page = params[I18n.t(:page)] || 1
-    @topics = Topic.order('updated_at DESC').page(page)
+    @topics = @topics.order(updated_at: :desc).page(page)
   end
 
   def new
     @topic = Topic.new
+    @roles = [["Medlemmar", Page::PRIVATE_PAGE_ID]] + current_user.roles.reverse.map { |role| [ role.display_name, role.id ] }
   end
 
   def show
   end
 
   def create
-    @topic = Topic.new(params[:topic])
+    @topic = Topic.new(role_params(:topic))
     @topic.user = current_user
     if @topic.save
       flash[:notice] = "Du skapade diskussionstråden #{@topic.subject}"

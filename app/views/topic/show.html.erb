@@ -6,12 +6,15 @@
   <%= link_to @topic.subject, topic_path(@topic) %>
 <% end %>
 
-
 <div class="clearfix post">
   <h1 class="title"><%= @topic.subject %></h1>
 
   <h6 class="meta">
     <a class="date" href="#"><%= l @topic.created_at, format: :long %></a><br/>
+    <% if @topic.role.present? %>
+      <span class="display_for"><%= @topic.role.display_name %></span>
+      <br>
+    <% end %>
     <%= t :author %> <%= @topic.user.name %>
   </h6>
   <div><%= auto_link(simple_format(@topic.content), html: { target: '_blank' }) { |text| text } %></div>

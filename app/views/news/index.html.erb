@@ -18,7 +18,13 @@
 
 <div class="col-2-3 last">
       <h3><%= link_to news.subject, news %></h3>
-      <h6 class="meta"><a class="date" href="<%= news_path(news) %>"><%= l news.created_at, format: :long %></a></h6>
+      <h6 class="meta">
+        <a class="date" href="<%= news_path(news) %>"><%= l news.created_at, format: :long %></a>
+        <% if news.role.present? %>
+          <br>
+          <span class="display_for"><%= news.role.display_name %></span>
+        <% end %>
+      </h6>
       <p><%= raw(truncate(strip_tags(HTMLEntities.new.decode(news.text)), length: 250)) %></p>
       <% if can? :comment, news %>
         <%= link_to t(:read_more_comment), news %>

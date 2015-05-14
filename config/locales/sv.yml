@@ -123,6 +123,7 @@ sv:
   comments: "Kommentarer"
   comment_only_visible_by_members: Din kommentar kommer bara vara synlig för medlemmar.
   author: "Skriven av"
+  display_for: "Visas för"
   no_comments: "Inga kommentarer"
   comment_count: "kommentarer"
   write_comment: "Skriv en kommentar"

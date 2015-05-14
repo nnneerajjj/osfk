@@ -12,6 +12,10 @@
       <h3><%= link_to topic.subject, topic %></h3>
       <h6 class="meta">
         <a class="date" href="<%= topic_path(topic) %>"><%= l topic.created_at, format: :long %></a><br/>
+        <% if topic.role.present? %>
+          <span class="display_for"><%= topic.role.display_name %></span>
+          <br>
+        <% end %>
         <%= t :author %> <%= topic.user.name %>
       </h6>
 

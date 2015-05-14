@@ -15,4 +15,10 @@ class Topic < ActiveRecord::Base
   validates :user, :subject, :content, presence: true
 
   scope :most_recent, -> { order("id desc").limit(3) }
+
+  def selected_role_id
+    selected_role_id = public? ? Page::PUBLIC_PAGE_ID : Page::PRIVATE_PAGE_ID
+    selected_role_id = role.id if role.present?
+    selected_role_id
+  end
 end

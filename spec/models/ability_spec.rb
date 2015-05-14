@@ -9,7 +9,7 @@ describe Ability do
 
     it { is_expected.to be_able_to :read, Page.new(public: true) }
     it { is_expected.to_not be_able_to :read, Page.new }
-    it { is_expected.to be_able_to :read, News.new }
+    it { is_expected.to be_able_to :read, News.new(public: true) }
     it { is_expected.to_not be_able_to :read, News.new(active: false) }
   end
 

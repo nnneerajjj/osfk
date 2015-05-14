@@ -47,7 +47,13 @@
 
   <div class="clearfix"></div>
 
-  <h6 class="meta"><a class="date" href="#"><%= l @news.created_at, format: :long %></a></h6>
+  <h6 class="meta">
+    <a class="date" href="#"><%= l @news.created_at, format: :long %></a>
+    <% if @news.role.present? %>
+      <br>
+      <span class="display_for"><%= @news.role.display_name %></span>
+    <% end %>
+  </h6>
   <div><%= raw(@news.content) %></div>
 
   <% if @news.file_uploads.any? %>
