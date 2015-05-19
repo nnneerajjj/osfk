@@ -9,7 +9,7 @@
 
 <div class="main-content clearfix">
 
-<%= form_for(@user, url: members_path) do |f| %>
+  <%= form_for(@user, url: members_path) do |f| %>
 
       <div class="clearfix">
         <div>
@@ -29,7 +29,7 @@
           <%= f.check_box :package2, data: { price: 1000 } %>
           <strong><%= f.label 'Dommaruden' %></strong>
         </div>
-        <%= f.label 'Total kostnad:' %> <strong><span id='total-cost'></span> kr</strong>. Därefter <span id='total-year-cost'></span> kr per år.
+        <%= f.label 'Värdet av medlemskap:' %> <strong><span id='total-cost'></span> kr</strong>. Därefter <span id='total-year-cost'></span> kr per år.
       </div>
 
       <div>
