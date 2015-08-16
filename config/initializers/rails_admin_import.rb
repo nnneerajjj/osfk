@@ -25,7 +25,6 @@ RailsAdminImport.config do |config|
         :stock,
         :approved,
         :regular,
-        :postal_address,
         :package1,
         :package2,
         :avatar,
