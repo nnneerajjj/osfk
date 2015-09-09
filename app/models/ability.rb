@@ -20,9 +20,9 @@ class Ability
       can :manage, User
       can :import, [User]
       can :function, User
+    elsif user.has_role?(:functionary)
+      can :function, User
     else
-      can :function, User, roles: { name: :functionary }
-
       can :manage, User, id: user.id
       can :create, Topic
       can :manage, Topic, user_id: user.id
