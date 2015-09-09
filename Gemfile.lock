@@ -40,6 +40,8 @@ GEM
       activerecord (>= 3.0)
       activesupport (>= 3.0)
       awesome_nested_set (>= 2.0)
+    acts_as_list (0.7.2)
+      activerecord (>= 3.0)
     addressable (2.3.6)
     airbrake (4.1.0)
       builder
@@ -291,6 +293,7 @@ PLATFORMS
 DEPENDENCIES
   active_model_serializers (= 0.8.0)
   acts_as_commentable_with_threading
+  acts_as_list
   airbrake
   aws-sdk
   byebug
@@ -331,3 +334,6 @@ DEPENDENCIES
   uglifier
   unicorn
   whenever
+
+BUNDLED WITH
+   1.10.6

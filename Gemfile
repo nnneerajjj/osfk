@@ -16,6 +16,7 @@ gem 'rails-i18n'
 gem 'cancancan'
 gem 'aws-sdk'
 gem 'acts_as_commentable_with_threading'
+gem 'acts_as_list'
 gem 'friendly_id'
 gem 'nokogiri'
 gem 'whenever', :require => false

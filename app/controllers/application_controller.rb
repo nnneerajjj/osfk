@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
 
   before_action :load_menu
-
+  helper_method :sponsors
   def load_menu
     @menu = Page.where("page_id = '0' OR page_id is null").includes(children: :children)
   end
@@ -21,6 +21,10 @@ class ApplicationController < ActionController::Base
     end
 
     role_params
+  end
+
+  def sponsors
+    Sponsor.all
   end
 
   def load_roles

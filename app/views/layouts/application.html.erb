@@ -106,20 +106,13 @@
         </div>
 
         <aside class="col-1-4 last centered">
-          <div class="ad"><a href="http://www.rsösterskär.se/"><img alt="" src="http://www.sportnik.com/file/show/1763649"></a></div>
-          <div class="ad"><a href="http://www.roslagsglas.se/"><img alt="" src="http://www.sportnik.com/file/show/1660499"></a></div>
-          <div class="ad"><a href="http://klimatsmartosteraker.se/"><img alt="" src="http://www.sportnik.com/file/show/1660509"></a></div>
-          <div class="ad"><a href="http://www.sportfiskarna.se/Omsportfiskarna/RegionM%E4lardalenSthlm/tabid/115/Default.aspx"><img alt="" src="http://www.sportnik.com/file/show/1660504"></a></div>
-          <div class="ad"><a href="http://www.nordsjoidedesign.se/index.php?affiliate=80"><img alt="" src="http://www.sportnik.com/file/show/1728107"></a></div>
-          <div class="ad"><a href="http://www.byggmax.com/se-sv/Byggmax/Butiker/Sthlm-Akersberga.aspx"><img alt="" src="http://www.sportnik.com/file/show/1733479"></a></div>
-          <div class="ad"><a href="http://www.mkjaktofritid.se/"><img alt="" src="http://www.sportnik.com/file/show/1660517"></a></div>
-          <div class="ad"><a href="http://www.sportfiskeboden.com/"><img alt="" src="http://www.sportnik.com/file/show/1660519"></a></div>
-          <div class="ad"><a href="http://www.ica.se/trevehallen"><img alt="" src="http://www.sportnik.com/file/show/1728121"></a></div>
-          <div class="ad"><a href="http://www.fiskelankar.se/"><img alt="" src="http://www.sportnik.com/file/show/1660555"></a></div>
-          <div class="ad"><a href="http://www.mcdonalds.se/SWEDEN/restsite.nsf/Search/C2236409C4802190C125686400487402"><img alt="" src="http://www.sportnik.com/file/show/1728103"></a></div>
-          <div class="ad"><a href="http://www.hi-sport.se/sidor/b_akersberga.html"><img alt="" src="http://www.sportnik.com/file/show/1728134"></a></div>
-          <div class="ad"><a href="http://www.domarudden.se/"><img alt="" src="http://www.sportnik.com/file/show/1660516"></a></div>
-          <div class="ad"><a href="http://www.flugspon.se/"><img alt="" src="http://www.sportnik.com/file/show/1965433"></a></div>
+          <% sponsors.each do |sponsor| %>
+            <div class="ad">
+              <%= link_to sponsor.url do %>
+                <%= image_tag sponsor.logo %>
+              <% end %>
+            </div>
+          <% end %>
         </aside>
 
         <% aside = yield :aside %>
