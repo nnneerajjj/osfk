@@ -1,7 +1,7 @@
 class MembersController < ApplicationController
 
   def index
-    authorize! :function, User.new
+    authorize! :index, User.new
 
     @can_manage = can? :manage, User.new
 

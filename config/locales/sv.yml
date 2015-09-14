@@ -213,10 +213,12 @@ sv:
   picker_browse: "Välj eller ladda upp"
 
   welcome: "Väkommen"
+
+  almost_done: "Du är nästan medlem i "
   member_of: "Du är nu medlem i "
-  you_can_login: "Du kommer kunna logga in när en administratör har godkänt ditt medlemskap."
+  you_can_login: "Du kommer kunna logga in när en administratör har bekräftad din betalning och godkänt ditt medlemskap."
   welcome_email_subject: "Välkommen till Österåkers Fiskeklubb"
-  due_amount: "Amount you have to pay: %{price}"
+  due_amount: "Totalt att betala: %{price} Kr"
 
   administrators: "Administratörer"
 

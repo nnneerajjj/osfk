@@ -18,10 +18,12 @@ class Ability
       can :manage, Text
       can :manage, User
       can :import, [User]
-      can :function, User
+      can :index, User
     else
       if user.has_role? :functionary
+        can :index, User
         can :function, User
+        can :show, User
       end
       can :manage, User, id: user.id
       can :create, Topic

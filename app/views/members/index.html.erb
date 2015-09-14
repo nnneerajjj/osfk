@@ -47,7 +47,7 @@
           <th class="sort" data-sort="lastname">Efternamn</th>
           <th class="" data-sort="packages">Paket</th>
           <th><%= "Betalat #{Time.now.year}" %></th>
-          <% if can?(:function, User.new) %>
+          <% if can?(:function, User) && current_user.has_role?(:functionary) %>
             <th></th>
           <% end %>
           <% if @can_manage %>
@@ -63,7 +63,7 @@
             <td class="lastname"><%= user.lastname %></td>
             <td class="packages"><%= user.packages %></td>
             <td class="approved"><%= raw '<em class="fa fa-check"></em>' if user.approved? %></td>
-            <% if can?(:function, user) %>
+            <% if can?(:function, user) && current_user.has_role?(:functionary) %>
               <td><%= link_to 'info', member_path(user) %></td>
             <% end %>
             <% if @can_manage %>

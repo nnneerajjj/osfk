@@ -4,13 +4,17 @@
 <% end %>
 
 <p>
-  Totalt att betala :  <%= t(:due_amount, price: @user.price) %>
+  <%= t(:due_amount, price: @user.price) %>
 </p>
 
 <p>
-  <%= I18n.t(:member_of) %> <a href="<%= ActionMailer::Base.default_url_options[:host] %>"><%= ActionMailer::Base.default_url_options[:host] %></a>
+  <%= I18n.t(:almost_done) %> <a href="<%= ActionMailer::Base.default_url_options[:host] %>"><%= ActionMailer::Base.default_url_options[:host] %></a>
 
 </p>
+<p>
+<%= I18n.t(:bank_account) %>  847-4900 
+<a> Skriv gärna ditt namn och person nr som referens </a> 
+<p/>
 
 <p>
   Du kommer få ett nytt mail när du har blivit godkänd av en administratör.
