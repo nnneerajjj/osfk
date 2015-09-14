@@ -1,9 +1,15 @@
 <% content_for :lead do %>
   <%= t :welcome %> <%= @user.name %>
+
 <% end %>
 
 <p>
+  Totalt att betala :  <%= t(:due_amount, price: @user.price) %>
+</p>
+
+<p>
   <%= I18n.t(:member_of) %> <a href="<%= ActionMailer::Base.default_url_options[:host] %>"><%= ActionMailer::Base.default_url_options[:host] %></a>
+
 </p>
 
 <p>

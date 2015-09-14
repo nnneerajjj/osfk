@@ -10,7 +10,11 @@ class MembersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    authorize! :function, @user
+  end
 
+  def edit 
+    @user = User.find(params[:id])
     authorize! :manage, @user
   end
 
@@ -25,7 +29,7 @@ class MembersController < ApplicationController
       redirect_to member_path(@user)
     else
       flash[:error] = @user.errors.full_messages.to_sentence
-      render :show
+      render :edit
     end
   end
 

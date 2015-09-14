@@ -11,73 +11,75 @@
 
 <h1><%= @user.name %></h1>
 
-<%= form_for(@user, url: member_path(@user)) do |f| %>
-
+<%= form_for(@user, url: root_path) do |f| %>
   <div class="clearfix">
     <div>
-        <%= f.radio_button :regular, '1', checked: @user.regular, data: { price: 300 } %>
+        <%= f.radio_button :regular, '1', checked: @user.regular, data: { price: 300 }, disabled: 'disabled' %>
         <strong><%= f.label 'Senior', value: '1' %></strong>
 
-        <%= f.radio_button :regular, '0', checked: !@user.regular, data: { price: 175 } %>
+        <%= f.radio_button :regular, '0', checked: !@user.regular, data: { price: 175 }, disabled: 'disabled' %>
         <strong><%= f.label 'Ungdom/pensionär', value: '0' %></strong>
     </div>
-
     <div>
-      <%= f.check_box :package1, data: { price: 200 } %>
+      <%= f.check_box :package1, data: { price: 200 }, disabled: 'disabled' %>
       <strong><%= f.label 'Mossön' %></strong>
     </div>
 
     <div>
-      <%= f.check_box :package2, data: { price: 1000 } %>
+      <%= f.check_box :package2, data: { price: 1000 }, disabled: 'disabled' %>
       <strong><%= f.label 'Årsfiskekort Drängsjön' %></strong>
     </div>
     <%= f.label 'Värdet av medlemskap:' %> <strong><span id='total-cost'></span> kr</strong>. Därefter <span id='total-year-cost'></span> kr per år.
   </div>
 
   <div>
-
-    <br />
-
-    <%= f.check_box :approved %>
-    <%= f.label :approved %>
-
-    <br />
-
-    <%= f.label :roles %>
-    <%= f.collection_select :role_ids, Role.all, :id, :display_name, { }, { multiple: true, class: 'multiple', style: 'width: 200px;' } %>
-
-    <%= f.label :number %>
-    <%= f.text_field :number %>
-
-    <%= f.label :firstname %>
-    <%= f.text_field :firstname %>
-
-    <%= f.label :lastname %>
-    <%= f.text_field :lastname %>
-
-    <%= f.label :identity_number %> <%= t :'identity_number_hint' %>
-    <%= f.text_field :identity_number %>
-
-    <%= f.label :email %>
-    <%= f.email_field :email %>
-
-    <%= f.label :telephone %>
-    <%= f.text_field :telephone %>
-
-    <%= f.label :home_phone %>
-    <%= f.text_field :home_phone %>
-
-    <%= f.label :address %>
-    <%= f.text_field :address %>
-
-    <%= f.label :postal_address %>
-    <%= f.text_field :postal_address %>
-
-    <%= f.submit I18n.t(:update) %>
-  <% end %>
-
+    <table class="table-style-1 mobile-table">
+      <tr>
+        <td><%= f.label :approved %></td>
+        <td><%= f.check_box :approved, disabled: 'disabled' %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :roles %></td>
+        <td><%= @user.roles.pluck(:display_name).join(', ')%></td>
+      </tr>
+      <tr>
+        <td><%= f.label :number %></td>
+        <td><%= @user.number %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :firstname %></td>
+        <td><%= @user.firstname %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :lastname %></td>
+        <td><%= @user.lastname %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :identity_number %> <%= t :'identity_number_hint' %></td>
+        <td><%= @user.identity_number %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :email %></td>
+        <td><%= @user.email %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :telephone %></td>
+        <td><%= @user.telephone %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :home_phone %></td>
+        <td><%= @user.home_phone %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :address %></td>
+        <td><%= @user.address %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :postal_address %></td>
+        <td><%= @user.postal_address %></td>
+      </tr>
+    </table>
+    <% end %>
+    </div>
   </div>
-
-  <%= button_to "Skicka ett 'lösenord återställnings'-mail till användaren", reset_password_member_path(@user), class: 'btn-2 right', onclick: "javascript:return confirm('Vill du skicka? Tänk på att användaren måste ha en epost-adress')" %>
-
 <% end %>

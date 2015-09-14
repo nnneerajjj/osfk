@@ -216,6 +216,7 @@ sv:
   member_of: "Du är nu medlem i "
   you_can_login: "Du kommer kunna logga in när en administratör har godkänt ditt medlemskap."
   welcome_email_subject: "Välkommen till Österåkers Fiskeklubb"
+  due_amount: "Amount you have to pay: %{price}"
 
   administrators: "Administratörer"
 

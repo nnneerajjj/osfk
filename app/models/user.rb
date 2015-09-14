@@ -11,10 +11,12 @@ class User < ActiveRecord::Base
   # https://github.com/plataformatec/devise/wiki/How-To%3a-Require-admin-to-activate-account-before-sign_in
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :firstname,
+  attr_accessible :email, :password, :password_confirmation, :reset_password_sent_at, :remember_me, 
+                  :remember_created_at, :sign_in_count, :current_sign_in_at, :last_sign_in_at, :current_sign_in_ip,
+                  :last_sign_in_ip, :admin, :firstname, :notification_date, :active, :card_number, 
                   :street_number, :house_number, :lastname, :website, :telephone, :water, :stock, :approved,
                   :identity_number, :package1, :package2, :regular, :address, :postal_address, :role_ids,
-                  :number, :home_phone, :login
+                  :number, :home_phone, :login, :topic_ids, :participant_ids, :event_ids, :return_to
 
   has_attached_file :avatar, :styles => { :thumb => "250x250>", :preview => "80x80" }
 
@@ -42,6 +44,14 @@ class User < ActiveRecord::Base
     else
       where(conditions).first
     end
+  end
+
+  def price
+    price = 300
+    price += 175 unless !!self.regular
+    price += 200 if !!self.package1
+    price += 1000 if !!self.package2
+    return price
   end
 
   def name
