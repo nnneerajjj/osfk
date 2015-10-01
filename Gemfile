@@ -23,6 +23,8 @@ gem 'whenever', :require => false
 gem 'airbrake'
 gem 'postmark-rails'
 gem 'rails_autolink'
+gem 'pghero'
+gem 'sinatra', require: nil
 gem 'daemons'
 gem 'htmlentities'
 gem 'date_time_attribute'
@@ -42,7 +44,6 @@ gem 'rails_admin_import', git: 'https://github.com/luddement/rails_admin_import.
 group :production do
   # Needed for heroku
   gem 'rails_12factor'
-  gem 'pg'
 end
 
 group :development do
