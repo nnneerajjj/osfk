@@ -142,6 +142,7 @@ sv:
   sign_in: "Logga in"
   sign_out: Logga ut
   sign_up: "Ansök om medlemskap"
+  become_member: "Bli medlem"
   remember_me: "Kom ihåg mig"
   forgot_password: "Glömt ditt lösenord?"
   logout: "Logga ut"
