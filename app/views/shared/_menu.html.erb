@@ -95,6 +95,11 @@ https://github.com/artberri/sidr/issues/8
                 </ul>
               </li>
             <% end %>
+            <% if can? :read, LocationReport %>
+                <li class="nav-parent">
+                  <%= link_to I18n.t('menu_share_location') , location_reports_path %>
+                </li>
+            <% end %>
             <% if can? :create, Slide %>
               <li class="nav-parent">
                 <%= link_to t(:slides), slides_path %>

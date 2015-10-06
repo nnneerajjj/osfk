@@ -19,16 +19,20 @@ class Ability
       can :manage, User
       can :import, [User]
       can :index, User
+      can :manage, LocationReport
     else
       if user.has_role? :functionary
         can :index, User
         can :function, User
         can :show, User
+        can :read, LocationReport
+        can :manage, LocationReport, user_id: user.id
       end
       can :manage, User, id: user.id
       can :create, Topic
       can :manage, Topic, user_id: user.id
       can :read, :all
+      cannot :read, LocationReport
       can :comment, News
       can :participate, Event
 

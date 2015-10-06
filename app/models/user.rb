@@ -24,9 +24,11 @@ class User < ActiveRecord::Base
 
   attr_accessor :login
 
+  has_many :location_reports
   has_many :topics
   has_many :participants
   has_many :events, through: :participants
+
 
   def participates_in?(event)
     events.where(id: event.id).any?

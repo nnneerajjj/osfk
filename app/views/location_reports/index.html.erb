@@ -1,0 +1,37 @@
+<h1><%= I18n.t('last_day_locations') %></h1>
+
+<%= link_to I18n.t('New_location_sharing'), new_location_report_path, class: 'btn-2' %>
+<%= link_to I18n.t('All_location_sharings'), all_location_report_path, class: 'btn' %>
+<table class="table-style-1 mobile-table">
+  <thead>
+    <tr>
+      <th><%= I18n.t('User') %></th>
+      <th><%= I18n.t('Latitude') %></th>
+      <th><%= I18n.t('Longitude') %></th>
+      <th><%= I18n.t('Date') %></th>
+      <th><%= I18n.t('Comment') %></th>
+      <th colspan="1"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @location_reports.each do |location_report| %>
+      <tr>
+        <td><%= location_report.user.fullname %></td>
+        <td><%= location_report.latitude %></td>
+        <td><%= location_report.longitude %></td>
+        <td><%= location_report.created_at %></td>
+        <td><%= truncate(location_report.comment, length: 25, separator: ' ') %></td>
+
+        <td><%= link_to 'More', location_report %></td>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= paginate @location_reports %>
+
+<br>
+
+

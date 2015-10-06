@@ -1,0 +1,48 @@
+<p id="notice"><%= notice %></p>
+
+<table class="table-style-1 mobile-table">
+  <tr>
+    <td><%= I18.t('name') %>:</td>
+    <td>
+      <%= @location_report.user.fullname %>
+    </td>
+  </tr>
+  <tr>
+    <td><%= I18.t('coordinates') %>: </td>
+    <td>
+      <%= @location_report.latitude %>, <%= @location_report.longitude %>
+    </td>
+  </tr>
+  <tr>
+    <td><%= I18.t('comment') %>: </td>
+    <td>
+      <%= @location_report.comment %>
+    </td>
+  </tr>
+  <tr>
+    <td><%= I18.t('location') %>: </td>
+    <td>
+      <div id="map123" style="height: 400px;"></div>
+
+      <script type="text/javascript" charset="utf-8">
+          function initMap() {
+              console.log('bump');
+              var center = {lat: <%= @location_report.latitude %>, lng: <%= @location_report.longitude %>};
+
+              var map = new google.maps.Map(document.getElementById('map123'), {
+                  scaleControl: true,
+                  center: center,
+                  zoom: 13
+              });
+
+              var marker = new google.maps.Marker({map: map, position: center});
+
+          }
+      </script>
+      <script async defer
+              src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-hPUE8Rd0SL1AU4HyS96yIh19fo7oWoQ&signed_in=true&language=en&callback=initMap"></script>
+    </td>
+  </tr>
+</table>
+
+<%= link_to I18.t('Back'), location_reports_path, class: 'btn' %>

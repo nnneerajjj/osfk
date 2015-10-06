@@ -1,4 +1,8 @@
 Caraten::Application.routes.draw do
+
+  get 'location_reports/all' , to: 'location_reports#all', as: 'all_location_report'
+  resources :location_reports
+
   devise_for :users, :controllers => { :registrations => "registrations" }
 
   get 'inaktiv', to: 'home#inactive', as: 'inactive_registration'
@@ -35,6 +39,8 @@ Caraten::Application.routes.draw do
   resources :slides
 
   resources :pages
+
+  resources :location_reports
 
   resources :uploads, only: :create
 

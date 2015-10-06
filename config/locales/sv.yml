@@ -2,6 +2,32 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 sv:
+# new values to translate start
+  hello: "Hello world"
+  send_location_report: "Send report"
+  User_denied_the_request_for_geolocation: "User denied the request for Geolocation."
+  Location_information_is_unavailable: "Location information is unavailable."
+  The_request_to_get_user_location_timed_out: "The request to get user location timed out."
+  An_unknown_error_occurred: "An unknown error occurred."
+  No_geolocation_support: "You browser doesn't support GEO API"
+  Back: "Back"
+  comment: "comment"
+  New_location_report: "New location report"
+  menu_share_location: "Shere location"
+  User: "User"
+  Latitude: "Latitude"
+  Longitude: "Longitude"
+  Comment: "Comment"
+  name: "name"
+  coordinates: "coordinates"
+  location: "location"
+  last_day_locations: "Location sherings during last day"
+  Date: "Date"
+  New_location_sharing: "New location sharing"
+  Today_location_sharing: "Today's location sharing"
+  All_location_sharings: "All location sharings"
+#new values to translate end
+
   activerecord:
     attributes:
       user:
@@ -270,3 +296,5 @@ sv:
       next: "Nästa"
       previous: "Föregående"
       truncate: "&hellip;"
+  menu_share_location: "Share location"
+  prohibited_this_location_report_from_being_saved: "prohibited this location share from beign saved"
