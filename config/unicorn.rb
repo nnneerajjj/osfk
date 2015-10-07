@@ -1,7 +1,7 @@
 # Hack to run sidekiq for free on heroku
 # Remove when we move away from heroku
 run_sidekiq_in_this_thread = %w(production).include?(ENV['RAILS_ENV'])
-worker_processes Integer(run_sidekiq_in_this_thread ? 2 : (ENV["WEB_CONCURRENCY"] || 3))
+worker_processes Integer(ENV["WEB_CONCURRENCY"] || 2)
 timeout 30
 preload_app true
 

@@ -1,3 +1,5 @@
+require 'sidekiq/web'
+
 Caraten::Application.routes.draw do
 
   get 'location_reports/all' , to: 'location_reports#all', as: 'all_location_report'
@@ -9,6 +11,10 @@ Caraten::Application.routes.draw do
 
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
   mount RailsAdminImport::Engine => '/rails_admin_import', :as => 'rails_admin_import'
+  authenticate :user, lambda { |u| u.admin? } do
+    mount Sidekiq::Web => '/sidekiq'
+    mount PgHero::Engine, at: 'pghero'
+  end
 
   resources :contacts, path: 'kontakt', only: [:index, :create]
   resources :members, path: 'medlemmar' do

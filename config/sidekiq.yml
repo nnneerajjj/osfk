@@ -2,7 +2,7 @@
 # Options here can still be overridden by cmd line args.
 #   sidekiq -C config.yml
 ---
-:concurrency: 2
+:concurrency: 1
 :queues:
   - default
   - mailer
