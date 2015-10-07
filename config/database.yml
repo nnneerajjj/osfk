@@ -8,8 +8,8 @@ development:
   adapter: postgresql
   database: osfk_dev_bak
   host: localhost
-  username: postgres
-  password: postgres
+  username: promote
+  password: promote
   pool: 5
 
 # Warning: The database defined as "test" will be erased and

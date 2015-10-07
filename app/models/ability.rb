@@ -21,13 +21,6 @@ class Ability
       can :index, User
       can :manage, LocationReport
     else
-      if user.has_role? :functionary
-        can :index, User
-        can :function, User
-        can :show, User
-        can :read, LocationReport
-        can :manage, LocationReport, user_id: user.id
-      end
       can :manage, User, id: user.id
       can :create, Topic
       can :manage, Topic, user_id: user.id
@@ -39,6 +32,14 @@ class Ability
       cannot :read, [Page, News, Topic]
       can :read, [Page, News, Topic], role: nil
       can :read, [Page, News, Topic], role: { users: { id: user.id } }
+      if user.has_role? :functionary
+        can :index, User
+        can :function, User
+        can :show, User
+        can :read, LocationReport
+        can :create, LocationReport
+        can :manage, LocationReport, user_id: user.id
+      end
     end
   end
 end

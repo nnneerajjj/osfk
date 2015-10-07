@@ -2,25 +2,25 @@
 
 <table class="table-style-1 mobile-table">
   <tr>
-    <td><%= I18.t('name') %>:</td>
+    <td><%= I18n.t('name') %>:</td>
     <td>
       <%= @location_report.user.fullname %>
     </td>
   </tr>
   <tr>
-    <td><%= I18.t('coordinates') %>: </td>
+    <td><%= I18n.t('coordinates') %>: </td>
     <td>
       <%= @location_report.latitude %>, <%= @location_report.longitude %>
     </td>
   </tr>
   <tr>
-    <td><%= I18.t('comment') %>: </td>
+    <td><%= I18n.t('comment') %>: </td>
     <td>
       <%= @location_report.comment %>
     </td>
   </tr>
   <tr>
-    <td><%= I18.t('location') %>: </td>
+    <td><%= I18n.t('location') %>: </td>
     <td>
       <div id="map123" style="height: 400px;"></div>
 
@@ -45,4 +45,4 @@
   </tr>
 </table>
 
-<%= link_to I18.t('Back'), location_reports_path, class: 'btn' %>
+<%= link_to I18n.t('Back'), location_reports_path, class: 'btn' %>

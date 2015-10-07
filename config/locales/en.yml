@@ -2,7 +2,6 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
   send_location_report: "Send report"
   User_denied_the_request_for_geolocation: "User denied the request for Geolocation."
   Location_information_is_unavailable: "Location information is unavailable."
@@ -12,7 +11,7 @@ en:
   Back: "Back"
   comment: "comment"
   New_location_report: "New location report"
-  menu_share_location: "Shere location"
+  menu_share_location: "Share location"
   User: "User"
   Latitude: "Latitude"
   Longitude: "Longitude"
@@ -25,3 +24,5 @@ en:
   New_location_sharing: "New location sharing"
   Today_location_sharing: "Today's location sharing"
   All_location_sharings: "All location sharings"
+  menu_share_location: "Share location"
+  prohibited_this_location_report_from_being_saved: "prohibited this location share from being saved"
