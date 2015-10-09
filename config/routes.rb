@@ -53,4 +53,5 @@ Caraten::Application.routes.draw do
   root :to => 'home#index'
 
   get '*slug', to: 'pages#show', constraints: PageExistsConstraint.new
+  get 'pdftest'    => 'test#pdftest'
 end

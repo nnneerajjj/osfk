@@ -40,6 +40,9 @@ gem 'unicorn'
 gem 'delayed_paperclip'
 gem 'rails_admin_import', git: 'https://github.com/luddement/rails_admin_import.git', branch: 'utf8'
 #gem 'rails_admin_import', path: '../Temp/rails_admin_import'
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
+
 
 group :production do
   # Needed for heroku
