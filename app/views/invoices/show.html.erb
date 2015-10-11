@@ -1,0 +1,225 @@
+<style>
+#invoice_summary{
+  float: left;
+  width: 50%;
+  margin: 5px;
+  padding: 5px;
+}
+#invoice_address{
+  float: left;
+  width: 45%;
+}
+#invoice_summary_left{
+  float: left;
+  width: 70%;
+}
+#invoice_summary_right{
+  float: left;
+  width: 30%;
+}
+.borderd_thick_invoice{
+border: 5px solid #CCC;
+}
+#invoice_main_cont{
+  float: left;
+  width: 100%;
+  margin: 5px;
+  padding: 5px;
+}
+#invoice_address_left {
+  float: left;
+  margin: 5px 0px 5px 50px;
+  width: 35%;
+}
+#invoice_address_right {
+  float: left;
+  margin: 5px;
+  width: 40%;
+}
+#invoice_main_top{
+  float:left;
+  width:100%;
+}
+.half{
+  float: left;
+  width: 50%;
+}
+.one_third{
+  float:left;
+  width:32%;
+  padding-left:15px;
+}
+.bold_text{
+  font-weight: bold;
+}
+.full_width{
+  float: left;
+  width: 100%;
+}
+.one_fourth{
+  float: left;
+  width: 23%;
+}
+.invoice_main_top_left{
+  float: left;
+  width: 18%;
+}
+.invoice_main_top_right{
+  float: left;
+  width: 32%;
+}
+
+#invoice_table{
+  border: 0px none;
+  width: 100%;
+  margin-bottom: 250px;
+}
+
+#invoice_table th{
+  border: 0px none;
+  text-align: center;
+  padding-right: 3px;
+}
+#invoice_table td{
+  border: 0px none;
+  text-align: center;
+  padding-right: 3px;
+  
+}
+#invoice_table_head{
+//  border-top: 2px solid black;
+}
+#invoice_table_body{
+  border-top: 1px solid grey;
+}
+.filler_1{
+  width:67%;
+  float:left;
+}
+.vat{
+  text-align: center;
+}
+.net_amount{
+  text-align: right;
+}
+.invoice_pay{
+  font-weight: bold;
+  text-align: right;
+  margin: 5px 3px 20px 0;
+}
+</style>
+<div id="header">
+  <h1>Österåkers Sportfiskeklubb</h1>
+  <h2>Faktura</h2>
+  <div>
+    <p>
+      <div>Österåkers Sportfiskeklubb</div>
+      <div>Box 147</div>
+      <div>184 22 Åkersberga</div>
+    </p>
+  </div>
+</div>
+<div id="content">
+  <div id="invoice_summary" class="borderd_thick_invoice">
+    <div id="invoice_summary_left">
+      <div>Fakturadatum</div>
+      <div>Fakturanummer</div>
+      <div>Medlems-/kundnr</div>
+      <div>OCRnr</div>
+      <div>Förfallodatum (30 dagar netto)</div>
+      <div>Bankgiro</div>
+      <div>ATT BETALA SEK</div>
+    </div><div id="invoice_summary_right">
+      <div><%= @invoice.created_at.to_date %></div>
+      <div><%= @invoice.id %></div>
+      <div><%= @invoice.user.id %></div>
+      <div><%= @invoice.created_at.to_date.to_s.gsub('-', '') + @invoice.user.id.to_s %></div>
+      <div><%= @invoice.created_at.to_date + 30.days %></div>
+      <div>847-4900</div>
+      <div><%= @invoice.amount %></div>
+    </div>
+  </div><div id="invoice_address">
+    <div id="invoice_address_left">
+      Fakturaadress
+    </div><div id="invoice_address_right">
+      Leif Söderberg</br>
+      Amorgränd 2 A</br>
+      </br>
+      192 75 Sollentuna
+    </div>
+  </div>
+  <div id="invoice_main_cont"  class="borderd_thick_invoice">
+    <div id="invoice_main_top">
+      <div class="invoice_main_top_left bold_text">
+        <div>Er referens</div>
+        <div>Ert ordernr</div>
+        <div>Leveransvillkor</div>
+        <div>Leveranssätt</div>
+      </div><div class="invoice_main_top_right">
+        <div><%= @invoice.user.email %></div>
+        <div><%= @invoice.id %></div>
+        <div>Fritt vårt lager</div>
+        <div>Post</div>
+      </div><div class="invoice_main_top_left bold_text">
+        <div>Vår referens</div>
+        <div>&nbsp;</div>
+        <div>Leveransdatum</div>
+        <div>Avtalsperiod</div>        
+      </div><div class="invoice_main_top_right">
+        <div>fiske@osfk.org</div>
+        <div>&nbsp;</div>
+        <div><%= @invoice.created_at.to_date %></div>
+        <div><%= @invoice.created_at.to_date.to_s + ' to ' + (@invoice.created_at.to_date + 1.year - 1.day).to_s %></div>      
+      </div>
+    </div>
+    <hr />
+    <table id="invoice_table">
+      <thead id="invoice_table_head">
+        <tr>
+          <th>Benämning</th>
+          <th>Antal</th>
+          <th>Enh</th>
+          <th>À-pris</th>
+          <th>Summa</th>
+      </thead><tbody id="invoice_table_body">
+        <tr>
+          <td><%= (@invoice.user.regular) ? 'Senior ' : 'Ungdom/pensionär ' %><%= @invoice.user.packages %></td>
+          <td>1</td>
+          <td>1</td>
+          <td><%= @invoice.amount %></td>
+          <td><%= @invoice.amount %></td>
+        </tr>     
+      </tbody>
+    </table>
+    <div id="invoice_main_bottom">
+      <div class="full_width">
+        <div class="one_third"> Var vänlig och betala i god tid. Ange medlems- och fakturanr. Vid påminnelse debiteras 50:-</div>
+        <div class="filler_1">
+          &nbsp;
+        </div>
+      </div><div  class="full_width">
+        <div class="vat full_width">Ej momspliktigt belopp<br /><%= @invoice.amount %></div>
+      </div><div  class="full_width">
+        <div class="net_amount full_width">Netto &nbsp; &nbsp; <%= @invoice.amount %> </div>
+      </div><div  class="full_width">
+        <hr />
+        <div class="invoice_pay full_width">ATT BETALA &nbsp; &nbsp; <%= @invoice.amount %> </div>
+      </div>    
+    </div>
+  </div><div id="invoice_footer">
+    <div class="one_third"> 
+      fiske@osfk.org <br />
+      
+    </div><div class="one_third">
+      Bankgiro: 847-4900<br />
+      <br />
+      rgnr: 816400-1623
+    </div><div class="one_third">
+      <div>
+         &nbsp;
+      </div><div>
+        &nbsp;
+      </div>
+    </div>
+  </div>
+</div>

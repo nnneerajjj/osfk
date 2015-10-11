@@ -39,6 +39,7 @@ class RegistrationsController < Devise::RegistrationsController
     resource_saved = resource.save
     yield resource if block_given?
     if resource_saved
+      @invoice = resource.invoices.create(status: 'unpaid', amount: resource.price)
       resource.send_welcome_email
       User.send_updated_email(resource, resource)
       if resource.active_for_authentication?

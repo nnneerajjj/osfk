@@ -6,20 +6,6 @@
     <%= wicked_pdf_javascript_include_tag "number_pages" %>
   </head>
   <body onload='number_pages'>
-    <div id="header">
-      <%= wicked_pdf_image_tag 'mysite.jpg' %>
-      <h1>Österåkers Sportfiskeklubb</h1>
-      <h2>Faktura</h2>
-      <div>
-        <p>
-          <div>Österåkers Sportfiskeklubb</div>
-          <div>Box 147</div>
-          <div>184 22 Åkersberga</div>
-        </p>
-      </div>
-    </div>
-    <div id="content">
-      <%= yield %>
-    </div>
+    <%= yield %>
   </body>
 </html>

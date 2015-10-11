@@ -5,6 +5,10 @@
 
 <p>
   <%= t(:due_amount, price: @user.price) %>
+</p><p>
+Ladda ner din faktura som PDF genom att klicka här <a target="_blank" href="<%= invoice_url(@user.invoices.last).to_s + '.pdf' %>"><%= invoice_url( @user.invoices.last).to_s + '.pdf' %></a>
+<br />
+eller Visa faktura <a target="_blank" href="<%= invoice_url @user.invoices.last %>"><%= invoice_url @user.invoices.last %></a>
 </p>
 
 <p>

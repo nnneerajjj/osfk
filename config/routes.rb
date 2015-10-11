@@ -2,6 +2,8 @@ require 'sidekiq/web'
 
 Caraten::Application.routes.draw do
 
+  resources :invoices, only: [:show]
+
   get 'location_reports/all' , to: 'location_reports#all', as: 'all_location_report'
   resources :location_reports
 

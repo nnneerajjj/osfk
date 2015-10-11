@@ -28,6 +28,7 @@ class User < ActiveRecord::Base
   has_many :topics
   has_many :participants
   has_many :events, through: :participants
+  has_many :invoices
 
 
   def participates_in?(event)
